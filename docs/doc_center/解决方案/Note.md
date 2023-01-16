@@ -1,0 +1,80 @@
+# QuecPython 解决方案文档编写注意事项
+
+## 目录结构
+
+解决方案根目录下存在一个名为`README.md`的文件，作为解决方案的首页入口。
+
+> 文档中心使用的[teedoc](https://gitee.com/teedoc)架构要求每个版块的首页文件都要是名为`README.md`的文件。
+
+每个功能板块在根目录下均对应一个文件夹，在该文件夹内，拆分为框架介绍和开发流程两个md文件。
+
+所有md文件中引用的图片，均存放于media目录中：
+- 解决方案文件夹下有多少文件夹，在media也按照目录关系建立相应的文件夹。
+- 图片统一为png格式，命名请见名知意，如`BMS.xxx.png`，其中`xxx`表示用简短英文编写的图片作用描述。
+
+目录结构示例如下：
+
+```
+QuecPython官网文档中心/解决方案
+├── BMS通信云盒应用开发
+│   ├── BMS通信云盒应用开发-开发流程.md
+│   └── BMS通信云盒应用开发-框架介绍.md
+├── DTU应用开发
+│   ├── DTU应用开发-开发流程.md
+│   └── DTU应用开发-框架介绍.md
+├── Note.md
+├── PoC应用开发
+│   ├── PoC应用开发-开发流程.md
+│   └── PoC应用开发-框架介绍.md
+├── README.md
+├── media
+│   ├── BMS通信云盒应用开发
+│   │   └── BMS.xxx.png
+│   └── DTU应用开发
+│       └── DTU.xxx.png
+├── tracker应用开发
+│   ├── tracker应用开发-开发流程.md
+│   └── tracker应用开发-框架介绍.md
+└── 学生卡应用开发
+    ├── 学生卡应用开发-开发流程.md
+    └── 学生卡应用开发-框架介绍.md
+```
+
+## README.md
+
+README.md作为板块的首页入口，需要对该板块做综合性描述，并且在最后提供板块的所有二级目录链接。
+
+## 正文内容格式
+
+参照以下格式：
+
+```markdown
+# BMS 通信云盒框架介绍
+
+正文
+
+```
+
+## 关于 CSS 样式
+
+文档在QuecPython官网上会按照某个CSS样式进行效果渲染。
+
+该CSS样式存放于远程git仓库。拉取命令如下：
+
+```bash
+git clone https://toscode.gitee.com/qpy-doc-center/typora-theme-pie.git
+```
+
+需要在每一个md文件的第一行添加如下代码：
+
+```html
+<link rel="stylesheet" type="text/css" href="path/to/typora-theme-pie/pie.css">
+```
+
+其中，`path/to/typora-theme-pie/pie.css`表示CSS样式相对于当前md的相对路径。
+
+> 因为后台会对文档自动进行该CSS样式渲染，因此提交的文档开头可不必添加上述CSS样式的应用。
+
+## QuecPython 解决方案
+
+[点此查看](./README.md)
