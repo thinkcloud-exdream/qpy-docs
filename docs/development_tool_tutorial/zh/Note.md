@@ -46,26 +46,6 @@ README.md作为板块的首页入口，需要对该板块做综合性描述，�
 
 ```
 
-## 关于 CSS 样式
-
-文档在QuecPython官网上会按照某个CSS样式进行效果渲染。
-
-该CSS样式存放于远程git仓库。拉取命令如下：
-
-```bash
-git clone https://toscode.gitee.com/qpy-doc-center/typora-theme-pie.git
-```
-
-需要在每一个md文件的第一行添加如下代码：
-
-```html
-<link rel="stylesheet" type="text/css" href="path/to/typora-theme-pie/pie.css">
-```
-
-其中，`path/to/typora-theme-pie/pie.css`表示CSS样式相对于当前md的相对路径。
-
-> 因为后台会对文档自动进行该CSS样式渲染，因此提交的文档开头可不必添加上述CSS样式的应用。
-
 ## QuecPython 开发工具使用教程
 
 [点此查看](./README.md)
