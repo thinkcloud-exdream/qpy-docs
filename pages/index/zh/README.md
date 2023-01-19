@@ -1,6 +1,6 @@
 
 ---
-title: 开源静态文档网站生成工具
+title: QuecPython
 keywords: QuecPython, markdown, Quectel, 物联网, 移远, 静态网站, 文档中心
 desc: QuecPython, 使用教程，快速开发的新语言
 id: home_page
