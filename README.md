@@ -1,4 +1,4 @@
-teedoc official website
+QuecPython doc website
 =====
 
 visit: [teedoc.neucrack.com](https://teedoc.neucrack.com/) or [teedoc.github.io](https://teedoc.github.io)
@@ -8,7 +8,7 @@ visit: [teedoc.neucrack.com](https://teedoc.neucrack.com/) or [teedoc.github.io]
 
 * Install Python3 first
 
-```
+```shell
 sudo apt install python3 python3-pip
 ```
 
@@ -18,32 +18,28 @@ sudo apt install python3 python3-pip
 pip3 install teedoc
 ```
 
-* Get site source files
+* Get source files
 
 ```
-git clone https://github.com/teedoc/teedoc.github.io my_site
-```
-
-或者
-
-```
-git clone https://github.com/teedoc/teedoc.gitee.io my_site
+git clone https://gitee.com/qpy-doc-center/teedoc_with_qpydoc.git
 ```
 
 * Install plugins
 
 ```
-cd my_site
+cd qpy-doc-center
 teedoc install
 ```
 
 * build and serve
 
 ```
-teedoc build
-teedoc serve
+# 编译静态网站文件
+./build.sh
+# 编译并预览
+./build.sh -s
 ```
 
-then visit [http://127.0.0.1:2333](http://127.0.0.1:2333)
+then visit [http://127.0.0.1:80](http://127.0.0.1:80)
 
 

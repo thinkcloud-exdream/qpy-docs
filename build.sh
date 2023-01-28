@@ -16,3 +16,14 @@ fi
 # if [ ! -d ${js_src_dir} ]; then
 	# cp
 # fi
+
+
+if [ $# == 0 ];then
+	echo "编译完成,输出文件目录: out/";
+else
+	if [ $1 = "-s" ]; then
+		echo "本地预览地址: http://127.0.0.1:80/"
+		echo "退出预览模式: Ctrl + C"
+		python -m http.server 80 -d out/
+	fi
+fi
