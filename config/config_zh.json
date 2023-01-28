@@ -9,14 +9,14 @@
         "home_url": "/",
         "items": [
             {
-                "url": "/API_reference/zh",
-                "label": "API参考手册",
+                "url": "/",
+                "label": "首页",
                 "position": "left"
             },
             {
                 "url": "/develop/zh/",
                 "label": "官网",
-                "position": "left"
+                "position": "right"
             },
 			{
                 "label": "&nbsp;&nbsp;&nbsp;&nbsp;文档&nbsp;&nbsp;&nbsp;&nbsp;",
@@ -44,7 +44,7 @@
                     },
                     {
                         "url": "/FAQs/zh/index.html",
-                        "label": "常见问题"
+                        "label": "FAQS"
                     }
                 ]
             }   

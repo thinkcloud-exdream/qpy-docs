@@ -49,7 +49,7 @@ id: home_page
                 <a href="/API_reference/zh/index.html" class="article-a">
                     <p class="article-p-h">API参考手册</p>
                 </a>
-                <p class="article-p-t">最新：2023-01-16</font>
+                <p class="article-p-t">最新：2023-01-19</font>
                 </p>
             </div>
             <!-- QuecPython开发指南-->
@@ -89,7 +89,7 @@ id: home_page
                         </figcaption>
                 </figure>
                 <a href="/development_tool_tutorial/zh/index.html" class="article-a">
-                    <p class="article-p-h">开发工具使用教程</p>
+                    <p class="article-p-h">工具使用教程</p>
                 </a>
                 <p class="article-p-t">最新：2023-01-16</font>
                 </p>
