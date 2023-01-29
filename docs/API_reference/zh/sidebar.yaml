@@ -1,6 +1,37 @@
 items:
 -   label: QuecPython标准库
     file: QuecPython标准库/QuecPython标准库.md
+    items:
+    -   label: uos - 基本系统服务
+        file: QuecPython标准库/uos.md
+    -   label: gc - 内存碎片回收
+        file: QuecPython标准库/gc.md
+    -   label: ubinascii - 二进制与ASCII转换
+        file: QuecPython标准库/ubinascii.md
+    -   label: ucollections - 集合和容器类型
+        file: QuecPython标准库/ucollections.md
+    -   label: urandom - 生成随机数
+        file: QuecPython标准库/urandom.md
+    -   label: math - 数学运算
+        file: QuecPython标准库/math.md
+    -   label: usocket - socket模块
+        file: QuecPython标准库/usocket.md
+    -   label: uio - 输入输出流
+        file: QuecPython标准库/uio.md
+    -   label: ustruct - 打包和解压原始数据类型
+        file: QuecPython标准库/uio.md
+    -   label: ujson - JSON编码和解码
+        file: QuecPython标准库/ujson.md
+    -   label: utime - 时间相关功能
+        file: QuecPython标准库/utime.md
+    -   label: sys - 系统相关功能
+        file: QuecPython标准库/sys.md
+    -   label: uzlib - zlib解压缩
+        file: QuecPython标准库/uzlib.md
+    -   label: _thread - 多线程
+        file: QuecPython标准库/_thread.md
+    -   label: uhashlib - 哈希算法
+        file: QuecPython标准库/uhashlib.md
 -   label: QuecPython类库
     file: QuecPython类库/QuecPython类库.md
 -   label: QuecPython组件库

@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" href="../typora-theme-pie/pie.css">
-
     本文阐述了QuecPython的machine模块的用法，描述了machine模块最新版本的特性。
 
 # `machine` - 硬件相关功能
