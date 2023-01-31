@@ -8,8 +8,8 @@ id: home_page
 
 <div id="home_page">
     <div>
-        <h1><span>QuecPython</span></h1>
-        <h3>QuecPython 文档中心/让开发更简单迅速</h3>
+        <h1><span>QuecPython文档中心</span></h1>
+        <h2>让开发更简单迅速</h3>
     </div>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="static/css/just-the-docs.css">
