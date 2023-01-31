@@ -49,14 +49,14 @@ class machine.Pin(id, mode=- 1, pull=- 1, *, value=None, drive=0, alt=- 1)
     <span id="label_pinmap">引脚编号与物理引脚的映射关系：</span>
 
     |引脚编号|引脚名称|物理引脚脚序|
-    |-|-|-|
+    |---|---|---|
     |`Pin.GPIO0`|`"gpio0"`|`10`|
     |`Pin.GPIO0`|`"gpio0"`|`10`|
     |`Pin.GPIO0`|`"gpio0"`|`10`|
 
 ## 方法
 
-### Pin.value
+### `Pin.value`
 
 ```python
 Pin.value([x])
@@ -74,20 +74,20 @@ Pin.value([x])
 
 ## 属性
 
-### Pin.attr1
+### `Pin.attr1`
 
 此处添加属性功能描述。
 
-### Pin.attr2
+### `Pin.attr2`
 
 此处添加属性功能描述。
 
 ## 常量
 
-### Pin.IN
+### `Pin.IN`
 
 此处添加常量功能描述。
 
-### Pin.OUT
+### `Pin.OUT`
 
 此处添加常量功能描述。

@@ -1,5 +1,3 @@
-    本章对 QuecPython 标准库进行整体的叙述，每个模块的具体功能描述，请查看下文中相应的链接。
-
 # QuecPython 标准库
 
 > - QuecPython 提供了内置模块，这些模块反映了 Python 标准库（例如 `os`，`time`），以及 QuecPython 特定的模块（例如 `bluetooth`，`machine`）。<br><br>
