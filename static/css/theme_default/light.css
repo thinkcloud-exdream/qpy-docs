@@ -214,7 +214,7 @@ td {
     border: 2px solid #f1f1f1;
 }
 code {
-    /* background-color: #f1f1f1; */
+    background-color: #f1f1f1;
     border-radius: 0.2em;
     transition: 0.4s;
     font-family: Menlo, Consolas, "DejaVu Sans Mono", Bitstream Vera Sans Mono, Courier New, monospace, Monaco, 'Andale Mono', 'Ubuntu Mono', "Microsoft YaHei";
