@@ -144,7 +144,7 @@ id: home_page
 				<figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
 					style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
 					<img src="static/image/image08.jpg" alt="Sample Image" />
-					<a href="/FAQs/zh/index.html" class="article-a">
+					<a href="/FAQ/zh/index.html" class="article-a">
 						<figcaption class="c4-layout-top-left">
 							<div class="c4-reveal-down">
 								<div>
@@ -155,8 +155,8 @@ id: home_page
 							</div>
 						</figcaption>
 				</figure>
-				<a href="/FAQs/zh/index.html" class="article-a">
-					<p class="article-p-h">FAQs</p>
+				<a href="/FAQ/zh/index.html" class="article-a">
+					<p class="article-p-h">FAQ</p>
 				</a>
 				<p class="article-p-t">最新：2023-01-16</font>
 				</p>

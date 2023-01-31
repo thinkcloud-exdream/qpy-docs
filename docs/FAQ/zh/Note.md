@@ -1,8 +1,8 @@
-# QuecPython FAQs文档编写注意事项
+# QuecPython FAQ文档编写注意事项
 
 ## 目录结构
 
-FAQs 文档根目录下存在一个名为`README.md`的文件，作为FAQ的首页入口。
+FAQ 文档根目录下存在一个名为`README.md`的文件，作为FAQ的首页入口。
 
 > 文档中心使用的[teedoc](https://gitee.com/teedoc)架构要求每个版块的首页文件都要是名为`README.md`的文件。
 
@@ -14,7 +14,7 @@ FAQs 文档根目录下存在一个名为`README.md`的文件，作为FAQ的首�
 目录结构示例如下：
 
 ```
-QuecPython官网文档中心/FAQs
+QuecPython官网文档中心/FAQ
 ├── BSP开发常见问题.md
 ├── Note.md
 ├── Python基础常见问题.md
@@ -52,6 +52,6 @@ README.md作为板块的首页入口，需要对该板块做综合性描述，�
 问题2答案
 ```
 
-## QuecPython FAQs
+## QuecPython FAQ
 
 [点此查看](./README.md)
