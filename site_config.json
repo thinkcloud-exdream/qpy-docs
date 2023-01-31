@@ -13,7 +13,7 @@
             "/development_tool_tutorial/zh/": "docs/development_tool_tutorial/zh",
             "/advanced_tutorial/zh/": "docs/advanced_tutorial/zh",
             "/solutions/zh/": "docs/solutions/zh",
-            "/FAQ/zh/": "docs/FAQs/zh"
+            "/FAQ/zh/": "docs/FAQ/zh"
         },
         "pages": {
             "/": "pages/index/zh"

@@ -43,8 +43,8 @@
                         "label": "解决方案"
                     },
                     {
-                        "url": "/FAQs/zh/index.html",
-                        "label": "FAQS"
+                        "url": "/FAQ/zh/index.html",
+                        "label": "FAQ"
                     }
                 ]
             }   
