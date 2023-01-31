@@ -6,11 +6,11 @@
 
 ## QuecPython 组件库列表
 
-- [`aLiYun` - 阿里云服务](./aLiYun.md)
-- [`TenCentYun` - 腾讯云服务](./TenCentYun.md)
-- [`request` - HTTP请求](./request.md)
-- [`log` - 日志模块](./log.md)
-- [`umqtt` - MQTT模块](./umqtt.md)
-- [`...`](./....md)
+- [aLiYun - 阿里云服务](./aLiYun.md)
+- [TenCentYun - 腾讯云服务](./TenCentYun.md)
+- [request - HTTP请求](./request.md)
+- [log - 日志模块](./log.md)
+- [umqtt - MQTT模块](./umqtt.md)
+- [...`](./....md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonThirdlib进行补充-->
