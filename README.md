@@ -27,7 +27,7 @@ git clone https://gitee.com/qpy-doc-center/teedoc_with_qpydoc.git
 * Install plugins
 
 ```
-cd qpy-doc-center
+cd teedoc_with_qpydoc
 teedoc install
 ```
 
