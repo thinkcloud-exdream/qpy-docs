@@ -1,6 +1,6 @@
     本文阐述了QuecPython的machine.Pin类的用法，描述了machine.Pin类最新版本的特性。
 
-# `class Pin - I/O引脚控制
+# `class Pin` - I/O引脚控制
 
 Pin对象用来控制I/O引脚（以GPIO为大家所熟知）。Pin对象一般与一个物理引脚关联，可以驱动输出电平或读取电平。Pin类提供方法来设置引脚的模式、设置或获取引脚逻辑电平。对模拟引脚的控制，参考[ADC](http://docs.micropython.org/en/latest/esp32/quickref.html#ADC)类。
 
@@ -43,8 +43,8 @@ class machine.Pin(id, mode=- 1, pull=- 1, *, value=None, drive=0, alt=- 1)
 
 **参数描述：**
 
-- `id - 引脚标识，int型表示引脚编号，str型表示引脚名称，tuple型表示([port, pin],)；<a href="#label_pinmap">点此查看</a>引脚编号与物理引脚的映射关系。
-- `mode - 引脚输入输出模式，`Pin.IN`：输入模式，`Pin.OUT`：输出模式。
+- `id` - 引脚标识，int型表示引脚编号，str型表示引脚名称，tuple型表示([port, pin],)；<a href="#label_pinmap">点此查看</a>引脚编号与物理引脚的映射关系。
+- `mode` - 引脚输入输出模式，`Pin.IN`：输入模式，`Pin.OUT`：输出模式。
 
     <span id="label_pinmap">引脚编号与物理引脚的映射关系：</span>
 
@@ -66,7 +66,7 @@ Pin.value([x])
 
 **参数描述：**
 
-- `x - 提供该参数，用于设置引脚电平；`1` 表示设置引脚电平为高，`0`表示设置引脚电平为低。
+- `x` - 提供该参数，用于设置引脚电平；`1` 表示设置引脚电平为高，`0`表示设置引脚电平为低。
 
 **返回值描述：**
 
