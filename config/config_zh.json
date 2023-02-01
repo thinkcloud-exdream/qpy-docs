@@ -19,8 +19,9 @@
                 "position": "right"
             },
 			{
-                "label": "&nbsp;&nbsp;&nbsp;&nbsp;文档&nbsp;&nbsp;&nbsp;&nbsp;",
+                "label": "文档",
                 "position": "left",
+				"type": "list",
                 "items": [
                     {
                         "url": "/API_reference/zh/index.html",
