@@ -1,83 +1,45 @@
 items:
--   label: teedoc 简介
-    file: README.md
--   label: 使用了 teedoc 的网站
-    file: usage/sites.md
--   label: 基本使用
--   label: 快速开始
-    file: usage/quick_start.md
--   label: 安装 teedoc
-    file: install/README.md
--   label: 文档结构和配置
-    file: usage/start.md
--   label: 编写文档内容(语法)
-    collapsed: false
+-   label: 使用说明
+    file: 使用说明/README.md
     items:
-    -   label: markdown 语法
-        file: syntax/syntax_markdown.md
-    -   label: Jupyter 语法
-        file: syntax/syntax_jupyter.ipynb
-    -   label: HTML 语法
-        file: syntax/syntax_html.html
--   label: 写文档时需注意
-    file: usage/write_attention.md
--   label: 博客
-    file: usage/blog.md
--   label: 部署
-    file: usage/deploy.md
+    -   label: 问题查找
+        file: 使用说明/问题查找.md
+    -   label: 文档贡献
+        file: 使用说明/文档贡献.md
+-   label: 开发环境与工具
+    file: 开发环境与工具/README.md
     items:
-    -   label: 部署到 github
-        file: usage/deploy_github_pages.md
-    -   label: 使用 nginx 部署到服务器
-        file: usage/deploy_nginx.md
-    -   label: 部署到云服务商
-        file: usage/deploy_cloud.md
-    -   label: 使用 CDN 加速网站
-        file: usage/deploy_cdn.md
--   label: 常见问题
-    file: usage/problems.md
--   label: 进阶使用
--   label: 插件
-    file: plugins/README.md
+    -   label: 开发工具使用常见问题
+        file: 开发环境与工具/开发工具使用常见问题.md
+-   label: 应用方案
+    file: 应用方案/README.md
     items:
-    -   label: 主题插件
-        file: plugins/themes.md
-    -   label: 其它插件
-        file: plugins/others.md
--   label: SEO(为搜索引擎优化)
-    file: usage/seo.md
--   label: 自定义页面模板
-    file: usage/layout_template.md
--   label: 国际化(i18n/翻译)
-    file: usage/i18n.md
--   label: 自定义404页面
-    file: usage/404.md
--   label: 从 gitbook 转换为 teedoc
-    file: usage/gitbook2teedoc.md
--   label: 查找大文件
-    file: usage/list_files_by_size.md
--   label: 找出两目录的不同文件
-    file: usage/compare_dirs.md
--   label: 更多
--   label: 更新历史
-    file: more/history.md
--   label: 更多样例(目录默认展开)
-    collapsed: false
+    -   label: EventMesh框架常见问题
+        file: 应用方案/EventMesh框架常见问题.md
+    -   label: sys_bus框架常见问题
+        file: 应用方案/sys_bus框架常见问题.md
+    -   label: 云平台对接常见问题
+        file: 应用方案/云平台对接常见问题.md
+    -   label: 解决方案常见问题
+        file: 应用方案/解决方案常见问题.md
+-   label: 软件平台
+    file: 软件平台/README.md
     items:
-    -   label: 二级子目录
-        items:
-        -   label: 三级子目录样例
-            items:
-            -   label: 文章1
-                file: more/example_docs/doc1.md
-        -   label: 文章2
-            file: more/example_docs/doc2.md
-    -   label: 文章标题自动编号
-        items:
-        -   label: 页面有多个一级标题
-            file: more/example_docs/multi_h1.md
-        -   label: 标题不自动编号
-            file: more/example_docs/heading_no_counter.md
-    -   label: 这是一个外部链接
-        url: https://github.com/teedoc/teedoc
-        target: _blank
+    -   label: Python基础常见问题
+        file: 软件平台/Python基础常见问题.md
+    -   label: 多线程开发常见问题
+        file: 软件平台/多线程开发常见问题.md
+    -   label: BSP开发常见问题
+        file: 软件平台/BSP开发常见问题.md
+    -   label: 外设应用开发常见问题
+        file: 软件平台/外设应用开发常见问题.md
+    -   label: 网络通信开发常见问题
+        file: 软件平台/网络通信开发常见问题.md
+    -   label: 蓝牙开发常见问题
+        file: 软件平台/蓝牙开发常见问题.md
+    -   label: 图形化界面开发常见问题
+        file: 软件平台/图形化界面开发常见问题.md
+-   label: 硬件相关
+    file: 硬件相关/README.md
+-   label: 测试校验
+    file: 测试校验/README.md

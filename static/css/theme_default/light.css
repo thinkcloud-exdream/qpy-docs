@@ -86,8 +86,8 @@ h3::before {
   margin-bottom: 0.18em;
   line-height: 1.43;
   vertical-align: middle;
-  /* content: ''; */
-  background-color: var(--main-5);
+  content: '';
+  background-color: var(--main-6);
   border-radius: 50%;
 }
 
@@ -113,7 +113,7 @@ h4::before {
   margin-right: 8px;
   margin-bottom: 0.18em;
   vertical-align: middle;
-  content: '';
+  /* content: ''; */
   background-color: var(--main-4);
 }
 
