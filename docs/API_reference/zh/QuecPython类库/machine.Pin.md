@@ -1,5 +1,3 @@
-    本文阐述了QuecPython的machine.Pin类的用法，描述了machine.Pin类最新版本的特性。
-
 # `class Pin` - I/O引脚控制
 
 Pin对象用来控制I/O引脚（以GPIO为大家所熟知）。Pin对象一般与一个物理引脚关联，可以驱动输出电平或读取电平。Pin类提供方法来设置引脚的模式、设置或获取引脚逻辑电平。对模拟引脚的控制，参考[ADC](http://docs.micropython.org/en/latest/esp32/quickref.html#ADC)类。
