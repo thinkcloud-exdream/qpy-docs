@@ -68,7 +68,7 @@ id: home_page
                         </figcaption>
                 </figure>
                 <a href="/development_guide/zh/index.html" class="article-a">
-                    <p class="article-p-h">QuecPython开发指南,</p>
+                    <p class="article-p-h">开发指南</p>
                 </a>
                 <p class="article-p-t">最新：2023-01-16</font>
                 </p>
