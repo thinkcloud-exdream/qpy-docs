@@ -41,7 +41,7 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>详解QuecPython API接口描述,包括参考用例等</p>
+                                    <p>详解QuecPython API接口描述,包括API参考用例等</p>
                                 </div>
                             </div>
                         </figcaption>
@@ -62,13 +62,13 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>QuecPython开发指南</p>
+                                    <p>QuecPython开发指南,包括BSP、网络通信、外设应用开发等</p>
                                 </div>
                             </div>
                         </figcaption>
                 </figure>
                 <a href="/development_guide/zh/index.html" class="article-a">
-                    <p class="article-p-h">开发指南</p>
+                    <p class="article-p-h">QuecPython开发指南,</p>
                 </a>
                 <p class="article-p-t">最新：2023-01-16</font>
                 </p>
@@ -107,7 +107,7 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>HeliosService 云平台 外设等</p>
+                                    <p>QuecPython应用框架、云平台对接、图形化界面开发等</p>
                                 </div>
                             </div>
                         </figcaption>
@@ -128,7 +128,7 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>云喇叭 DTU 对讲机 Tracker等solution介绍</p>
+                                    <p>云喇叭、DTU、对讲机、Tracker和BMS相关等solution介绍</p>
                                 </div>
                             </div>
                         </figcaption>
