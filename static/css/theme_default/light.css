@@ -6,9 +6,11 @@
  */
 
 :root {
+	--main-4: #ff887a;
+	--main-5: #ff5d52;
 	--main-6: #f22f27;
-	--main-10: #590009;
-/* 字体 */
+	--mid-10: #262626;
+	/* 字体 */
 	--font-normal: 'Source Sans Pro', 'MiSans', '等距更纱黑体 SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
 	--font-code: 'Fira Code', Monaco, Consolas, 'MiSans', '等距更纱黑体 SC', 'Microsoft YaHei', sans-serif;
 }
@@ -31,8 +33,6 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     letter-spacing: 0.03em;
-	
-	
     font-family: var(--font-normal) !important;
 }
 a {
@@ -1051,7 +1051,7 @@ a.toc-link {
 }
 
 .toc-link::before {
-	content: ' ';
+	content: '';
 	display: inline-block;
 	height: inherit;
 	left: 0;
