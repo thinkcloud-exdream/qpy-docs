@@ -27,14 +27,14 @@ API 参考手册根目录下存在一个名为`README.md`的文件，该文件�
 QuecPython官网文档中心/API手册
 ├── README.md
 ├── QuecPython标准库
-│   ├── QuecPython标准库.md
+│   ├── README.md
 │   ├── gc.md
 │   ├── ubinascii.md
 │   ├── ucollections.md
 │   ├── uos.md
 │   └── urandom.md
 ├── QuecPython类库
-│   ├── QuecPython类库.md
+│   ├── README.md
 │   ├── atcmd.md
 │   ├── cellLocator.md
 │   ├── dataCall.md
@@ -43,7 +43,7 @@ QuecPython官网文档中心/API手册
 │   ├── machine.md
 │   └── wifilocator.md
 ├── QuecPython组件库
-│   ├── QuecPython组件库.md
+│   ├── README.md
 │   ├── TenCentYun.md
 │   ├── aLiYun.md
 │   ├── log.md

@@ -1,6 +1,6 @@
 items:
 -   label: QuecPython标准库
-    file: QuecPython标准库/QuecPython标准库.md
+    file: QuecPython标准库/README.md
     items:
     -   label: uos - 基本系统服务
         file: QuecPython标准库/uos.md
@@ -33,6 +33,6 @@ items:
     -   label: uhashlib - 哈希算法
         file: QuecPython标准库/uhashlib.md
 -   label: QuecPython类库
-    file: QuecPython类库/QuecPython类库.md
+    file: QuecPython类库/README.md
 -   label: QuecPython组件库
-    file: QuecPython组件库/QuecPython组件库.md
+    file: QuecPython组件库/README.md

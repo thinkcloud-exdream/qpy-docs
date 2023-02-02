@@ -20,12 +20,12 @@ QuecPython官网文档中心/开发指南
 │   ├── BSP-Audio应用开发.md
 │   ├── BSP-GPIO应用开发.md
 │   ├── BSP-UART应用开发.md
-│   └── BSP应用开发.md
+│   └── README.md
 ├── Note.md
 ├── OTA升级
 │   ├── OTA升级-固件.md
 │   ├── OTA升级-文件.md
-│   └── OTA升级.md
+│   └── README.md
 ├── README.md
 ├── media
 │   ├── BSP应用开发
@@ -35,12 +35,12 @@ QuecPython官网文档中心/开发指南
 ├── 外设应用开发
 │   ├── 外设-LCD应用开发.md
 │   ├── 外设-摄像头应用开发.md
-│   └── 外设应用开发.md
+│   └── README.md
 ├── 多线程应用开发
 │   ├── 多线程-互斥锁应用.md
 │   ├── 多线程-创建线程.md
 │   ├── 多线程-消息队列应用.md
-│   └── 多线程应用开发.md
+│   └── README.md
 ├── 快速入门.md
 └── 网络通信应用开发
     ├── 网络通信-HTTP通信.md
@@ -49,7 +49,7 @@ QuecPython官网文档中心/开发指南
     ├── 网络通信-TCP与UDP通信.md
     ├── 网络通信-WebSocket通信.md
     ├── 网络通信-数据拨号.md
-    └── 网络通信应用开发.md
+    └── README.md
 ```
 
 ## README.md
