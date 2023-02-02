@@ -74,14 +74,15 @@ function menu_show(show)
     }
 }
 function menu_toggle(){
+	console.log('ready twice')
     if(!$("#sidebar_wrapper").is(':visible')){ // show
         menu_show(true);
     }else{ // hide
         menu_show(false);
     }
 }
-
 function registerSidebarClick(){
+	console.log('ready one')
     function show_collapse_item(a_obj){
         var o_ul = a_obj.next();
         var collapsed = !o_ul.hasClass("show");

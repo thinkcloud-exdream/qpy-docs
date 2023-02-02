@@ -36,3 +36,30 @@ items:
     file: QuecPython类库/README.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
+    items:
+    -   label: aLiYun - 阿里云服务
+        file: QuecPython组件库/aLiYun.md
+    -   label: TenCentYun- 腾讯云服务
+        file: QuecPython组件库/TenCentYun.md
+    -   label: request - HTTP相关服务
+        file: QuecPython组件库/request.md
+    -   label: log - 日志
+        file: QuecPython组件库/log.md
+    -   label: umqtt - MQTT
+        file: QuecPython组件库/umqtt.md
+    -   label: ntptime - NTP对时
+        file: QuecPython组件库/ntptime.md
+    -   label: system - 环境配置
+        file: QuecPython组件库/system.md
+    -   label: ql_fs - 高级文件操作
+        file: QuecPython组件库/ql_fs.md
+    -   label: Queue - 普通队列
+        file: QuecPython组件库/Queue.md
+    -   label: sys_bus - 会话总线
+        file: QuecPython组件库/sys_bus.md
+    -   label: uasyncio - 协程
+        file: QuecPython组件库/uasyncio.md
+    -   label: uwebsocket - websocket服务
+        file: QuecPython组件库/uwebsocket.md
+    -   label: ussl - SSL算法
+        file: QuecPython组件库/ussl.md
