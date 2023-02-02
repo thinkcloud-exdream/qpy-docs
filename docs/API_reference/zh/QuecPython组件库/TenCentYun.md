@@ -1,0 +1,251 @@
+# TenCentYun- 腾讯云服务
+
+模块功能：腾讯云物联网套件客户端功能,目前的产品节点类型仅支持“设备”，设备认证方式支持“一机一密和“动态注册认证”。
+
+注意：BC25PA平台不支持模块功能。
+
+## 配置产品信息和设备信息
+
+> **TXyun(productID, devicename, devicePsk, ProductSecret)**
+
+配置腾讯云物联网套件的产品信息和设备信息。
+
+* 参数
+
+| 参数          | 类型   | 说明                                                         |
+| :------------ | :----- | ------------------------------------------------------------ |
+| productID     | string | 产品标识（唯一ID）                                           |
+| ProductSecret | string | 可选参数，默认为None，productSecret，产品密钥<br />一机一密认证方案时，此参数传入None<br/>一型一密认证方案时，此参数传入真实的产品密钥 |
+| devicename    | string | 设备名称                                                     |
+| devicePsk     | string | 可选参数,默认为Non，设备密钥（一型一密认证方案时此参数传入None） |
+
+* 返回值
+
+返回TXyun连接对象。
+
+## 设置MQTT数据通道的参数
+
+> **TXyun.setMqtt(clean_session, keepAlive=300,reconn=True)**
+
+设置MQTT数据通道的参数
+
+* 参数
+
+| 参数          | 类型 | 说明                                                         |
+| :------------ | :--- | ------------------------------------------------------------ |
+| clean_session | bool | 可选参数，一个决定客户端类型的布尔值。 如果为True，那么代理将在其断开连接时删除有关此客户端的所有信息。 如果为False，则客户端是持久客户端，当客户端断开连接时，订阅信息和排队消息将被保留。默认为False |
+| keepAlive     | int  | 通信之间允许的最长时间段（以秒为单位）,默认为300，范围（60-1000），建议300以上 |
+| reconn        | bool | （可选）控制是否使用内部重连的标志，默认开启为True           |
+
+* 返回值
+
+成功返回整型值0，失败返回整型值-1。
+
+## 注册回调函数
+
+> **TXyun.setCallback(sub_cb)**
+
+注册回调函数。
+
+* 参数
+
+| 参数   | 类型     | 说明                                       |
+| :----- | :------- | ------------------------------------------ |
+| sub_cb | function | 设置消息回调函数，当服务端响应时触发该方法 |
+
+* 返回值
+
+无
+
+## 设置异常回调函数
+
+> **TXyun.error_register_cb(callback)**
+
+设置异常回调函数，腾讯云以及umqtt内部线程异常时通过回调返回error信息，该方法在设置不使用内部重连的情况下才可触发回调
+
+* 参数 
+
+| 参数     | 参数类型 | 说明         |
+| -------- | -------- | ------------ |
+| callback | function | 异常回调函数 |
+
+* 返回值
+
+无
+
+异常回调函数示例
+
+```python
+from TenCentYun import TXyun
+
+def err_cb(err):
+    print("thread err:")
+    print(err)
+
+tenxun = TXyun(productID, devicename, devicePsk, ProductSecret)
+tenxun.error_register_cb(err_cb)
+```
+
+
+
+## 订阅mqtt主题
+
+> **TXyun.subscribe(topic,qos)**
+
+订阅mqtt主题。
+
+* 参数
+
+| 参数  | 类型   | 说明                                                         |
+| :---- | :----- | ------------------------------------------------------------ |
+| topic | string | topic                                                        |
+| qos   | int    | MQTT消息服务质量（默认0，可选择0或1）MQTT消息服务质量（默认0，可选择0或1）0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker |
+
+* 返回值
+
+成功返回整型值0，失败返回整型值-1。
+
+## 发布消息
+
+> **TXyun.publish(topic,msg, qos=0)**
+
+发布消息。
+
+* 参数
+
+| 参数  | 类型   | 说明                                                         |
+| :---- | :----- | ------------------------------------------------------------ |
+| topic | string | topic                                                        |
+| msg   | string | 需要发送的数据                                               |
+| qos   | int    | MQTT消息服务质量（默认0，可选择0或1）MQTT消息服务质量（默认0，可选择0或1）0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker |
+
+* 返回值 
+
+成功返回整型值0，失败返回整型值-1。
+
+## 运行连接
+
+> **TXyun.start()**
+
+运行连接。
+
+* 参数
+
+无
+
+* 返回值
+
+无
+
+## 关闭连接
+
+> **TXyun.disconnect()**
+
+关闭连接。
+
+* 参数
+
+无
+
+* 返回值
+
+无
+
+## 发送Ping包
+
+> **TXyun.ping()**
+
+发送心跳包
+
+* 参数
+
+无
+
+* 返回值
+
+无
+
+## 获取腾讯云连接状态
+
+> **TXyun.getTXyunsta()**
+
+获取腾讯云连接状态
+
+注意：BG95平台不支持该API。
+
+* 参数
+
+无
+
+* 返回值
+
+0 ：连接成功
+
+1：连接中
+
+2：服务端连接关闭
+
+-1：连接异常
+
+
+
+**使用示例**
+
+```python
+from TenCentYun import TXyun
+import log
+import utime
+import checkNet
+
+
+'''
+下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
+'''
+PROJECT_NAME = "QuecPython_TencentYun_example"
+PROJECT_VERSION = "1.0.0"
+
+checknet = checkNet.CheckNetwork(PROJECT_NAME, PROJECT_VERSION)
+
+# 设置日志输出级别
+log.basicConfig(level=log.INFO)
+txyun_log = log.getLogger("TenCentYun")
+
+'''
+腾讯云物联网套件客户端功能
+'''
+productID = ""  # 产品标识（参照接入腾讯云应用开发指导）
+devicename = ""   # 设备名称（参照接入腾讯云应用开发指导）
+devicePsk = ""   # 设备密钥（一型一密认证此参数传入None， 参照接入腾讯云应用开发指导）
+ProductSecret = None   # 产品密钥（一机一密认证此参数传入None，参照接入腾讯云应用开发指导）
+
+tenxun = TXyun(productID, devicename, devicePsk, ProductSecret)  # 创建连接对象
+state = 5
+
+def sub_cb(topic, msg):   # 云端消息响应回调函数
+    global state
+    txyun_log.info("Subscribe Recv: Topic={},Msg={}".format(topic.decode(), msg.decode()))
+    state -= 1
+
+
+if __name__ == '__main__':
+    stagecode, subcode = checknet.wait_network_connected(30)
+    if stagecode == 3 and subcode == 1:
+        txyun_log.info('Network connection successful!')
+
+        tenxun.setMqtt()  # 设置mqtt
+        tenxun.setCallback(sub_cb)   # 设置消息回调函数
+        topic = ""  # 输入自定义的Topic
+        tenxun.subscribe(topic)   # 订阅Topic
+        tenxun.start()
+        tenxun.publish(topic, "hello world")   # 发布消息
+
+        while 1:
+            if state:
+                pass
+            else:
+                tenxun.disconnect()
+                break
+    else:
+        txyun_log.info('Network connection failed! stagecode = {}, subcode = {}'.format(stagecode, subcode))
+
+```
