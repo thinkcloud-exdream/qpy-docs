@@ -4,16 +4,20 @@
 
 注意：BC25PA平台不支持模块功能。
 
-## 配置产品信息和设备信息
+## 初始化腾讯云
 
-> **TXyun(productID, devicename, devicePsk, ProductSecret)**
+### `TXyun`
+
+```python
+TXyun(productID, devicename, devicePsk, ProductSecret)
+```
 
 配置腾讯云物联网套件的产品信息和设备信息。
 
 * 参数
 
 | 参数          | 类型   | 说明                                                         |
-| :------------ | :----- | ------------------------------------------------------------ |
+| ------------ | ----- | ------------------------------------------------------------ |
 | productID     | string | 产品标识（唯一ID）                                           |
 | ProductSecret | string | 可选参数，默认为None，productSecret，产品密钥<br />一机一密认证方案时，此参数传入None<br/>一型一密认证方案时，此参数传入真实的产品密钥 |
 | devicename    | string | 设备名称                                                     |
@@ -23,16 +27,20 @@
 
 返回TXyun连接对象。
 
-## 设置MQTT数据通道的参数
+## 设置相关功能和回调
 
-> **TXyun.setMqtt(clean_session, keepAlive=300,reconn=True)**
+### `TXyun.setMqtt`
+
+```python
+TXyun.setMqtt(clean_session, keepAlive=300,reconn=True)
+```
 
 设置MQTT数据通道的参数
 
 * 参数
 
 | 参数          | 类型 | 说明                                                         |
-| :------------ | :--- | ------------------------------------------------------------ |
+| ------------ | --- | ------------------------------------------------------------ |
 | clean_session | bool | 可选参数，一个决定客户端类型的布尔值。 如果为True，那么代理将在其断开连接时删除有关此客户端的所有信息。 如果为False，则客户端是持久客户端，当客户端断开连接时，订阅信息和排队消息将被保留。默认为False |
 | keepAlive     | int  | 通信之间允许的最长时间段（以秒为单位）,默认为300，范围（60-1000），建议300以上 |
 | reconn        | bool | （可选）控制是否使用内部重连的标志，默认开启为True           |
@@ -41,25 +49,29 @@
 
 成功返回整型值0，失败返回整型值-1。
 
-## 注册回调函数
+### `TXyun.setCallback`
 
-> **TXyun.setCallback(sub_cb)**
+```python
+TXyun.setCallback(sub_cb)
+```
 
 注册回调函数。
 
 * 参数
 
 | 参数   | 类型     | 说明                                       |
-| :----- | :------- | ------------------------------------------ |
+| ----- | ------- | ------------------------------------------ |
 | sub_cb | function | 设置消息回调函数，当服务端响应时触发该方法 |
 
 * 返回值
 
 无
 
-## 设置异常回调函数
+### `TXyun.error_register_cb`
 
-> **TXyun.error_register_cb(callback)**
+```python
+TXyun.error_register_cb(callback)
+```
 
 设置异常回调函数，腾讯云以及umqtt内部线程异常时通过回调返回error信息，该方法在设置不使用内部重连的情况下才可触发回调
 
@@ -86,18 +98,20 @@ tenxun = TXyun(productID, devicename, devicePsk, ProductSecret)
 tenxun.error_register_cb(err_cb)
 ```
 
+## 订阅发布功能
 
+### `TXyun.subscribe`
 
-## 订阅mqtt主题
-
-> **TXyun.subscribe(topic,qos)**
+```python
+TXyun.subscribe(topic,qos)
+```
 
 订阅mqtt主题。
 
 * 参数
 
 | 参数  | 类型   | 说明                                                         |
-| :---- | :----- | ------------------------------------------------------------ |
+| ---- | ----- | ------------------------------------------------------------ |
 | topic | string | topic                                                        |
 | qos   | int    | MQTT消息服务质量（默认0，可选择0或1）MQTT消息服务质量（默认0，可选择0或1）0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker |
 
@@ -105,16 +119,19 @@ tenxun.error_register_cb(err_cb)
 
 成功返回整型值0，失败返回整型值-1。
 
-## 发布消息
 
-> **TXyun.publish(topic,msg, qos=0)**
+### `TXyun.publish`
+
+```python
+TXyun.publish(topic,msg, qos=0)
+```
 
 发布消息。
 
 * 参数
 
 | 参数  | 类型   | 说明                                                         |
-| :---- | :----- | ------------------------------------------------------------ |
+| ---- | ----- | ------------------------------------------------------------ |
 | topic | string | topic                                                        |
 | msg   | string | 需要发送的数据                                               |
 | qos   | int    | MQTT消息服务质量（默认0，可选择0或1）MQTT消息服务质量（默认0，可选择0或1）0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker |
@@ -123,9 +140,14 @@ tenxun.error_register_cb(err_cb)
 
 成功返回整型值0，失败返回整型值-1。
 
-## 运行连接
 
-> **TXyun.start()**
+## 启停服务相关功能
+
+### `TXyun.start`
+
+```python
+TXyun.start()
+```
 
 运行连接。
 
@@ -137,9 +159,11 @@ tenxun.error_register_cb(err_cb)
 
 无
 
-## 关闭连接
+### `TXyun.disconnect`
 
-> **TXyun.disconnect()**
+```python
+TXyun.disconnect()
+```
 
 关闭连接。
 
@@ -151,9 +175,11 @@ tenxun.error_register_cb(err_cb)
 
 无
 
-## 发送Ping包
+### `TXyun.ping`
 
-> **TXyun.ping()**
+```python
+TXyun.ping()
+```
 
 发送心跳包
 
@@ -165,9 +191,11 @@ tenxun.error_register_cb(err_cb)
 
 无
 
-## 获取腾讯云连接状态
+### `TXyun.getTXyunsta`
 
-> **TXyun.getTXyunsta()**
+```python
+TXyun.getTXyunsta()
+```
 
 获取腾讯云连接状态
 
