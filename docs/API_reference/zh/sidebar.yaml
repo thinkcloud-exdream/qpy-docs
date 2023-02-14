@@ -34,6 +34,13 @@ items:
         file: QuecPython标准库/uhashlib.md
 -   label: QuecPython类库
     file: QuecPython类库/README.md
+    items:
+    -   label: dataCall - 拨号
+        file: QuecPython类库/dataCall.md
+    -   label: checkNet - 网络就绪检测
+        file: QuecPython类库/checkNet.md
+    -   label: wifiScan - WiFi扫描
+        file: QuecPython类库/wifiScan.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:
