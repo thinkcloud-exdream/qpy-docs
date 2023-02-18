@@ -84,7 +84,7 @@ SPI.write(data, datalen)
 ### `SPI.write_read`
 
 ```python
-SPI.write_read(r_data，data, datalen)
+SPI.write_read(r_data, data, datalen)
 ```
 
 该方法用于写入和读取数据。

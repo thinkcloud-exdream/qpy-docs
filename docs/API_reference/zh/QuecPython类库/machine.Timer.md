@@ -52,7 +52,7 @@ timer.start(period, mode, callback)
 ```python
 # 使用该定时器时需注意：定时器0-3，每个在同一时间内只能执行一件任务，且多个对象不可使用同一个定时器。
 >>> def fun(args):
-        print(“###timer callback function###”)
+        print("###timer callback function###")
 >>> timer1.start(period=1000, mode=timer1.PERIODIC, callback=fun)
 0
 ###timer callback function###

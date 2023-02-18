@@ -105,7 +105,7 @@ lcd.lcd_init(lcd_init_data, lcd_width, lcd_hight, lcd_clk, data_line, line_num, 
 ### `lcd.mipi_init`
 
 ```python
-lcd.mipi_init(initbuf，**kwargs)
+lcd.mipi_init(initbuf, **kwargs)
 ```
 
 该方法用于初始化MIPI，按键值对传参，请根据屏厂提供的初始化参数填写。

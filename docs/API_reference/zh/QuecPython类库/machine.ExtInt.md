@@ -24,6 +24,7 @@ class machine.ExtInt(GPIOn, mode, pull, callback)
   <summary><span id="BG95M3_label_pinmap"></span>BG95M3平台引脚对应关系<br /></summary>
 GPIO2 – 引脚号5<br />GPIO3 – 引脚号6<br />GPIO6 – 引脚号19<br />GPIO7 – 引脚号22<br />GPIO8 – 引脚号23<br />GPIO9 – 引脚号25<br />GPIO11 – 引脚号27<br />GPIO12 – 引脚号28<br />GPIO14 – 引脚号41<br />GPIO16 – 引脚号65<br/>GPIO17 – 引脚号66<br />GPIO18 – 引脚号85<br />GPIO19 – 引脚号86<br />GPIO20 – 引脚号87<br />GPIO21 – 引脚号88
 </details>
+
 **示例：**
 
 ```python

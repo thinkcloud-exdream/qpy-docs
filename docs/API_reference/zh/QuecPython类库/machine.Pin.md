@@ -112,6 +112,7 @@ GPIO1 – 引脚号30<br />GPIO2 – 引脚号31<br />GPIO3 – 引脚号32<br /
   <summary>EG912N平台引脚对应关系</summary>
 GPIO1 – 引脚号4<br />GPIO2 – 引脚号5<br />GPIO3 – 引脚号6<br />GPIO4 – 引脚号7<br />GPIO5 – 引脚号18<br />GPIO6 – 引脚号19<br />GPIO7 – 引脚号1<br />GPIO8 – 引脚号16<br />GPIO9 – 引脚号25<br />GPIO10 – 引脚号26<br />GPIO11 – 引脚号27<br />GPIO12 – 引脚号28<br />GPIO13 – 引脚号40<br/>GPIO14 – 引脚号41<br/>GPIO15 – 引脚号64<br/>GPIO16 – 引脚号20<br/>GPIO17 – 引脚号21<br/>GPIO18 – 引脚号30<br/>GPIO19 – 引脚号34<br/>GPIO20 – 引脚号35<br/>GPIO21 – 引脚号36<br/>GPIO22 – 引脚号37<br/>GPIO23 – 引脚号38<br/>GPIO24 – 引脚号39<br/>GPIO25 – 引脚号42<br />GPIO26 – 引脚号78<br />GPIO27 – 引脚号83<br />GPIO28 – 引脚号92<br />GPIO29 – 引脚号95<br />GPIO30 – 引脚号96<br />GPIO31 – 引脚号97<br />GPIO32 – 引脚号98<br />GPIO33 – 引脚号103<br />GPIO34 – 引脚号104<br />GPIO35 – 引脚号105<br />GPIO36 – 引脚号106<br />GPIO37 – 引脚号107<br />GPIO38 – 引脚号114<br />GPIO39 – 引脚号115<br />GPIO40 – 引脚号116
 </details>
+
 ## 方法
 
 ### `Pin.read`
