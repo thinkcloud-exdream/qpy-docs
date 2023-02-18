@@ -12,6 +12,10 @@
 - [wifilocator - WiFi定位](./wifilocator.md)
 - [atcmd - 发送AT指令](./atcmd.md)
 - [machine - 硬件相关功能](./machine.md)
+- [pm - 低功耗相关功能](./pm.md)
+- [modem - 设备信息相关功能](./modem.md)
+- [quecgnss - 内置GNSS相关功能](./quecgnss.md)
+- [GNSS - GNSS相关功能](./GNSS.md)
 - [...](./....md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
