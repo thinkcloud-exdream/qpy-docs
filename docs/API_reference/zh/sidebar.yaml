@@ -34,6 +34,9 @@ items:
         file: QuecPython标准库/uhashlib.md
 -   label: QuecPython类库
     file: QuecPython类库/README.md
+    items:
+        label: machine - 硬件相关功能
+        file: QuecPython类库/machine.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:
