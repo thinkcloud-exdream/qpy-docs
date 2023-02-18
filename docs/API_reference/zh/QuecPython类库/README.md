@@ -15,7 +15,8 @@
 - [pm - 低功耗相关功能](./pm.md)
 - [modem - 设备信息相关功能](./modem.md)
 - [quecgnss - 内置GNSS相关功能](./quecgnss.md)
-- [GNSS - GNSS相关功能](./GNSS.md)
+- [gnss - GNSS相关功能](./gnss.md)
+- [securedata - 安全数据区相关功能](./securedata.md)
 - [...](./....md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
