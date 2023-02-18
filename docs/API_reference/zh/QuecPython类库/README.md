@@ -12,6 +12,8 @@
 - [wifilocator - WiFi定位](./wifilocator.md)
 - [atcmd - 发送AT指令](./atcmd.md)
 - [machine - 硬件相关功能](./machine.md)
+- [misc - 其他](./misc.md)
+- [qrcode - 二维码显示](./qrcode.md)
 - [...](./....md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
