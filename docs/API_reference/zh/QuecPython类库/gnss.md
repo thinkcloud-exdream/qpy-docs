@@ -16,15 +16,6 @@ gnss.GnssGetData(uartn,baudrate,databits,parity,stopbits,flowctl)
 
 **参数描述**
 
-| 参数     | 类型 | 说明                                                                                                                      |
-| :------- | :--- | ------------------------------------------------------------------------------------------------------------------------- |
-| uartn    | int  | UARTn范围为0-3：<br />0-UART0 - DEBUG PORT<br />1-UART1 – BT PORT<br />2-UART2 – MAIN PORT<br />3-UART3 – USB CDC PORT |
-| baudrate | int  | 波特率，常用波特率都支持，如4800、9600、19200、38400、57600、115200、230400等                                             |
-| databits | int  | 数据位（5 ~ 8），展锐平台当前仅支持8位                                                                                    |
-| parity   | int  | 奇偶校验（0 – NONE，1 – EVEN，2 - ODD）                                                                                 |
-| stopbits | int  | 停止位（1 ~ 2）                                                                                                           |
-| flowctl  | int  | 硬件控制流（0 – FC_NONE， 1 – FC_HW）                                                                                   |
-
 * `uartn`，int类型
   UARTn范围为0-3：
   `0`-UART0 - DEBUG PORT

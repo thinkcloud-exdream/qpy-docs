@@ -34,6 +34,19 @@ items:
         file: QuecPython标准库/uhashlib.md
 -   label: QuecPython类库
     file: QuecPython类库/README.md
+    items:
+    -   label:  - 执行Python脚本
+        file: QuecPython类库/example.md
+    -   label:  - 低功耗相关功能
+        file: QuecPython类库/pm.md
+    -   label:  - 设备相关功能
+        file: QuecPython类库/modem.md  
+    -   label:  - 内置GNSS相关功能
+        file: QuecPython类库/quecgnss.md   
+    -   label:  - GNSS相关功能
+        file: QuecPython类库/gnss.md   
+    -   label:  - 安全数据区相关功能
+        file: QuecPython标准库/securedata.md                                           
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:

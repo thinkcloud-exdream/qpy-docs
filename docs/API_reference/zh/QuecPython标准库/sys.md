@@ -1,8 +1,6 @@
-	sys 模块中提供了与QuecPython运行环境有关的函数和变量。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[sys](https://docs.python.org/3.5/library/sys.html#module-sys)
-
 # `sys` - 系统相关功能
 
-> 新架构代码升级了MPY的版本，sys变更为usys。导入模块时建议使用以下方式进行导入 
+> 新架构代码升级了MPY的版本，sys变更为usys。导入模块时建议使用以下方式进行导入
 
 ```python
 try:
@@ -58,8 +56,6 @@ MicroPython 语言版本，字符串格式。
 
 MicroPython  语言版本，整数元组格式。
 
-
-
 ## **方法**
 
 ### `sys.exit`
@@ -68,7 +64,15 @@ MicroPython  语言版本，整数元组格式。
 sys.exit(retval=0)
 ```
 
-使用给定的参数退出当前程序。与此同时，该函数会引发`SystemExit`退出。如果给定了参数，则将其值作为参数赋值给`SystemExit`。
+使用给定的参数退出当前程序。
+
+**参数描述**
+
+* `retval`，int型，退出参数
+
+**返回值描述**
+
+该函数会引发 `SystemExit`退出。如果给定了参数，则将其值作为参数赋值给 `SystemExit`。
 
 ### `sys.print_exception`
 
@@ -76,7 +80,10 @@ sys.exit(retval=0)
 sys.print_exception(exc, file=sys.stdout)
 ```
 
-
-
 打印异常到文件对象，默认是 sys.stdout，即输出异常信息的标准输出。
 
+**参数描述**
+
+* `exc`，exception对象
+
+* `file`，指定输出文件，默认为sys.stdout

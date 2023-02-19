@@ -1,25 +1,34 @@
-	本文阐述了QuecPython的uos模块的用法，描述了uos模块最新版本的特性。
 # `uos` - 基本系统服务
 
 `uos`模块包含文件系统访问和挂载构建，该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：[os](https://docs.python.org/3.5/library/os.html#module-os)
 
 ## 删除文件
 
-### `uos.remove` 
+### `uos.remove`
 
 ```python
 uos.remove(path)
 ```
 
-删除文件。path表示文件名。
+删除文件。
+
+**参数描述**
+
+* `path`，字符串，表示文件名。
 
 ## 改变当前目录
 
 ### `uos.chdir`
+
 ```python
 uos.chdir(path)
 ```
-改变当前目录。path表示目录名。
+
+改变当前目录。
+
+**参数描述**
+
+* `path`，字符串，表示目录名。
 
 ## 获取当前路径
 
@@ -31,6 +40,10 @@ uos.getcwd()
 
 获取当前路径。
 
+**返回值描述**
+
+字符串，当前路径
+
 ## 列出指定目录文件
 
 ### `uos.listdir`
@@ -39,7 +52,15 @@ uos.getcwd()
 uos.listdir( [dir] )
 ```
 
-没有参数列出当前目录文件，否则列出给定目录的文件。dir为可选参数，表示目录名，默认为 ‘/’ 目录。
+没有参数列出当前目录文件，否则列出给定目录的文件。
+
+**参数描述**
+
+* `dir`为字符串，可选参数，表示目录名，默认为 ‘/’ 目录。
+
+**返回值描述**
+
+元组，列出路径下所有存在的对象（目录&文件）
 
 **示例：**
 
@@ -56,7 +77,11 @@ uos.listdir( [dir] )
 uos.mkdir(path)
 ```
 
-创建一个新的目录。path表示准备创建的目录名。
+创建一个新的目录。
+
+**参数描述**
+
+* `path`表示准备创建的目录名。
 
 **示例：**
 
@@ -74,7 +99,12 @@ uos.mkdir(path)
 uos.rename(old_path, new_path)
 ```
 
-重命名文件。old_path表示旧文件或目录名，new_path表示新文件或目录名。
+重命名文件。
+
+**参数描述**
+
+* `old_path`，字符串，表示旧文件或目录名，
+* `new_path`，字符串，表示新文件或目录名。
 
 **示例：**
 
@@ -90,7 +120,11 @@ uos.rename(old_path, new_path)
 uos.rmdir(path)
 ```
 
-删除指定目录。path表示目录名。
+删除指定目录。
+
+**参数描述**
+
+* `path`，字符串，表示目录名。
 
 **示例：**
 
@@ -108,11 +142,21 @@ uos.rmdir(path)
 uos.ilistdir( [dir] )
 ```
 
-该函数返回一个迭代器，该迭代器会生成所列出条目对应的3元组。dir为可选参数，表示目录名，没有参数时，默认列出当前目录，有参数时，则列出dir参数指定的目录。元组的形式为 `(name, type, inode[, size])`:
+该函数返回一个迭代器，该迭代器会生成所列出条目对应的3元组。
 
-* name 是条目的名称，字符串类型，如果dir是字节对象，则名称为字节;
-* type 是条目的类型，整型数，0x4000表示目录，0x8000表示常规文件；
-* 是一个与文件的索引节点相对应的整数，对于没有这种概念的文件系统来说，可能为0；
+**参数描述**
+
+* `dir`为可选参数，字符串，表示目录名，没有参数时，默认列出当前目录，有参数时，则列出dir参数指定的目录。
+
+**返回值描述**
+
+返回一个迭代器，该迭代器会生成所列出条目对应的3元组
+
+元组的形式为 `(name, type, inode[, size])`:
+
+* `name` 是条目的名称，字符串类型，如果dir是字节对象，则名称为字节;
+* `type` 是条目的类型，整型数，0x4000表示目录，0x8000表示常规文件；
+* `inode`是一个与文件的索引节点相对应的整数，对于没有这种概念的文件系统来说，可能为0；
 * 一些平台可能会返回一个4元组，其中包含条目的size。对于文件条目，size表示文件大小的整数，如果未知，则为-1。对于目录项，其含义目前尚未定义。
 
 ## 获取文件或目录的状态
@@ -123,7 +167,15 @@ uos.ilistdir( [dir] )
 uos.stat(path)
 ```
 
-获取文件或目录的状态。path表示文件或目录名。返回值是一个元组，返回值形式为：
+获取文件或目录的状态。
+
+**参数描述**
+
+* `path`，字符串，表示文件或目录名。
+
+**返回值描述**
+
+返回值是一个元组，返回值形式为：
 
 `(mode, ino, dev, nlink, uid, gid, size, atime, mtime, ctime)`
 
@@ -146,7 +198,15 @@ uos.stat(path)
 uos.statvfs(path)
 ```
 
-获取文件系统状态信息。path表示文件或目录名。返回一个包含文件系统信息的元组：
+获取文件系统状态信息。
+
+**参数描述**
+
+* `path`，字符串，表示文件或目录名。
+
+**返回值描述**
+
+返回一个包含文件系统信息的元组：
 
 `(f_bsize, f_frsize, f_blocks, f_bfree, f_bavail, f_files, f_ffree, f_favail, f_flag, f_namemax)`
 
@@ -178,7 +238,11 @@ uos.statvfs(path)
 uos.uname()
 ```
 
-获取关于底层信息或其操作系统的信息。该接口与micropython官方接口返回值形式有所区别，返回一个元组，形式为：
+获取关于底层信息或其操作系统的信息。
+
+**返回值描述**
+
+该接口与micropython官方接口返回值形式有所区别，返回一个元组，形式为：
 
 `(sysname, nodename, release, version, machine)`
 
@@ -199,15 +263,17 @@ uos.uname()
 'EC600S-CNLB'
 ```
 
-
-
 ### `uos.uname2`
 
 ```python
 uos.uname2()
 ```
 
-获取关于底层信息或其操作系统的信息。该接口与micropython官方接口返回值形式一致。注意与上面uos.uname()接口返回值的区别，返回值形式为：
+获取关于底层信息或其操作系统的信息。
+
+**返回值描述**
+
+该接口与micropython官方接口返回值形式一致。注意与上面uos.uname()接口返回值的区别，返回值形式为：
 
 `(sysname, nodename, release, version, machine, qpyver=)`
 
@@ -230,8 +296,6 @@ uos.uname2()
 'EC600S with QUECTEL'
 ```
 
-
-
 ## 返回具有*n个*随机字节的bytes对象
 
 ### `uos.urandom`
@@ -242,6 +306,14 @@ uos.urandom(n)
 
 返回具有*n个*随机字节的bytes对象，只要有可能，它就会由硬件随机数生成器生成。
 
+**参数描述**
+
+* `n`，整形，随机字节的个数
+
+**返回值描述**
+
+具有*n个*随机字节的bytes对象
+
 **示例：**
 
 ```python
@@ -249,8 +321,6 @@ uos.urandom(n)
 >>> uos.urandom(5)
 b'\xb3\xc9Y\x1b\xe9'
 ```
-
-
 
 ## 注册存储设备 - SPI - SD卡
 
@@ -264,16 +334,19 @@ uos.VfsFat(spi_port, spimode, spiclk, spics)
 
 初始化SD卡，和SD卡通信。使用SPI通信方式。
 
-* 参数
+**参数描述**
 
-| 参数     | 参数类型 | 参数说明                                                     |
-| -------- | -------- | ------------------------------------------------------------ |
-| spi_port | int      | 通道选择[0,1]                                                |
-| spimode  | int      | SPI 的工作模式(模式0最常用):<br/>时钟极性CPOL: 即SPI空闲时，时钟信号SCLK的电平（0:空闲时低电平; 1:空闲时高电平）<br/>0 : CPOL=0, CPHA=0<br/>1 : CPOL=0, CPHA=1<br/>2: CPOL=1, CPHA=0<br/>3: CPOL=1, CPHA=1 |
-| spiclk   | int      | 时钟频率 0 : 812.5kHz 1 : 1.625MHz 2 : 3.25MHz 3 : 6.5MHz 4 : 13MHz |
-| spics    | int      | 指定CS片选引脚为任意GPIO，硬件CS可以接这里指定的脚，也可以接默认的SPI CS脚<br/>1~n:指定Pin.GPIO1~Pin.GPIOn为CS脚 |
+* `spi_port`，int，通道选择[0,1]
+* `spimode`，int，PI 的工作模式(模式0最常用):`<br />`0 : CPOL=0, CPHA=0 1 : CPOL=0, CPHA=12: CPOL=1, CPHA=0 3: CPOL=1, CPHA=1
 
-* 返回值
+> 时钟极性CPOL: 即SPI空闲时，时钟信号SCLK的电平（0:空闲时低电平; 1:空闲时高电平）
+
+* `spiclk`， int， 时钟频率 0 : 812.5kHz 1 : 1.625MHz 2 : 3.25MHz 3 : 6.5MHz 4 : 13MHz
+* `spics`，int，指定CS片选引脚为任意GPIO，硬件CS可以接这里指定的脚，也可以接默认的SPI CS脚
+
+> 1-n:指定Pin.GPIO1-Pin.GPIOn为CS脚
+
+**返回值描述**
 
 成功则返回VfsFat object，失败则会卡住。
 
@@ -282,8 +355,6 @@ uos.VfsFat(spi_port, spimode, spiclk, spics)
 ```python
 >>> cdev = uos.VfsFat(1, 0, 4, 1)
 ```
-
-
 
 ## 注册存储设备 - SDIO - SD卡
 
@@ -297,22 +368,20 @@ uos.VfsSd(str)
 
 初始化SD卡，使用SDIO通信方式。
 
-* 参数
+**参数描述**
 
-| 参数 | 参数类型 | 参数说明    |
-| ---- | -------- | ----------- |
-| str  | str      | 传入"sd_fs" |
+* `str`，str， 传入"sd_fs"
 
-* 返回值
+**返回值描述**
 
 成功则返回vfs object，失败则会报错。
 
-- 引脚说明
+**引脚说明**
 
-| 平台   | 引脚                                                         |
-| ------ | ------------------------------------------------------------ |
+| 平台   | 引脚                                                                                                            |
+| ------ | --------------------------------------------------------------------------------------------------------------- |
 | EC600U | CMD:引脚号48<br />DATA0:引脚号39<br />DATA1:引脚号40<br />DATA2:引脚号49<br />DATA3:引脚号50<br />CLK:引脚号132 |
-| EC200U | CMD:引脚号33<br />DATA0:引脚号31<br />DATA1:引脚号30<br />DATA2:引脚号29<br />DATA3:引脚号28<br />CLK:引脚号32 |
+| EC200U | CMD:引脚号33<br />DATA0:引脚号31<br />DATA1:引脚号30<br />DATA2:引脚号29<br />DATA3:引脚号28<br />CLK:引脚号32  |
 
 **示例：**
 
@@ -331,16 +400,14 @@ uos.set_det(vfs_obj.GPIOn,mode)
 
 指定sd卡插拔卡的检测管脚和模式。
 
-* 参数
+**参数描述**
 
-| 参数          | 参数类型 | 参数说明                                                     |
-| ------------- | -------- | ------------------------------------------------------------ |
-| vfs_obj.GPIOn | int      | 用于sd卡插拔卡检测的GPIO引脚号，参照Pin模块的定义            |
-| mode          | int      | 0:sd卡插上后，检测口为低电平；sd卡取出后，检测口为高电平<br />1:sd卡插上后，检测口为高电平；sd卡取出后，检测口为低电平 |
+* `vfs_obj.GPIOn`，int类型，用于sd卡插拔卡检测的GPIO引脚号，参照Pin模块的定义
+* `mode`，int类型 `<br />0`:sd卡插上后，检测口为低电平；sd卡取出后，检测口为高电平 `<br />1`:sd卡插上后，检测口为高电平；sd卡取出后，检测口为低电平
 
-* 返回值
+**返回值描述**
 
-成功返回0，失败返回-1。
+成功返回 `0`，失败返回 `-1`。
 
 **示例：**
 
@@ -353,7 +420,7 @@ uos.set_det(vfs_obj.GPIOn,mode)
 
 ## 设置插拔SD卡回调函数
 
-###  `uos.set_callback`
+### `uos.set_callback`
 
 ```python
 uos.set_callback(fun)
@@ -361,20 +428,18 @@ uos.set_callback(fun)
 
 设定发生插拔卡事件时的用户回调函数。
 
-* 参数
+**参数描述**
 
-| 参数 | 参数类型 | 参数说明                                                     |
-| ---- | -------- | ------------------------------------------------------------ |
-| fun  | function | 插拔卡回调 [ind_type]<br />ind_type: 事件类型，0：拔卡 1：插卡 |
+* `fun`，function类型，插拔卡回调 `[ind_type]`
+* `ind_type`: 事件类型，0：拔卡 1：插卡
 
-* 返回值
+**返回值描述**
 
-成功返回0，失败返回-1。
+成功返回 `0`，失败返回 `-1`。
 
+**SD卡使用示例（SDIO接口）**
 
-SD卡使用示例（SDIO接口）
-
->目前仅EC600U/EC200U平台支持。
+> 目前仅EC600U/EC200U平台支持。
 
 **示例：**
 
@@ -401,15 +466,13 @@ def call_back(para):
         print(uos.listdir('/usr'))
     elif(para == 0):
         print("plug out")   
-        
+  
 udev.set_callback(call_back)
 ```
 
-
-
 ## 注册littleFS存储设备 - SPI NOR FLASH
 
->目前仅EG915U支持
+> 目前仅EG915U/EC600N支持
 
 ### `uos.VfsLfs1`
 
@@ -417,23 +480,20 @@ udev.set_callback(call_back)
 uos.VfsLfs1(readsize,progsize,lookahead,pname,spi_port,spi_clk)
 ```
 
-
 初始化spi nor flash,和外挂nor flash通信。使用SPI通信方式,将此存储设备挂载为littleFS文件系统。
 
-* 参数
+**参数描述**
 
-| 参数      | 参数类型 | 参数说明                                                     |
-| --------- | -------- | ------------------------------------------------------------ |
-| readsize  | int      | 预留，暂未使用                                               |
-| progsize  | int      | 预留，暂未使用                                               |
-| lookahead | int      | 预留，暂未使用                                               |
-| pname     | str      | 固定为“ext_fs”。后续扩展                                     |
-| spi_port  | int      | 支持的端口参照SPI章节说明                                    |
-| spi_clk   | int      | 时钟频率：<br />EG915U：0：6.25M 1:12.5M  2:25M  3:50M  4:3.125M 5:1.5625M  6:781.25K |
+* readsize，int类型，预留，暂未使用
+* progsize，int类型，预留，暂未使用
+* lookahead，int类型，预留，暂未使用
+* pname，str类型，固定为“ext_fs”。后续扩展
+* spi_port，int类型，支持的端口参照SPI章节说明
+* spi_clk，int类型 `<br />`时钟频率：`<br />`0：6.25M 1:12.5M  2:25M  3:50M  4:3.125M 5:1.5625M  6:781.25K
 
-* 返回值
+**返回值描述**
 
-  成功则返回VfsLfs1 object,失败则 OSError 19。
+成功则返回VfsLfs1 object,失败则 OSError 19。
 
 **示例：**
 
@@ -452,9 +512,6 @@ uos.VfsLfs1(readsize,progsize,lookahead,pname,spi_port,spi_clk)
   
 ```
 
-  
-
-
 ## 挂载文件系统
 
 ### `uos.mount`
@@ -465,16 +522,10 @@ uos.mount(vfs_obj, path)
 
 挂载实体文件系统(如littleFS/FATFS等)到虚拟文件系统(VFS)。
 
-* 参数
+**参数描述**
 
-| 参数    | 参数类型   | 参数说明         |
-| ------- | ---------- | ---------------- |
-| vfs_obj | vfs object | 文件系统对象     |
-| path    | str        | 文件系统的根目录 |
-
-* 返回值
-
-无。
+* vfs_obj，vfs object，文件系统对象
+* path，str类型，文件系统的根目录
 
 **示例：**
 
@@ -483,9 +534,9 @@ uos.mount(vfs_obj, path)
 >>> uos.mount(cdev, '/sd')
 ```
 
-**SD卡（SPI接口）使用示例: **
+**SD卡（SPI接口）使用示例:**
 
->目前仅EC600N/EC800N平台支持。
+> 目前仅EC600N/EC800N/EC600U/EC200U平台支持。
 
 ```python
 >>> cdev = uos.VfsFat(1, 0, 4, 1)
@@ -498,4 +549,3 @@ uos.mount(vfs_obj, path)
 >>> f.read()
 >>> f.close()
 ```
-

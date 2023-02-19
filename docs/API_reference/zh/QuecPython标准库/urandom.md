@@ -12,6 +12,14 @@ urandom.choice(obj)
 
 随机生成对象 obj 中的元素，obj 类型 string。
 
+**参数描述**
+
+* `obj`，str类型
+
+**返回值描述**
+
+`obj`中随机某个元素，str
+
 **示例**：
 
 ```
@@ -29,6 +37,14 @@ urandom.getrandbits(k)
 ```
 
 随机产生一个在k bits范围内的十进制数。
+
+**参数描述**
+
+* `k`，int类型，表示范围（单位bit）
+
+**返回值描述**
+
+int类型，在k bits范围内的十进制随机数
 
 **示例**：
 
@@ -52,6 +68,15 @@ urandom.randint(start, end)
 
 随机生成一个 start 到 end 之间的整数。
 
+**参数描述**
+
+* `start`，int类型，区间最小值
+* `end`，int类型，区间最大值
+
+**返回值描述**
+
+int类型，在`start `到 `end` 之间的随机整数
+
 **示例**：
 
 ```
@@ -72,6 +97,10 @@ urandom.random()
 
 随机生成一个 0 到 1 之间的浮点数。
 
+**返回值描述**
+
+浮点数，在0 到 1 之间。
+
 **示例**：
 
 ```
@@ -89,6 +118,16 @@ urandom.randrange(start, end, step)
 ```
 
 随机生成 start 到 end 间并且递增为 step 的正整数。
+
+**参数描述**
+
+* `start`，int类型，区间最小值
+* `end`，int类型，区间最大值
+* `step`，int类型，递增长度
+
+**返回值描述**
+
+int类型，在 `start `到 `end` 之间的随机整数
 
 **示例**：
 
@@ -110,6 +149,10 @@ urandom.seed(sed)
 
 指定随机数种子，通常和其它随机数生成函数搭配使用。
 
+**参数描述**
+
+* `sed`，int类型，区间最小值
+
 **示例**：
 
 ```python
@@ -117,7 +160,7 @@ urandom.seed(sed)
 >>> urandom.seed(20)  #指定随机数种子
 >>> for i in range(0, 15): #生成0~15范围内的随机序列
 ...     print(urandom.randint(1, 10))
-...     
+...   
 8
 10
 9
@@ -143,7 +186,14 @@ urandom.seed(sed)
 urandom.uniform(start, end)
 ```
 
-随机生成 start 到 end 范围内的浮点数。
+**参数描述**
+
+* `start`，任意实数类型，区间最小值
+* `end`，任意实数类型，区间最大值
+
+**返回值描述**
+
+浮点数类型，在 `start `到 `end` 之间的随机整数
 
 **示例**：
 
@@ -214,4 +264,3 @@ if __name__ == '__main__':
     random_log.info(num)
 
 ```
-
