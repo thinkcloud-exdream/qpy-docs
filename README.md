@@ -87,6 +87,14 @@ then visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
     > Choose one you are familiar with.
 
+* Configure user.name & user.email
+
+    ```bash
+    # Use your full English name to replace <name>
+    git config --global user.name <name>
+    git config --global user.email <name>@quectel.com
+    ```
+
 * Check the status of project repository
 
     ```bash
