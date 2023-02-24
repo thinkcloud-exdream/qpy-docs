@@ -1,4 +1,4 @@
-# `sim` - SIM卡相关功能
+# sim - SIM卡相关功能
 
 提供sim卡相关功能的接口，如查询sim卡状态、iccid、imsi、电话号码等。
 
@@ -334,7 +334,8 @@ sim.readPhonebook(storage, start, end, username)
 
 - `start` - 需要读取电话号码记录的起始编号，整型值，`start`为 `0` 表示不使用编号获取电话号码记，`start`应小于等于`end`。
 - `end` - 需要读取电话号码记录的结束编号，整型值，必须满足：`end - start <= 20`。
-- `username` - 电话号码中的用户名，字符串类型，当 start为 0 时有效，暂不支持中文，最大长度不超过30字节。<br>注意：按username进行匹配时，并不是按完整的单词进行匹配，只要电话簿中已有记录的name是以username开头，那么就会匹配上。
+- `username` - 电话号码中的用户名，字符串类型，当 start为 0 时有效，暂不支持中文，最大长度不超过30字节。
+>注意：按username进行匹配时，并不是按完整的单词进行匹配，只要电话簿中已有记录的name是以username开头，那么就会匹配上。
 
 **返回值描述：**
 

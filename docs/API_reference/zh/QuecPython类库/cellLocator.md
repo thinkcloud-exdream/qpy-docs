@@ -1,4 +1,4 @@
-# `cellLocator` - 基站定位
+# cellLocator - 基站定位
 
 `cellLocator` 提供基站定位功能，获取模组经纬度坐标信息。
 
@@ -20,7 +20,8 @@ cellLocator.getLocation(serverAddr, port, token, timeout, profileIdx)
 * `port` - 服务器端口，整型值，目前仅支持 80 端口
 * `token` - 密钥，字符串类型，16位字符组成，需要申请
 * `timeout` -设置超时时间，整型值，范围1-300s，默认300s
-* `profileIdx` - PDP上下文ID，整型值，一般设置为1，设置其他值可能需要专用apn与密码才能设置成功；范围如下：<br/>EC600N/EC600S/EC800N，范围：1~8<br/>EC200U/EC600U，范围：1~7
+* `profileIdx` - PDP上下文ID，整型值，一般设置为1，设置其他值可能需要专用apn与密码才能设置成功；
+范围如下：EC600N/EC600S/EC800N，范围：1 ~ 8；EC200U/EC600U，范围：1 ~ 7。
 
 **返回值描述：**
 
