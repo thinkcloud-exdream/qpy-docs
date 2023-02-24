@@ -13,6 +13,7 @@
 - [atcmd - 发送AT指令](./atcmd.md)
 - [machine - 硬件相关功能](./machine.md)
 - [ethernet - 以太网相关功能](./ethernet.md)
+- [WLAN - 无线局域网相关功能](./WLAN.md)
 - [...](./....md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
