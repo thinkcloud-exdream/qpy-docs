@@ -10,9 +10,13 @@ QoS1 – 至少一次，是中间级别；发送者保证消息至少送达到�
 QoS2 – 有且仅有一次，是最高级别；保证消息送达且仅送达一次。
 ```
 
-## 构建mqtt连接对象
+## 初始化MQTT
 
-> **MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={},reconn=True,version=4)**
+### `MQTTClient`
+
+```python
+MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={},reconn=True,version=4)
+```
 
 构建mqtt连接对象。
 
@@ -35,9 +39,14 @@ QoS2 – 有且仅有一次，是最高级别；保证消息送达且仅送达�
 
 mqtt对象。
 
-## 设置回调函数
+## 设置相关功能和回调
 
-> **MQTTClient.set_callback(callback)**
+### `MQTTClient.set_callback`
+
+```python
+MQTTClient.set_callback(callback)
+```
+
 
 设置回调函数，收到消息时会被调用。
 
@@ -51,9 +60,11 @@ mqtt对象。
 
 无
 
-## 设置异常回调函数
+### `MQTTClient.error_register_cb`
 
-> **MQTTClient.error_register_cb(callback)**
+```python
+MQTTClient.error_register_cb(callback)
+```
 
 设置异常回调函数，umqtt内部线程异常时通过回调返回error信息，该方法在设置不使用内部重连的情况下才可触发回调
 
@@ -80,9 +91,11 @@ c = MQTTClient("umqtt_client", "mq.tongxinmao.com", 18830)
 c.error_register_cb(err_cb)
 ```
 
-## 设置要发送给服务器的遗嘱
+### `MQTTClient.set_last_will`
 
-> **MQTTClient.set_last_will(topic,msg,retain=False,qos=0)**
+```python
+MQTTClient.set_last_will(topic,msg,retain=False,qos=0)
+```
 
 设置要发送给服务器的遗嘱，客户端没有调用disconnect()异常断开，则发送通知到客户端。
 
@@ -99,9 +112,14 @@ c.error_register_cb(err_cb)
 
 无
 
-## 与服务器建立连接
+## MQTT连接相关功能
 
-> **MQTTClient.connect(clean_session=True)**
+### `MQTTClient.connect`
+
+```python
+MQTTClient.connect(clean_session=True)
+```
+
 
 与服务器建立连接，连接失败会导致MQTTException异常。
 
@@ -115,9 +133,11 @@ c.error_register_cb(err_cb)
 
 成功返回0，失败则抛出异常
 
-## 与服务器断开连接
+### `MQTTClient.disconnect`
 
-> **MQTTClient.disconnect()**
+```python
+MQTTClient.disconnect()
+```
 
 与服务器断开连接。
 
@@ -129,9 +149,11 @@ c.error_register_cb(err_cb)
 
 无
 
-## 关闭Socket
+### `MQTTClient.close`
 
-> **MQTTClient.close()**
+```python
+MQTTClient.close()
+```
 
 释放socket资源,(注意区别disconnect方法，close只释放socket资源，disconnect包含线程等资源)
 
@@ -145,9 +167,11 @@ c.error_register_cb(err_cb)
 
 无
 
-## 发送ping包
+### `MQTTClient.ping`
 
-> **MQTTClient.ping()**
+```python
+MQTTClient.ping()
+```
 
 当keepalive不为0且在时限内没有通讯活动，会主动向服务器发送ping包,检测保持连通性，keepalive为0则不开启。
 
@@ -159,16 +183,20 @@ c.error_register_cb(err_cb)
 
 无
 
-## 发布消息
+## 发布订阅相关功能
 
-> **MQTTClient.publish(topic,msg, retain=False, qos=0)**
+### `MQTTClient.publish`
+
+```python
+MQTTClient.publish(topic,msg, retain=False, qos=0)
+```
 
 发布消息。
 
 * 参数
 
 | 参数   | 类型   | 说明                                                         |
-| :----- | :----- | ------------------------------------------------------------ |
+| ----- | ----- | ------------------------------------------------------------ |
 | topic  | string | 消息主题                                                     |
 | msg    | string | 需要发送的数据                                               |
 | retain | bool   | 默认为False, 发布消息时把retain设置为true，即为保留信息。<br />MQTT服务器会将最近收到的一条RETAIN标志位为True的消息保存在服务器端, 每当MQTT客户端连接到MQTT服务器并订阅了某个topic，如果该topic下有Retained消息，那么MQTT服务器会立即向客户端推送该条Retained消息 <br />特别注意：MQTT服务器只会为每一个Topic保存最近收到的一条RETAIN标志位为True的消息！也就是说，如果MQTT服务器上已经为某个Topic保存了一条Retained消息，当客户端再次发布一条新的Retained消息，那么服务器上原来的那条消息会被覆盖！ |
@@ -178,16 +206,18 @@ c.error_register_cb(err_cb)
 
 无
 
-## 订阅mqtt主题
+### `MQTTClient.subscribe`
 
-> **MQTTClient.subscribe(topic,qos)**
+```python
+MQTTClient.subscribe(topic,qos)
+```
 
 订阅mqtt主题。
 
 * 参数
 
 | 参数  | 类型   | 说明                                                         |
-| :---- | :----- | ------------------------------------------------------------ |
+| ---- | ----- | ------------------------------------------------------------ |
 | topic | string | topic                                                        |
 | qos   | int    | MQTT消息服务质量（默认0，可选择0或1）0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker |
 
@@ -195,9 +225,11 @@ c.error_register_cb(err_cb)
 
 无
 
-## 检查服务器是否有待处理消息
+### `MQTTClient.check_msg`
 
-> **MQTTClient.check_msg()**
+```python
+MQTTClient.check_msg()
+```
 
 检查服务器是否有待处理消息。
 
@@ -209,9 +241,11 @@ c.error_register_cb(err_cb)
 
 无
 
-## 阻塞等待服务器消息响应
+### `MQTTClient.wait_msg`
 
-> **MQTTClient.wait_msg()**
+```python
+MQTTClient.wait_msg()
+```
 
 阻塞等待服务器消息响应。
 
@@ -223,9 +257,11 @@ c.error_register_cb(err_cb)
 
 无
 
-## 获取mqtt连接状态
+### `MQTTClient.get_mqttsta`
 
-> **MQTTClient.get_mqttsta()**
+```python
+MQTTClient.get_mqttsta()
+```
 
 获取mqtt连接状态
 

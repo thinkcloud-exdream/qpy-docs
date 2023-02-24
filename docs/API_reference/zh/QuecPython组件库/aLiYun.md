@@ -1,19 +1,23 @@
 # aLiYun - 阿里云服务
 
-## 配置产品信息和设备信息。
+## 初始化阿里云
+
+### `aLiYun`
+
+```python
+aliyun = aLiYun(productKey, productSecret, DeviceName, DeviceSecret, MqttServer)
+```
+
+配置阿里云物联网套件的产品信息和设备信息
 
 模块功能：阿里云物联网套件客户端功能,目前的产品节点类型仅支持“设备”，设备认证方式支持“一机一密和“一型一密”。
 
 注意：BC25PA平台不支持模块功能。
 
-> **aLiYun(productKey, productSecret, DeviceName, DeviceSecret, MqttServer)**
-
-配置阿里云物联网套件的产品信息和设备信息。
-
 * 参数
 
 | 参数          | 类型   | 说明                                                         |
-| :------------ | :----- | ------------------------------------------------------------ |
+| ------------ | ----- | ------------------------------------------------------------ |
 | productKey    | string | 产品标识                                                     |
 | productSecret | string | 可选参数，默认为None，productSecret，产品密钥<br />一机一密认证方案时，此参数传入None<br/>一型一密认证方案时，此参数传入真实的产品密钥 |
 | DeviceName    | string | 设备名称                                                     |
@@ -24,15 +28,20 @@
 
 返回aLiYun连接对象。
 
-## 设置MQTT数据通道的参数
 
-> **aLiYun.setMqtt(clientID, clean_session, keepAlive=300,reconn=True)**
+## 设置相关功能和回调
+
+### `aLiYun.setMqtt`
+
+```python
+aLiYun.setMqtt(clientID, clean_session, keepAlive=300,reconn=True)
+```
 
 设置MQTT数据通道的参数
 
 **需要注意的是，当进行阿里云的一型一密连接的时候，会在本地生成secret.json的文件用以保存设备的设备密钥，如果重刷固件或者删除，再进行连接的时候会因为没有secret.json而报错，所以重刷固件或者删除了secert.json文件，需要手动新建secret.json文件，下面secret.json文件的模板**
 
-```
+```json
 {
   "Test01": "9facf9aba414ec9eea7c10d8a4cb69a0"
 }
@@ -40,12 +49,10 @@
 # "9facf9aba414ec9eea7c10d8a4cb69a0" 设备密钥
 ```
 
-
-
 * 参数
 
 | 参数          | 类型   | 说明                                                         |
-| :------------ | :----- | ------------------------------------------------------------ |
+| ------------ | ----- | ------------------------------------------------------------ |
 | clientID      | string | 自定义阿里云连接id                                           |
 | clean_session | bool   | 可选参数，一个决定客户端类型的布尔值。 如果为True，那么代理将在其断开连接时删除有关此客户端的所有信息。 如果为False，则客户端是持久客户端，当客户端断开连接时，订阅信息和排队消息将被保留。默认为False |
 | keepAlive     | int    | 通信之间允许的最长时间段（以秒为单位）,默认为300，范围（60-1200） |
@@ -55,25 +62,31 @@
 
 成功返回整型值0，失败返回整型值-1。
 
-## 注册回调函数
+### `aLiYun.setCallback`
 
-> **aLiYun.setCallback(sub_cb)**
+```python
+aLiYun.setCallback(sub_cb)
+```
 
 注册回调函数。
 
 * 参数
 
 | 参数   | 类型     | 说明     |
-| :----- | :------- | -------- |
+| -----  | -------  | -------- |
 | sub_cb | function | 回调函数 |
 
 * 返回值
 
 无
 
-## 设置异常回调函数
 
-> **aLiYun.error_register_cb(callback)**
+
+### `aLiYun.error_register_cb`
+
+```python
+aLiYun.error_register_cb(callback)
+```
 
 设置异常回调函数，aliyun以及umqtt内部线程异常时通过回调返回error信息，该方法在设置不使用内部重连的情况下才可触发回调
 
@@ -101,10 +114,13 @@ ali.error_register_cb(err_cb)
 ```
 
 
+## 订阅发布功能
 
-## 订阅mqtt主题
+### `aLiYun.subscribe`
 
-> **aLiYun.subscribe(topic,qos)**
+```python
+aLiYun.subscribe(topic,qos)
+```
 
 订阅mqtt主题。
 
@@ -119,9 +135,13 @@ ali.error_register_cb(err_cb)
 
 成功返回整型值0，失败返回整型值-1。
 
-## 发布消息
 
-> **aLiYun.publish(topic,msg, qos=0)**
+
+### `aLiYun.publish`
+
+```python
+aLiYun.publish(topic,msg, qos=0)
+```
 
 发布消息。
 
@@ -137,9 +157,13 @@ ali.error_register_cb(err_cb)
 
 成功返回整型值0，失败返回整型值-1。
 
-## 运行连接
+## 启停服务相关功能
 
-> **aLiYun.start()**
+### `aLiYun.start`
+
+```python
+aLiYun.start()
+```
 
 运行连接。
 
@@ -151,9 +175,13 @@ ali.error_register_cb(err_cb)
 
 无
 
-## 关闭连接
 
-> **aLiYun.disconnect()**
+
+### `aLiYun.disconnect`
+
+```python
+aLiYun.disconnect()
+```
 
 关闭连接。
 
@@ -165,9 +193,13 @@ ali.error_register_cb(err_cb)
 
 无
 
-## 发送Ping包
 
-> **aLiYun.ping()**
+
+### `aLiYun.ping`
+
+```python
+aLiYun.ping()
+```
 
 发送心跳包
 
@@ -179,9 +211,13 @@ ali.error_register_cb(err_cb)
 
 无
 
-## 获取阿里云连接状态
 
-> **aLiYun.getAliyunSta()**
+
+### `aLiYun.getAliyunSta`
+
+```python
+aLiYun.getAliyunSta()
+```
 
 获取阿里云连接状态
 
@@ -206,12 +242,7 @@ ali.error_register_cb(err_cb)
 **使用示例**
 
 ```python
-'''
-@Author: Pawn
-@Date: 2020-09-28
-@Description: example for module aLiYun
-@FilePath: example_aliyun_file.py
-'''
+
 import log
 import utime
 import checkNet
