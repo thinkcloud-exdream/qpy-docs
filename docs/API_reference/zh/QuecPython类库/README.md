@@ -14,5 +14,10 @@
 - [machine - 硬件相关功能](./machine.md)
 - [ethernet - 以太网相关功能](./ethernet.md)
 - [uping - 发送ping包](./uping.md)
+- [pm - 低功耗相关功能](./pm.md)
+- [modem - 设备相关功能](./modem.md)
+- [quecgnss - 内置GNSS相关功能](./quecgnss.md)
+- [gnss - GNSS相关功能](./gnss.md)
+- [securedata - 安全数据区相关功能](./securedata.md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
