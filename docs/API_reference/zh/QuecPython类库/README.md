@@ -13,6 +13,6 @@
 - [atcmd - 发送AT指令](./atcmd.md)
 - [machine - 硬件相关功能](./machine.md)
 - [ethernet - 以太网相关功能](./ethernet.md)
-- [...](./....md)
+- [uping - 发送ping包](./uping.md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
