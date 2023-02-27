@@ -1,4 +1,4 @@
-# `dataCall` - 拨号功能
+# dataCall - 拨号功能
 
 拨号，指的是PDP Context的激活操作，激活成功后，核心网的PDN网关才会分配一个IP地址给模组。
 
@@ -39,7 +39,7 @@ else:
 
 
 
-## 方法
+## APN配置与获取功能
 
 ### `dataCall.setPDPContext`
 
@@ -136,6 +136,8 @@ dataCall.getPDPContext(profileID)
 
 
 
+## 开机自动拨号功能
+
 ### `dataCall.setAutoActivate`
 
 ```python
@@ -168,6 +170,8 @@ dataCall.setAutoActivate(profileID, enable)
 
 
 
+## 拨号重连功能
+
 ### `dataCall.setAutoConnect`
 
 ```python
@@ -199,6 +203,8 @@ dataCall.setAutoConnect(profileID, enable)
 ```
 
 
+
+## DNS配置功能
 
 ### `dataCall.setDNSServer`
 
@@ -239,6 +245,8 @@ dataCall.setDNSServer(profileID, simID, priDNS, secDNS)
 ```
 
 
+
+## 回调注册功能
 
 ### `dataCall.setCallback`
 
@@ -291,6 +299,8 @@ dataCall.setCallback(netCallback)
 ```
 
 
+
+## 激活与去激活功能
 
 ### `dataCall.activate`
 
@@ -350,6 +360,8 @@ dataCall.deactivate(profileID)
 > 支持该方法的模组：EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600M/EC800M/EG810M/EC200A/EC200U/EC600U/EG912U/EG915U/EC600G/EC800G/EC600E/EC800E/BG77/BG95系列。
 
 
+
+## 获取拨号信息功能
 
 ### `dataCall.getInfo`
 

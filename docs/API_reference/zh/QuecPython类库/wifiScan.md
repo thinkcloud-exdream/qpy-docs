@@ -1,4 +1,4 @@
-# `wifiScan` - WiFi扫描
+# wifiScan - WiFi扫描
 
 `wifiScan`模块提供了同步和异步两种方式来扫描模组周边的WiFi热点信息。
 
@@ -14,7 +14,7 @@ EC600U系列模组中，EC600UEC_AC不支持`wifiScan`。
 
 
 
-## 方法
+## 开启或关闭扫描功能
 
 ### `wifiScan.control`
 
@@ -58,6 +58,8 @@ WiFi扫描功能已开启则返回True，未开启返回False。
 
 
 
+## 扫描参数配置与获取功能
+
 ### `wifiScan.setCfgParam`
 
 ```python
@@ -99,6 +101,8 @@ wifiScan.getCfgParam()
 
 
 
+## 回调注册功能
+
 ### `wifiScan.setCallback`
 
 ```python
@@ -127,6 +131,8 @@ def wifiscanCallback(args):
 返回一个整型值，0表示注册成功，-1表示注册失败。
 
 
+
+## 启动扫描功能
 
 ### `wifiScan.asyncStart`
 
