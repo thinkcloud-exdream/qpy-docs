@@ -1,9 +1,8 @@
-# `net` - 网络相关功能
+# net - 网络相关功能
 
 `net`模块包含了模组网络相关的功能，提供配置和查询网络模式信息等接口，比如获取注网状态，设置搜网模式等。
 
->注：
->建议用户使用不同运营商的SIM卡时，则配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组无法注网。用户具体如何配置APN信息，参考`dataCall.setApn`方法。
+>注： 建议用户使用不同运营商的SIM卡时，则配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组无法注网。用户具体如何配置APN信息，参考`dataCall.setApn`方法。
 
 ## 方法
 
@@ -103,6 +102,7 @@ net.getCellInfo([sinrEnable])
 
 >注：
 >
+>* 该接口搜小区时会一直阻塞，一般是3-5秒，在无信号的地方会更长
 >* `sinrEnable`为可选参，不支持的平台可不写，不写默认不获取sinr
 >
 >* 仅BC25/EC600E/EC800E系列支持获取sinr，其余模组型号均不支持
@@ -143,41 +143,25 @@ net.getConfig()
 
 * 网络制式
 
-| 值   |  网络制式                                                     |
-| ---- | ------------------------------------------------------------ |
-| 0    | GSM                                                          |
-| 1    | UMTS                                                         |
-| 2    | GSM_UMTS（auto）                                             |
-| 3    | GSM_UMTS（GSM preferred）                                    |
-| 4    | GSM_UMTS（UMTS preferred）                                   |
-| 5    | LTE                                                          |
-| 6    | GSM_LTE（auto）                                              |
-| 7    | GSM_LTE（GSM preferred）                                     |
-| 8    | GSM_LTE（LTE preferred）                                     |
-| 9    | UMTS_LTE（auto）                                             |
-| 10   | UMTS_LTE（UMTS preferred）                                   |
-| 11   | UMTS_LTE（LTE preferred）                                    |
-| 12   | GSM_UMTS_LTE（auto）                                         |
-| 13   | GSM_UMTS_LTE（GSM preferred）                                |
-| 14   | GSM_UMTS_LTE（UMTS preferred）                               |
-| 15   | GSM_UMTS_LTE（LTE preferred）                                |
-| 16   | GSM_LTE（dual link）                                         |
-| 17   | UMTS_LTE（dual link）                                        |
-| 18   | GSM_UMTS_LTE（dual link）                                    |
-| 19   | CATM,             BG95 supported                             |
-| 20   | GSM_CATM,         BG95 supported                             |
-| 21   | CATNB,            BG95 supported                             |
-| 22   | GSM_CATNB,        BG95 supported                             |
-| 23   | CATM_CATNB,       BG95 supported                             |
-| 24   | GSM_CATM_CATNB,   BG95 supported                             |
-| 25   | CATM_GSM,         BG95 supported                             |
-| 26   | CATNB_GSM,        BG95 supported                             |
-| 27   | CATNB_CATM,       BG95 supported                             |
-| 28   | GSM_CATNB_CATM,   BG95 supported                             |
-| 29   | CATM_GSM_CATNB,   BG95 supported                             |
-| 30   | CATM_CATNB_GSM,   BG95 supported                             |
-| 31   | CATNB_GSM_CATM,   BG95 supported                             |
-| 32   | CATNB_CATM_GSM,   BG95 supported                             |
+| 值   | 网络制式                       |      | 值   | 网络制式                         |
+| ---- | :----------------------------- | ---- | ---- | -------------------------------- |
+| 0    | GSM                            |      | 17   | UMTS_LTE（dual link）            |
+| 1    | UMTS                           |      | 18   | GSM_UMTS_LTE（dual link）        |
+| 2    | GSM_UMTS（auto）               |      | 19   | CATM,             BG95 supported |
+| 3    | GSM_UMTS（GSM preferred）      |      | 20   | GSM_CATM,         BG95 supported |
+| 4    | GSM_UMTS（UMTS preferred）     |      | 21   | CATNB,            BG95 supported |
+| 5    | LTE                            |      | 22   | GSM_CATNB,        BG95 supported |
+| 6    | GSM_LTE（auto）                |      | 23   | CATM_CATNB,       BG95 supported |
+| 7    | GSM_LTE（GSM preferred）       |      | 24   | GSM_CATM_CATNB,   BG95 supported |
+| 8    | GSM_LTE（LTE preferred）       |      | 25   | CATM_GSM,         BG95 supported |
+| 9    | UMTS_LTE（auto）               |      | 26   | CATNB_GSM,        BG95 supported |
+| 10   | UMTS_LTE（UMTS preferred）     |      | 27   | CATNB_CATM,       BG95 supported |
+| 11   | UMTS_LTE（LTE preferred）      |      | 28   | GSM_CATNB_CATM,   BG95 supported |
+| 12   | GSM_UMTS_LTE（auto）           |      | 29   | CATM_GSM_CATNB,   BG95 supported |
+| 13   | GSM_UMTS_LTE（GSM preferred）  |      | 30   | CATM_CATNB_GSM,   BG95 supported |
+| 14   | GSM_UMTS_LTE（UMTS preferred） |      | 31   | CATNB_GSM_CATM,   BG95 supported |
+| 15   | GSM_UMTS_LTE（LTE preferred）  |      | 32   | CATNB_CATM_GSM,   BG95 supported |
+| 16   | GSM_LTE（dual link）           |      |      |                                  |
 
 >BC25系列不支持此方法
 
@@ -254,6 +238,7 @@ net.getNetMode()
 | `act`            | 整型值 | 首选网络的ACT模式        |
 
 `ACT`模式枚举值参照下表：
+
 | 值   | ACT模式            |
 | ---- | ------------------ |
 | 0    | GSM                |
@@ -269,6 +254,7 @@ net.getNetMode()
 | 10   | NONE               |
 
 BG95系列模组`ACT`模式枚举值参照下表：
+
 | 值   | ACT模式             |
 | ---- | ------------------ |
 | 0    | GSM                |
@@ -441,16 +427,17 @@ net.getState()
 
 * 返回值参数说明：
 
-  | 参数           | 参数说明                                                     |
-  | -------------- | ------------------------------------------------------------ |
-  | `state`        | 网络注册状态，具体见下表                                     |
-  | `lac`          | 位置区码，范围 1 ~ 65534                                     |
-  | `cid`          | cell id，范围 0x00000000 ~ 0x0FFFFFFF，具体见`net.csqQueryPoll()`中返回值 |
-  | ``rat``        | 接入技术，access technology，具体见后面表格                  |
-  | `reject_cause` | 注册被拒绝的原因，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
-  | `psc`          | 主扰码，Primary Scrambling Code，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
+| 参数           | 参数说明                                                     |
+| -------------- | ------------------------------------------------------------ |
+| `state`        | 网络注册状态，具体见下表                                     |
+| `lac`          | 位置区码，范围 1 ~ 65534                                     |
+| `cid`          | cell id，范围 0x00000000 ~ 0x0FFFFFFF，具体见`net.csqQueryPoll()`中返回值 |
+| ``rat``        | 接入技术，access technology，具体见后面表格                  |
+| `reject_cause` | 注册被拒绝的原因，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
+| `psc`          | 主扰码，Primary Scrambling Code，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
 
 * 网络注册状态`state`枚举值见下表：
+
 | 值   | 状态说明                                                     |
 | ---- | ------------------------------------------------------------ |
 | 0    | not registered, MT is not currently searching an operator to register to |
@@ -467,6 +454,7 @@ net.getState()
 | 11   | emergency bearer services only                               |
 
 * 接入技术`access technology`
+
 | 值   | 说明               |
 | ---- | ------------------ |
 | 0    | GSM                |
@@ -482,22 +470,22 @@ net.getState()
 | 10   | NONE               |
 
 > 注：BG77/BG95系列参照下表
->
-> | 值   | 说明               |
-> | ---- | ------------------ |
-> | 0    | GSM                |
-> | 1    | GSM COMPACT        |
-> | 2    | UTRAN              |
-> | 3    | GSM wEGPRS         |
-> | 4    | UTRAN wHSDPA       |
-> | 5    | UTRAN wHSUPA       |
-> | 6    | UTRAN wHSDPA HSUPA |
-> | 7    | E_UTRAN            |
-> | 8    | UTRAN HSPAP        |
-> | 9    | E_UTRAN_CA         |
-> | 10   | E_UTRAN_NBIOT      |
-> | 11   | E_UTRAN_EMTC       |
-> | 12   | NONE               |
+
+| 值   | 说明               |
+| ---- | ------------------ |
+| 0    | GSM                |
+| 1    | GSM COMPACT        |
+| 2    | UTRAN              |
+| 3    | GSM wEGPRS         |
+| 4    | UTRAN wHSDPA       |
+| 5    | UTRAN wHSUPA       |
+| 6    | UTRAN wHSDPA HSUPA |
+| 7    | E_UTRAN            |
+| 8    | UTRAN HSPAP        |
+| 9    | E_UTRAN_CA         |
+| 10   | E_UTRAN_NBIOT      |
+| 11   | E_UTRAN_EMTC       |
+| 12   | NONE               |
 
 
 

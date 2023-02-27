@@ -1,4 +1,4 @@
-# `class wifilocator` - WIFI定位
+# class wifilocator - WIFI定位
 
 `wifilocator`对象提供WIFI定位功能，获取模组经纬度坐标信息。
 
