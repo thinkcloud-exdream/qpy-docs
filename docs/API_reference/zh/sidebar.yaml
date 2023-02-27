@@ -19,7 +19,7 @@ items:
     -   label: uio - 输入输出流
         file: QuecPython标准库/uio.md
     -   label: ustruct - 打包和解压原始数据类型
-        file: QuecPython标准库/uio.md
+        file: QuecPython标准库/ustruct.md
     -   label: ujson - JSON编码和解码
         file: QuecPython标准库/ujson.md
     -   label: utime - 时间相关功能
@@ -57,6 +57,8 @@ items:
         file: QuecPython类库/wifiScan.md
     -   label: ethernet - 以太网相关功能
         file: QuecPython类库/ethernet.md
+    -   label: WLAN - 无线局域网相关功能
+        file: QuecPython类库/WLAN.md
     -   label: misc - 其他
         file: QuecPython类库/misc.md
         items:

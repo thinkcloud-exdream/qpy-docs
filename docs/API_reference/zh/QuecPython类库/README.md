@@ -19,6 +19,7 @@
 - [misc - 其他](./misc.md)
 - [qrcode - 二维码显示](./qrcode.md)
 - [ethernet - 以太网相关功能](./ethernet.md)
+- [WLAN - 无线局域网相关功能](./WLAN.md)
 - [uping - 发送ping包](./uping.md)
 - [pm - 低功耗相关功能](./pm.md)
 - [modem - 设备相关功能](./modem.md)
