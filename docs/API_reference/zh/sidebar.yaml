@@ -57,6 +57,15 @@ items:
         file: QuecPython类库/wifiScan.md
     -   label: ethernet - 以太网相关功能
         file: QuecPython类库/ethernet.md
+    -   label: misc - 其他
+        file: QuecPython类库/misc.md
+        items:
+        -   label: USBNET - USB网卡
+            file: QuecPython类库/misc.USBNET.md
+        -   label: Power - 关机和重启
+            file: QuecPython类库/misc.Power.md
+    -   label: qrcode - 二维码显示
+        file: QuecPython类库/qrcode.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:
