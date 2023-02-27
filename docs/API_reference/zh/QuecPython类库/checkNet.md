@@ -16,7 +16,7 @@ checkNet.waitNetworkReady(timeout)
 
 **参数描述：**
 
-* `timeout` - 超时时间，整型值，范围1~3600秒，默认60秒。
+* `timeout` - 超时时间，整型值，范围1~3600秒，默认`60`秒。
 
 **返回值描述：**
 
@@ -27,7 +27,7 @@ checkNet.waitNetworkReady(timeout)
 | stage | 整形 | 表示当前正在检测什么状态：<br/>1 - 正在检测SIM卡状态<br/>2 - 正在检测网络注册状态<br/>3 - 正在检测PDP Context激活状态 |
 | state | 整形 | 根据stage值，来表示不同的状态，具体如下：<br>stage = 1时，state表示 SIM卡的状态，范围0~21，每个值的详细说明，请参考`sim.getStatus()`方法的返回值说明；<br>stage = 2时，state表示网络注册状态，范围0~11，每个状态值的详细说明，请参考`net.getState()`方法的返回值说明；<br>stage = 3时，state表示PDP Context激活状态，0表示没有激活成功，1表示激活成功。 |
 
-如果网络已经就绪，应该返回(3,1)，如果返回值不是(3,1)，可参考如下说明来排查定位问题：
+如果网络已经就绪，应该返回`(3,1)`，如果返回值不是`(3,1)`，可参考如下说明来排查定位问题：
 
 <table>
 	<tr>
@@ -67,6 +67,7 @@ checkNet.waitNetworkReady(timeout)
         <td>这是正常返回情况，说明网络已就绪，可进行网络相关业务操作。</td>
 	</tr>
 </table>
+
 
 
 
