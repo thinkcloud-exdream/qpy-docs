@@ -1,4 +1,4 @@
-# `urandom` - 生成随机数
+# urandom - 生成随机数
 
 urandom 模块提供了生成随机数的工具。
 

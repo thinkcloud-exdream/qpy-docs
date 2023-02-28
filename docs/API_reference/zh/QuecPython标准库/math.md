@@ -1,4 +1,4 @@
-# `math` - 数学运算
+# math - 数学运算
 
 math 模块提供数学运算函数。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[math](https://docs.python.org/3.5/library/math.html#module-math)
 

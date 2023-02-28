@@ -35,6 +35,8 @@ items:
 -   label: QuecPython类库
     file: QuecPython类库/README.md
     items:
+    -   label: example - 执行python脚本
+        file: QuecPython类库/example.md
     -   label: dataCall - 拨号
         file: QuecPython类库/dataCall.md
     -   label: atcmd - 发送AT指令
@@ -66,10 +68,20 @@ items:
             file: QuecPython类库/misc.USBNET.md
         -   label: Power - 关机和重启
             file: QuecPython类库/misc.Power.md
+    -   label: modem - 设备相关
+        file: QuecPython类库/modem.md
     -   label: machine - 硬件相关功能
         file: QuecPython类库/machine.md
     -   label: qrcode - 二维码显示
         file: QuecPython类库/qrcode.md
+    -   label: pm - 低功耗
+        file: QuecPython类库/pm.md
+    -   label: gnss - 外置GNSS
+        file: QuecPython类库/gnss.md
+    -   label: quecgnss - 内置GNSS
+        file: QuecPython类库/quecgnss.md
+    -   label: securedata - 安全数据区
+        file: QuecPython类库/securedata.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:

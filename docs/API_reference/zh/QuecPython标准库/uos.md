@@ -1,4 +1,4 @@
-# `uos` - 基本系统服务
+# uos - 基本系统服务
 
 `uos`模块包含文件系统访问和挂载构建，该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：[os](https://docs.python.org/3.5/library/os.html#module-os)
 
