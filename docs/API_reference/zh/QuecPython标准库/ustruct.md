@@ -1,7 +1,7 @@
 
 # ustruct - 打包和解压原始数据类型
 
-模块功能：`ustruct`模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[struct](https://docs.python.org/3/library/struct.html)
+模块功能：`ustruct`模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[struct](https://docs.python.org/3.5/library/struct.html#module-struct)
 
 
 ## 格式字符串
@@ -28,11 +28,8 @@
 
 | Format | C Type               | Python type | Standard size |
 | ------ | -------------------- | ----------- | ------------- |
-| `x`    | `pad byte`           | no value    |               |
-| `c`    | `char`               | bytes of length 1 | 1       |
 | `b`    | `signed char`        | integer     | 1             |
 | `B`    | `unsigned char`      | integer     | 1             |
-| `?`    | `_Bool`              | bool        | 1             |
 | `h`    | `short`              | integer     | 2             |
 | `H`    | `unsigned short`     | integer     | 2             |
 | `i`    | `int`                | integer     | 4             |
@@ -41,13 +38,8 @@
 | `L`    | `unsigned long`      | integer     | 4             |
 | `q`    | `long long`          | integer     | 8             |
 | `Q`    | `unsigned long long` | integer     | 8             |
-| `n`    | `ssize_t`            | integer     |               |
-| `N`    | `size_t`             | integer     |               |
-| `e`    |                      | float       | 2             |
 | `f`    | `float`              | float       | 4             |
 | `d`    | `double`             | float       | 8             |
-| `s`    | `char[]`             | bytes       |               |
-| `p`    | `char[]`             | bytes       |               |
 | `P`    | `void *`             | integer     | 4             |
 
 
