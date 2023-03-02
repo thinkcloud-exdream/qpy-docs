@@ -1,4 +1,4 @@
-# `quecgnss` - 内置GNSS
+# quecgnss - 内置GNSS
 
 此模块提供内置GNSS的使用接口
 
