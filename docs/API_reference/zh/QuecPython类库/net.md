@@ -81,7 +81,7 @@ net.getCellInfo([sinrEnable])
 | 参数     | 参数意义                                                     |
 | -------- | ------------------------------------------------------------ |
 | `flag`   | 小区类型，范围0 - 3，0：当前服务小区，1：邻区，2：同频邻区 ，3：异频邻区 |
-| `cid`    | 返回UMTS网络下的 Cell identity 信息，Cell identity = RNC_ID * 65536 + Cell_ID，Cell identity范围 0x0000000 ~ 0xFFFFFFF（注意这里是28bits）；其中RNC_ID的范围是0 ~ 4095，Cell_ID的范围是0 ~ 65535 |
+| `cid`    | 表示UMTS网络下的 Cell identity ，Cell identity = RNC_ID * 65536 + Cell_ID，Cell identity范围 0x0000000 ~ 0xFFFFFFF（注意这里是28bits）；即Cell identity前两个字节是RNC_ID，后两个字节是Cell_ID，Cell_ID的范围是0 ~ 65535 |
 | `lcid`   | URA ID，范围 0 ~ 65535，0表示该信息不存在                    |
 | `mcc`    | 移动设备国家代码，范围 0 ~ 999                               |
 | `mnc`    | 移动设备网络代码，范围 0 ~ 99                                |
@@ -95,7 +95,7 @@ net.getCellInfo([sinrEnable])
 | 参数   | 参数意义                                                     |
 | ------ | ------------------------------------------------------------ |
 | `flag` | 小区类型，范围0 - 3，0：当前服务小区，1：邻区，2：同频邻区 ，3：异频邻区 |
-| `cid`  | 返回LTE网络下的 Cell identity 信息，Cell identity = RNC_ID * 65536 + Cell_ID，Cell identity范围 0x0000000 ~ 0xFFFFFFF（注意这里是28bits）；其中RNC_ID的范围是0 ~ 4095，Cell_ID的范围是0 ~ 65535 |
+| `cid`  | 表示LTE网络下的小区标识（Cell Identity），也叫ECI（E-UTRAN Cell Identifier），ECI = eNodeB ID *256 + Cell ID组成，范围0x0000000 ~ 0xFFFFFFF（注意是28bits），前20bit表示基站标识（eNodeB ID），后8bit表示LTE小区ID（Cell ID） |
 | `mcc`  | 移动设备国家代码，范围 0 ~ 999                               |
 | `mnc`  | 移动设备网络代码，范围 0 ~ 99                                |
 | `pci`  | 物理层小区标识号，0 ~ 503                                    |
