@@ -159,7 +159,5 @@ web配网之后ESP8266会自动重启连接，之后每次上电ESP8266就会自
 
 ## 外挂WiFi功能应用实例
 
-[WLAN.py](../code/WLAN.py)
-[ap.py](../code/ap.py)
-[station.py](../code/station.py)
-[web.py](../code/web.py)
+[code](https://gitee.com/q767904101/quec-python_-code.git)
+

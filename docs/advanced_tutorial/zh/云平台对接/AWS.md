@@ -1,3 +1,68 @@
+# 云平台对接-AWS应用开发
+
+## 什么是云平台AWS
+
+AWS 全称Amazon web service(亚马逊网络服务),是亚马逊公司旗下云计算服务平台,为全世界各个国家和地区的客户提供一整套基础设施和云解决方案。 AWS面向用户提供包括弹性计算、存储、数据库、物联网在内的一整套云计算服务,帮助企业降低IT投入和维护成本,轻松上云 从概念是来看,AWS提供了一系列的托管产品,帮助我们在没有物理服务器的情况下,照样可以正常完成软件开发中的各种需求,也就是我们常说的云服务。
+
+## 怎么使用云平台AWS
+
+#### 【进入平台】
+
+[亚马逊云首页](https://amazonaws-china.com/cn/)点击【产品】---【物联网】---【AWS IoT Core】
+
+![image-20230301153819079](../media/云平台对接/AWS/云平台对接AWS_01.png)
+
+![image-20230301154126556](../media/云平台对接/AWS/云平台对接AWS_02.png)
+
+![image-20230301154323459](../media/云平台对接/AWS/云平台对接AWS_03.png)
+
+#### 【创建策略】
+
+![image-20230301154602272](../media/云平台对接/AWS/云平台对接AWS_04.png)
+
+![image-20230301155516253](../media/云平台对接/AWS/云平台对接AWS_05.png)
+
+#### 【创建物品】
+
+![image-20230301161042093](../media/云平台对接/AWS/云平台对接AWS_06.png)
+
+![image-20230301161125928](../media/云平台对接/AWS/云平台对接AWS_07.png)
+
+![image-20230301161323026](../media/云平台对接/AWS/云平台对接AWS_08.png)
+
+![image-20230301161410209](../media/云平台对接/AWS/云平台对接AWS_09.png)
+
+![image-20230301161505534](../media/云平台对接/AWS/云平台对接AWS_10.png)
+
+![image-20230301161743688](../media/云平台对接/AWS/云平台对接AWS_11.png)
+
+![image-20230301161854690](../media/云平台对接/AWS/云平台对接AWS_12.png)
+
+至此完成“创建物品”。用证书连接AWS IoT平台，同一个证书可以用于多个设备，不同设备的Client ID保持唯一。
+
+
+
+#### 【设备通信】
+
+获取AWS服务器的MQTT连接地址、端口：
+
+![image-20230301163235249](../media/云平台对接/AWS/云平台对接AWS_13.png)
+
+使用MQTT.fx工具测试通信，在订阅主题栏填写“#”，表示接收所有主题。
+
+![13](../media/云平台对接/AWS/云平台对接AWS_14.png)
+
+![12](../media/云平台对接/AWS/云平台对接AWS_15.png)
+
+ 
+
+
+
+### 软件应用
+
+看到代码在创建MQTTClient的时间，设置了ssl=True，"cert": certificate_content，"key": private_content 等关键参数，其中证书是在AWS平台下载获取。
+
+```python
 from umqtt import MQTTClient
 import modem
 import _thread
@@ -160,4 +225,18 @@ if __name__ == '__main__':
         print('Not Net, Resatrting...')
         utime.sleep_ms(200)
         Power.powerRestart()
+        
     main()
+
+```
+
+## 云平台AWS功能测试
+
+使用QPYcom运行代码，下面实例是基于uMQTT执行连接云平台的效果。
+
+![image-20230301165904773](../media/云平台对接/AWS/云平台对接AWS_16.png)
+
+## 云平台AWS功能应用实例
+
+[code](https://gitee.com/q767904101/quec-python_-code.git)
+
