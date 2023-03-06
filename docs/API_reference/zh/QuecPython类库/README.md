@@ -15,6 +15,8 @@
 - [net - 网络相关功能](./net.md)
 - [cellLocator - 基站定位](./cellLocator.md)
 - [wifilocator - WiFi定位](./wifilocator.md)
+- [fota-固件升级相关功能](./fota.md)
+- [app_fota-用户文件升级相关功能](./app_fota.md)
 - [machine - 硬件相关功能](./machine.md)
 - [misc - 其他](./misc.md)
 - [qrcode - 二维码显示](./qrcode.md)

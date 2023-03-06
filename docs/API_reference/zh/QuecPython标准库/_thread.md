@@ -83,7 +83,8 @@ _thread.get_ident()
 
 **返回值描述：**
 
-返回当前线程号。
+- 返回当前线程号。
+
 
 ### `_thread.stack_size`
 
