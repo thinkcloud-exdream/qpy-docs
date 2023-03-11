@@ -10,13 +10,13 @@ PWM技术在电子工程、控制系统和机械工程等领域得到广泛应�
 
 ## 怎么使用PWM
 
-使用PWM技术需要通过特定的电路或芯片来生成PWM信号，支持QuecPython开发的模组大部分都具有此功能，具体可见[PWM功能API文档](../../API_reference/zh/QuecPython类库/PWM.html)确认是否支持此功能，可以按照以下步骤进行：
+使用PWM技术需要通过特定的电路或芯片来生成PWM信号，支持QuecPython开发的模组大部分都具有此功能，具体可见[PWM功能API文档](../../../API_reference/zh/QuecPython类库/misc.PWM.html)确认是否支持此功能，可以按照以下步骤进行：
 
 ### 硬件设计
 
-根据上述[PWM功能API文档](../../API_reference/zh/QuecPython类库/machine.PWM.html)介绍的引脚号和模组的硬件设计文档(从[下载区](/download/)获取)设计好硬件电路即可。设计硬件电路注意需要注意电平转换，以及电平转换电路的最大输出频率。
+根据上述[PWM功能API文档](../../../API_reference/zh/QuecPython类库/misc.PWM.html)介绍的引脚号和模组的硬件设计文档(从[下载区](/download/)获取)设计好硬件电路即可。设计硬件电路注意需要注意电平转换，以及电平转换电路的最大输出频率。
 
-如模组本身不支持或支持的数量不够用，则可以使用模组支持的任意一个[GPIO](../../API_reference/zh/QuecPython类库/machine.Pin.html)结合[定时器](../../API_reference/zh/QuecPython类库/machine.Timer.html)来粗略模拟输出PWM信号,硬件设计相同，软件实现可见下文。
+如模组本身不支持或支持的数量不够用，则可以使用模组支持的任意一个[GPIO](../../../API_reference/zh/QuecPython类库/machine.Pin.html)结合[定时器](../../../API_reference/zh/QuecPython类库/machine.Timer.html)来粗略模拟输出PWM信号,硬件设计相同，软件实现可见下文。
 
 ### 软件应用
 
