@@ -6,7 +6,7 @@
 
 
 
-> 强烈建议用户使用不同运营商的SIM卡时，配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组注网失败或拨号失败，模组获取不到IP地址，无法上网。配置APN的方式，参考`dataCall.setPDPContext`方法。
+> 用户使用不同运营商的SIM卡时，应配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组注网失败或拨号失败，模组获取不到IP地址，无法上网。配置APN的方式，参考`dataCall.setPDPContext`方法。
 
 
 
@@ -66,7 +66,7 @@ dataCall.setPDPContext(profileID, ipType, apn, username, password, authType)
 
 - `password` - 密码，字符串类型，可为空，为空直接写`''`，范围0~64字节。
 
-- `authType` - APN鉴权方式，整形值，取值范围见下表枚举：
+- `authType` - APN鉴权方式，整型值，取值范围见下表枚举：
 
 | 值   | 含义      |
 | ---- | --------- |
@@ -267,8 +267,8 @@ def netCallback(args):
 
 | 参数    | 类型 | 含义                                             |
 | ------- | ---- | ------------------------------------------------ |
-| args[0] | 整形 | PDP上下文ID，表示当前是哪一路PDP网络状态发生变化 |
-| args[1] | 整形 | 网络状态，0表示网络断开，1表示网络连接成功       |
+| args[0] | 整型 | PDP上下文ID，表示当前是哪一路PDP网络状态发生变化 |
+| args[1] | 整型 | 网络状态，0表示网络断开，1表示网络连接成功       |
 
 **返回值描述：**
 
@@ -392,10 +392,10 @@ dataCall.getInfo(profileID, ipType)
 
 | 参数      | 类型   | 含义                                                         |
 | --------- | ------ | ------------------------------------------------------------ |
-| profileID | 整形   | PDP上下文ID                                                  |
-| ipType    | 整形   | IP协议类型，有如下几个值：<br>0表示IPv4<br>1表示IPv6<br>2表示IPv4和IPv6 |
-| state     | 整形   | IPv4或IPv6的拨号状态<br>0表示未拨号或拨号失败<br>1表示拨号成功 |
-| reconnect | 整形   | 拨号重连标志，保留参数，暂未使用                             |
+| profileID | 整型   | PDP上下文ID                                                  |
+| ipType    | 整型   | IP协议类型，有如下几个值：<br>0表示IPv4<br>1表示IPv6<br>2表示IPv4和IPv6 |
+| state     | 整型   | IPv4或IPv6的拨号状态<br>0表示未拨号或拨号失败<br>1表示拨号成功 |
+| reconnect | 整型   | 拨号重连标志，保留参数，暂未使用                             |
 | addr      | 字符串 | IPv4或IPv6的地址，具体取决于输入参数ipType的值：<br>ipType为0，addr为IPv4地址<br>ipType为1，addr为IPv6地址 |
 | priDNS    | 字符串 | 主要DNS服务器地址                                            |
 | secDNS    | 字符串 | 辅助DNS服务器地址                                            |
