@@ -29,11 +29,11 @@ checkNet.waitNetworkReady(timeout)
 
 如果网络已经就绪，则返回`(3,1)`，否则可参考如下说明来排查定位问题：
 
-<table>
+<table >
 	<tr>
-	    <td>stage</td>
-        <td>state</td>
-        <td>说明</td>
+	    <th bgcolor=#ED1922>stage</td>
+        <th bgcolor=#ED1922>state</td>
+        <th bgcolor=#ED1922>说明</td>
 	</tr >
 	<tr>
 	    <td rowspan="2">1</td>
