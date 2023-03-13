@@ -39,15 +39,15 @@ items:
         file: QuecPython类库/example.md
     -   label: dataCall - 拨号
         file: QuecPython类库/dataCall.md
-    -   label: atcmd - 发送AT指令
+    -   label: atcmd - 发送AT指令功能
         file: QuecPython类库/atcmd.md
-    -   label: sim - SIM卡
+    -   label: sim - SIM卡功能
         file: QuecPython类库/sim.md
-    -   label: sms - 短信
+    -   label: sms - 短信功能
         file: QuecPython类库/sms.md
-    -   label: voiceCall - 电话
+    -   label: voiceCall - 电话功能
         file: QuecPython类库/voiceCall.md
-    -   label: net - 网络
+    -   label: net - 网络相关功能
         file: QuecPython类库/net.md
     -   label: cellLocator - 基站定位
         file: QuecPython类库/cellLocator.md

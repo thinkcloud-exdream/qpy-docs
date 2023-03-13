@@ -1,6 +1,6 @@
 # class wifilocator - WIFI定位
 
-`wifilocator`对象提供WIFI定位功能，获取模组经纬度坐标信息。
+模块功能：提供WIFI定位功能的类，获取模组经纬度坐标信息。
 
 
 
@@ -16,7 +16,7 @@ import wifilocator
 wifiloc = wifilocator.wifilocator("xxxxxxxxxxxxxxxx")
 # 获取模块坐标信息
 wifiloc.getwifilocator()
-# 返回结果 (117.1152877807617, 31.82142066955567, 100)
+(117.1152877807617, 31.82142066955567, 100)
 # 上面使用的密钥"xxxxxxxxxxxxxxxx"指代token，具体需要向移远申请
 ```
 
@@ -48,10 +48,6 @@ wifilocator.getwifilocator()
 
 该方法用于获取模组经纬度坐标信息。
 
-**参数描述**
-
-无
-
 **返回值描述：**
 
 成功返回模组经纬度坐标信息，元组格式：`(longtitude, latitude, accuracy)`；
@@ -68,7 +64,7 @@ wifilocator.getwifilocator()
 
 `2` – 密钥长度错误，必须为16字节
 
-`3` – 获取坐标出错
+`3` – 获取坐标出错。
 
 
 
