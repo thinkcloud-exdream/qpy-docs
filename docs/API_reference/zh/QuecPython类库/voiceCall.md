@@ -1,10 +1,10 @@
 # voiceCall - 电话功能
 
-`voiceCall`模块提供电话功能相关接口。
+模块功能：该模块提供电话功能相关接口。
 
 
 
->注：
+>注意：
 >* 支持voiceCall功能的模组：
 > EC100Y系列：EC100YCN_AA
 > EC200N系列：EC200NCN_AA/EC200NCN_AC/EC200NCN_LA
@@ -15,7 +15,7 @@
 > EC200A系列：EC200AAU_HA/EC200ACN_DA/EC200ACN_HA/EC200ACN_LA/EC200AEU_HA
 > EC200U系列：EC200UAU_AB/EC200UCN_AA/EC200UEU_AA/EC200UEU_AB
 > EC600U系列：EC600CEU_AB/EG912UGL_AA/EG915UEU_AB
-> BC25系列/EC600G系列/EC800G系列/BG95系列/BG77系列模组不支持voiceCall功能
+> BC25/EC600G/EC800G/BG95/BG77系列模组不支持voiceCall功能。
 >* 其他系列模组需要定制版本才能支持voiceCall功能。
 
 
@@ -66,7 +66,7 @@ voiceCall.callStart(phonenum)
 
   成功返回整型`0`，失败返回整型`-1`。
 
-**示例描述：**
+**示例：**
 
 ```python
 >>> voiceCall.callStart("13855169092")
@@ -151,7 +151,7 @@ def voicecallFun(args):
 | 7    | 1        | 呼出中                                        |                                                              |
 | 8    | 4        | 呼出失败                                      | `args[1]`：呼叫识别号码<br/>`args[2]`：呼叫失败原因<br/>`args[3]`：指示是否可以从网络端获得in-band tones |
 | 9    | 3        | 等待                                          | `args[1]`：呼叫识别号码<br>`args[2]`：电话号码               |
-| 10   | 8        | 来电通知，响铃（volte通话）                   | `args[1]`：呼叫识别号码<br/>`args[2]`：呼叫方向(MO/MT)<br/>`args[3]`：通话状态<br/>`args[4]`：业务类型(这里一般都是0，表示voice call，语音通话业务)<br/>`args[5]`：多方通话标志，0：非多方通话 1：多方通话<br/>`args[6]`：电话号码<br/>`args[7]`：号码类型[129/145],129:非国际号码,145:国际号码 |
+| 10   | 8        | 来电通知，响铃（volte通话）                   | `args[1]`：呼叫识别号码<br/>`args[2]`：呼叫方向(MO/MT)<br/>`args[3]`：通话状态<br/>`args[4]`：业务类型(这里一般都是0，表示voice call，语音通话业务)<br/>`args[5]`：多方通话标志，0：非多方通话，1：多方通话<br/>`args[6]`：电话号码<br/>`args[7]`：号码类型[129/145],129:非国际号码,145:国际号码 |
 | 11   | 8        | 通话接通（volte通话）                         | `args[1] ~ args[7]`：具体说明同上                            |
 | 12   | 8        | 通话挂断（volte通话）                         | `args[1] ~ args[7]`：具体说明同上                            |
 | 13   | 8        | 呼叫等待（volte通话）                         | `args[1] ~ args[7]`：具体说明同上                            |
@@ -234,7 +234,7 @@ voiceCall.setAutoCancel(enable)
 
 **参数描述：** 
 
-* `enable` - 开启或者关闭来电自动挂断功能，`1`：开启，`0`：关闭 (默认不开启)
+* `enable` - 开启或者关闭来电自动挂断功能，`1`：开启，`0`：关闭 (默认不开启)。
 
 **返回值描述：**
 
@@ -242,7 +242,7 @@ voiceCall.setAutoCancel(enable)
 
 
 
->注：EC200AAU_HA/EC200ACN_DA/EC200ACN_HA/EC200ACN_LA/EC200AEU_HA系列模组支持该功能
+>注意：EC200AAU_HA/EC200ACN_DA/EC200ACN_HA/EC200ACN_LA/EC200AEU_HA系列模组支持该功能
 
 
 
@@ -272,9 +272,9 @@ voiceCall.getAutoCancelStatus()
 
 **返回值描述：**
 
-`0`：来电自动挂断使能关闭，来电不会被模组自动挂断
+`0`：来电自动挂断使能关闭，来电不会被模组自动挂断。
 
-`1`：来电自动挂断使能开启，来电会被模组自动挂断
+`1`：来电自动挂断使能开启，来电会被模组自动挂断。
 
 **示例：**
 
@@ -304,7 +304,7 @@ voiceCall.startDtmf(dtmf, duration)
 
 **参数描述：**
 
-* `dtmf` - DTMF字符串，字符串类型，最大字符数：32个，有效字符数有：`0-9、A、B、C、D、*、#`
+* `dtmf` - DTMF字符串，字符串类型，最大字符数：32个，有效字符数有：`0-9、A、B、C、D、*、#`。
 * `duration` - 持续时间，整型值，范围：100-1000，单位：毫秒。
 
 **返回值描述：**
@@ -313,7 +313,7 @@ voiceCall.startDtmf(dtmf, duration)
 
 
 
->注：该方法仅在语音通话过程中使用生效
+>注意：该方法仅在语音通话过程中使用生效
 
 
 
@@ -336,7 +336,7 @@ voiceCall.dtmfDetEnable(enable)
 
 **参数描述：**
 
-* `enable` - 使能开关，整型值，取值`0/1`，`0`：不开启DTMF识别，`1`：开启DTMF识别
+* `enable` - 使能开关，整型值，取值`0/1`，`0`：不开启DTMF识别，`1`：开启DTMF识别。
 
 **返回值描述：**
 
@@ -344,7 +344,7 @@ voiceCall.dtmfDetEnable(enable)
 
 
 
->注：支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法
+>注意：支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
 
 
 
@@ -375,7 +375,7 @@ def dtmfFun(args):
 
 
 
->注：支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法
+>注意：支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
 
 
 
@@ -501,7 +501,7 @@ voiceCall.setVolume(volume)
 
 * `volume` - 音量等级，整型值，范围`（0 ~ 11）`，数值越大，音量越大。
 
-**返回值：**
+**返回值描述：**
 
 设置成功返回整型`0`，失败返回整型`-1`。
 
@@ -520,7 +520,7 @@ voiceCall.setAutoRecord(enable, recordType, recordMode, filename)
 
 **参数描述：**
 
-* `enable` - 使能开关，整型值，取值0或1，`0`：关闭自动录音功能 ，`1`：开启自动录音功能
+* `enable` - 使能开关，整型值，取值0或1，`0`：关闭自动录音功能 ，`1`：开启自动录音功能。
 * `recordType` - 录音文件类型，整型值，具体如下：
 
 | 值 | 说明 |
@@ -582,7 +582,7 @@ voiceCall.startRecord(recordType, recordMode, filename)
 
 设置成功返回整型`0`，设置失败返回整型`-1`，不支持该接口返回字符串`"NOT SUPPORT"`。
 
-**示例描述：**
+**示例：**
 
 ```python
 >>> voiceCall.startRecord(0,2,'U:/test.amr')
@@ -622,7 +622,7 @@ voiceCall.readRecordStream(readBuf, bufLen)
 
 **参数描述：**
 
-* `readBuf` - 存储读取到的数据，用于保存读取到的数据；
+* `readBuf` - 存储读取到的数据，用于保存读取到的数据。
 
 * `bufLen` - 期望读取的字符串长度（不能超过readBuf申请的字节长度）。
 
@@ -632,7 +632,7 @@ voiceCall.readRecordStream(readBuf, bufLen)
 
 
 
->说明：
+>注意：
 >* 录音流第一包数据均是对应格式文件的文件头
 >* wav格式录音流第一包数据不包含文件大小，需结束录音后自行计算
 
@@ -680,7 +680,7 @@ def recordStreamCallback(args):
 
 
 
->说明：
+>注意：
 >* 录音流第一包数据均是对应格式文件的文件头
 >* wav格式录音流第一包数据不包含文件大小，需结束录音后自行计算
 
