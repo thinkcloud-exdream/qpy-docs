@@ -69,6 +69,7 @@ voiceCall.callStart(phonenum)
 **示例：**
 
 ```python
+>>> import voiceCall
 >>> voiceCall.callStart("13855169092")
 0
 ```
@@ -115,6 +116,7 @@ voiceCall.callEnd()
 **示例：**
 
 ```python
+>>> import voiceCall
 >>> voiceCall.callEnd()
 0
 ```
@@ -166,6 +168,7 @@ def voicecallFun(args):
 **示例：**
 
 ```python
+>>> import voiceCall
 def voice_callback(args):
      if args[0] == 10:
          print('voicecall incoming call, PhoneNO: ', args[6])
@@ -209,6 +212,7 @@ def voice_callback(args):
 **示例：**
 
 ```python
+>>> import voiceCall
 def voice_callback(args):
 	if args[0] == 4106:
 		print('voicecall is waiting')
@@ -249,6 +253,7 @@ voiceCall.setAutoCancel(enable)
 **示例：**
 
 ```python
+>>> import voiceCall
 #手机呼叫模块，默认不会自动挂断
 >>> voiceCall.getAutoCancelStatus()
 0
@@ -279,6 +284,7 @@ voiceCall.getAutoCancelStatus()
 **示例：**
 
 ```python
+>>> import voiceCall
 #手机呼叫模块，默认不会自动挂断
 >>> voiceCall.getAutoCancelStatus()
 0
@@ -320,6 +326,7 @@ voiceCall.startDtmf(dtmf, duration)
 **示例：**
 
 ```python
+>>> import voiceCall
 >>> voiceCall.startDtmf('A',100)
 0
 ```
@@ -382,6 +389,7 @@ def dtmfFun(args):
 **示例：**
 
 ```python
+>>> import voiceCall
 >>> def cb(args):
 ... print(args)
 
@@ -585,6 +593,7 @@ voiceCall.startRecord(recordType, recordMode, filename)
 **示例：**
 
 ```python
+>>> import voiceCall
 >>> voiceCall.startRecord(0,2,'U:/test.amr')
 0
 ```
