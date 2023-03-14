@@ -21,7 +21,7 @@ sms.sendTextMsg(phoneNumber, msg, codeMode)
 **参数描述：**
 
 * `phoneNumber` - 接收方手机号码，字符串类型，最大长度不超过20字节。
-* `msg` - 待发送消息，字符串类型，长度不超过140个字节。
+* `msg` - 待发送消息，字符串类型，单条短信长度不超过140个字节。
 * `codeMode` -使用的字符编码方式，字符串类型，取值范围如下：
 
 | 值       | 含义                                           |
@@ -32,6 +32,16 @@ sms.sendTextMsg(phoneNumber, msg, codeMode)
 **返回值描述：**
 
 返回一个整型值，`0`表示发送成功，`-1`表示发送失败。
+
+
+
+> 注意：仅以下系列支持长短信：
+>
+> EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC800M/EG810M/EC200A系列支持6条正常短信长度；
+>
+> EC200U/EC600U/EG912U/EC600G/EC800G系列支持4条正常短信长度。
+
+
 
 **示例：**
 
@@ -57,7 +67,7 @@ sms.sendPduMsg(phoneNumber, msg, codeMode)
 **参数描述：**
 
 * `phoneNumber` - 接收方手机号码，字符串类型，最大长度不超过20字节。
-* `msg` - 待发送消息，字符串类型，长度不超过140个字节。
+* `msg` - 待发送消息，字符串类型，单条短信长度不超过140个字节。
 * `codeMode` -使用的字符编码方式，字符串类型，取值范围如下：
 
 | 值       | 含义                                           |
@@ -68,6 +78,16 @@ sms.sendPduMsg(phoneNumber, msg, codeMode)
 **返回值描述：**
 
 返回一个整型值，`0`表示发送成功，`-1`表示发送失败。
+
+
+
+> 注意：仅以下系列支持长短信：
+>
+> EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600M/EC800M/EG810M/EC200A系列支持6条正常短信长度；
+>
+> EC200U/EC600U/EG912U/EC600G/EC800G系列支持4条正常短信长度。
+
+
 
 **示例：**
 
@@ -94,7 +114,7 @@ sms.deleteMsg(index [, delmode])
 
 **参数描述：**
 
-* `index` - 索引号，整型值，需要删除短信的索引号；
+* `index` - 索引号，整型值，需要删除短信的索引号。
 * `delmode` - 模式，整型值，可选参数，当不写时默认为0，具体如下：
 
 | 值   | 说明                      |
@@ -154,6 +174,8 @@ sms.setSaveLoc(mem1, mem2, mem3)
 
 
 
+> 注意：不同系列短信默认存储空间有差异，用户根据自己的需求进行设置。
+>
 > EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC800M/EG810M/EC200A系列如果要改变接收消息的存储位置，需要同时设定mem2 & mem3；EC200U/EC600U/EG912U/EG915U/EC600G/EC800G系列只需设定mem3即可
 
 
@@ -385,6 +407,9 @@ sms.getCenterAddr()
 >>> import sms
 >>> sms.getCenterAddr()
 '+8613800551500'
+# 有些系列返回值中可能不带+，如EC600U系列：
+>>> sms.getCenterAddr()
+'8613800551500'
 ```
 
 
@@ -429,7 +454,7 @@ def usrFun(args):
 
 | 参数      | 类型   | 参数说明             |
 | --------- | ------ | -------------------- |
-| `args[0]` | 整形   | 当前SIM卡卡槽的simId |
+| `args[0]` | 整型   | 当前SIM卡卡槽的simId |
 | `args[1]` | 整型   | 短信索引             |
 | `args[2]` | 字符串 | 短信存储位置         |
 
@@ -451,7 +476,7 @@ def cb(args):
 sms.setCallback(cb)
 
 # 示例二
-#短信回调函数新老架构的使用方法不同，如下所示，新架构参照示例一，QPY_V0004_EC600N_CNLC_FW_VOLTE(2021-09-09发布)之前发布的版本参照示例二。
+# 2021-09-09之前发布的版本使用方法不同，如下所示，参照示例二：
 import sms
 
 def cb(args):
