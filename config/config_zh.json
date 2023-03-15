@@ -1,87 +1,87 @@
 {
-    "locale": "zh_CN",
-    "navbar": {
-        "title": "QuecPython",
-        "logo": {
-            "alt": "teedoc logo",
-            "src": "/static/image/quectel.png"
-        },
-        "home_url": "/",
-        "items": [
-            {
-                "url": "/",
-                "label": "首页",
-                "position": "left"
-            },
-            {
-                "url": "/develop/zh/",
-                "label": "官网",
-                "position": "right"
-            },
-			{
-                "label": "文档",
-                "position": "left",
-				"type": "list",
-                "items": [
-                    {
-                        "url": "/API_reference/zh/index.html",
-                        "label": "API参考手册"
-                    },
-                    {
-                        "url": "/development_guide/zh/index.html",
-                        "label": "开发指南"
-                    },
-                    {
-                        "url": "/development_tool_tutorial/zh/index.html",
-                        "label": "工具使用教程"
-                    },
-                    {
-                        "url": "/advanced_tutorial/zh/index.html",
-                        "label": "高级教程"
-                    },
-                    {
-                        "url": "/solutions/zh/index.html",
-                        "label": "解决方案"
-                    },
-                    {
-                        "url": "/FAQ/zh/index.html",
-                        "label": "FAQ"
-                    }
-                ]
-            }   
-        ]
+  "locale": "zh_CN",
+  "navbar": {
+    "title": "QuecPython",
+    "logo": {
+      "alt": "teedoc logo",
+      "src": "/static/image/quectel.png"
     },
-    "footer":{
-        "top":[
-            {
-                "label": "链接",
-                "items": [
-                    {
-                        "label": "网站使用 teedoc 生成",
-                        "url": "https://teedoc.neucrack.com",
-                        "target": "_blank"
-                    },
-                    {
-                        "label": "网站地图",
-                        "url": "/sitemap.xml"
-                    }
-                ]
-            },
-            {
-                "label": "源码",
-                "items": [
-                    {
-                        "label": "github",
-                        "url": "https://github.com/neutree/teedoc",
-                        "target": "_blank"
-                    },
-                    {
-                        "label": "gitee",
-                        "url": "https://gitee.com/teedoc/teedoc",
-                        "target": "_blank"
-                    }
-                ]
-            }
+    "home_url": "/",
+    "items": [
+      {
+        "url": "/",
+        "label": "首页",
+        "position": "left"
+      },
+      {
+        "url": "/develop/zh/",
+        "label": "官网",
+        "position": "right"
+      },
+      {
+        "label": "文档",
+        "position": "left",
+        "type": "list",
+        "items": [
+          {
+            "url": "/API_reference/zh/index.html",
+            "label": "API参考手册"
+          },
+          {
+            "url": "/Getting_started/zh/index.html",
+            "label": "入门指南"
+          },
+          {
+            "url": "/development_tool_tutorial/zh/index.html",
+            "label": "工具使用教程"
+          },
+          {
+            "url": "/advanced_tutorial/zh/index.html",
+            "label": "高级教程"
+          },
+          {
+            "url": "/solutions/zh/index.html",
+            "label": "解决方案"
+          },
+          {
+            "url": "/FAQ/zh/index.html",
+            "label": "FAQ"
+          }
         ]
-    }
+      }
+    ]
+  },
+  "footer": {
+    "top": [
+      {
+        "label": "链接",
+        "items": [
+          {
+            "label": "网站使用 teedoc 生成",
+            "url": "https://teedoc.neucrack.com",
+            "target": "_blank"
+          },
+          {
+            "label": "网站地图",
+            "url": "/sitemap.xml"
+          }
+        ]
+      },
+      {
+        "label": "源码",
+        "items": [
+          {
+            "label": "github",
+            "url": "https://github.com/neutree/teedoc",
+            "target": "_blank"
+          },
+          {
+            "label": "gitee",
+            "url": "https://gitee.com/teedoc/teedoc",
+            "target": "_blank"
+          }
+        ]
+      }
+    ]
+  }
 }

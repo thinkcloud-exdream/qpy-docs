@@ -1,4 +1,3 @@
-
 ---
 title: QuecPython
 keywords: QuecPython, markdown, Quectel, 物联网, 移远, 静态网站, 文档中心
@@ -52,23 +51,23 @@ id: home_page
                 <p class="article-p-t">最新：2023-01-19</font>
                 </p>
             </div>
-            <!-- QuecPython开发指南-->
+            <!-- QuecPython入门指南-->
             <div class="col-item">
                 <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
                     style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
                     <img src="static/image/image02.jpg" alt="Sample Image" />
-                    <a href="/development_guide/zh/index.html" class="article-a">
+                    <a href="/Getting_started/zh/index.html" class="article-a">
                         <figcaption class="c4-layout-top-left">
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>QuecPython开发指南,包括BSP、网络通信、外设应用开发等</p>
+                                    <p>QuecPython入门指南,带您从0到1学会QuecPython项目开发、量产。</p>
                                 </div>
                             </div>
                         </figcaption>
                 </figure>
-                <a href="/development_guide/zh/index.html" class="article-a">
-                    <p class="article-p-h">开发指南</p>
+                <a href="/Getting_started/zh/index.html" class="article-a">
+                    <p class="article-p-h">入门指南</p>
                 </a>
                 <p class="article-p-t">最新：2023-01-16</font>
                 </p>

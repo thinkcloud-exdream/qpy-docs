@@ -1,81 +1,80 @@
 {
-    "site_name": "QuecPython",
-    "site_slogon": "QuecPython文档中心",
-    "site_root_url": "/",
-    "site_domain": "toscode.gitee.com/qpy-doc-center/teedoc_with_qpydoc",
-    "site_protocol": "https",
-    "config_template_dir": "config",
-    "source": "https://toscode.gitee.com/qpy-doc-center/teedoc_with_qpydoc/blob/main/",
-    "route": {
-        "docs": {
-            "/API_reference/zh/": "docs/API_reference/zh",
-            "/development_guide/zh/": "docs/development_guide/zh",
-            "/development_tool_tutorial/zh/": "docs/development_tool_tutorial/zh",
-            "/advanced_tutorial/zh/": "docs/advanced_tutorial/zh",
-            "/solutions/zh/": "docs/solutions/zh",
-            "/FAQ/zh/": "docs/FAQ/zh"
-        },
-        "pages": {
-            "/": "pages/index/zh"
-        },
-        "assets": {
-            "/static/": "static"
+  "site_name": "QuecPython",
+  "site_slogon": "QuecPython文档中心",
+  "site_root_url": "/",
+  "site_domain": "toscode.gitee.com/qpy-doc-center/teedoc_with_qpydoc",
+  "site_protocol": "https",
+  "config_template_dir": "config",
+  "source": "https://toscode.gitee.com/qpy-doc-center/teedoc_with_qpydoc/blob/main/",
+  "route": {
+    "docs": {
+      "/API_reference/zh/": "docs/API_reference/zh",
+      "/Getting_started/zh/": "docs/Getting_started/zh",
+      "/development_tool_tutorial/zh/": "docs/development_tool_tutorial/zh",
+      "/advanced_tutorial/zh/": "docs/advanced_tutorial/zh",
+      "/solutions/zh/": "docs/solutions/zh",
+      "/FAQ/zh/": "docs/FAQ/zh"
+    },
+    "pages": {
+      "/": "pages/index/zh"
+    },
+    "assets": {
+      "/static/": "static"
+    }
+  },
+  "translate": {
+    "docs": {},
+    "pages": {
+      "/": [
+        {
+          "url": "/en/",
+          "src": "pages/index/en"
         }
-    },
-    "translate": {
-        "docs": {
-        },
-        "pages": {
-            "/": [ {
-                    "url": "/en/",
-                    "src": "pages/index/en"
-                }
-            ]
+      ]
+    }
+  },
+  "executable": {
+    "python": "python3",
+    "pip": "pip3"
+  },
+  "plugins": {
+    "teedoc-plugin-markdown-parser": {
+      "from": "pypi",
+      "config": {
+        "mathjax": {
+          "enable": true
         }
+      }
     },
-    "executable": {
-        "python": "python3",
-        "pip": "pip3"
+    "teedoc-plugin-jupyter-notebook-parser": {
+      "from": "pypi",
+      "config": {}
     },
-    "plugins": {
-        "teedoc-plugin-markdown-parser":{
-            "from": "pypi",
-            "config": {
-                "mathjax": {
-                    "enable": true
-                }
-            }
-        },
-        "teedoc-plugin-jupyter-notebook-parser":{
-            "from": "pypi",
-            "config": {
-            }
-        },
-        "teedoc-plugin-theme-default":{
-            "from": "pypi",
-            "config": {
-                "dark": true,
-                "env":{
-                    "main_color": "#ED1922"
-                }
-            }
-        },
-        "teedoc-plugin-search":{
-            "from": "pypi",
-            "config": {
-                "search_hint": "Search"
-            }
-        },
-        "teedoc-plugin-baidu-tongji": {
-            "from": "pypi",
-            "config": {
-                "code": "4d52982572d5512e9762879ebf063c86"
-            }
+    "teedoc-plugin-theme-default": {
+      "from": "pypi",
+      "config": {
+        "dark": true,
+        "env": {
+          "main_color": "#ED1922"
         }
+      }
     },
-    "rebuild_changes_delay": 1,
-    "robots":{
-        "User-agent": "*"
+    "teedoc-plugin-search": {
+      "from": "pypi",
+      "config": {
+        "search_hint": "Search"
+      }
     },
-    "layout_root_dir": "layout"
+    "teedoc-plugin-baidu-tongji": {
+      "from": "pypi",
+      "config": {
+        "code": "4d52982572d5512e9762879ebf063c86"
+      }
+    }
+  },
+  "rebuild_changes_delay": 1,
+  "robots": {
+    "User-agent": "*"
+  },
+  "layout_root_dir": "layout"
 }
