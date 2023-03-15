@@ -1067,7 +1067,7 @@ a.toc-link {
 /* class template */
 .md_page #page_content > div {
     width: 90%;
-    max-width: 50em;
+    /* max-width: 50em; */
     margin: auto;
     line-height: 2em;
 }

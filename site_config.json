@@ -9,10 +9,8 @@
     "route": {
         "docs": {
             "/API_reference/zh/": "docs/API_reference/zh",
-            "/development_guide/zh/": "docs/development_guide/zh",
-            "/development_tool_tutorial/zh/": "docs/development_tool_tutorial/zh",
-            "/advanced_tutorial/zh/": "docs/advanced_tutorial/zh",
-            "/solutions/zh/": "docs/solutions/zh",
+            "/Getting_started/zh/": "docs/Getting_started/zh",
+            "/Application_guide/zh/": "docs/Application_guide/zh",
             "/FAQ/zh/": "docs/FAQ/zh"
         },
         "pages": {

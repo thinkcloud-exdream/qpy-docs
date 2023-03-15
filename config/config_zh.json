@@ -27,22 +27,15 @@
                         "url": "/API_reference/zh/index.html",
                         "label": "API参考手册"
                     },
+					{
+                        "url": "/Getting_started/zh/index.html",
+                        "label": "快速开始"
+                    },
                     {
-                        "url": "/development_guide/zh/index.html",
+                        "url": "/Application_guide/zh/index.html",
                         "label": "开发指南"
                     },
-                    {
-                        "url": "/development_tool_tutorial/zh/index.html",
-                        "label": "工具使用教程"
-                    },
-                    {
-                        "url": "/advanced_tutorial/zh/index.html",
-                        "label": "高级教程"
-                    },
-                    {
-                        "url": "/solutions/zh/index.html",
-                        "label": "解决方案"
-                    },
+                    
                     {
                         "url": "/FAQ/zh/index.html",
                         "label": "FAQ"
@@ -51,7 +44,7 @@
             }   
         ]
     },
-    "footer":{
+	"footer":{
         "top":[
             {
                 "label": "链接",

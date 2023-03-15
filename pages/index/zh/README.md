@@ -30,7 +30,7 @@ id: home_page
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div id="main-content" class="home-content home-wrapper" role="main">
         <!-- 第一行-->
-        <div class="col-3">
+        <div class="col-4">
             <!-- QuecPython API 接口文档-->
             <div class="col-item">
                 <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
@@ -49,7 +49,28 @@ id: home_page
                 <a href="/API_reference/zh/index.html" class="article-a">
                     <p class="article-p-h">API参考手册</p>
                 </a>
-                <p class="article-p-t">最新：2023-01-19</font>
+                <p class="article-p-t">最新：2023-03-15</font>
+                </p>
+            </div>
+			<!-- QuecPython快速开始教程-->
+            <div class="col-item">
+                <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
+                    style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
+                    <img src="static/image/image03.jpg" alt="Sample Image" />
+                    <a href="/Getting_started/zh/index.html" class="article-a">
+                        <figcaption class="c4-layout-top-left">
+                            <div class="c4-reveal-down">
+                                <div>
+                                    <h2 style="margin-bottom: 5px;"></h2>
+                                    <p>QuecPython快速开始教程</p>
+                                </div>
+                            </div>
+                        </figcaption>
+                </figure>
+                <a href="/Getting_started/zh/index.html" class="article-a">
+                    <p class="article-p-h">快速开始</p>
+                </a>
+                <p class="article-p-t">最新：2023-03-15</font>
                 </p>
             </div>
             <!-- QuecPython开发指南-->
@@ -57,7 +78,7 @@ id: home_page
                 <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
                     style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
                     <img src="static/image/image02.jpg" alt="Sample Image" />
-                    <a href="/development_guide/zh/index.html" class="article-a">
+                    <a href="/Application_guide/zh/index.html" class="article-a">
                         <figcaption class="c4-layout-top-left">
                             <div class="c4-reveal-down">
                                 <div>
@@ -67,74 +88,8 @@ id: home_page
                             </div>
                         </figcaption>
                 </figure>
-                <a href="/development_guide/zh/index.html" class="article-a">
+                <a href="/Application_guide/zh/index.html" class="article-a">
                     <p class="article-p-h">开发指南</p>
-                </a>
-                <p class="article-p-t">最新：2023-01-16</font>
-                </p>
-            </div>
-            <!-- QuecPython开发工具使用教程-->
-            <div class="col-item">
-                <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
-                    <img src="static/image/image03.jpg" alt="Sample Image" />
-                    <a href="/development_tool_tutorial/zh/index.html" class="article-a">
-                        <figcaption class="c4-layout-top-left">
-                            <div class="c4-reveal-down">
-                                <div>
-                                    <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>QuecPython开发工具使用教程</p>
-                                </div>
-                            </div>
-                        </figcaption>
-                </figure>
-                <a href="/development_tool_tutorial/zh/index.html" class="article-a">
-                    <p class="article-p-h">工具使用教程</p>
-                </a>
-                <p class="article-p-t">最新：2023-01-16</font>
-                </p>
-            </div>
-        </div>
-        <!-- 第二行-->
-        <div class="col-3">
-            <!-- QuecPython高级教程-->
-            <div class="col-item">
-                <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
-                    <img src="static/image/image05.jpg" alt="Sample Image" />
-                    <a href="/advanced_tutorial/zh/index.html" class="article-a">
-                        <figcaption class="c4-layout-top-left">
-                            <div class="c4-reveal-down">
-                                <div>
-                                    <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>QuecPython应用框架、云平台对接、图形化界面开发等</p>
-                                </div>
-                            </div>
-                        </figcaption>
-                </figure>
-                <a href="/advanced_tutorial/zh/index.html" class="article-a">
-                    <p class="article-p-h">高级教程</p>
-                </a>
-                <p class="article-p-t">最新：2023-01-16</font>
-                </p>
-            </div>
-            <!-- QuecPython解决方案-->
-            <div class="col-item">
-                <figure class="c4-izmir c4-border-corners-1 c4-image-zoom-out c4-gradient-bottom" tabindex="0"
-                    style="--primary-color: #E0EAFC; --secondary-color: #CFDEF3; --text-color: #1f467b; --border-color: #1f467b; --image-opacity: .1;">
-                    <img src="static/image/image06.jpg" alt="Sample Image" />
-                    <a href="/solutions/zh/index.html" class="article-a">
-                        <figcaption class="c4-layout-top-left">
-                            <div class="c4-reveal-down">
-                                <div>
-                                    <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>云喇叭、DTU、对讲机、Tracker和BMS相关等solution介绍</p>
-                                </div>
-                            </div>
-                        </figcaption>
-                </figure>
-                <a href="/solutions/zh/index.html" class="article-a">
-                    <p class="article-p-h">解决方案</p>
                 </a>
                 <p class="article-p-t">最新：2023-01-16</font>
                 </p>
@@ -149,7 +104,7 @@ id: home_page
 							<div class="c4-reveal-down">
 								<div>
 									<h2 style="margin-bottom: 5px;"></h2>
-									<p>常见问题,刷砖救砖,文档系统编写规范,
+									<p>常见问题,固件烧录救砖,文档系统编写规范,
 										参与文档贡献流程,提交文档错误流程。</p>
 								</div>
 							</div>
@@ -158,7 +113,7 @@ id: home_page
 				<a href="/FAQ/zh/index.html" class="article-a">
 					<p class="article-p-h">FAQ</p>
 				</a>
-				<p class="article-p-t">最新：2023-01-16</font>
+				<p class="article-p-t">最新：2023-03-15</font>
 				</p>
 			</div>
 		</div>
