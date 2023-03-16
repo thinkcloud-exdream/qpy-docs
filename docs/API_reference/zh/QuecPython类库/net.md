@@ -1,11 +1,14 @@
-# `net` - 网络相关功能
+# net - 网络相关功能
 
 `net`模块包含了模组网络相关的功能，提供配置和查询网络模式信息等接口，比如获取注网状态，设置搜网模式等。
 
->注：
->建议用户使用不同运营商的SIM卡时，则配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组无法注网。用户具体如何配置APN信息，参考`dataCall.setApn`方法。
 
-## 方法
+
+>注： 建议用户使用不同运营商的SIM卡时，则配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组无法注网。用户具体如何配置APN信息，参考`dataCall.setPDPContext`方法。
+
+
+
+## 获取CSQ信号强度
 
 ### `net.csqQueryPoll`
 
@@ -15,15 +18,15 @@ net.csqQueryPoll()
 
 该方法用于获取csq信号强度。
 
-**参数描述：**
-
-* 无
-
 **返回值描述：**
 
   成功返回整型的csq信号强度值，失败返回整型值`-1`，返回值为`99`表示异常；
 
+
+
 >信号强度值范围0 ~ 31，值越大表示信号强度越好。
+
+
 
 **示例：**
 
@@ -35,6 +38,8 @@ net.csqQueryPoll()
 
 
 
+## 获取小区信息
+
 ### `net.getCellInfo`
 
 ```python
@@ -43,17 +48,16 @@ net.getCellInfo([sinrEnable])
 
 该方法用于获取邻近小区的信息。
 
-**参数：**
+**参数描述：**
 
-* `sinrEnable` - 使能是否获取sinr数值，整型值，取值范围见下表：
+* `sinrEnable` - 使能是否获取sinr数值，整型值，可选参数，取值范围见下表：
 
 | 取值 | 含义          |
 |-----| ------------- |
 | 0   | 不获取sinr数值 |
 | 1   | 获取sinr数值   |
 
-
-**返回值：**
+**返回值描述：**
 
   失败返回整型值`-1`，成功返回包含三种网络系统`（GSM、UMTS、LTE）`的信息的list，如果对应网络系统信息为空，则返回空的List。格式和说明如下：
 
@@ -77,7 +81,7 @@ net.getCellInfo([sinrEnable])
 | 参数     | 参数意义                                                     |
 | -------- | ------------------------------------------------------------ |
 | `flag`   | 小区类型，范围0 - 3，0：当前服务小区，1：邻区，2：同频邻区 ，3：异频邻区 |
-| `cid`    | 返回UMTS网络下的 Cell identity 信息，Cell identity = RNC_ID * 65536 + Cell_ID，Cell identity范围 0x0000000 ~ 0xFFFFFFF（注意这里是28bits）；其中RNC_ID的范围是0 ~ 4095，Cell_ID的范围是0 ~ 65535 |
+| `cid`    | 表示UMTS网络下的 Cell identity ，Cell identity = RNC_ID * 65536 + Cell_ID，Cell identity范围 0x0000000 ~ 0xFFFFFFF（注意这里是28bits）；即Cell identity前两个字节是RNC_ID，后两个字节是Cell_ID，Cell_ID的范围是0 ~ 65535 |
 | `lcid`   | URA ID，范围 0 ~ 65535，0表示该信息不存在                    |
 | `mcc`    | 移动设备国家代码，范围 0 ~ 999                               |
 | `mnc`    | 移动设备网络代码，范围 0 ~ 99                                |
@@ -91,7 +95,7 @@ net.getCellInfo([sinrEnable])
 | 参数   | 参数意义                                                     |
 | ------ | ------------------------------------------------------------ |
 | `flag` | 小区类型，范围0 - 3，0：当前服务小区，1：邻区，2：同频邻区 ，3：异频邻区 |
-| `cid`  | 返回LTE网络下的 Cell identity 信息，Cell identity = RNC_ID * 65536 + Cell_ID，Cell identity范围 0x0000000 ~ 0xFFFFFFF（注意这里是28bits）；其中RNC_ID的范围是0 ~ 4095，Cell_ID的范围是0 ~ 65535 |
+| `cid`  | 表示LTE网络下的小区标识（Cell Identity），也叫ECI（E-UTRAN Cell Identifier），ECI = eNodeB ID *256 + Cell ID组成，范围0x0000000 ~ 0xFFFFFFF（注意是28bits），前20bit表示基站标识（eNodeB ID），后8bit表示LTE小区ID（Cell ID） |
 | `mcc`  | 移动设备国家代码，范围 0 ~ 999                               |
 | `mnc`  | 移动设备网络代码，范围 0 ~ 99                                |
 | `pci`  | 物理层小区标识号，0 ~ 503                                    |
@@ -101,11 +105,15 @@ net.getCellInfo([sinrEnable])
 | `rsrq` |LTE网络参考信号接收质量，范围 -20 ~ -3 <br>注：理论上rsrq的范围应该是-19.5 ~ -3，但由于计算方法问题，目前能给出的是-20 ~ -3<br>目前仅BC25系列、BG77/BG95系列和EC600E/EC800E系列获取该参数有意义，其它平台该参数无意义|
 | `sinr` |信噪比(目前仅BC25系列和EC600E/EC800E系列支持获取该参数）范围-30 ~ 30       |
 
+
+
 >注：
 >
+>* 该接口搜小区时会一直阻塞，一般是3-5秒，在无信号的地方会更长
 >* `sinrEnable`为可选参，不支持的平台可不写，不写默认不获取sinr
->
 >* 仅BC25/EC600E/EC800E系列支持获取sinr，其余模组型号均不支持
+
+
 
 **示例：**
 
@@ -114,7 +122,7 @@ net.getCellInfo([sinrEnable])
 ([], [], [(0, 232301375, 1120, 17, 378, 26909, 1850, -66, -8), (3, 110110494, 1120, 17, 10, 26909, 2452, -87, -17), (3, 94542859, 1120, 1, 465, 56848, 1650, -75, -10), 
 (3, 94472037, 1120, 1, 369, 56848, 3745, -84, -20)])
 
-//BC25
+# BC25
 >>> net.getCellInfo(1)
 ([], [], [(0, 17104243, 460, 4, 169, 19472, 3688, -56, -10, -3)])
 >>> net.getCellInfo(0)
@@ -125,6 +133,8 @@ net.getCellInfo([sinrEnable])
 
 
 
+## 网络制式及漫游配置
+
 ### `net.getConfig`
 
 ```python
@@ -133,53 +143,43 @@ net.getConfig()
 
 该方法用于获取当前网络模式及漫游配置。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   失败返回整型值`-1`，成功返回一个元组，包含当前首选的网络制式与漫游打开状态，说明如下：
 
 * 网络制式
 
-| 值   |  网络制式                                                     |
-| ---- | ------------------------------------------------------------ |
-| 0    | GSM                                                          |
-| 1    | UMTS                                                         |
-| 2    | GSM_UMTS（auto）                                             |
-| 3    | GSM_UMTS（GSM preferred）                                    |
-| 4    | GSM_UMTS（UMTS preferred）                                   |
-| 5    | LTE                                                          |
-| 6    | GSM_LTE（auto）                                              |
-| 7    | GSM_LTE（GSM preferred）                                     |
-| 8    | GSM_LTE（LTE preferred）                                     |
-| 9    | UMTS_LTE（auto）                                             |
-| 10   | UMTS_LTE（UMTS preferred）                                   |
-| 11   | UMTS_LTE（LTE preferred）                                    |
-| 12   | GSM_UMTS_LTE（auto）                                         |
-| 13   | GSM_UMTS_LTE（GSM preferred）                                |
-| 14   | GSM_UMTS_LTE（UMTS preferred）                               |
-| 15   | GSM_UMTS_LTE（LTE preferred）                                |
-| 16   | GSM_LTE（dual link）                                         |
-| 17   | UMTS_LTE（dual link）                                        |
-| 18   | GSM_UMTS_LTE（dual link）                                    |
-| 19   | CATM,             BG95 supported                             |
-| 20   | GSM_CATM,         BG95 supported                             |
-| 21   | CATNB,            BG95 supported                             |
-| 22   | GSM_CATNB,        BG95 supported                             |
-| 23   | CATM_CATNB,       BG95 supported                             |
-| 24   | GSM_CATM_CATNB,   BG95 supported                             |
-| 25   | CATM_GSM,         BG95 supported                             |
-| 26   | CATNB_GSM,        BG95 supported                             |
-| 27   | CATNB_CATM,       BG95 supported                             |
-| 28   | GSM_CATNB_CATM,   BG95 supported                             |
-| 29   | CATM_GSM_CATNB,   BG95 supported                             |
-| 30   | CATM_CATNB_GSM,   BG95 supported                             |
-| 31   | CATNB_GSM_CATM,   BG95 supported                             |
-| 32   | CATNB_CATM_GSM,   BG95 supported                             |
+| 值   | 网络制式                  |      | 值   | 网络制式                        |
+| ---- | :------------------------ | ---- | ---- | ------------------------------- |
+| 0    | GSM                       |      | 17   | UMTS_LTE（双链路）              |
+| 1    | UMTS                      |      | 18   | GSM_UMTS_LTE（双链路）          |
+| 2    | GSM_UMTS（自动）          |      | 19   | CATM，BG95/BG77系列支持         |
+| 3    | GSM_UMTS（GSM 优先）      |      | 20   | GSM_CATM,  BG95系列支持         |
+| 4    | GSM_UMTS（UMTS 优先）     |      | 21   | CATNB,   BG95/BG77系列支持      |
+| 5    | LTE                       |      | 22   | GSM_CATNB,  BG95系列支持        |
+| 6    | GSM_LTE（自动）           |      | 23   | CATM_CATNB,   BG95/BG77系列支持 |
+| 7    | GSM_LTE（GSM 优先）       |      | 24   | GSM_CATM_CATNB, BG95系列支持    |
+| 8    | GSM_LTE（LTE 优先）       |      | 25   | CATM_GSM,  BG95系列支持         |
+| 9    | UMTS_LTE（自动）          |      | 26   | CATNB_GSM,  BG95系列支持        |
+| 10   | UMTS_LTE（UMTS 优先）     |      | 27   | CATNB_CATM, BG95/BG77系列支持   |
+| 11   | UMTS_LTE（LTE 优先）      |      | 28   | GSM_CATNB_CATM, BG95系列支持    |
+| 12   | GSM_UMTS_LTE（自动）      |      | 29   | CATM_GSM_CATNB,  BG95系列支持   |
+| 13   | GSM_UMTS_LTE（GSM 优先）  |      | 30   | CATM_CATNB_GSM,   BG95系列支持  |
+| 14   | GSM_UMTS_LTE（UMTS 优先） |      | 31   | CATNB_GSM_CATM,   BG95系列支持  |
+| 15   | GSM_UMTS_LTE（LTE 优先）  |      | 32   | CATNB_CATM_GSM,   BG95系列支持  |
+| 16   | GSM_LTE（双链路）         |      |      |                                 |
 
->BC25系列不支持此方法
+
+
+>BC25系列不支持此方法;
+>
+>BG95-M1系列仅支持CATM制式；
+>
+>BG95-M2/BG77系列仅支持包含CATM和CATNB两种制式；
+>
+>BG95-M3/M8系列支持CATM，CATNB和GSM全部三种制式；
+
+
 
 **示例：**
 
@@ -198,25 +198,26 @@ net.setConfig(mode [, roaming])
 
 该方法用于设置网络制式及漫游配置。
 
-**参数：**
+**参数描述：**
 
 * `mode` - 网络制式，整型值，详见上述网络制式表格
 
-* `roaming` - 漫游开关，整型值（`0`：关闭， `1`：开启）
+* `roaming` - 漫游开关，整型值，可选参数（`0`：关闭， `1`：开启）
 
-**返回值：**
+**返回值描述：**
 
   设置成功返回整型值`0`，设置失败返回整型值`-1`。
+
+
 
 >注意：
 >
 >* roaming为可选参数，不支持的平台，该参数可不写
->
 >* BC25系列不支持此方法
->
 >* EC200U/EC600U/EG915U系列模组不支持漫游参数配置，且仅支持设置网络制式0/6/8
->
 >* EC600E/EC800E系列模组仅支持LTE ONLY.
+
+
 
 **示例：**
 
@@ -230,6 +231,8 @@ net.setConfig(mode [, roaming])
 
 
 
+## 获取网络配置模式
+
 ### `net.getNetMode`
 
 ```python
@@ -238,11 +241,7 @@ net.getNetMode()
 
 该方法用于获取网络配置模式。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
 失败返回整型值`-1`，成功返回一个元组，格式为：`(selection_mode, mcc, mnc, act)`参数说明如下：
 
@@ -254,6 +253,7 @@ net.getNetMode()
 | `act`            | 整型值 | 首选网络的ACT模式        |
 
 `ACT`模式枚举值参照下表：
+
 | 值   | ACT模式            |
 | ---- | ------------------ |
 | 0    | GSM                |
@@ -269,6 +269,7 @@ net.getNetMode()
 | 10   | NONE               |
 
 BG95系列模组`ACT`模式枚举值参照下表：
+
 | 值   | ACT模式             |
 | ---- | ------------------ |
 | 0    | GSM                |
@@ -294,6 +295,8 @@ BG95系列模组`ACT`模式枚举值参照下表：
 
 
 
+## 获取详细信号强度
+
 ### `net.getSignal`
 
 ```python
@@ -302,16 +305,16 @@ net.getSignal([sinrEnable])
 
 该方法用于获取详细信号强度。
 
-**参数：**
-	
-* `sinrEnable` - 使能是否获取sinr数值，整型值，取值范围见下表：
+**参数描述：**
+
+* `sinrEnable` - 使能是否获取sinr数值，整型值，可选参数，取值范围见下表：
 
 | 取值 | 含义          |
 |-----| ------------- |
 | 0   | 不获取sinr数值 |
 | 1   | 获取sinr数值   |
 
-**返回值：**
+**返回值描述：**
 
   失败返回整型值`-1`，成功返回一个元组，包含两个List`(GW 、LTE)`，返回值格式和说明如下：
 
@@ -336,11 +339,14 @@ net.getSignal([sinrEnable])
 | `cqi`  | 信道质量                                                     |
 | `sinr` | 信噪比，BC25系列不支持获取该参数                             |
 
+
+
 >注：
 >
 >* `sinrEnable`为可选参，不支持的平台可不写，不写默认不获取sinr
->
 >* BC25系列不支持获取sinr，其余模组型号均支持
+
+
 
 **示例：**
 
@@ -355,6 +361,8 @@ net.getSignal([sinrEnable])
 
 
 
+## 获取当前基站时间
+
 ### `net.nitzTime`
 
 ```python
@@ -363,11 +371,7 @@ net.nitzTime()
 
 该方法用于获取当前基站时间。这个时间是基站在模块开机注网成功时下发的时间。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   失败返回整型值`-1`，成功返回一个元组，包含基站时间与对应时间戳与闰秒数（0表示不可用），格式为：`(date, abs_time, leap_sec)`，说明如下：
 
@@ -391,6 +395,8 @@ net.nitzTime()
 
 
 
+## 获取运营商信息
+
 ### `net.operatorName`
 
 ```python
@@ -399,11 +405,7 @@ net.operatorName()
 
 该接口用于获取当前注网的运营商信息。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   失败返回整型值`-1`，成功返回一个元组，包含注网的运营商信息，格式为： `(long_eons, short_eons, mcc, mnc)`，说明如下：
 
@@ -423,6 +425,8 @@ net.operatorName()
 
 
 
+## 获取网络注册信息
+
 ### `net.getState`
 
 ```python
@@ -431,42 +435,40 @@ net.getState()
 
 该接口用于获取当前网络注册信息。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   失败返回整型值`-1`，成功返回一个元组，包含电话和网络注册信息，元组中`voice`开头的表示电话注册信息，`data`开头的表示网络注册信息，格式为：`([voice_state, voice_lac, voice_cid, voice_rat, voice_reject_cause, voice_psc], [data_state, data_lac, data_cid, data_rat, data_reject_cause, data_psc])`
 
 * 返回值参数说明：
 
-  | 参数           | 参数说明                                                     |
-  | -------------- | ------------------------------------------------------------ |
-  | `state`        | 网络注册状态，具体见下表                                     |
-  | `lac`          | 位置区码，范围 1 ~ 65534                                     |
-  | `cid`          | cell id，范围 0x00000000 ~ 0x0FFFFFFF，具体见`net.csqQueryPoll()`中返回值 |
-  | ``rat``        | 接入技术，access technology，具体见后面表格                  |
-  | `reject_cause` | 注册被拒绝的原因，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
-  | `psc`          | 主扰码，Primary Scrambling Code，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
+| 参数           | 参数说明                                                     |
+| -------------- | ------------------------------------------------------------ |
+| `state`        | 网络注册状态，具体见下表                                     |
+| `lac`          | 位置区码，范围 1 ~ 65534                                     |
+| `cid`          | cell id，范围 0x00000000 ~ 0x0FFFFFFF，具体见`net.getCellInfo()`中返回值 |
+| ``rat``        | 接入技术，access technology，具体见后面表格                  |
+| `reject_cause` | 注册被拒绝的原因，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
+| `psc`          | 主扰码，Primary Scrambling Code，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
 
 * 网络注册状态`state`枚举值见下表：
-| 值   | 状态说明                                                     |
-| ---- | ------------------------------------------------------------ |
-| 0    | not registered, MT is not currently searching an operator to register to |
-| 1    | registered, home network                                     |
-| 2    | not registered, but MT is currently trying to attach or searching an operator to register to |
-| 3    | registration denied                                          |
-| 4    | unknown                                                      |
-| 5    | registered, roaming                                          |
-| 6    | egistered for “SMS only”, home network (not applicable)      |
-| 7    | registered for “SMS only”, roaming (not applicable)          |
-| 8    | attached for emergency bearer services only                  |
-| 9    | registered for “CSFB not preferred”, home network (not applicable) |
-| 10   | registered for “CSFB not preferred”, roaming (not applicable) |
-| 11   | emergency bearer services only                               |
+
+| 值   | 状态说明                              |
+| ---- | ------------------------------------- |
+| 0    | 没有注册，MT也没有再搜索              |
+| 1    | 注册完成,，本地网络                   |
+| 2    | 没有注册，但是MT在尝试搜索            |
+| 3    | 拒绝注册                              |
+| 4    | 未知状态                              |
+| 5    | 注册完成， 漫游网络                   |
+| 6    | 注册为“仅限短信”，本地网络 (不适用)   |
+| 7    | 注册为“仅限短信”，漫游网络(不适用)    |
+| 8    | 紧急attach仅限紧急承载服务            |
+| 9    | 注册为“CSFB不优先”，本地网络 (不适用) |
+| 10   | 注册为“CSFB不优先”，漫游网络(不适用)  |
+| 11   | 仅限紧急承载服务                      |
 
 * 接入技术`access technology`
+
 | 值   | 说明               |
 | ---- | ------------------ |
 | 0    | GSM                |
@@ -481,25 +483,25 @@ net.getState()
 | 9    | E_UTRAN_CA         |
 | 10   | NONE               |
 
+
+
 > 注：BG77/BG95系列参照下表
->
-> | 值   | 说明               |
-> | ---- | ------------------ |
-> | 0    | GSM                |
-> | 1    | GSM COMPACT        |
-> | 2    | UTRAN              |
-> | 3    | GSM wEGPRS         |
-> | 4    | UTRAN wHSDPA       |
-> | 5    | UTRAN wHSUPA       |
-> | 6    | UTRAN wHSDPA HSUPA |
-> | 7    | E_UTRAN            |
-> | 8    | UTRAN HSPAP        |
-> | 9    | E_UTRAN_CA         |
-> | 10   | E_UTRAN_NBIOT      |
-> | 11   | E_UTRAN_EMTC       |
-> | 12   | NONE               |
 
-
+| 值   | 说明               |
+| ---- | ------------------ |
+| 0    | GSM                |
+| 1    | GSM COMPACT        |
+| 2    | UTRAN              |
+| 3    | GSM wEGPRS         |
+| 4    | UTRAN wHSDPA       |
+| 5    | UTRAN wHSUPA       |
+| 6    | UTRAN wHSDPA HSUPA |
+| 7    | E_UTRAN            |
+| 8    | UTRAN HSPAP        |
+| 9    | E_UTRAN_CA         |
+| 10   | E_UTRAN_NBIOT      |
+| 11   | E_UTRAN_EMTC       |
+| 12   | NONE               |
 
 **示例：**
 
@@ -510,6 +512,8 @@ net.getState()
 
 
 
+## 获取小区ID
+
 ### `net.getCi`
 
 ```python
@@ -518,11 +522,7 @@ net.getCi()
 
 该方法用于获取附近小区ID。该接口获取结果即为`net.getCellInfo()`接口获取结果中的cid集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回一个list类型的数组，包含小区id，格式为：`[id, ……, id]`。数组成员数量并非固定不变，位置不同、信号强弱不同等都可能导致获取的结果不一样。
 
@@ -543,13 +543,9 @@ net.getCi()
 net.getServingCi()
 ```
 
-该方法用于获取服务小区ID。
+该方法用于获取服务小区ID。该接口获取结果即为`net.getCellInfo()`接口获取结果中的cid集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回服务小区ID。失败返回整型值`-1`。
 
@@ -562,6 +558,8 @@ net.getServingCi()
 
 
 
+## 获取小区的MNC
+
 ### `net.getMnc`
 
 ```python
@@ -570,11 +568,7 @@ net.getMnc()
 
 该方法用于获取附近小区的mnc。该接口获取结果即为`net.getCellInfo()`接口获取结果中的mnc集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回一个list类型的数组，包含小区`mnc`，格式为：`[mnc, ……, mnc]`。数组成员数量并非固定不变，位置不同、信号强弱不同等都可能导致获取的结果不一样。
 
@@ -595,13 +589,9 @@ net.getMnc()
 net.getServingMnc()
 ```
 
-该方法用于获取服务小区的mnc。
+该方法用于获取服务小区的mnc。该接口获取结果即为`net.getCellInfo()`接口获取结果中的mnc集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回服务小区`mnc`。失败返回整型值`-1`。
 
@@ -614,6 +604,8 @@ net.getServingMnc()
 
 
 
+## 获取小区的MCC
+
 ### `net.getMcc`
 
 ```python
@@ -622,11 +614,7 @@ net.getMcc()
 
 该方法用于获取附近小区的mcc。该接口获取结果即为`net.getCellInfo()`接口获取结果中的mcc集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回一个list类型的数组，包含小区`mcc`，格式为：`[mcc, ……, mcc]`。数组成员数量并非固定不变，位置不同、信号强弱不同等都可能导致获取的结果不一样。
 
@@ -653,13 +641,9 @@ net.getMcc()
 net.getServingMcc()
 ```
 
-该方法用于获取服务小区的mcc。
+该方法用于获取服务小区的mcc。该接口获取结果即为`net.getCellInfo()`接口获取结果中的mcc集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回服务小区的`mcc`，失败返回整型值`-1`。
 
@@ -678,6 +662,8 @@ net.getServingMcc()
 
 
 
+## 获取小区的Lac
+
 ### `net.getLac`
 
 ```python
@@ -686,11 +672,7 @@ net.getLac()
 
 该方法用于获取附近小区的Lac。该接口获取结果即为`net.getCellInfo()`接口获取结果中的lac集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回一个list类型的数组，包含小区lac，格式为：`[lac, ……, lac]`。数组成员数量并非固定不变，位置不同、信号强弱不同等都可能导致获取的结果不一样。
 
@@ -711,13 +693,9 @@ net.getLac()
 net.getServingLac()
 ```
 
-该方法用于获取服务小区的Lac。
+该方法用于获取服务小区的Lac。该接口获取结果即为`net.getCellInfo()`接口获取结果中的lac集合。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
   成功返回服务小区`lac`，失败返回整型值`-1`。
 
@@ -730,6 +708,8 @@ net.getServingLac()
 
 
 
+## 工作模式配置
+
 ### `net.getModemFun`
 
 ```python
@@ -738,15 +718,10 @@ net.getModemFun()
 
 该方法用于获取当前工作模式。
 
-**参数：**
+**返回值描述：**
 
-* 无
+  成功返回当前模组工作模式，失败返回整型值`-1`；模组工作模式详细如下：
 
-**返回值：**
-
-  成功返回当前模组工作模式，失败返回整型值`-1`：
-
-* 模组工作模式
 | 模式 | 说明       |
 | --- | ---------- |
 | 0   | 全功能关闭  |
@@ -765,12 +740,12 @@ net.getModemFun()
 ### `net.setModemFun`
 
 ```python
-net.setModemFun(fun, rst)
+net.setModemFun(fun [, rst])
 ```
 
 该方法用于设置当前模组工作模式。
 
-**参数：**
+**参数描述：**
 
 * `fun` - 模组工作模式，整型值
 | 模式 | 说明       |
@@ -785,7 +760,7 @@ net.setModemFun(fun, rst)
 | 0   | 设置完不重启（默认）  |
 | 1   | 设置完重启  |
 
-**返回值：**
+**返回值描述：**
 
   设置成功返回整型值`0`，设置失败返回整型值`-1`。
 
@@ -797,6 +772,8 @@ net.setModemFun(fun, rst)
 ```
 
 
+
+## band设置与获取
 
 ### `net.setBand`
 
@@ -827,7 +804,7 @@ net.setBand(netRat, gsmBand, bandTuple)
 | LTE      | B1/B3/B5/B7/B8/B20/B28/B31/B72       |
 | EGPRS    | EGSM900/DCS1800                      |
 
-**参数：**
+**参数描述：**
 
 * `netRat` - 网络模式，整型值，表示制定要设置的是哪种网络模式下的`band`
 | rat值 | 说明                                      |
@@ -850,14 +827,18 @@ net.setBand(netRat, gsmBand, bandTuple)
 `band_lh = (band_value & 0x0000000000000000FFFFFFFF00000000) >> 32`
 `band_ll = (band_value & 0x000000000000000000000000FFFFFFFF)`
 
-**返回值：**
+**返回值描述：**
 
   设置成功返回整型`0`，失败返回整型`-1`。
+
+
 
 >注:
 >* 当前可支持模组型号：BG95系列/EG912NENAA
 >* BG95不支持设置上述模式1(LTE)下的`band`
 >* EG912NENAA仅支持上述模式0(GSM)和模式1(LTE)
+
+
 
 **示例：**
 
@@ -983,7 +964,7 @@ net.getBand(netRat)
 
 该方法用于获取当前某个网络制式下的band设置值。
 
-**参数：**
+**参数描述：**
 
 * `netRat` - 网络模式，整型值，表示制定要设置的是哪种网络模式下的`band`
 | rat值 | 说明                                      |
@@ -993,14 +974,18 @@ net.getBand(netRat)
 | 2     | 设置CATM网络的band                         |
 | 3     | 设置NB网络的band                           |
 
-**返回值：**
+**返回值描述：**
 
 返回十六进制字符串形式的band值。
+
+
 
 >注:
 >* 当前可支持模组型号：BG95系列/EG912NENAA
 >* BG95不支持设置上述模式1(LTE)下的`band`
 >* EG912NENAA仅支持上述模式0(GSM)和模式1(LTE)
+
+
 
 **示例：**
 
@@ -1019,15 +1004,15 @@ net.bandRst()
 
 该方法用于恢复band初始设定值。
 
-**参数：**
-
-* 无
-
-**返回值：**
+**返回值描述：**
 
 成功返回整型`0`，失败返回整型`-1`。
 
+
+
 >当前可支持模组型号：EG912NENAA
+
+
 
 **示例：**
 

@@ -1,4 +1,4 @@
-# `dataCall` - 拨号功能
+# dataCall - 拨号功能
 
 拨号，指的是PDP Context的激活操作，激活成功后，核心网的PDN网关才会分配一个IP地址给模组。
 
@@ -6,7 +6,7 @@
 
 
 
-> 强烈建议用户使用不同运营商的SIM卡时，配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组注网失败或拨号失败，模组获取不到IP地址，无法上网。配置APN的方式，参考`dataCall.setPDPContext`方法。
+> 用户使用不同运营商的SIM卡时，应配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组注网失败或拨号失败，模组获取不到IP地址，无法上网。配置APN的方式，参考`dataCall.setPDPContext`方法。
 
 
 
@@ -39,7 +39,7 @@ else:
 
 
 
-## 方法
+## APN配置与获取功能
 
 ### `dataCall.setPDPContext`
 
@@ -51,7 +51,7 @@ dataCall.setPDPContext(profileID, ipType, apn, username, password, authType)
 
 **参数描述：**
 
-* `profileID` - PDP上下文ID，整型值，范围1~3，一般设置为1。
+* `profileID` - PDP上下文ID，整型值，范围1~3，一般设置为`1`。
 * `ipType` - IP协议类型，整型值，取值范围见下表：
 
 | 值   | 含义       |
@@ -66,7 +66,7 @@ dataCall.setPDPContext(profileID, ipType, apn, username, password, authType)
 
 - `password` - 密码，字符串类型，可为空，为空直接写`''`，范围0~64字节。
 
-- `authType` - APN鉴权方式，整形值，取值范围见下表枚举：
+- `authType` - APN鉴权方式，整型值，取值范围见下表枚举：
 
 | 值   | 含义      |
 | ---- | --------- |
@@ -77,7 +77,7 @@ dataCall.setPDPContext(profileID, ipType, apn, username, password, authType)
 
 **返回值描述：**
 
-返回一个整型值，0表示设置成功，-1表示设置失败。
+返回一个整型值，`0`表示设置成功，`-1`表示设置失败。
 
 
 
@@ -105,7 +105,7 @@ dataCall.setPDPContext(profileID, ipType, apn, username, password, authType)
 dataCall.getPDPContext(profileID)
 ```
 
-获取profileID对应的那一路PDP Context相关信息。
+获取`profileID`对应的那一路PDP Context相关信息。
 
 **参数描述：**
 
@@ -114,7 +114,7 @@ dataCall.getPDPContext(profileID)
 
 **返回值描述：**
 
-获取失败时，返回一个整型值-1；获取成功时，返回一个元组，包含PDP Context相关信息，格式如下：
+获取失败时，返回一个整型值`-1`；获取成功时，返回一个元组，包含PDP Context相关信息，格式如下：
 
 `(ipType, apn, username, password, authType)`
 
@@ -136,19 +136,21 @@ dataCall.getPDPContext(profileID)
 
 
 
+## 开机自动拨号功能
+
 ### `dataCall.setAutoActivate`
 
 ```python
 dataCall.setAutoActivate(profileID, enable)
 ```
 
-设置profileID指定的那一路开机是否自动进行PDP Context激活。
+设置`profileID`指定的那一路开机是否自动进行PDP Context激活。
 
 **参数描述：**
 
 - `profileID` - PDP上下文ID，整型值，范围1~3。
 
-- `enable` - 控制模组是否在开机时自动进行PDP Context激活，整型值，0表示关闭，1表示使能。
+- `enable` - 控制模组是否在开机时自动进行PDP Context激活，整型值，`0`表示关闭，`1`表示使能。
 
 
 
@@ -168,19 +170,21 @@ dataCall.setAutoActivate(profileID, enable)
 
 
 
+## 拨号重连功能
+
 ### `dataCall.setAutoConnect`
 
 ```python
 dataCall.setAutoConnect(profileID, enable)
 ```
 
-设置profileID指定的那一路是否使能自动重连功能。自动重连功能是指，因网络异常、信号差等异常场景导致模组与网络断开连接，当异常场景恢复正常后，模组自动进行拨号重连的行为。
+设置`profileID`指定的那一路是否使能自动重连功能。自动重连功能是指，因网络异常、信号差等异常场景导致模组与网络断开连接，当异常场景恢复正常后，模组自动进行拨号重连的行为。
 
 **参数描述：**
 
 - `profileID` - PDP上下文ID，整型值，范围1~3。
 
-- `enable` - 控制是否使能自动重连，整型值，0表示关闭，1表示使能。
+- `enable` - 控制是否使能自动重连，整型值，`0`表示关闭，`1`表示使能。
 
 
 
@@ -200,6 +204,8 @@ dataCall.setAutoConnect(profileID, enable)
 
 
 
+## DNS配置功能
+
 ### `dataCall.setDNSServer`
 
 ```python
@@ -212,7 +218,7 @@ dataCall.setDNSServer(profileID, simID, priDNS, secDNS)
 
 - `profileID` - PDP上下文ID，整型值，范围1~3。
 
-- `simID` - SIM卡卡槽编号，整型值，0表示SIM0，1表示SIM1，目前仅支持0。
+- `simID` - SIM卡卡槽编号，整型值，`0`表示SIM0，`1`表示SIM1，目前仅支持`0`。
 
 - `priDNS` - 主要DNS服务器地址，字符串类型。
 
@@ -220,7 +226,7 @@ dataCall.setDNSServer(profileID, simID, priDNS, secDNS)
 
 **返回值描述：**
 
-返回一个整型值，0表示配置成功，-1表示配置失败。
+返回一个整型值，`0`表示配置成功，`-1`表示配置失败。
 
 
 
@@ -239,6 +245,8 @@ dataCall.setDNSServer(profileID, simID, priDNS, secDNS)
 ```
 
 
+
+## 回调注册功能
 
 ### `dataCall.setCallback`
 
@@ -259,12 +267,12 @@ def netCallback(args):
 
 | 参数    | 类型 | 含义                                             |
 | ------- | ---- | ------------------------------------------------ |
-| args[0] | 整形 | PDP上下文ID，表示当前是哪一路PDP网络状态发生变化 |
-| args[1] | 整形 | 网络状态，0表示网络断开，1表示网络连接成功       |
+| args[0] | 整型 | PDP上下文ID，表示当前是哪一路PDP网络状态发生变化 |
+| args[1] | 整型 | 网络状态，0表示网络断开，1表示网络连接成功       |
 
 **返回值描述：**
 
-返回一个整型值，0表示注册成功，-1表示注册失败。
+返回一个整型值，`0`表示注册成功，`-1`表示注册失败。
 
 
 
@@ -292,13 +300,15 @@ dataCall.setCallback(netCallback)
 
 
 
+## 激活与去激活功能
+
 ### `dataCall.activate`
 
 ```
 dataCall.activate(profileID)
 ```
 
-激活profileID指定的那一路PDP Context。
+激活`profileID`指定的那一路PDP Context。
 
 **参数描述：**
 
@@ -307,7 +317,7 @@ dataCall.activate(profileID)
 
 **返回值描述：**
 
-返回一个整型值，0表示激活成功，-1表示激活失败。
+返回一个整型值，`0`表示激活成功，`-1`表示激活失败。
 
 
 
@@ -335,7 +345,7 @@ dataCall.activate(profileID)
 dataCall.deactivate(profileID)
 ```
 
-去激活profileID指定的那一路PDP Context。
+去激活`profileID`指定的那一路PDP Context。
 
 **参数描述：**
 
@@ -343,13 +353,15 @@ dataCall.deactivate(profileID)
 
 **返回值描述：**
 
-返回一个整型值，0表示去激活成功，-1表示去激活失败。
+返回一个整型值，`0`表示去激活成功，`-1`表示去激活失败。
 
 
 
 > 支持该方法的模组：EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600M/EC800M/EG810M/EC200A/EC200U/EC600U/EG912U/EG915U/EC600G/EC800G/EC600E/EC800E/BG77/BG95系列。
 
 
+
+## 获取拨号信息功能
 
 ### `dataCall.getInfo`
 
@@ -372,7 +384,7 @@ dataCall.getInfo(profileID, ipType)
 
 **返回值描述：**
 
-获取失败返回整形值-1，获取成功返回一个元组，包含拨号信息，具体说明如下：
+获取失败返回整形值`-1`，获取成功返回一个元组，包含拨号信息，具体说明如下：
 
 `ipType`为0或1，返回值格式为：
 
@@ -380,10 +392,10 @@ dataCall.getInfo(profileID, ipType)
 
 | 参数      | 类型   | 含义                                                         |
 | --------- | ------ | ------------------------------------------------------------ |
-| profileID | 整形   | PDP上下文ID                                                  |
-| ipType    | 整形   | IP协议类型，有如下几个值：<br>0表示IPv4<br>1表示IPv6<br>2表示IPv4和IPv6 |
-| state     | 整形   | IPv4或IPv6的拨号状态<br>0表示未拨号或拨号失败<br>1表示拨号成功 |
-| reconnect | 整形   | 拨号重连标志，保留参数，暂未使用                             |
+| profileID | 整型   | PDP上下文ID                                                  |
+| ipType    | 整型   | IP协议类型，有如下几个值：<br>0表示IPv4<br>1表示IPv6<br>2表示IPv4和IPv6 |
+| state     | 整型   | IPv4或IPv6的拨号状态<br>0表示未拨号或拨号失败<br>1表示拨号成功 |
+| reconnect | 整型   | 拨号重连标志，保留参数，暂未使用                             |
 | addr      | 字符串 | IPv4或IPv6的地址，具体取决于输入参数ipType的值：<br>ipType为0，addr为IPv4地址<br>ipType为1，addr为IPv6地址 |
 | priDNS    | 字符串 | 主要DNS服务器地址                                            |
 | secDNS    | 字符串 | 辅助DNS服务器地址                                            |

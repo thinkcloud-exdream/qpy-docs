@@ -1,8 +1,10 @@
-# `atcmd` - 发送AT指令功能
+# atcmd - 发送AT指令功能
 
 提供发送AT指令的方法，使模组能够通过Python代码发送AT指令。
 
-## 方法
+
+
+## 发送AT指令
 
 ### `atcmd.sendSync`
 

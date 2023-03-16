@@ -1,8 +1,12 @@
-# `class wifilocator` - WIFI定位
+# class wifilocator - WIFI定位
 
 `wifilocator`对象提供WIFI定位功能，获取模组经纬度坐标信息。
 
+
+
 > 注意：当前仅EC600S/EC600N/EC800N/EC200U/EC600U系列支持该功能。
+
+
 
 **示例：**
 
@@ -15,6 +19,8 @@ wifiloc.getwifilocator()
 # 返回结果 (117.1152877807617, 31.82142066955567, 100)
 # 上面使用的密钥"xxxxxxxxxxxxxxxx"指代token，具体需要向移远申请
 ```
+
+
 
 ## 构造函数
 
@@ -32,7 +38,7 @@ class wifilocator.wifilocator(token)
 
 
 
-## 方法
+## 获取坐标信息
 
 ### wifilocator.getwifilocator
 
