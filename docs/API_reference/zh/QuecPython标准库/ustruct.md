@@ -93,7 +93,7 @@ ustruct.pack(fmt, v1, v2, ...)
 ```python
 >>> import ustruct
 
->>> ustruct.pack('ii', 7, 9)  #打包两个整数
+>>> ustruct.pack('ii', 7, 9)  # 打包两个整数
 b'\x07\x00\x00\x00\t\x00\x00\x00'
 
 ```
@@ -120,7 +120,7 @@ ustruct.unpack(fmt, data)
 ```python
 >>> import ustruct
 
->>> ustruct.unpack('ii', b'\x07\x00\x00\x00\t\x00\x00\x00')  #解压之前打包的两个整数
+>>> ustruct.unpack('ii', b'\x07\x00\x00\x00\t\x00\x00\x00')  # 解压之前打包的两个整数
 (7, 9)
 
 ```
@@ -157,7 +157,7 @@ ustruct.pack_into(fmt, buffer, offset, v1, v2, ...)
 >>> buf = bytearray(8) # 创建容量为8字节的缓冲区
 >>> ustruct.pack_into(fmt, buf, 0, name.encode(), age) # 将"name"编码成bytes类型并写入三个字符(占3个字节)，后面紧跟着一个占1个字节的整数"age"
 
->>>  print(buf)#输出：bytearray(b'Tom\x19\x00\x00\x00')
+>>>  print(buf) # 输出：bytearray(b'Tom\x19\x00\x00\x00')
 bytearray(b'Tom\x19\x00\x00\x00\x00')
 ```
 
@@ -192,7 +192,7 @@ ustruct.unpack_from(fmt, data, offset=0)
 
 # 从字节序列的第一个字节开始解包
 >>> result = ustruct.unpack_from(fmt, data, 0)
->>> print(result)#输出：(b'Tom', 25)
+>>> print(result) # 输出：(b'Tom', 25)
 (b'Tom', 25)
 
 ```
