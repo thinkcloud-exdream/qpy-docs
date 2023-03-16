@@ -96,11 +96,9 @@
 
 - [6.4：MQTT 通信](./QuecPython物联网基础功能/MQTT通信.md)
 
-- [6.5：SNMP 通信](./QuecPython物联网基础功能/SNMP通信.md)
+- [6.5：WebSocket 通信](./QuecPython物联网基础功能/WebSocket通信.md)
 
-- [6.6：WebSocket 通信](./QuecPython物联网基础功能/WebSocket通信.md)
-
-- [6.7：通信异常处理](./QuecPython物联网基础功能/通信异常处理.md)
+- [6.6：通信异常处理](./QuecPython物联网基础功能/通信异常处理.md)
 
   </details>
 

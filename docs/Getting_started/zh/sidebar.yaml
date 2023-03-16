@@ -96,11 +96,9 @@ items:
         file: QuecPython物联网基础功能/HTTP通信.md
     -   label: 6.4：MQTT 通信
         file: QuecPython物联网基础功能/MQTT通信.md
-    -   label: 6.5：SNMP 通信
-        file: QuecPython物联网基础功能/SNMP通信.md
-    -   label: 6.6：WebSocket 通信
+    -   label: 6.5：WebSocket 通信
         file: QuecPython物联网基础功能/WebSocket通信.md
-    -   label: 6.7：通信异常处理
+    -   label: 6.6：通信异常处理
         file: QuecPython物联网基础功能/通信异常处理.md
     
 -   label: 7：QuecPython 云平台功能
