@@ -1,7 +1,7 @@
 
 # ucollections - 集合和容器类型
 
-模块功能：ucollections 模块可以创建一个新的容器类型，用于保存各种对象。该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：[collections](https://docs.python.org/3/library/collections.html)
+模块功能：ucollections 模块可以创建一个新的容器类型，用于保存各种对象。该模块实现了CPython模块相应模块的子集。更多信息请参阅CPython文档：[collections](https://docs.python.org/3/library/collections.html)
 
 ## `ucollections`方法
 ### `ucollections.namedtuple`
