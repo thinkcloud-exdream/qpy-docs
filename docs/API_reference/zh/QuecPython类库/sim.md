@@ -1,6 +1,6 @@
-# sim - SIM卡相关功能
+# sim - SIM卡功能
 
-提供sim卡相关功能的接口，如查询sim卡状态、iccid、imsi、电话号码等。
+模块功能：提供sim卡相关功能的接口，如查询sim卡状态、iccid、imsi、电话号码等。
 
 
 
@@ -38,6 +38,7 @@ sim.genericAccess(simId, cmd)
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.genericAccess(0,'80F2000016')
 (48, '623E8202782183027FF08410A0000000871002FF86FF9000')
 ```
@@ -88,6 +89,7 @@ sim.getIccid()
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.getIccid()
 '89860390845513443049'
 ```
@@ -110,13 +112,14 @@ sim.getPhoneNumber()
 
 
 
->BC25系列不支持此方法
+>注意：BC25系列不支持此方法
 
 
 
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.getPhoneNumber()
 '+8618166328752'
 ```
@@ -176,17 +179,11 @@ sim.enablePin(pin)
 
 **参数描述：**
 
-- `pin` - PIN码，字符串类型，一般默认是‘1234’，最大长度不超过15字节。
+- `pin` - PIN码，字符串类型，一般默认是‘1234’，最大长度不超过15位数字。
 
 **返回值描述：**
 
 返回一个整型值，`0`表示成功，`-1`表示失败。
-
-
-
-> BC25系列PIN密码最大支持四位字符串。
-
-
 
 **示例：**
 
@@ -207,7 +204,7 @@ sim.disablePin(pin)
 
 **参数描述：**
 
-- `pin` - PIN码，字符串类型，一般默认是‘1234’，最大长度不超过15字节。
+- `pin` - PIN码，字符串类型，一般默认是‘1234’，最大长度不超过15位数字。
 
 **返回值描述：**
 
@@ -216,6 +213,7 @@ sim.disablePin(pin)
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.disablePin("1234")
 0
 ```
@@ -232,7 +230,7 @@ PIN码验证：用于SIM卡开启PIN码验证后，如果需要启用SIM卡，�
 
 **参数描述：**
 
-- `pin` - PIN码，字符串类型，一般默认是‘1234’，最大长度不超过15字节。
+- `pin` - PIN码，字符串类型，一般默认是‘1234’，最大长度不超过15位数字。
 
 **返回值描述：**
 
@@ -241,6 +239,7 @@ PIN码验证：用于SIM卡开启PIN码验证后，如果需要启用SIM卡，�
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.verifyPin("1234")
 0
 ```
@@ -257,8 +256,8 @@ sim.changePin(oldPin, newPin)
 
 **参数描述：**
 
-- `oldPin` - 旧的PIN码，字符串类型，最大长度不超过15字节。
-- `newPin` - 新的PIN码，字符串类型，最大长度不超过15字节。
+- `oldPin` - 旧的PIN码，字符串类型，最大长度不超过15位数字。
+- `newPin` - 新的PIN码，字符串类型，最大长度不超过15位数字。
 
 **返回值描述：**
 
@@ -267,6 +266,7 @@ sim.changePin(oldPin, newPin)
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.changePin("1234", "4321")
 0
 ```
@@ -281,26 +281,21 @@ sim.changePin(oldPin, newPin)
 sim.unblockPin(puk, newPin)
 ```
 
-该方法用于SIM卡解锁：当多次输入PIN/PIN2码错误需要用PUK码解锁。如果PUK码输入错误10次，SIM卡将永久锁定自动报废。
+该方法用于SIM卡解锁：当多次输入PIN码错误需要用PUK码解锁。如果PUK码输入错误10次，SIM卡将永久锁定自动报废。
 
 **参数描述：**
 
-- `puk` - PUK码，字符串类型，长度8位数字，最大长度不超过15字节。
-- `newPin` - 新PIN码，字符串类型，最大长度不超过15字节。
+- `puk` - PUK码，字符串类型，长度8位数字，最大长度不超过15位数字。
+- `newPin` - 新PIN码，字符串类型，最大长度不超过15位数字。
 
 **返回值描述：**
 
 返回一个整型值，`0`表示成功，`-1`表示失败。
 
-
-
-> BC25系列PIN密码最大支持四位字符串；PUK码最大支持八位字符串。
-
-
-
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.unblockPin("12345678", "0000")
 0
 ```
@@ -319,7 +314,7 @@ sim.readPhonebook(storage, start, end, username)
 
 **参数描述：**
 
-- `storage` - 需要读取电话号码记录的电话本存储位置，整型值，可选参数值如下：
+- `storage` -电话号码存储位置，整型值，可选参数值如下：
 
 | 值   | 含义                                                         |
 | ---- | ------------------------------------------------------------ |
@@ -361,7 +356,7 @@ sim.readPhonebook(storage, start, end, username)
 
 >注意：
 >
->- BC25系列不支持此功能的方法。
+>- EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600MCNLE/EC600MCNLA/EC800MCNLA/EC800MCNLE/EC800MCNGA/EG810M/EC200A系列支持此方法。
 >
 >- 按username进行匹配时，并不是按完整的单词进行匹配，只要电话簿中已有记录的name是以username开头，那么就会匹配上。
 
@@ -370,6 +365,7 @@ sim.readPhonebook(storage, start, end, username)
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.readPhonebook(9, 1, 4, "")
 (4,[(1,'Tom','15544272539'),(2,'Pony','15544272539'),(3,'Jay','18144786859'),(4,'Pondy','15544282538')])
 >>> sim.readPhonebook(9, 0, 0, "Tom")
@@ -392,7 +388,7 @@ sim.writePhonebook(storage, index, username, number)
 
 **参数描述：**
 
-- `storage` - 需要写入电话号码记录的电话本存储位置，整型值，具体可选参数同上`sim.readPhonebook`中的`storage` ：
+- `storage` - 电话号码存储位置，整型值，具体可选参数同上`sim.readPhonebook`中的`storage` ：
 
 - `index` - 需要写入电话号码记录的在电话簿中的编号，整型值，范围`1 ~ 500`。
 - `username` - 电话号码的用户名，字符串类型，长度范围不超过30字节，暂不支持中文名。
@@ -402,9 +398,16 @@ sim.writePhonebook(storage, index, username, number)
 
 返回一个整型值，`0`表示成功，`-1`表示失败。
 
+
+
+> 注意：EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600MCNLE/EC600MCNLA/EC800MCNLA/EC800MCNLE/EC800MCNGA/EG810M/EC200A系列支持此方法。
+
+
+
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.writePhonebook(9, 1, 'Tom', '18144786859')
 0
 ```
@@ -432,13 +435,14 @@ SIM卡热插拔开关：用于设置SIM卡热插拔相关配置。
 
 
 
-> BC25系列不支持此方法。
+> 注意：BC25系列不支持此方法。
 
 
 
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.setSimDet(1, 0)
 0
 ```
@@ -458,22 +462,23 @@ sim.getSimDet()
 
 成功： 返回元组数据，格式`(detenable, insertlevel)`，具体说明如下：
 
-| 参数          | 类型 | 含义                                         |
-| ------------- | ---- | -------------------------------------------- |
-| `detenable`   | 整型 | 开启或者关闭SIM卡热插拔功能，0：关闭 1：打开 |
-| `insertlevel` | 整型 | 高低电平配置(0/1)                            |
+| 参数          | 类型 | 含义                                           |
+| ------------- | ---- | ---------------------------------------------- |
+| `detenable`   | 整型 | 开启或者关闭SIM卡热插拔功能，0：关闭 ，1：打开 |
+| `insertlevel` | 整型 | 高低电平配置(0/1)                              |
 
 失败： 返回`-1`。
 
 
 
->BC25系列不支持此方法。
+>注意：BC25系列不支持此方法。
 
 
 
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.getSimDet()
 (1, 0)
 ```
@@ -490,10 +495,6 @@ sim.getCurSimid()
 
 该方法用于获取当前卡的SIM卡卡槽编号(simId)。
 
-**参数描述：**
-
-- 无
-
 **返回值描述：**
 
 成功： 返回当前`simId`(`0`或`1`，分别表示`SIM1`或者`SIM2`)。
@@ -502,13 +503,14 @@ sim.getCurSimid()
 
 
 
->支持该方法的模组：EC600M/EC800M系列。
+>注意：支持该方法的模组：EC600M/EC800M系列。
 
 
 
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.getCurSimid()   #获取当前卡，当前是卡1
 0
 ```
@@ -533,13 +535,14 @@ sim.switchCard(simId)
 
 
 
->支持该方法的模组：EC600M/EC800M系列。
+>注意：支持该方法的模组：EC600M/EC800M系列。
 
 
 
 **示例：**
 
 ```python
+>>> import sim
 >>> sim.getCurSimid()  #获取当前卡，当前是卡1
 0
 >>> sim.switchCard(1)  #切到卡2
@@ -571,7 +574,7 @@ def usrFun(args):
 
 | 参数   | 类型 | 含义                                                      |
 | ------ | ---- | --------------------------------------------------------- |
-| `args` | 整形 | 当前SIM卡插拔状态：`1`  表示SIM卡插入；`2` 表示 SIM卡拔出 |
+| `args` | 整型 | 当前SIM卡插拔状态：`1`  表示SIM卡插入；`2` 表示 SIM卡拔出 |
 
 **返回值描述：**
 
@@ -579,7 +582,7 @@ def usrFun(args):
 
 
 
-> BC25系列不支持此方法。
+> 注意：BC25系列不支持此方法。
 
 
 
@@ -616,7 +619,7 @@ def usrFun(args):
 
 | 参数 | 类型 | 含义                                                        |
 | ---- | ---- | ----------------------------------------------------------- |
-| args | 整形 | 切换SIM卡结果：`7` -表示切换SIM成功，`8`- 表示切换SIM卡失败 |
+| args | 整型 | 切换SIM卡结果：`7` -表示切换SIM成功，`8`- 表示切换SIM卡失败 |
 
 **返回值描述：**
 
@@ -626,7 +629,7 @@ def usrFun(args):
 
 > 支持该方法的模组：EC600M/EC800M系列。
 >
-> 注意以下几点：<br>1、目标卡不存在或者目标卡状态异常；<br>2、目标卡是当前卡；<br>以上情况切卡方法`sim.switchCard`直接返回-1，不触发此接口设置的回调函数。
+> 注意：以下几点：<br>1、目标卡不存在或者目标卡状态异常；<br>2、目标卡是当前卡；<br>以上情况切卡方法`sim.switchCard`直接返回-1，不触发此接口设置的回调函数。
 
 
 

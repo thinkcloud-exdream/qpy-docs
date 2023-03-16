@@ -1,10 +1,10 @@
 # net - 网络相关功能
 
-`net`模块包含了模组网络相关的功能，提供配置和查询网络模式信息等接口，比如获取注网状态，设置搜网模式等。
+模块功能：该模块包含了模组网络相关的功能，提供配置和查询网络模式信息等接口，比如获取注网状态，设置搜网模式等。
 
 
 
->注： 建议用户使用不同运营商的SIM卡时，则配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组无法注网。用户具体如何配置APN信息，参考`dataCall.setPDPContext`方法。
+>注意： 建议用户使用不同运营商的SIM卡时，则配置对应运营商的APN信息；如果不配置或者配置错误，可能会导致模组无法注网。用户具体如何配置APN信息，参考`dataCall.setPDPContext`方法。
 
 
 
@@ -20,7 +20,7 @@ net.csqQueryPoll()
 
 **返回值描述：**
 
-  成功返回整型的csq信号强度值，失败返回整型值`-1`，返回值为`99`表示异常；
+  成功返回整型的csq信号强度值，失败返回整型值`-1`，返回值为`99`表示异常。
 
 
 
@@ -107,7 +107,7 @@ net.getCellInfo([sinrEnable])
 
 
 
->注：
+>注意：
 >
 >* 该接口搜小区时会一直阻塞，一般是3-5秒，在无信号的地方会更长
 >* `sinrEnable`为可选参，不支持的平台可不写，不写默认不获取sinr
@@ -118,6 +118,7 @@ net.getCellInfo([sinrEnable])
 **示例：**
 
 ```python
+>>> import net
 >>> net.getCellInfo()
 ([], [], [(0, 232301375, 1120, 17, 378, 26909, 1850, -66, -8), (3, 110110494, 1120, 17, 10, 26909, 2452, -87, -17), (3, 94542859, 1120, 1, 465, 56848, 1650, -75, -10), 
 (3, 94472037, 1120, 1, 369, 56848, 3745, -84, -20)])
@@ -171,7 +172,7 @@ net.getConfig()
 
 
 
->BC25系列不支持此方法;
+>注意：BC25系列不支持此方法;
 >
 >BG95-M1系列仅支持CATM制式；
 >
@@ -184,6 +185,7 @@ net.getConfig()
 **示例：**
 
 ```python
+>>> import net
 >>>net.getConfig ()
 (8, False)
 ```
@@ -222,6 +224,7 @@ net.setConfig(mode [, roaming])
 **示例：**
 
 ```python
+>>> import net
 >>>net.setConfig(6)
 0
 
@@ -247,10 +250,10 @@ net.getNetMode()
 
 | 参数             | 类型   | 参数说明                 |
 | ---------------- | ------ | ------------------------ |
-| `selection_mode` | 整型值 | 方式，0 - 自动，1 - 手动 |
+| `selection_mode` | 整型   | 方式，0 - 自动，1 - 手动 |
 | `mcc`            | 字符串 | 移动设备国家代码         |
 | `mnc`            | 字符串 | 移动设备网络代码         |
-| `act`            | 整型值 | 首选网络的ACT模式        |
+| `act`            | 整型   | 首选网络的ACT模式        |
 
 `ACT`模式枚举值参照下表：
 
@@ -289,6 +292,7 @@ BG95系列模组`ACT`模式枚举值参照下表：
 **示例：**
 
 ```python
+>>> import net
 >>> net.getNetMode()
 (0, '460', '46', 7)
 ```
@@ -341,7 +345,7 @@ net.getSignal([sinrEnable])
 
 
 
->注：
+>注意：
 >
 >* `sinrEnable`为可选参，不支持的平台可不写，不写默认不获取sinr
 >* BC25系列不支持获取sinr，其余模组型号均支持
@@ -351,6 +355,7 @@ net.getSignal([sinrEnable])
 **示例：**
 
 ```python
+>>> import net
 >>>net.getSignal()
 ([99, 99, 255, 255], [-51, -76, -5, 255])
 >>>net.getSignal(0)
@@ -377,13 +382,14 @@ net.nitzTime()
 
 | 参数       | 类型   | 参数意义                                                     |
 | ---------- | ------ | ------------------------------------------------------------ |
-| `date`     | 字符串 | 基站时间，其中关于时区的部分，不同系列有所区别，具体见示例。<br>如果需要设置和获取时区，请使用`utime`模块的`setTimeZone(offset)`和`getTimeZone()`接口，<br>不同平台，这两个接口的单位都是小时，具体参考`utime`模块的说明。 |
+| `date`     | 字符串 | 基站时间，其中关于时区的部分，不同系列有所区别，具体见示例。<br>如果需要设置和获取时区，请使用`utime`模块的`setTimeZone(offset)`和`getTimeZone()`接口，<br>不同平台，这两个接口的单位都是小时，具体参考[`utime`](../QuecPython标准库/utime.md)模块的说明。 |
 | `abs_time` | 整型   | 基站时间的绝对秒数表示                                       |
 | `leap_sec` | 整型   | 闰秒数                                                       |
 
 **示例：**
 
 ```python
+>>> import net
 >>> net.nitzTime() 
 # EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600M/EC800M/EG810M/EC200A系列的返回值，时区单位小时，这里8即表示东八区
 ('21/10/26 06:08:03 8 0', 1635228483, 0)  
@@ -419,6 +425,7 @@ net.operatorName()
 **示例：**
 
 ```python
+>>> import net
 >>> net.operatorName()
 ('CHN-UNICOM', 'UNICOM', '460', '01')
 ```
@@ -445,7 +452,7 @@ net.getState()
 | -------------- | ------------------------------------------------------------ |
 | `state`        | 网络注册状态，具体见下表                                     |
 | `lac`          | 位置区码，范围 1 ~ 65534                                     |
-| `cid`          | cell id，范围 0x00000000 ~ 0x0FFFFFFF，具体见`net.getCellInfo()`中返回值 |
+| `cid`          | cell id，范围 0x00000000 ~ 0x0FFFFFFF，具体见上面`net.getCellInfo()`中返回值 |
 | ``rat``        | 接入技术，access technology，具体见后面表格                  |
 | `reject_cause` | 注册被拒绝的原因，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
 | `psc`          | 主扰码，Primary Scrambling Code，EC200U/EC600U/BC25系列该参数保留，不作为有效参数 |
@@ -485,7 +492,7 @@ net.getState()
 
 
 
-> 注：BG77/BG95系列参照下表
+> 注意：BG77/BG95系列参照下表
 
 | 值   | 说明               |
 | ---- | ------------------ |
@@ -506,6 +513,7 @@ net.getState()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getState()
 ([11, 26909, 232301323, 7, 0, 466], [0, 26909, 232301323, 7, 0, 0])
 ```
@@ -552,6 +560,7 @@ net.getServingCi()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getServingCi()
 94938399
 ```
@@ -577,6 +586,7 @@ net.getMnc()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getMnc()
 [0, 0]
 ```
@@ -598,6 +608,7 @@ net.getServingMnc()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getServingMnc()
 1
 ```
@@ -629,6 +640,7 @@ net.getMcc()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getMcc()
 [1120, 0]
 ```
@@ -656,6 +668,7 @@ net.getServingMcc()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getServingMcc()
 1120
 ```
@@ -681,6 +694,7 @@ net.getLac()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getLac()
 [21771, 0]
 ```
@@ -702,6 +716,7 @@ net.getServingLac()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getServingLac()
 56848
 ```
@@ -731,6 +746,7 @@ net.getModemFun()
 **示例：**
 
 ```python
+>>> import net
 >>> net.getModemFun()
 1
 ```
@@ -767,6 +783,7 @@ net.setModemFun(fun [, rst])
 **示例：**
 
 ```python
+>>> import net
 >>> net.setModemFun(4)
 0
 ```
@@ -829,11 +846,11 @@ net.setBand(netRat, gsmBand, bandTuple)
 
 **返回值描述：**
 
-  设置成功返回整型`0`，失败返回整型`-1`。
+  设置成功返回整型值`0`，失败返回整型值`-1`。
 
 
 
->注:
+>注意：
 >* 当前可支持模组型号：BG95系列/EG912NENAA
 >* BG95不支持设置上述模式1(LTE)下的`band`
 >* EG912NENAA仅支持上述模式0(GSM)和模式1(LTE)
@@ -980,7 +997,7 @@ net.getBand(netRat)
 
 
 
->注:
+>注意：
 >* 当前可支持模组型号：BG95系列/EG912NENAA
 >* BG95不支持设置上述模式1(LTE)下的`band`
 >* EG912NENAA仅支持上述模式0(GSM)和模式1(LTE)
@@ -990,7 +1007,8 @@ net.getBand(netRat)
 **示例：**
 
 ```python
-net.getBand(2)
+>>> import net
+>>> net.getBand(2)
 '0x10000200000000090e189f'  # 这是字符串，用户如果需要int型，可通过int(data)来自行转换
 ```
 
@@ -1006,11 +1024,11 @@ net.bandRst()
 
 **返回值描述：**
 
-成功返回整型`0`，失败返回整型`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
 
 
->当前可支持模组型号：EG912NENAA
+>注意：当前可支持模组型号：EG912NENAA
 
 
 
@@ -1021,6 +1039,7 @@ net.bandRst()
 先设置成其他band，调用该接口，看是否成功恢复成初始值
 EG912NENAA平台初始值：gsm_band:0x3(EGSM900/DCS1800 )  lte_band:0x8000000000480800D5(B1/B3/B5/B7/B8/B20/B28/B31/B72 )
 '''
+>>> import net
 >>> net.bandRst()
 0
 ```
