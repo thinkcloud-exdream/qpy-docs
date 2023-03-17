@@ -28,5 +28,7 @@
 - [quecgnss - 内置GNSS相关功能](./quecgnss.md)
 - [gnss - GNSS相关功能](./gnss.md)
 - [securedata - 安全数据区相关功能](./securedata.md)
+- [ble- 低功耗蓝牙相关功能](./ble.md)
+- [bt- 经典蓝牙相关功能](./bt.md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
