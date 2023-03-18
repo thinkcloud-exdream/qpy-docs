@@ -1,4 +1,4 @@
-# `class Timer` - 硬件定时器
+# class Timer - 硬件定时器
 
 类功能：硬件定时器。
 
@@ -12,17 +12,16 @@
 class machine.Timer(Timern)
 ```
 
-**参数：**
+**参数描述：**
 
 - `Timern` - 定时器号，int类型，支持定时器Timer0 ~ Timer3。
 
 **示例：**
 
 ```python
-# 使用该定时器时需注意：定时器0-3，每个在同一时间内只能执行一件任务，且多个对象不可使用同一个定时器。
-from machine import Timer
-# 创建Timer对象
-timer1 = Timer(Timer.Timer1)
+>>> # 创建Timer对象
+>>> from machine import Timer
+>>> timer1 = Timer(Timer.Timer1)
 ```
 
 ## 方法
@@ -35,22 +34,21 @@ timer.start(period, mode, callback)
 
 该方法用于启动定时器。
 
-**参数：**
+**参数描述：**
 
 - `period` - 中断周期，int类型，单位毫秒，大于等于1。
 
-- `mode` - 运行模式，int类型，说明如下：<br />`Timer.ONE_SHOT` - 单次模式，定时器只执行一次<br />`Timer.PERIODIC` - 周期模式，循环执行
+- `mode` - 运行模式，int类型，说明如下：<br />`ONE_SHOT` - 单次模式，定时器只执行一次<br />`PERIODIC` - 周期模式，循环执行
 
 - `callback` - 定时器执行函数，function类型。
 
-**返回值：**
+**返回值描述：**
 
 启动成功返回整型值`0`，失败返回整型值`-1`。
 
 **示例：**
 
 ```python
-# 使用该定时器时需注意：定时器0-3，每个在同一时间内只能执行一件任务，且多个对象不可使用同一个定时器。
 >>> def fun(args):
         print("###timer callback function###")
 >>> timer1.start(period=1000, mode=timer1.PERIODIC, callback=fun)
@@ -69,20 +67,13 @@ timer.stop()
 
 该方法用于关闭定时器。
 
-**返回值：**
+**返回值描述：**
 
 成功返回整型值`0`，失败返回整型值`-1`。
 
 **使用示例**：
 
 ```python
-'''
-@Author: Baron
-@Date: 2020-06-17
-@LastEditTime: 2020-06-17 17:06:08
-@Description: example for module timer
-@FilePath: example_timer_file.py
-'''
 import log
 import utime
 from machine import Timer

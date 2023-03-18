@@ -1,6 +1,6 @@
 # class WDT – 看门狗定时器
 
-模块功能：APP应用程序发生异常不执行时进行系统重启操作
+类功能：APP应用程序发生异常不执行时进行系统重启操作。
 
 ## 构造函数
 
@@ -12,13 +12,13 @@ class machine.WDT(period)
 
 创建软狗对象。
 
-**参数：**
+**参数描述：**
 
 - `period` - 设置软狗检测时间，单位(s），int类型。
 
-**返回值：**
+**返回值描述：**
 
-返回软狗对象
+返回软狗对象。
 
 ## 方法
 
@@ -30,9 +30,9 @@ wdt.feed()
 
 该方法用于喂狗。
 
-**返回值：**
+**返回值描述：**
 
-成功返回整型值`0`，失败返回其他
+成功返回整型值`0`，失败返回其他。
 
 ### `wdt.stop`
 
@@ -42,21 +42,13 @@ wdt.stop()
 
 该方法用于关闭软狗功能。
 
-**返回值：**
+**返回值描述：**
 
 成功返回整型值`0`，失败返回其他。
 
 **使用示例：**
 
 ```python
-'''
-@Author: Pawn
-@Date: 2020-08-12
-@LastEditTime: 2020-08-12 17:06:08
-@Description: example for module timer
-@FilePath: example_wdt.py
-'''
-
 from machine import WDT
 from machine import Timer
 import utime

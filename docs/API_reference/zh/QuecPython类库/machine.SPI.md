@@ -10,13 +10,13 @@
 class machine.SPI(port, mode, clk)
 ```
 
-**参数说明：**
+**参数描述：**
 
 - `port` - 通道选择[0,1]，int类型。
 
-- `mode` - SPI 的工作模式(模式0最常用)，说明如下：<br />时钟极性CPOL：即SPI空闲时，时钟信号SCLK的电平（0:空闲时低电平; 1:空闲时高电平）<br />0 : CPOL=0, CPHA=0<br />1 : CPOL=0, CPHA=1<br />2:  CPOL=1, CPHA=0<br />3:  CPOL=1, CPHA=1
+- `mode` - SPI 的工作模式，说明如下：<br />时钟极性CPOL：即SPI空闲时，时钟信号SCLK的电平(0:空闲时低电平; 1:空闲时高电平)<br />`0` : CPOL=0, CPHA=0<br />`1` : CPOL=0, CPHA=1<br />`2`:  CPOL=1, CPHA=0<br />`3`:  CPOL=1, CPHA=1
 
-- `clk` - 时钟频率，说明如下：<br />EC600N/EC600S/EC800N/BG95M3/EC600M/EC800M/EG912N:<br /> 0 : 812.5kHz<br /> 1 : 1.625MHz<br /> 2 : 3.25MHz<br /> 3 : 6.5MHz<br /> 4 : 13MHz<br /> 5 :  26MHz<br /> 6：52MHz<br />EC600U/EC200U/EG915U:<br />0 : 781.25KHz<br />1 : 1.5625MHz<br />2 : 3.125MHz<br />3 : 5MHz<br />4 : 6.25MHz<br />5 : 10MHz<br />6 : 12.5MHz<br />7 : 20MHz<br />8 : 25MHz<br />9 : 33.33MHz<br />BC25PA：<br />0 ：5MHz<br />X : XMHz  (X in [1,39])
+- `clk` - 时钟频率，说明如下：<br />EC600N/EC600S/EC800N/BG95M3/EC600M/EC800M/EG912N:<br />`0` : 812.5kHz<br />`1` : 1.625MHz<br />`2` : 3.25MHz<br />`3` : 6.5MHz<br />`4` : 13MHz<br />`5` :  26MHz<br />`6`：52MHz<br />C600U/EC200U/EG915U:<br />`0` : 781.25KHz<br />`1` : 1.5625MHz<br />`2` : 3.125MHz<br />`3` : 5MHz<br />`4` : 6.25MHz<br />`5` : 10MHz<br />`6` : 12.5MHz<br />`7` : 20MHz<br />`8` : 25MHz<br />`9` : 33.33MHz<br />BC25PA：<br />`0` ：5MHz<br />`X` : XMHz  (X in [1,39])
 
 
 > 注意：BC25PA平台不支持1、2模式。
@@ -24,12 +24,12 @@ class machine.SPI(port, mode, clk)
 **示例：**
 
 ```python
-from machine import SPI
-# 创建SPI对象
-spi_obj = SPI(1, 0, 1)  # 返回spi对象
+>>> from machine import SPI
+>>> # 创建SPI对象
+>>> spi_obj = SPI(1, 0, 1)
 ```
 
-**引脚说明：**
+**SPI引脚对应关系：**
 
 | 平台          | 引脚                                                         |
 | ------------- | ------------------------------------------------------------ |
@@ -55,14 +55,14 @@ SPI.read(recv_data, datalen)
 
 该方法用于读取数据。
 
-**参数说明：**
+**参数描述：**
 
 - `recv_data` - 接收读取数据的数组，bytearray类型。
 - `datalen` - 读取数据的长度，int类型。
 
-**返回值：**
+**返回值描述：**
 
-失败返回整型值`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
 ### `SPI.write`
 
@@ -72,14 +72,14 @@ SPI.write(data, datalen)
 
 该方法用于写入数据。
 
-**参数说明：**
+**参数描述：**
 
 - `data` - 写入的数据，bytes类型。
 - `datalen` - 写入的数据长度，int类型。
 
-**返回值：**
+**返回值描述：**
 
-失败返回整型值`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
 ### `SPI.write_read`
 
@@ -89,15 +89,15 @@ SPI.write_read(r_data, data, datalen)
 
 该方法用于写入和读取数据。
 
-**参数说明：**
+**参数描述：**
 
 - `r_data  ` - 接收读取数据的数组，bytearray类型。
 - `data` - 发送的数据，bytes类型。
 - `datalen` - 读取数据的长度，int类型。
 
-**返回值：**
+**返回值描述：**
 
-失败返回整型值`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
 **使用示例：**
 
@@ -128,7 +128,7 @@ spi_log = log.getLogger("SPI")
 
 if __name__ == '__main__':
     r_data = bytearray(5)  # 创建接收数据的buff
-    data = b"world"  # 写入测试数据
+    data = b"world"  # 测试数据
 
     ret = spi_obj.write_read(r_data, data, 5)  # 写入数据并接收
     spi_log.info(r_data)

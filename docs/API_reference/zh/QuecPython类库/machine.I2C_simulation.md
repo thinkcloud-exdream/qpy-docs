@@ -1,16 +1,16 @@
 # class I2C_simulation - 模拟I2C通信
 
-类功能：用于gpio模拟标准i2c协议。除了创建对象外，其它的操作（读写）均与I2C通信一致。
+类功能：用于gpio模拟标准i2c协议，除了创建对象外，其它的操作(读写)均与I2C通信一致。
 
 ## 构造函数
 
-### `machine.I2C`_simulation
+### `machine.I2C_simulation`
 
 ```python
 class machin.I2C_simulation(GPIO_clk, GPIO_sda, CLK)
 ```
 
-**参数说明：**
+**参数描述：**
 
 - `GPIO_clk` - i2c的CLK引脚(需要控制的GPIO引脚号，参照Pin模块的定义)，int类型。
 - `GPIO_sda` - i2c的SDA引脚(需要控制的GPIO引脚号，参照Pin模块的定义)，int类型。
@@ -19,9 +19,9 @@ class machin.I2C_simulation(GPIO_clk, GPIO_sda, CLK)
 **示例：**
 
 ```python
-from machine import I2C_simulation
-# 创建I2C_simulation对象
-i2c_obj = I2C_simulation(I2C_simulation.GPIO10, I2C_simulation.GPIO11, 300)  # 返回i2c对象
+>>> from machine import I2C_simulation
+>>> # 创建I2C_simulation对象
+>>> i2c_obj = I2C_simulation(I2C_simulation.GPIO10, I2C_simulation.GPIO11, 300)  # 返回i2c对象
 ```
 
 ## 方法
@@ -34,16 +34,16 @@ I2C_simulation.read(slaveaddress, addr,addr_len, r_data, datalen, delay)
 
 该方法用于从 I2C 总线中读取数据。
 
-**参数说明：**
+**参数描述：**
 
 - `slaveaddress` - i2c 设备地址，int类型。
 - `addr` - i2c 寄存器地址，bytearray类型。
 - `addr_len` - 寄存器地址长度，int类型。
-- `r_data` - 接收数据的字节数组，bytearray类型
+- `r_data` - 接收数据的字节数组，bytearray类型。
 - `datalen` - 字节数组的长度，int类型。
-- `delay` - 延时，数据转换缓冲时间（单位ms），int类型。
+- `delay` - 延时，数据转换缓冲时间(单位ms)，int类型。
 
-**返回值：**
+**返回值描述：**
 
 成功返回整型值`0`，失败返回整型值`-1`。
 
@@ -55,7 +55,7 @@ I2C_simulation.write(slaveaddress, addr, addr_len, data, datalen)
 
 该方法用于从 I2C 总线中写入数据。
 
-**参数说明：**
+**参数描述：**
 
 - `slaveaddress` - i2c 设备地址，int类型。
 - `addr` - i2c 寄存器地址，bytearray类型。
@@ -63,13 +63,11 @@ I2C_simulation.write(slaveaddress, addr, addr_len, data, datalen)
 - `data` - 写入的数据，bytearray类型。
 - `datalen` - 写入数据的长度，int类型。
 
-**返回值：**
+**返回值描述：**
 
 成功返回整型值`0`，失败返回整型值`-1`。
 
 **使用示例：**
-
-该示例是驱动AHT10获取温湿度。
 
 ```python
 import log
@@ -84,8 +82,8 @@ import utime as time
 
 # API  手册 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=i2c
 # AHT10 说明书
-#  https://server4.eca.ir/eshop/AHT10/Aosong_AHT10_en_draft_0c.pdf
-
+# https://server4.eca.ir/eshop/AHT10/Aosong_AHT10_en_draft_0c.pdf
+# 该示例是驱动AHT10获取温湿度数据
 
 class aht10class():
     i2c_log = None

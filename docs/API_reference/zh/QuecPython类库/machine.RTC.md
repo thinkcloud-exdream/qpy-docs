@@ -13,9 +13,9 @@ class machine.RTC()
 **示例：**
 
 ```python
-# 创建RTC对象
->>>from machine import RTC
->>>rtc = RTC()
+>>> # 创建RTC对象
+>>> from machine import RTC
+>>> rtc = RTC()
 ```
 
 ## 方法
@@ -26,20 +26,20 @@ class machine.RTC()
 rtc.datetime([year, month, day, week, hour, minute, second, microsecond])
 ```
 
-该方法用于设置和获取RTC时间。不带参数时，则用于获取时间，带参数则是设置时间；设置时间的时候，参数week不参与设置，microsecond参数保留，暂未使用，默认是0。
+该方法用于设置或获取RTC时间。不带参数时，用于获取时间，带参数则是设置时间；设置时间时，参数week不参与设置，microsecond参数保留，暂未使用，默认是0。
 
-**参数：**
+**参数描述：**
 
 - `year` -  年，int类型。
-- `month` - 月，int类型，范围1 ~ 12。
-- `day` - 日，int类型，范围1 ~ 31。
-- `week` - 星期，int类型，范围0 ~ 6，其中0表示周日，1 ~ 6分别表示周一到周六；设置时间时，该参数不起作用，保留；获取时间时该参数有效。
-- `hour` - 时，int类型，范围0 ~ 23。
-- `minute` - 分，int类型，范围0 ~ 59。
-- `second` - 秒，int类型，范围0 ~ 59。
+- `month` - 月，int类型，范围[1 ~ 12]。
+- `day` - 日，int类型，范围[1 ~ 31]。
+- `week` - 星期，int类型，范围[0 ~ 6]，其中0表示周日，[1 ~ 6]分别表示周一到周六；设置时间时，该参数不起作用，保留；获取时间时该参数有效。
+- `hour` - 时，int类型，范围[0 ~ 23]。
+- `minute` - 分，int类型，范围[0 ~ 59]。
+- `second` - 秒，int类型，范围[0 ~ 59]。
 - `microsecond` - 微秒，int类型，保留参数，暂未使用，设置时间时该参数写0即可。
 
-**返回值：**
+**返回值描述：**
 
 获取时间时，返回一个元组，包含日期时间，格式如下：<br />`[year, month, day, week, hour, minute, second, microsecond]`
 
@@ -65,24 +65,24 @@ rtc.datetime([year, month, day, week, hour, minute, second, microsecond])
 rtc.set_alarm(data_e)
 ```
 
-该方法用于设置RTC到期时间,当到了到期时间就会调用注册的回调函数。
+该方法用于设置RTC到期时间,时间到期就会调用注册的回调函数。
 
-> 注：支持平台EC600U/EC200U/EC600N/EC800N/BC25
-
-**参数：**
+**参数描述：**
 
 - `year` -  年，int类型。
-- `month` - 月，int类型，范围1 ~ 12。
-- `day` - 日，int类型，范围1 ~ 31。
-- `week` - 星期，int类型，范围0 ~ 6，其中0表示周日，1 ~ 6分别表示周一到周六；设置时间时，该参数不起作用，保留；获取时间时该参数有效。
-- `hour` - 时，int类型，范围0 ~ 23。
-- `minute` - 分，int类型，范围0 ~ 59。
-- `second` - 秒，int类型，范围0 ~ 59。
+- `month` - 月，int类型，范围[1 ~ 12]。
+- `day` - 日，int类型，范围[1 ~ 31]。
+- `week` - 星期，int类型，范围[0 ~ 6]，其中0表示周日，[1 ~ 6]分别表示周一到周六；设置时间时，该参数不起作用，保留；获取时间时该参数有效。
+- `hour` - 时，int类型，范围[0 ~ 23]。
+- `minute` - 分，int类型，范围[0 ~ 59]。
+- `second` - 秒，int类型，范围[0 ~ 59]。
 - `microsecond` - 微秒，int类型，保留参数，暂未使用，设置时间时该参数写0即可。
 
-**返回值：**
+**返回值描述：**
 
 设置成功返回整型值`0`，设置失败返回整型值`-1` 。
+
+> 注意：该方法支持平台EC600U/EC200U/EC600N/EC800N/BC25
 
 **示例：**
 
@@ -103,15 +103,15 @@ rtc.register_callback(fun)
 
 该方法用于注册RTC alarm回调处理函数。
 
-> 注：支持平台EC600U/EC200U/EC600N/EC800N/BC25
-
-**参数：**
+**参数描述：**
 
 - `fun` - RTC alarm回调处理函数，function类型。
 
-**返回值：**
+**返回值描述：**
 
 注册成功返回整型值`0`，注册失败返回整型值`-1` 。
+
+> 注意：该方法支持平台EC600U/EC200U/EC600N/EC800N/BC25
 
 ### `rtc.enable_alarm`
 
@@ -121,15 +121,15 @@ rtc.enable_alarm(on_off)
 
 该方法用于打开/关闭RTC alarm功能
 
-> 注：支持平台EC600U/EC200U/EC600N/EC800N/BC25，BC25PA平台只有设置回调函数,才能启动定时器.
-
-**参数：**
+**参数描述：**
 
 - `on_off` - `1`表示打开RTC alarm功能，`0`表示关闭RTC alarm功能，int类型。
 
-**返回值：**
+**返回值描述：**
 
 打开/关闭成功返回整型值`0`，打开/关闭失败返回整型值`-1` 。
+
+> 注意：该方法支持平台EC600U/EC200U/EC600N/EC800N/BC25，BC25PA平台只有设置回调函数，才能启动定时器。
 
 **示例：**
 
