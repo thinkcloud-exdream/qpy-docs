@@ -95,7 +95,6 @@ items:
             file: QuecPython类库/machine.WDT.md
         -   label: KeyPad - 矩阵键盘
             file: QuecPython类库/machine.KeyPad.md
-        file: QuecPython类库/machine.md
     -   label: qrcode - 二维码显示
         file: QuecPython类库/qrcode.md
     -   label: pm - 低功耗
