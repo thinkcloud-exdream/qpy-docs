@@ -1,9 +1,3 @@
-```
-本文阐述了QuecPython的misc模块的用法，描述了misc模块最新版本的特性。
-```
-
-
-
 # misc- 其他
 
 模块功能:  提供关机、软件重启、PWM以及ADC相关功能。
@@ -16,7 +10,7 @@
 misc.antennaSecRXOffCtrl(*args)
 ```
 
-分集天线配置、查询接口。（仅1803S平台支持该接口）。
+分集天线配置、查询接口(EC200A系列支持该接口)。
 
 **参数描述：**
 
@@ -24,13 +18,13 @@ misc.antennaSecRXOffCtrl(*args)
   参数个数为0，查询：misc.antennaSecRXOffCtrl()；
   参数个数为1，配置：misc.antennaSecRXOffCtrl(SecRXOff_set)。
 
-- SecRXOff_set-int类型，范围0/1, `0`:不关闭分集天线 `1`:关闭分集天线。
+- `SecRXOff_set`-int类型，范围0/1, `0`:不关闭分集天线 `1`:关闭分集天线。
 
 **返回值描述：**
 
 查询：成功返回分集天线配置，失败返回整形值`-1`；
 
-设置：成功返回整形0,失败返回整型值`-1`。
+设置：成功返回整形`0`,失败返回整型值`-1`。
 
 **示例：**
 

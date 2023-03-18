@@ -1,5 +1,3 @@
-    本文阐述了QuecPython的misc.ADC类的用法，描述了misc.ADC类最新版本的特性。
-
 # class ADC - 电压采集功能
 
 用于采集电压信号。
@@ -43,7 +41,7 @@ ADC.read(ADCn)
 
 **参数描述：**
 
-- ADCn-ADC通道,int类型,<a href="#label_pinmap">点此查看</a>支持的通道与对应引脚
+- `ADCn`-ADC通道,int类型,<a href="#label_pinmap">点此查看</a>支持的通道与对应引脚
 
 **返回值描述：**
 
@@ -60,7 +58,7 @@ ADC.read(ADCn)
 
 <span id="label_pinmap">**ADC通道与物理引脚的映射关系：**</span>
 
-EC100Y平台对应引脚如下<br/>ADC0 – 引脚号39<br/>ADC1 – 引脚号81<br/>EC600S/EC600N平台对应引脚如下<br/>ADC0 – 引脚号19<br/>EC600M平台对应引脚如下<br/>ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br/>EC800N平台对应引脚如下<br/>ADC0 – 引脚号9<br/>EC600U平台对应引脚如下<br />ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br />ADC2 – 引脚号113<br />ADC3 – 引脚号114<br />EC200U平台对应引脚如下<br />ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br />ADC2 – 引脚号43<br />EC200A平台对应引脚如下<br/>ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br/>BG95M3平台对应引脚如下<br/>ADC0 – 引脚号24<br/>EG915U平台对应引脚如下<br/>ADC0 – 引脚号24<br/>ADC1 – 引脚号2<br/>EC800M平台对应引脚如下<br/>ADC0 – 引脚号9<br/>ADC1 – 引脚号96<br/>EG912N平台对应引脚如下<br/>ADC0 – 引脚号24<br/>ADC1 – 引脚号2
+EC100Y系列对应引脚如下<br/>ADC0 – 引脚号39<br/>ADC1 – 引脚号81<br/>EC600S/EC600N系列对应引脚如下<br/>ADC0 – 引脚号19<br/>EC600M系列对应引脚如下<br/>ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br/>EC800N系列对应引脚如下<br/>ADC0 – 引脚号9<br/>EC600U系列对应引脚如下<br />ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br />ADC2 – 引脚号113<br />ADC3 – 引脚号114<br />EC200U系列对应引脚如下<br />ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br />ADC2 – 引脚号43<br />EC200A系列对应引脚如下<br/>ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br/>BG95系列对应引脚如下<br/>ADC0 – 引脚号24<br/>EG915U系列对应引脚如下<br/>ADC0 – 引脚号24<br/>ADC1 – 引脚号2<br/>EC800M系列对应引脚如下<br/>ADC0 – 引脚号9<br/>ADC1 – 引脚号96<br/>EG912N系列对应引脚如下<br/>ADC0 – 引脚号24<br/>ADC1 – 引脚号2
 
 ### ADC.close
 

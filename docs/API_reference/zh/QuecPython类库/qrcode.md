@@ -1,14 +1,6 @@
-```
-本文阐述了QuecPython的qrcode模块的用法，描述了qrcode模块最新版本的特性。
-```
-
-
-
 # qrcode- 二维码显示
 
 模块功能：根据输入的内容，生成对应的二维码。
-
-> 注意:BC25PA平台不支持此模块功能;使用该功能前，需要初始化LCD。
 
 ## 二维码显示功能
 
@@ -18,14 +10,16 @@
 qrcode.show(qrcode_str,magnification,start_x,start_y,Background_color,Foreground_color)
 ```
 
+显示二维码到LCD。
+
 **参数描述：**
 
-- qrcode_str-string类型,二维码内容;
-- magnification-int类型,放大倍数[1,6];
-- start_x-int类型,二维码显示起始x坐标;
-- start_y-int类型,二维码显示起始y坐标;
-- Background_color-int类型,前景色（不设置即默认为0xffff）;
-- Foreground_color,int类型,背景色（不设置即默认为0x0000）。
+- `qrcode_str`-string类型,二维码内容;
+- `magnification`-int类型,放大倍数[1,6];
+- `start_x`-int类型,二维码显示起始x坐标;
+- `start_y`-int类型,二维码显示起始y坐标;
+- `Background_color`-int类型,前景色（不设置即默认为0xffff）;
+- `Foreground_color`,int类型,背景色（不设置即默认为0x0000）。
 
 **返回值描述：**
 

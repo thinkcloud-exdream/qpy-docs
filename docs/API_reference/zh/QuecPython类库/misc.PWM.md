@@ -1,10 +1,8 @@
-    本文阐述了QuecPython的misc.PWM类的用法，描述了misc.PWM类最新版本的特性。
-
 # class PWM - 脉宽调制
 
 提供脉宽调制输出功能。
 
-> 注意：BC25PA平台不支持此模块。
+> 注意：BC25系列不支持此模块。
 
 ## 构造函数
 
@@ -16,17 +14,17 @@ class misc.PWM(PWM.PWMn,PWM.ABOVE_xx, highTime, cycleTime)
 
 **参数描述：**
 
-- PWM.PWMn-PWM通道,int类型,<a href="#label_pwmmap">点此查看</a>支持的通道与对应引脚;
+- `PWM.PWMn`-PWM通道,int类型,<a href="#label_pwmmap">点此查看</a>支持的通道与对应引脚;
 
-- PWM.ABOVE_xx-时间取值范围,int类型,说明如下:
+- `PWM.ABOVE_xx`-时间取值范围,int类型,说明如下:
 
-  EC600SCN/EC600N/EC800N/EC600M/EC800M/EG912N平台:<br />PWM.ABOVE_MS				          ms级取值范围：(0,1023]<br/>PWM.ABOVE_1US				        us级取值范围：(0,157]<br/>PWM.ABOVE_10US				      us级取值范围：(1,1575]<br/>PWM.ABOVE_BELOW_US			ns级 取值(0,1024]<br />EC200U/EC600U/EG915U平台:<br />PWM.ABOVE_MS				          ms级取值范围：(0,10]<br/>PWM.ABOVE_1US				        us级取值范围：(0,10000]<br/>PWM.ABOVE_10US				      us级取值范围：(1,10000]<br/>PWM.ABOVE_BELOW_US			ns级 取值[100,65535]
+  EC200U/EC600U/EG915U系列:<br />PWM.ABOVE_MS				          ms级取值范围：(0,10]<br/>PWM.ABOVE_1US				        us级取值范围：(0,10000]<br/>PWM.ABOVE_10US				      us级取值范围：(1,10000]<br/>PWM.ABOVE_BELOW_US			ns级 取值[100,65535]
 
-- highTime-高电平时间,int类型,说明如下:
+- `highTime`-高电平时间,int类型,说明如下:
 
   ms级时，单位为ms<br/>us级时，单位为us<br/>ns级别：需要使用者计算<br/>               频率 = 13Mhz / cycleTime<br/>               占空比 = highTime/ cycleTime
 
-- cycleTime-周期时间,int类型,说明如下:
+- `cycleTime`-周期时间,int类型,说明如下:
 
   ms级时，单位为ms<br/>us级时，单位为us<br/>ns级别：需要使用者计算<br/>             频率 = 13Mhz / cycleTime<br/>             占空比 = highTime/ cycleTime
 
@@ -39,7 +37,7 @@ class misc.PWM(PWM.PWMn,PWM.ABOVE_xx, highTime, cycleTime)
 
 <span id="label_pwmmap">**PWM通道与物理引脚的映射关系：**</span>
 
-EC100YCN平台，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号19<br/>PWM1 – 引脚号18<br/>PWM2 – 引脚号23<br/>PWM3 – 引脚号22<br/>EC600SCN/EC600N平台，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号52<br/>PWM1 – 引脚号53<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69<br />EC800N平台，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号79<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49<br />EC200UCN平台，支持PWM0，对应引脚如下：<br />PWM0 – 引脚号135<br />EC600UCN平台，支持PWM0，对应引脚如下：<br />PWM0 – 引脚号70<br />EC600M平台，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号57<br/>PWM1 – 引脚号56<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69<br/>EG915U平台，支持PWM0，对应引脚如下：<br/>PWM0 – 引脚号20<br/>EC800M平台，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号83<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49<br/>EG912N平台，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号21<br/>PWM1 – 引脚号116<br/>PWM2 – 引脚号107<br/>PWM3 – 引脚号92
+EC100Y系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号19<br/>PWM1 – 引脚号18<br/>PWM2 – 引脚号23<br/>PWM3 – 引脚号22<br/>EC600SCN/EC600N系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号52<br/>PWM1 – 引脚号53<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69<br />EC800N系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号79<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49<br />EC200U系列，支持PWM0，对应引脚如下：<br />PWM0 – 引脚号135<br />EC600U系列，支持PWM0，对应引脚如下：<br />PWM0 – 引脚号70<br />EC600M系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号57<br/>PWM1 – 引脚号56<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69<br/>EG915U系列，支持PWM0，对应引脚如下：<br/>PWM0 – 引脚号20<br/>EC800M系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号83<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49<br/>EG912N系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号21<br/>PWM1 – 引脚号116<br/>PWM2 – 引脚号107<br/>PWM3 – 引脚号92
 
 ## 方法
 

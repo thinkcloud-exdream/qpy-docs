@@ -1,10 +1,8 @@
-    本文阐述了QuecPython的misc.USB类的用法，描述了misc.USB类最新版本的特性。
-
 # class USB - USB插拔检测
 
 提供USB插拔检测功能。
 
-> 注意：当前仅EC600S/EC600N/EC800N/EC200U/EC600U平台支持该功能。
+> 注意：EC600S/EC600N/EC800N/EG912N/EC200U/EC600U/EG915U/EC600M/EC800M/EC200A系列支持该功能。
 
 ## 构造函数
 
@@ -45,7 +43,7 @@ usb.setCallback(usrFun)
 
 **参数描述：**
 
-- usrFun -回调函数,原型usrFun (conn_status),参数conn_status:`0`表示未连接,`1`表示连接。
+- `usrFun` -回调函数,原型usrFun (conn_status),参数conn_status:`0`表示未连接,`1`表示连接。
 
 **返回值描述：**
 
