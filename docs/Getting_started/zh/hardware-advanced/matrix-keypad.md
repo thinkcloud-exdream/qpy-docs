@@ -25,19 +25,19 @@
 
 本文使用的搭载EC200U的开发板中矩阵键盘相关原理图接线：
 
-<img src="./../media/QuecPython硬件高级功能/keypad/keypad_0.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
+<img src="./../media/hardware-advanced/matrix-keypad/keypad_0.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
 
-<img src="./../media/QuecPython硬件高级功能/keypad/keypad_1.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
+<img src="./../media/hardware-advanced/matrix-keypad/keypad_1.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
 
 
 
-<img src="./../media/QuecPython硬件高级功能/keypad/keypad_2.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
+<img src="./../media/hardware-advanced/matrix-keypad/keypad_2.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
 
 通过API文档和上图我们可以知道EC200U系列模块支持4行3列的矩阵键盘，其中KEYOUT对应的是软件中的行号，从0开始，KEYIN对应的是软件中的列号，从1开始。
 
 由于开发板只是引出了引脚，所以我们还需要自行购买矩阵键盘模块，使用杜邦线进行连接，连接的实物图如图所示：
 
-<img src="./../media/QuecPython硬件高级功能/keypad/keypad_3.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
+<img src="./../media/hardware-advanced/matrix-keypad/keypad_3.png" style="border-style: solid; border-radius: 10px; color:  #f1f1f1;" border=3 alt="">
 
 ### 3. 示例代码
 
