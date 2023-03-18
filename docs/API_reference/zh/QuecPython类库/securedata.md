@@ -2,7 +2,25 @@
 
 模组提供一块裸flash区域及专门的读写接口供客户存贮重要信息，且信息在烧录固件后不丢失(烧录不包含此功能的固件无法保证不丢失)。提供一个存储和读取接口，不提供删除接口。
 
+
 > 目前除BC25/BG95/EC200A系列外，其余平台均支持本功能
+
+**示例**
+
+```python
+import SecureData
+# 即将存储的数据buf
+databuf = '\x31\x32\x33\x34\x35\x36\x37\x38'
+# 在index为1的存储区域中存储长度为8的数据databuf
+SecureData.Store(1, databuf, 8)
+# 定义一个长度为20的数组用于读取存储的数据
+buf = bytearray(20)
+# 读取index为1的存储区域中的数据至buf中,将读取到数据的长度存储在变量length中
+length = SecureData.Read(1, buf, 20)
+# 输出读到的数据
+print(buf[:length])
+```
+
 
 ## 数据存储
 
@@ -42,7 +60,7 @@ SecureData.Read(index,databuf,len)
 
 **参数描述**                              
 
-* `index`，index范围为1-16：读取存储数据对应的索引号，int类型
+* `index`，index范围为1-16：待读取数据对应的索引号，int类型
 * `databuf`，存储读取到的数据，bytearray类型
 * `len`，要读取数据的长度，int类型
 
@@ -53,33 +71,3 @@ SecureData.Read(index,databuf,len)
 `-2`存储数据不存在且备份数据也不存在
 `-1`参数有误
 `其他`实际读取到的数据长度
-
-**示例**
-
-```python
-import SecureData
-# 即将存储的数据buf
-databuf = '\x31\x32\x33\x34\x35\x36\x37\x38'
-# 在index为1的存储区域中存储长度为8的数据databuf
-SecureData.Store(1, databuf, 8)
-# 定义一个长度为20的数组用于读取存储的数据
-buf = bytearray(20)
-# 读取index为1的存储区域中的数据至buf中,将读取到数据的长度存储在变量length中
-length = SecureData.Read(1, buf, 20)
-# 输出读到的数据
-print(buf[:length])
-```
-
-**使用示例**
-
-```python
->>> import SecureData
->>> databuf = '\x31\x32\x33\x34\x35\x36\x37\x38'
->>> SecureData.Store(1, databuf, 8)
-0
->>> buf = bytearray(20)
->>> length = SecureData.Read(1, buf, 20)
->>> print(buf[:length])
-bytearray(b'12345678')
->>> 
-```

@@ -2,6 +2,33 @@
 
 在无业务处理时使系统进入休眠状态，进入低功耗模式。
 
+**使用示例**
+
+模拟测试，实际开发请根据业务场景选择使用！
+
+```python
+import pm
+import utime
+
+# 创建wakelock锁
+lpm_fd = pm.create_wakelock("test_lock", len("test_lock"))
+# 设置自动休眠模式
+pm.autosleep(1)
+
+# 模拟测试，实际开发请根据业务场景选择使用
+while 1:
+    utime.sleep(20)  # 休眠
+    res = pm.wakelock_lock(lpm_fd)
+    print("ql_lpm_idlelock_lock, g_c1_axi_fd = %d" %lpm_fd)
+    print("unlock  sleep")
+    utime.sleep(20)
+    res = pm.wakelock_unlock(lpm_fd)
+    print(res)
+    print("ql_lpm_idlelock_unlock, g_c1_axi_fd = %d" % lpm_fd)
+    num = pm.get_wakelock_num()  # 获取已创建锁的数量
+    print(num)
+```
+
 ## 创建wake_lock锁
 
 ### `pm.create_wakelock`
@@ -14,8 +41,8 @@ pm.create_wakelock(lock_name, name_size)
 
 **参数描述**
 
-* `lock_name`，自定义lock名，string类型，
-* `name_size`， lock_name的长度， int类型
+* `lock_name`，自定义lock名，string类型。
+* `name_size`， 可选参数，lock_name的长度， int类型。
 
 **返回值描述**
 
@@ -35,7 +62,7 @@ pm.delete_wakelock(lpm_fd)
 
 **参数描述**
 
-* `lpm_fd`，需要删除的锁对应标识id，int类型
+* `lpm_fd`，需要删除的锁对应标识id，int类型。
 
 **返回值描述**
 
@@ -55,7 +82,7 @@ pm.wakelock_lock(lpm_fd)
 
 **参数描述**
 
-* `lpm_fd`，需要执行加锁操作的wakelock标识id，int类型
+* `lpm_fd`，需要执行加锁操作的wakelock标识id，int类型。
 
 **返回值描述**
 
@@ -75,7 +102,7 @@ pm.wakelock_unlock(lpm_fd)
 
 **参数描述**
 
-* `lpm_fd`，需要执行释放锁操作的wakelock标识id，int类型
+* `lpm_fd`，需要执行释放锁操作的wakelock标识id，int类型。
 
 **返回值描述**
 
@@ -95,7 +122,7 @@ pm.autosleep(sleep_flag)
 
 **参数描述**
 
-* `sleep_flag`，`0`关闭自动休眠， `1`开启自动休眠，int类型
+* `sleep_flag`，`0`关闭自动休眠， `1`开启自动休眠，int类型。
 
 **返回值描述**
 
@@ -132,8 +159,8 @@ pm.set_psm_time(mode)# 单独设置启用或禁用 <模式2>
 * `mode`，是否启用PSM，int类型:
   `0 `禁用PSM
   `1 `启用PSM
-  `2 `(仅BC25平台)禁用PSM并删除PSM的所有参数，如有默认值，则重置默认值。(注意此种模式禁用的情况下，如果要启用PSM必须用**模式1**，用**模式2**没有任何的意义,因为设置的TAU和ACT时间全部清零了)。
-* `tau_uint`，tau(T3412)定时器单位，int类型
+  `2 `(仅BC25平台)禁用PSM并删除PSM的所有参数，如有默认值，则重置默认值。(注意此种模式禁用的情况下，如果要启用PSM必须用**模式1**，用**模式2**没有任何的意义,因为设置的TAU和ACT时间全部清零了。)
+* `tau_uint`，tau(T3412)定时器单位，int类型。
 
 | tau定时器单位值 | 类型 | 单位值说明   |
 | --------------- | ---- | ------------ |
@@ -146,8 +173,8 @@ pm.set_psm_time(mode)# 单独设置启用或禁用 <模式2>
 | 6               | int  | 320 小时     |
 | 7               | int  | 定时器被停用 |
 
-* `tau_time`，tau(T3412)定时器时间周期值，int类型
-* `act_uint`，act(T3324)定时器单位，int类型
+* `tau_time`，tau(T3412)定时器时间周期值，int类型。
+* `act_uint`，act(T3324)定时器单位，int类型。
 
 | act定时器单位值 | 类型 | 单位值说明   |
 | --------------- | ---- | ------------ |
@@ -156,7 +183,7 @@ pm.set_psm_time(mode)# 单独设置启用或禁用 <模式2>
 | 2               | int  | 6 分钟       |
 | 7               | int  | 定时器被停用 |
 
-* `act_time`，act(T3324)定时器时间周期值，int类型
+* `act_time`，act(T3324)定时器时间周期值，int类型。
 
 > **注意：**实际设置的tau和act，为单位值和周期值的积
 
@@ -210,29 +237,3 @@ pm.get_psm_time()
 
 > **注意**：仅BC25/ECX00U/ECX00E平台支持
 
-**使用示例**
-
-模拟测试，实际开发请根据业务场景选择使用！
-
-```python
-import pm
-import utime
-
-# 创建wakelock锁
-lpm_fd = pm.create_wakelock("test_lock", len("test_lock"))
-# 设置自动休眠模式
-pm.autosleep(1)
-
-# 模拟测试，实际开发请根据业务场景选择使用
-while 1:
-    utime.sleep(20)  # 休眠
-    res = pm.wakelock_lock(lpm_fd)
-    print("ql_lpm_idlelock_lock, g_c1_axi_fd = %d" %lpm_fd)
-    print("unlock  sleep")
-    utime.sleep(20)
-    res = pm.wakelock_unlock(lpm_fd)
-    print(res)
-    print("ql_lpm_idlelock_unlock, g_c1_axi_fd = %d" % lpm_fd)
-    num = pm.get_wakelock_num()  # 获取已创建锁的数量
-    print(num)
-```

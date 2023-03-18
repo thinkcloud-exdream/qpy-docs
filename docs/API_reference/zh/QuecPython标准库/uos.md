@@ -1,6 +1,6 @@
 # uos - 基本系统服务
 
-`uos`模块包含文件系统访问和挂载构建，该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：[os](https://docs.python.org/3.5/library/os.html#module-os)
+`uos`模块包含文件系统访问和挂载构建，该模块实现了CPython模块相应模块的子集。更多信息请参阅CPython文档：[os](https://docs.python.org/3.5/library/os.html#module-os)
 
 ## 删除文件
 
@@ -275,7 +275,7 @@ uos.uname2()
 
 该接口与micropython官方接口返回值形式一致。注意与上面uos.uname()接口返回值的区别，返回值形式为：
 
-`(sysname, nodename, release, version, machine, qpyver=)`
+`(sysname, nodename, release, version, machine, qpyver)`
 
 * `sysname` – 底层系统的名称，string类型
 * `nodename` – 网络名称(可以与 sysname 相同) ，string类型
@@ -304,11 +304,11 @@ uos.uname2()
 uos.urandom(n)
 ```
 
-返回具有*n个*随机字节的bytes对象，只要有可能，它就会由硬件随机数生成器生成。
+返回具有*n个*随机字节的bytes对象，如果模组搭载了硬件随机数生成器，它就会由硬件随机数生成器生成。
 
 **参数描述**
 
-* `n`，整形，随机字节的个数
+* `n`，整型，随机字节的个数
 
 **返回值描述**
 
@@ -337,11 +337,22 @@ uos.VfsFat(spi_port, spimode, spiclk, spics)
 **参数描述**
 
 * `spi_port`，int，通道选择[0,1]
-* `spimode`，int，PI 的工作模式(模式0最常用):`<br />`0 : CPOL=0, CPHA=0 1 : CPOL=0, CPHA=12: CPOL=1, CPHA=0 3: CPOL=1, CPHA=1
+* `spimode`，int，PI 的工作模式(模式0最常用):<br />0 : CPOL=0, CPHA=0 1 : CPOL=0, CPHA=12: CPOL=1, CPHA=0 3: CPOL=1, CPHA=1
 
 > 时钟极性CPOL: 即SPI空闲时，时钟信号SCLK的电平（0:空闲时低电平; 1:空闲时高电平）
 
-* `spiclk`， int， 时钟频率 0 : 812.5kHz 1 : 1.625MHz 2 : 3.25MHz 3 : 6.5MHz 4 : 13MHz
+* `spiclk`， int
+
+|参数|时钟频率|
+| ---- | ---- |
+|   0   |812.5kHz|
+|   1   |1.625MHz|
+|   2  |3.25MHz|
+|   3  |6.5MHz|
+|   4  |13MHz|
+
+   0 : 812.5kHz 1 : 1.625MHz 2 : 3.25MHz 3 : 6.5MHz 4 : 13MHz
+
 * `spics`，int，指定CS片选引脚为任意GPIO，硬件CS可以接这里指定的脚，也可以接默认的SPI CS脚
 
 > 1-n:指定Pin.GPIO1-Pin.GPIOn为CS脚
@@ -402,8 +413,8 @@ uos.set_det(vfs_obj.GPIOn,mode)
 
 **参数描述**
 
-* `vfs_obj.GPIOn`，int类型，用于sd卡插拔卡检测的GPIO引脚号，参照Pin模块的定义
-* `mode`，int类型 `<br />0`:sd卡插上后，检测口为低电平；sd卡取出后，检测口为高电平 `<br />1`:sd卡插上后，检测口为高电平；sd卡取出后，检测口为低电平
+* `vfs_obj.GPIOn`，int类型，用于sd卡插拔卡检测的GPIO引脚号，参照[Pin](../QuecPython类库/machine.Pin.md)模块的定义
+* `mode`，int类型 <br />0:sd卡插上后，检测口为低电平；sd卡取出后，检测口为高电平 <br />1:sd卡插上后，检测口为高电平；sd卡取出后，检测口为低电平
 
 **返回值描述**
 
@@ -484,12 +495,12 @@ uos.VfsLfs1(readsize,progsize,lookahead,pname,spi_port,spi_clk)
 
 **参数描述**
 
-* readsize，int类型，预留，暂未使用
-* progsize，int类型，预留，暂未使用
-* lookahead，int类型，预留，暂未使用
-* pname，str类型，固定为“ext_fs”。后续扩展
-* spi_port，int类型，支持的端口参照SPI章节说明
-* spi_clk，int类型 `<br />`时钟频率：`<br />`0：6.25M 1:12.5M  2:25M  3:50M  4:3.125M 5:1.5625M  6:781.25K
+* `readsize`，int类型，预留，暂未使用
+* `progsize`，int类型，预留，暂未使用
+* `lookahead`，int类型，预留，暂未使用
+* `pname`，str类型，固定为“ext_fs”。后续扩展
+* `spi_port`，int类型，支持的端口参照SPI章节说明
+* `spi_clk`，int类型 <br />时钟频率：<br />0：6.25M 1:12.5M  2:25M  3:50M  4:3.125M 5:1.5625M  6:781.25K
 
 **返回值描述**
 
@@ -524,8 +535,8 @@ uos.mount(vfs_obj, path)
 
 **参数描述**
 
-* vfs_obj，vfs object，文件系统对象
-* path，str类型，文件系统的根目录
+* `vfs_obj`，vfs object，文件系统对象
+* `path`，str类型，文件系统的根目录
 
 **示例：**
 

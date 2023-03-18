@@ -34,7 +34,7 @@ except ImportError:
 
 ### `sys.modules`
 
-已载入模块的字典。
+以字典形式返回当前Python环境中已经导入的模块。
 
 ### `sys.platform`
 
@@ -50,11 +50,11 @@ MicroPython运行的平台。
 
 ### `sys.version`
 
-MicroPython 语言版本，字符串格式。
+MicroPython 版本，字符串格式。
 
 ### `sys.version_info`
 
-MicroPython  语言版本，整数元组格式。
+MicroPython  版本，整数元组格式。
 
 ## **方法**
 
