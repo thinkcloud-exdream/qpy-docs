@@ -1,24 +1,15 @@
+# camera  - 摄像头
 
+模块功能：实现摄像头预览，照相机，扫码功能。
 
-```
-本文阐述了QuecPython的camera模块的用法，描述了camera模块最新版本的特性。
-```
-
-
-
-# <font color='red'>`camera` </font> - 摄像头相关功能
-
-`camera`模块包含摄像头相关的功能。包括摄像头预览功能，照相机功能以及扫码功能。
-
-模块功能：实现摄像头预览，照相机，扫码功能
-
-> 目前支持型号：EC600N系列、EC800N系列、EC600M系列、EC800M系列；EC600U系列和EC200U系列可定制该功能。
+> 目前支持型号：EC600N系列、EC800N系列、EC600M系列、EC800M系列、EC600U-CN系列、EC200U-CN系列。
 >
-> 注意：如果需要预览，在初始化camera对象之前，请先参照machine模块的lcd类的内容正确初始化LCD对象。
+> 注意：如果需要预览，在初始化camera对象之前，请先参照[machine模块的lcd类的内容](machine.LCD.md)正确初始化LCD对象。
 
 **示例：**
 
 ```python
+# -*- coding: UTF-8 -*-
 from machine import LCD
 import camera
 

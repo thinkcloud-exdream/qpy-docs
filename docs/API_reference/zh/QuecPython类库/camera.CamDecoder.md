@@ -1,14 +1,6 @@
+# class camScandecode - 摄像头扫码
 
-
-```
-本文阐述了QuecPython的camera.camScandecode类的用法，描述了camera.camScandecode类最新版本的特性。
-```
-
-
-
-# `class camScandecode` - 摄像头扫码
-
-`camScandecode`对象提供摄像头的扫码功能。
+类功能：提供摄像头的扫码功能。
 
 > 注意：如果开启预览，需要先初始化LCD。
 
@@ -71,7 +63,7 @@ class camera.camScandecode(model,decode_level,cam_w,cam_h,perview_level,lcd_w,lc
 - `lcd_w` - LCD水平分辨率，int类型，请按照所使用的LCD的规格填写。
 - `lcd_h` - LCD垂直分辨率，int类型，请按照所使用的LCD的规格填写。
 
-<span id="label_cam_map2">摄像头型号对应表：</span>
+<span id="label_cam_map2">**摄像头型号对应表：**</span>
 
 | 编号 | 摄像头型号 | 通信方式 |
 | ---- | ---------- | -------- |
@@ -88,15 +80,13 @@ camScandecode.open()
 
 该方法用于使能摄像头的扫码功能。
 
-**参数描述**
+**参数描述：**
 
-无
+无。
 
 **返回值描述：**
 
-`0` 表示打开使能成功；
-
-`其他`表示打开使能失败。
+`0` 表示打开使能成功，其他表示打开使能失败。
 
 ### camScandecode.close
 
@@ -106,15 +96,13 @@ camScandecode.close()
 
 该方法用于关闭使能摄像头的扫码功能。
 
-**参数描述**
+**参数描述：**
 
-无
+无。
 
 **返回值描述：**
 
-`0` 表示关闭使能成功；
-
-`其他`表示关闭使能失败。
+`0` 表示关闭使能成功，其他表示关闭使能失败。
 
 ### camScandecode.start
 
@@ -124,15 +112,13 @@ camScandecode.start()
 
 该方法用于开始摄影头扫码。
 
-**参数描述**
+**参数描述：**
 
-无
+无。
 
 **返回值描述：**
 
-`0` 表示开始扫码；
-
-`其他`表示开始扫码失败。
+`0` 表示开始扫码，其他表示开始扫码失败。
 
 ### camScandecode.stop
 
@@ -142,15 +128,13 @@ camScandecode.stop()
 
 该方法用于结束摄像头扫码。
 
-**参数描述**
+**参数描述：**
 
-无
+无。
 
 **返回值描述：**
 
-`0` 表示结束扫码扫码；
-
-`其他`表示结束扫码失败。
+`0` 表示结束扫码扫码，其他表示结束扫码失败。
 
 ### camScandecode.pause
 
@@ -160,15 +144,13 @@ camScandecode.pause()
 
 该方法用于暂停摄像头扫码。
 
-**参数描述**
+**参数描述：**
 
-无
+无。
 
 **返回值描述：**
 
-`0` 表示暂停扫码成功；
-
-`其他`表示暂停扫码失败。
+`0` 表示暂停扫码成功，其他表示暂停扫码失败。
 
 ### camScandecode.resume
 
@@ -178,32 +160,36 @@ camScandecode.resume()
 
 该方法用于继续摄像头扫码。
 
-**参数描述**
+**参数描述：**
 
-无
+无。
 
 **返回值描述：**
 
-`0` 表示继续扫码成功；
-
-`其他`表示继续扫码失败。
+`0` 表示继续扫码成功，其他表示继续扫码失败。
 
 ### camScandecode.callback
 
 ```python
-def callback(para):
-    print(para)
-camScandecode.callback(callback)
+camScandecode.callback(cb)
 ```
 
-该方法用于设置识别回调函数
+该方法用于设置识别回调函数。
 
-**参数描述**
+**参数描述：**
 
-- `callback` - 识别回调函数，回调函数原型：function([result, content])->None<br />回调函数参数： [result, content]<br />result: 扫码结果（0：成功， 其它：失败）<br />content: 扫码内容
+- `cb` - 识别回调函数，回调函数原型：
+
+  ```
+  cb(result_list)
+  ```
+
+  **回调函数参数描述：**
+
+  - `result_list[0]` - 扫码结果，int类型，`0`表示成功， 其它表示失败
+
+  - `result_list[1]` - 扫码内容，string类型。
 
 **返回值描述：**
 
-`0` 表示设置识别回调函数成功；
-
-`其他`表示设置识别回调函数失败。
+`0` 表示设置识别回调函数成功，其他表示设置识别回调函数失败。
