@@ -151,7 +151,7 @@ urandom.seed(sed)
 
 **参数描述**
 
-* `sed`，int类型，区间最小值
+* `sed`，int类型
 
 **示例**：
 
@@ -193,7 +193,7 @@ urandom.uniform(start, end)
 
 **返回值描述**
 
-浮点数类型，在 `start `到 `end` 之间的随机整数
+浮点数类型，在 `start `到 `end` 之间的随机数
 
 **示例**：
 

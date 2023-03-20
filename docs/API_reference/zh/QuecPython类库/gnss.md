@@ -16,7 +16,7 @@ gnss.GnssGetData(uartn,baudrate,databits,parity,stopbits,flowctl)
 
 **参数描述**
 
-* `uartn`，int类型
+* `UARTn`，int类型
   UARTn范围为0-3：
   `0`-UART0 - DEBUG PORT
   `1`-UART1 – BT PORT
@@ -28,8 +28,7 @@ gnss.GnssGetData(uartn,baudrate,databits,parity,stopbits,flowctl)
 * `stopbits`，int类型，停止位（1 ~ 2）
 * `flowctl`，int类型，硬件控制流（0 – FC_NONE， 1 – FC_HW）
 
-**返回值描述**
-gnss类的对象
+**返回值描述**<br />gnss类的对象
 
 **示例**
 
@@ -311,7 +310,8 @@ gnss.getCourse()
 获取GNSS信息中携带的卫星方位角
 
 **返回值描述**
-返回所有可视的GNSS卫星方位角，范围：`0 ~ 359`，以正北为参考平面。返回形式为字典，其中key表示卫星编号，value表示方位角。要注意，value的值可能是一个整型值，也可能是""，这取决于原始的GNSS数据中GPGSV语句中方位角是否有值。返回值形式如下：
+
+返回所有可视的GNSS卫星方位角，范围：`0 ~ 359`，以正北为参考平面。返回形式为字典，其中key表示卫星编号，value表示方位角。要注意，value的值可能是一个整型值，也可能是空，这取决于原始的GNSS数据中GPGSV语句中方位角是否有值。返回值形式如下：
 
 `{key:value, ...,  key:value}`
 
