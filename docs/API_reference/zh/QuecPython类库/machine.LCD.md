@@ -1,10 +1,18 @@
 # class LCD - LCD显示屏
 
-类功能：该模块提供对LCD显示屏的控制
+类功能：该模块提供对LCD显示屏的控制。
 
-适配版本：EC100Y(V0009)及以上；EC600S(V0002)及以上。
-
-> 注意：BC25PA平台不支持此模块功能。
+> 支持的模块型号：
+>
+> EC200U系列、EC600U系列、EC600N系列、EC800N系列
+>
+> EC600M-CNLA、EC600M-CNLE
+>
+> EC800M-CNLA、EC800M-CNLE、EC800M-CNGA、EC800G-CNGA
+>
+> EG912N-ENAA、EG912U-GLAA
+>
+> EG915N-EUAG、EG915U-EUAB
 
 ## 构造函数
 
@@ -17,8 +25,8 @@ class machine.lcd = LCD()
 **示例：**
 
 ```python
-from machine import LCD 
-lcd = LCD()   # 创建lcd对象
+>>> from machine import LCD 
+>>> lcd = LCD()    # 创建lcd对象
 ```
 
 ## 方法
@@ -38,28 +46,28 @@ lcd.lcd_init(lcd_init_data, lcd_width, lcd_hight, lcd_clk, data_line, line_num, 
 | 参数               | 类型      | 说明                                                         |
 | ------------------ | --------- | ------------------------------------------------------------ |
 | lcd_init_data      | bytearray | LCD 的初始化配置命令                                         |
-| lcd_width          | int       | LCD 屏幕的宽度。宽度不超过 500                               |
-| lcd_hight          | int       | LCD 屏幕的高度。高度不超过 500                               |
-| lcd_clk            | int       | LCD SPI 时钟。SPI 时钟为 6.5K/13K/26K/52K                    |
-| data_line          | int       | 数据线数。参数值为 1 和 2。                                  |
-| line_num           | int       | 线的数量。参数值为 3 和 4。                                  |
-| lcd_type           | int       | 屏幕类型。0：rgb；1：fstn                                    |
+| lcd_width          | int       | LCD 屏幕的宽度，宽度不超过 500                               |
+| lcd_hight          | int       | LCD 屏幕的高度，高度不超过 500                               |
+| lcd_clk            | int       | LCD SPI 时钟，SPI 时钟为 6.5K/13K/26K/52K                    |
+| data_line          | int       | 数据线数，参数值为 1 和 2                                    |
+| line_num           | int       | 线的数量，参数值为 3 和 4                                    |
+| lcd_type           | int       | 屏幕类型，0 - rgb；1 - fstn                                  |
 | lcd_invalid        | bytearray | LCD 区域设置的配置命令                                       |
 | lcd_display_on     | bytearray | LCD 屏亮的配置命令                                           |
 | lcd_display_off    | bytearray | LCD 屏灭的配置命令                                           |
-| lcd_set_brightness | bytearray | LCD屏亮度的配置命令。<br />设置为 None表示由 LCD_BL_K 控制亮度（有些屏幕是由寄存器控制屏幕亮度，有些是通过 LCD_BL_K 控制屏幕亮度） |
+| lcd_set_brightness | bytearray | LCD屏亮度的配置命令：<br />设置为 None表示由 LCD_BL_K 控制亮度 |
 
 **返回值描述：**
 
-`0` 表示成功
+`0` 表示成功。
 
-`-1`表示已经初始化
+`-1` 表示已经初始化。
 
-`-2` 表示参数错误，为空或过大（大于 1000 像素点）
+`-2` 表示参数错误，为空或过大(大于 1000 像素点)。
 
-`-3`表示缓存申请失败
+`-3` 表示缓存申请失败。
 
-`-5`表示配置参数错误
+`-5` 表示配置参数错误。
 
 #### **接口2：设备接模块SPI接口**
 
@@ -72,34 +80,34 @@ lcd.lcd_init(lcd_init_data, lcd_width, lcd_hight, lcd_clk, data_line, line_num, 
 | 参数               | 类型      | 说明                                                         |
 | ------------------ | --------- | ------------------------------------------------------------ |
 | lcd_init_data      | bytearray | LCD 的配置命令                                               |
-| lcd_width          | int       | LCD 屏幕的宽度。宽度不超过 500                               |
-| lcd_hight          | int       | LCD 屏幕的高度。高度不超过 500                               |
-| lcd_clk            | int       | SPI 时钟。见machine SPI 创建SPI对象参数说明clk               |
-| data_line          | int       | 数据线数。参数值为 1 和 2。                                  |
-| line_num           | int       | 线的数量。参数值为 3 和 4。                                  |
-| lcd_type           | int       | 屏幕类型。0：rgb；1：fstn                                    |
+| lcd_width          | int       | LCD 屏幕的宽度，宽度不超过 500                               |
+| lcd_hight          | int       | LCD 屏幕的高度，高度不超过 500                               |
+| lcd_clk            | int       | SPI 时钟，见machine.SPI 创建SPI对象参数说明clk               |
+| data_line          | int       | 数据线数，参数值为 1 和 2                                    |
+| line_num           | int       | 线的数量，参数值为 3 和 4                                    |
+| lcd_type           | int       | 屏幕类型，0 - rgb；1 - fstn                                  |
 | lcd_invalid        | bytearray | LCD 区域设置的配置命令                                       |
 | lcd_display_on     | bytearray | LCD 屏亮的配置命令                                           |
 | lcd_display_off    | bytearray | LCD 屏灭的配置命令                                           |
-| lcd_set_brightness | bytearray | LCD屏亮度的配置命令。设置为 None表示由 LCD_BL_K 控制亮度（有些屏幕是由寄存器控制屏幕亮度，有 些是通过 LCD_BL_K 控制屏幕亮度） |
-| lcd_interface      | int       | LCD接口类型。0：LCM接口；1：SPI接口                          |
+| lcd_set_brightness | bytearray | LCD屏亮度的配置命令：<br />设置为 None表示由 LCD_BL_K 控制亮度 |
+| lcd_interface      | int       | LCD接口类型，0 - LCM接口；1 - SPI接口                        |
 | spi_port           | int       | 通道选择[0,1]，参照SPI部分                                   |
-| spi_mode           | int       | SPI 的工作模式(模式0最常用):<br />时钟极性CPOL: 即SPI空闲时，时钟信号SCLK的电平（0:空闲时低电平; 1:空闲时高电平）<br /> 0 : CPOL=0, CPHA=0<br /> 1 : CPOL=0, CPHA=1<br /> 2:  CPOL=1, CPHA=0<br /> 3:  CPOL=1, CPHA=1 |
+| spi_mode           | int       | SPI 的工作模式(通常使用工作模式0)：<br />时钟极性CPOL：即SPI空闲时，时钟信号SCLK的电平(0:空闲时低电平; 1:空闲时高电平)<br />0 : CPOL=0, CPHA=0<br />1 : CPOL=0, CPHA=1<br />2 : CPOL=1, CPHA=0<br />3 : CPOL=1, CPHA=1 |
 | cs_pin             | int       | CS引脚，见machine.Pin常量说明                                |
 | dc_pin             | int       | DC引脚，见machine.Pin常量说明                                |
 | rst_pin            | int       | RST引脚，见machine.Pin常量说明                               |
 
 **返回值描述：**
 
-`0` 表示成功
+`0` 表示成功。
 
-`-1`表示屏幕已经初始化
+`-1` 表示屏幕已经初始化。
 
-`-2` 表示参数错误，为空或过大（大于 1000 像素点）
+`-2` 表示参数错误，为空或过大(大于 1000 像素点)。
 
-`-3`表示缓存申请失败
+`-3` 表示缓存申请失败。
 
-`-5`表示配置参数错误
+`-5` 表示配置参数错误。
 
 
 ### `lcd.mipi_init`
@@ -112,7 +120,7 @@ lcd.mipi_init(initbuf, **kwargs)
 
 > 注意：
 >
-> 1.仅支持EC200U系列和EC600U系列
+> 1.仅支持EC200U系列和EC600U系列。
 >
 > 2.参数列表中，initbuf为必传参数；后面参数与缺省值不同时传入。
 
@@ -125,11 +133,11 @@ lcd.mipi_init(initbuf, **kwargs)
 | hight       | int       | 缺省值：854，屏幕的高度，示例：hight=800                     |
 | bpp         | int       | 缺省值：16，像素深度                                         |
 | DataLane    | int       | 缺省值：2，数据通道                                          |
-| MipiMode    | int       | 缺省值：0，模式：<br />0：DSI_VIDEO_MODE；<br />1：DSI_CMD_MODE |
-| PixelFormat | int       | 缺省值：0，像素格式：<br />0：RGB_PIX_FMT_RGB565；<br />16：RGB_PIX_FMT_RGB888<br />32：RGB_PIX_FMT_XRGB888<br />48：RGB_PIX_FMT_RGBX888 |
-| DsiFormat   | int       | 缺省值：0，DSI格式：<br />0：DSI_FMT_RGB565；<br />1：DSI_FMT_RGB666；<br />2：DSI_FMT_RGB666L；<br />3：DSI_FMT_RGB888 |
-| TransMode   | int       | 缺省值：3，转换模式：<br />0：DSI_CMD；<br />1：DSI_PULSE；<br />2：DSI_EVENT；<br />3：DSI_BURST |
-| RgbOrder    | int       | 缺省值：8，RGB顺序：<br />0：RGB；<br />8：BGR               |
+| MipiMode    | int       | 缺省值：0<br />模式：<br />0：DSI_VIDEO_MODE<br />1：DSI_CMD_MODE |
+| PixelFormat | int       | 缺省值：0<br />像素格式：<br />0：RGB_PIX_FMT_RGB565<br />16：RGB_PIX_FMT_RGB888<br />32：RGB_PIX_FMT_XRGB888<br />48：RGB_PIX_FMT_RGBX888 |
+| DsiFormat   | int       | 缺省值：0<br />DSI格式：<br />0：DSI_FMT_RGB565<br />1：DSI_FMT_RGB666<br />2：DSI_FMT_RGB666L<br />3：DSI_FMT_RGB888 |
+| TransMode   | int       | 缺省值：3<br />转换模式：<br />0：DSI_CMD<br />1：DSI_PULSE<br />2：DSI_EVENT<br />3：DSI_BURST |
+| RgbOrder    | int       | 缺省值：8<br />RGB顺序：<br />0：RGB<br />8：BGR             |
 | BllpEnable  | bool      | 缺省值：true，blank low power 模式使能                       |
 | HSync       | int       | 缺省值：10，水平同步                                         |
 | HBP         | int       | 缺省值：10，水平后肩                                         |
@@ -220,7 +228,7 @@ lcd.lcd_clear(color)
 
 **返回值描述：**
 
-成功返回`0`， 失败返回`-1`。
+成功返回`0`，失败返回`-1`。
 
 ### `lcd.lcd_write`
 
@@ -232,7 +240,7 @@ lcd.lcd_write(color_buffer,start_x,start_y,end_x,end_y)
 
 **参数描述：**
 
-- `Color_buffer` - 屏幕的颜色值缓存，bytearray类型。
+- `color_buffer` - 屏幕的颜色值缓存，bytearray类型。
 - `start_x` - 起始 x 坐标，int类型。
 - `start_y` - 起始 y 坐标，int类型。
 - `end_x` - 结束 x 坐标，int类型。
@@ -240,13 +248,13 @@ lcd.lcd_write(color_buffer,start_x,start_y,end_x,end_y)
 
 **返回值描述：**
 
-`0` 表示成功；
+`0` 表示成功。
 
-`-1`表示屏幕未初始化；
+`-1` 表示屏幕未初始化。
 
-`-2` 表示宽度和高度设置错误；
+`-2` 表示宽度和高度设置错误。
 
-`-3`表示数据缓存为空。
+`-3 ` 表示数据缓存为空。
 
 ### `lcd.lcd_brightness`
 
@@ -270,7 +278,7 @@ lcd.lcd_brightness(level)
 lcd.lcd_display_on()
 ```
 
-该方法用于打开屏显 。调用此接口后调用 lcd.lcd_init()中的 lcd_display_on 回调。 
+该方法用于打开屏显 ，调用此接口后调用 lcd.lcd_init()中的 lcd_display_on 回调。 
 
 **返回值描述：**
 
@@ -279,10 +287,10 @@ lcd.lcd_display_on()
 ### `lcd.lcd_display_off`
 
 ```python
-**lcd.lcd_display_off()**
+lcd.lcd_display_off()
 ```
 
-该方法用于关闭屏显 。调用此接口后调用 lcd.lcd_init()中的 lcd_display_off 回调。 
+该方法用于关闭屏显 ，调用此接口后调用 lcd.lcd_init()中的 lcd_display_off 回调。 
 
 **返回值描述：**
 
@@ -299,7 +307,7 @@ lcd.lcd_write_cmd(cmd_value, cmd_value_len)
 **参数描述：**
 
 - `cmd_value` - 命令值 ，16进制 。
-- `cmd_value_len` -   命令值长度，int类型。
+- `cmd_value_len` - 命令值长度，int类型。
 
 **返回值描述：**
 
@@ -315,8 +323,8 @@ lcd.lcd_write_data(data_value, data_value_len)
 
 **参数描述：**
 
-- `data_value` -   数据值，16进制。
-- `data_value_len` -   数据值长度，int类型。
+- `data_value` - 数据值，16进制。
+- `data_value_len` - 数据值长度，int类型。
 
 **返回值描述：**
 
@@ -328,17 +336,17 @@ lcd.lcd_write_data(data_value, data_value_len)
 lcd.lcd_show(file_name, start_x,start_y,width,hight)
 ```
 
-该方法用于采用读文件方式，显示图片。
+该方法采用读文件方式，显示图片。
 
-> 注意：该文件是由Image2Lcd工具生成的bin文件。若勾选包含图像头文件，则width和hight无需填写，也可以是jpeg格式图片
+> 注意：该文件是由Image2Lcd工具生成的bin文件，若勾选包含图像头文件，则width和hight无需填写。
 
 **参数描述：**
 
 - `file_name ` - 需要显示的图片名，str类型。
 - `start_x` - 起始x坐标，int类型。
 - `start_y` - 起始y坐标，int类型。
-- `width` - 图片宽度（若图片文件包含的头信息，则该处不填，jpeg格式也不需要填），int类型。
-- `hight` - 图片高度（若图片文件包含的头信息，则该处不填，jpeg格式也不需要填），int类型。
+- `width` - 图片宽度(若图片文件包含头信息，则该处不填)，int类型。
+- `hight` - 图片高度(若图片文件包含头信息，则该处不填)，int类型。
 
 **返回值描述：**
 
@@ -350,7 +358,7 @@ lcd.lcd_show(file_name, start_x,start_y,width,hight)
 lcd.lcd_show_jpg( file_name, start_x,start_y)
 ```
 
-该方法用于采用读文件方式，显示jpeg图片。
+该方法采用读文件方式，显示jpeg图片。
 
 **参数描述：**
 

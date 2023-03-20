@@ -1,4 +1,4 @@
-# `class UART` - 串口通信
+# class UART - 串口通信
 
 类功能：uart串口数据传输。
 
@@ -12,17 +12,17 @@ class machine.UART(UART.UARTn, buadrate, databits, parity, stopbits, flowctl)
 
 **参数描述：**
 
-- `UARTn` - UART编号，int类型，UARTn说明如下：<br />UART0 - DEBUG PORT<br />UART1 – BT PORT<br />UART2 – MAIN PORT<br />UART3 – USB CDC PORT (BG95M3 不支持)<br />UART4 – STDOUT PORT (仅支持EC200U/EC600U/EG915U)
+- `UARTn` - UART编号，int类型，UARTn说明如下：<br />`UART0` - DEBUG PORT<br />`UART1` - BT PORT<br />`UART2` - MAIN PORT<br />`UART3` - USB CDC PORT (不支持BG95M3)<br />`UART4` - STDOUT PORT (仅支持EC200U/EC600U/EG915U)
 
-- `buadrate` - 波特率，int类型，常用波特率都支持，如`4800`、`9600`、`19200`、`38400`、`57600`、`115200`、`230400`等。
-- `databits` - 数据位（5 ~ 8），int类型，展锐平台当前仅支持8位。
-- `parity` - 奇偶校验（`0` – NONE，`1` – EVEN，`2` - ODD），int类型。
-- `stopbits` - 停止位（1 ~ 2），int类型。
-- `flowctl` - 硬件控制流（`0` – FC_NONE， `1` – FC_HW），int类型。
+- `buadrate` - 波特率，int类型，支持常用波特率，如`4800`、`9600`、`19200`、`38400`、`57600`、`115200`、`230400`等。
+- `databits` - 数据位[5 ~ 8]，int类型，EC600U/EC200U/EG915U仅支持8位。
+- `parity` - 奇偶校验(`0` – NONE，`1` – EVEN，`2` – ODD)，int类型。
+- `stopbits` - 停止位[1 ~ 2]，int类型。
+- `flowctl` - 硬件控制流(`0` – FC_NONE， `1` – FC_HW)，int类型。
 
-**引脚对应关系 ：**
+**UART引脚对应关系 ：**
 
-| 平台          |                                                              |
+| 平台          | 引脚                                                         |
 | ------------- | ------------------------------------------------------------ |
 | EC600U        | uart1:<br />TX: 引脚号124<br />RX: 引脚号123<br />uart2:<br />TX:引脚号32<br />RX:引脚号31<br />uart4:<BR />TX:引脚号103<BR />RX:引脚号104 |
 | EC200U        | uart1:<br />TX: 引脚号138<br />RX: 引脚号137<br />uart2:<br />TX:引脚号67<br />RX:引脚号68<br />uart4:<BR />TX:引脚号82<BR />RX:引脚号81 |
@@ -32,16 +32,18 @@ class machine.UART(UART.UARTn, buadrate, databits, parity, stopbits, flowctl)
 | EC800N        | uart0:<br />TX: 引脚号39<br />RX: 引脚号38<br />uart1:<br />TX: 引脚号50<br />RX: 引脚号51<br />uart2:<br />TX:引脚号18<br />RX:引脚号17 |
 | BC25PA        | uart1:<br />TX: 引脚号29<br />RX: 引脚号28                   |
 | BG95M3        | uart0:<br />TX: 引脚号23<br />RX: 引脚号22<br />uart1:<br />TX:引脚号27<br />RX:引脚号28<br />uart2:<br />TX: 引脚号64<br />RX: 引脚号65 |
-| EC600M        | uart0:<br />TX: 引脚号71<br />RX: 引脚号72<br />uart1(不开启流控):<br />TX: 引脚号3<br />RX: 引脚号2<br />uart1(开启流控):<br />TX: 引脚号33<br />RX: 引脚号34<br />uart2:<br />TX:引脚号32<br />RX:引脚号31 |
+| EC600M        | uart0:<br />TX: 引脚号71<br />RX: 引脚号72<br />uart1(flowctl = 0):<br />TX: 引脚号3<br />RX: 引脚号2<br />uart1(flowctl = 1):<br />TX: 引脚号33<br />RX: 引脚号34<br />uart2:<br />TX:引脚号32<br />RX:引脚号31 |
 | EG915U        | uart1:<br />TX: 引脚号27<br />RX: 引脚号28<br />uart2:<br />TX:引脚号35<br />RX:引脚号34<br/>uart4:<br/>TX:引脚号19<br/>RX:引脚号18 |
-| EC800M        | uart0:<br />TX: 引脚号39<br />RX: 引脚号38<br />uart1(不开启流控):<br />TX: 引脚号50<br />RX: 引脚号51<br />uart1(开启流控):<br />TX: 引脚号22<br />RX: 引脚号23<br />注:EC800MCN_GA uart1不可用<br />uart2:<br />TX:引脚号18<br />RX:引脚号17 |
-| EG912N        | uart0:<br />TX: 引脚号23<br />RX: 引脚号22<br />uart1(不开启流控):<br />TX: 引脚号27<br />RX: 引脚号28<br/>uart1(开启流控):<br />TX: 引脚号36<br />RX: 引脚号37<br />uart2:<br />TX:引脚号34<br />RX:引脚号35 |
+| EC800M        | uart0:<br />TX: 引脚号39<br />RX: 引脚号38<br />uart1(flowctl = 0):<br />TX: 引脚号50<br />RX: 引脚号51<br />uart1(flowctl = 1):<br />TX: 引脚号22<br />RX: 引脚号23<br />注意:EC800MCN_GA uart1不可用<br />uart2:<br />TX:引脚号18<br />RX:引脚号17 |
+| EG912N        | uart0:<br />TX: 引脚号23<br />RX: 引脚号22<br />uart1(flowctl = 0):<br />TX: 引脚号27<br />RX: 引脚号28<br/>uart1(flowctl = 1):<br />TX: 引脚号36<br />RX: 引脚号37<br />uart2:<br />TX:引脚号34<br />RX:引脚号35 |
+
+> 注意：EC600M/EC800M/EG912N 的uart1在flowctl = 1时，仅将uart1映射到不同的引脚，未开启流控功能。
 
 **示例：**
 
 ```python
->>> from machine import UART
 >>> # 创建uart对象
+>>> from machine import UART
 >>> uart1 = UART(UART.UART1, 115200, 8, 0, 1, 0)
 ```
 
@@ -53,7 +55,7 @@ class machine.UART(UART.UARTn, buadrate, databits, parity, stopbits, flowctl)
 uart.any()
 ```
 
-该方法用于获取接收缓存未读数据大小
+该方法用于获取接收缓存未读数据大小。
 
 **返回值描述：**
 
@@ -108,12 +110,12 @@ uart.close()
 
 **返回值描述：**
 
-成功返回整型`0`，失败返回整型`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
 ### `uart.control_485`
 
 ```python
-art.control_485(UART.GPIOn, direction)
+uart.control_485(UART.GPIOn, direction)
 ```
 
 该方法用于控制485通信方向，串口发送数据之前和之后进行拉高拉低指定GPIO，用来指示485通信的方向。
@@ -126,9 +128,9 @@ art.control_485(UART.GPIOn, direction)
 
 **返回值描述：**
 
-成功返回整型`0`，失败返回整型`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
-> 注意：BC25PA平台不支持此方法。
+> 注意：BC25PA/BG95M3平台不支持此方法。
 
 **示例：**
 
@@ -148,12 +150,23 @@ uart.set_callback(fun)
 
 **参数描述：**
 
-- `fun` - 回调函数，function类型，说明如下：<br />回调函数原型：`cb_func([result, port, num])->None`<br />回调函数参数：`[result, port, num]`<br />`result`：接收接口（0：成功，其它：失败）<br />`port`：接收端口<br />`num`：返回有多少数据
+- `fun` - 串口回调函数，回调函数原型：
 
+  ```
+  fun(result_list)
+  ```
+
+  回调函数参数描述：
+
+  - `result_list[0]`：接收是否成功(0：成功，其它：失败)
+
+  - `result_list[1]`：接收端口
+
+  - `result_list[2]`：返回有多少数据
 
 **返回值描述：**
 
-成功返回整型`0`，失败返回整型`-1`。
+成功返回整型值`0`，失败返回整型值`-1`。
 
 **示例：**
 

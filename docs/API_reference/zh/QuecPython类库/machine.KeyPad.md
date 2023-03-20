@@ -1,10 +1,9 @@
 # class KeyPad - 矩阵键盘
 
-模块功能:提供矩阵键盘接口。
+类功能:提供矩阵键盘接口。
 
-> 支持平台：EC600SCN_LB/ EC800NCN_LA/ EC600NCN_LC/ EC200UCN_LB/ EC600UCN_LB/ EC600MCN_LA/ EC800MCN_LA/ EC800MCN_GA/ EG912NEN_AA
+> 支持型号：EC600SCN_LB/ EC800NCN_LA/ EC600NCN_LC/ EC200UCN_LB/ EC600UCN_LB/ EC600MCN_LA/ EC800MCN_LA/ EC800MCN_GA/ EG912NEN_AA
 >
-> EC200U最大支持4X3,EC600U最大支持6X6。
 
 ## 构造函数
 
@@ -14,10 +13,10 @@
 class machine.KeyPad(row,col)
 ```
 
-**参数：**
+**参数描述：**
 
-- row - 行号，int类型，大于0，不超过平台支持最大值
-- col - 列号，int类型，大于0，不超过平台支持最大值
+- `row` - 行号，int类型，大于0，不超过平台支持最大值。
+- `col` - 列号，int类型，大于0，不超过平台支持最大值。
 
 > 注意：如果row和col均不设置,默认为4X4.
 
@@ -31,7 +30,7 @@ class machine.KeyPad(row,col)
 | EC800M        | 5      | 5      |
 | EG912N        | 3      | 3      |
 
-**引脚说明：**
+**KeyPad引脚对应关系：**
 
 > 注意：当不使用全部引脚时，接线按行列号从小到大顺序接线，比如EC600M使用2x2矩阵键盘时，硬件使用49、51和48、50引脚。
 
@@ -44,11 +43,11 @@ class machine.KeyPad(row,col)
 **示例：**
 
 ```python
->>># 创建keypad对象
->>>import machine
->>>keypad=machine.KeyPad(2,3)		# 矩阵键盘设置为2行3列矩阵键盘
->>>keypad=machine.KeyPad()  	 	# 不设置,默认设置为4行4列矩阵键盘
->>>keypad=machine.KeyPad(2)  	 	# 行值设置为2,不设置列值,列值默认为4,2行4列矩阵键盘
+>>> # 创建keypad对象
+>>> import machine
+>>> keypad=machine.KeyPad(2,3)	# 设置为2行3列矩阵键盘
+>>> keypad=machine.KeyPad()		# 参数缺省,默认设置为4行4列矩阵键盘
+>>> keypad=machine.KeyPad(2)	# 行值设置为2,列值缺省,列值默认为4,2行4列矩阵键盘
 ```
 
 ## 方法
@@ -61,9 +60,9 @@ keypad.init()
 
 该方法用于初始化keypad设置。
 
-**返回值：**
+**返回值描述：**
 
-成功返回`0`，失败返回`-1`。
+成功返回整型值`0`，失败返回整型值`-1` 。
 
 ### `keypad.set_callback`
 
@@ -71,16 +70,27 @@ keypad.init()
 keypad.set_callback(usrFun)
 ```
 
-该方法用于设置回调函数，按键接入模组后，按放按键后触发回调函数设置。
+该方法用于设置回调函数，外接按键接入模组后，当外接键盘按键按放时会触发此回调函数。
 
-**参数：**
+**参数描述：**
 
-- usrFun - 回调函数,functio类型，说明如下：<br />当外接键盘按键按放会触发此函数。<br />usrFun参数为list数据类型，list包含三个参数。<br />其含义如下：<br />list[0]: 1表示按下，0表示抬起<br />list[1] : row<br />list[2] : col
+- `usrFun` - 矩阵键盘回调函数，回调函数原型：
 
+  ```
+  usrFun(result_list)
+  ```
 
-**返回值：**
+  回调函数参数描述：
 
-成功返回`0`。
+  - `result_list[0]`：按键状态(1表示按下，0表示抬起)
+
+  - `result_list[1]`：行号
+
+  - `result_list[2]`：列号
+
+**返回值描述：**
+
+设置成功返回整型值`0`，设置失败返回整型值`-1` 。
 
 ### `keypad.deinit`
 
@@ -90,9 +100,9 @@ keypad.deinit()
 
 该方法用于解除初始化，释放初始化的资源和回调函数设置。
 
-**返回值：**
+**返回值描述：**
 
-成功返回`0`，失败返回`-1`。
+设置成功返回整型值`0`，设置失败返回整型值`-1` 。
 
 **使用示例：**
 
