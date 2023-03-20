@@ -53,6 +53,10 @@ items:
         file: QuecPython类库/cellLocator.md
     -   label: wifilocator - WIFI定位
         file: QuecPython类库/wifilocator.md
+    -   label: fota - 固件升级相关功能
+        file: QuecPython类库/fota.md
+    -   label: app_fota - 用户文件升级相关功能
+        file: QuecPython类库/app_fota.md
     -   label: checkNet - 网络就绪检测
         file: QuecPython类库/checkNet.md
     -   label: wifiScan - WiFi扫描
@@ -82,6 +86,10 @@ items:
         file: QuecPython类库/quecgnss.md
     -   label: securedata - 安全数据区
         file: QuecPython类库/securedata.md
+    -   label: ble - 低功耗蓝牙相关功能
+        file: QuecPython类库/ble.md
+    -   label: bt - 经典蓝牙相关功能
+        file: QuecPython类库/bt.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:
