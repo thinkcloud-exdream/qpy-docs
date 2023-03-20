@@ -63,6 +63,24 @@ items:
         file: QuecPython类库/wifiScan.md
     -   label: ethernet - 以太网相关功能
         file: QuecPython类库/ethernet.md
+    -   label: camera - 摄像扫码
+        file: QuecPython类库/camera.md
+        items:
+        -   label: CamPreview - 摄像头预览
+            file: QuecPython类库/camera.CamPreview.md
+        -   label: CamDecoder - 摄像头扫码
+            file: QuecPython类库/camera.CamDecoder.md
+        -   label: CamCapture - 摄像头拍照
+            file: QuecPython类库/camera.CamCapture.md
+    -   label: audio - 音频播放
+        file: QuecPython类库/audio.md
+        items:
+        -   label: TTS - 文本到语音播放
+            file: QuecPython类库/audio.TTS.md
+        -   label: Audio - 音频播放
+            file: QuecPython类库/audio.Audio.md
+        -   label: Record - 录音
+            file: QuecPython类库/audio.Record.md
     -   label: WLAN - 无线局域网相关功能
         file: QuecPython类库/WLAN.md
     -   label: misc - 其他
