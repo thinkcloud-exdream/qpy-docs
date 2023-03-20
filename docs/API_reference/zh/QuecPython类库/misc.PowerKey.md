@@ -1,5 +1,3 @@
-    本文阐述了QuecPython的misc.PowerKey类的用法，描述了misc.PowerKey类最新版本的特性。
-
 # class PowerKey - power key按键回调注册功能
 
 提供power key按键注册回调功能接口。
@@ -14,7 +12,7 @@ class misc.PowerKey()
 
 **返回值描述：**
 
-返回创建的对象
+返回创建的对象。
 
 **示例：**
 
@@ -35,19 +33,19 @@ PowerKey.powerKeyEventRegister(usrFun)
 
 **参数描述：**
 
-- usrfun-回调函数,原型usrfun(status),参数status:`0`表示松开,`1`表示按下;按下或松开powerkey按键时触发回调。
+- `usrfun`-回调函数,原型usrfun(status),参数status:`0`表示松开,`1`表示按下;按下或松开powerkey按键时触发回调。
 
 **返回值描述：**
 
 `0`表示注册成功，`-1`表示注册失败。
 
-> 注意:EC600S/EC600N等ASR平台，对于powerkey，按下和松开时，都会触发用户注册的回调函数；
+> 注意:EC600S/EC600N系列，对于powerkey，按下和松开时，都会触发用户注册的回调函数；
 >
-> EC200U/EC600U等展锐平台，对于powerkey，只在按键松开时才会触发回调函数，并且按键按下的时间需要维持500ms以上。
+> EC200U/EC600U系列，对于powerkey，只在按键松开时才会触发回调函数，并且按键按下的时间需要维持500ms以上。
 
 **示例：**
 
-EC600S/EC600N平台：
+EC600S/EC600N系列：
 
 ```python
 from misc import PowerKey
@@ -63,7 +61,7 @@ def pwk_callback(status):
 pk.powerKeyEventRegister(pwk_callback)
 ```
 
-EC200U/EC600U平台：
+EC200U/EC600U系列：
 
 ```python
 from misc import PowerKey
