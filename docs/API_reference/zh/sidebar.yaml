@@ -19,7 +19,7 @@ items:
     -   label: uio - 输入输出流
         file: QuecPython标准库/uio.md
     -   label: ustruct - 打包和解压原始数据类型
-        file: QuecPython标准库/uio.md
+        file: QuecPython标准库/ustruct.md
     -   label: ujson - JSON编码和解码
         file: QuecPython标准库/ujson.md
     -   label: utime - 时间相关功能
@@ -34,6 +34,54 @@ items:
         file: QuecPython标准库/uhashlib.md
 -   label: QuecPython类库
     file: QuecPython类库/README.md
+    items:
+    -   label: example - 执行python脚本
+        file: QuecPython类库/example.md
+    -   label: dataCall - 拨号
+        file: QuecPython类库/dataCall.md
+    -   label: atcmd - 发送AT指令
+        file: QuecPython类库/atcmd.md
+    -   label: sim - SIM卡
+        file: QuecPython类库/sim.md
+    -   label: sms - 短信
+        file: QuecPython类库/sms.md
+    -   label: voiceCall - 电话
+        file: QuecPython类库/voiceCall.md
+    -   label: net - 网络
+        file: QuecPython类库/net.md
+    -   label: cellLocator - 基站定位
+        file: QuecPython类库/cellLocator.md
+    -   label: wifilocator - WIFI定位
+        file: QuecPython类库/wifilocator.md
+    -   label: checkNet - 网络就绪检测
+        file: QuecPython类库/checkNet.md
+    -   label: wifiScan - WiFi扫描
+        file: QuecPython类库/wifiScan.md
+    -   label: ethernet - 以太网相关功能
+        file: QuecPython类库/ethernet.md
+    -   label: WLAN - 无线局域网相关功能
+        file: QuecPython类库/WLAN.md
+    -   label: misc - 其他
+        file: QuecPython类库/misc.md
+        items:
+        -   label: USBNET - USB网卡
+            file: QuecPython类库/misc.USBNET.md
+        -   label: Power - 关机和重启
+            file: QuecPython类库/misc.Power.md
+    -   label: modem - 设备相关
+        file: QuecPython类库/modem.md
+    -   label: machine - 硬件相关功能
+        file: QuecPython类库/machine.md
+    -   label: qrcode - 二维码显示
+        file: QuecPython类库/qrcode.md
+    -   label: pm - 低功耗
+        file: QuecPython类库/pm.md
+    -   label: gnss - 外置GNSS
+        file: QuecPython类库/gnss.md
+    -   label: quecgnss - 内置GNSS
+        file: QuecPython类库/quecgnss.md
+    -   label: securedata - 安全数据区
+        file: QuecPython类库/securedata.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:

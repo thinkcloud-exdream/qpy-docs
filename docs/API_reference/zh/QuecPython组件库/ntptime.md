@@ -4,15 +4,21 @@
 
 注意：BC25PA平台电信卡开卡时需要说明SIM卡须支持此类业务，移动联通一般不限制(开卡时需要和运营商确认)。
 
-## 返回当前的ntp服务器
 
-> **ntptime.host**
+### `ntptime.host`
+
+```python
+ntptime.host
+```
 
 返回当前的ntp服务器，默认为"ntp.aliyun.com"。
 
-## 设置ntp服务器
 
-> **ntptime.sethost(host)**
+### `ntptime.sethost`
+
+```python
+ntptime.sethost(host)
+```
 
 设置ntp服务器。
 
@@ -26,9 +32,12 @@
 
 成功返回整型值0，失败返回整型值-1。
 
-## 同步ntp时间
 
-> **ntptime.settime(timezone=0)**
+### `ntptime.settime`
+
+```python
+ntptime.settime(timezone=0)
+```
 
 同步ntp时间。
 
@@ -47,13 +56,6 @@
 **ntptime使用示例**
 
 ```python
-'''
-@Author: Baron
-@Date: 2020-06-17
-@LastEditTime: 2020-06-17 17:06:08
-@Description: example for module ntptime
-@FilePath: example_ntptime_file.py
-'''
 import ntptime
 import log
 import utime
@@ -86,5 +88,4 @@ if __name__ == '__main__':
         ntptime.settime()
     else:
         ntp_log.info('Network connection failed! stagecode = {}, subcode = {}'.format(stagecode, subcode))
-```
 ```

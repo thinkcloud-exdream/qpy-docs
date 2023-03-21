@@ -5,11 +5,13 @@
 适配版本：EC100Y(V0009)及以上；EC600S(V0002)及以上。
 
 
-## 开启/关闭交互保护
+### `system.replSetEnable`
 
-> ​	**system.replSetEnable(flag，**kw_args)**
+```python
+system.replSetEnable(flag，**kw_args)
+```
 
-交互保护设置，可变参API
+开启/关闭交互保护,交互保护设置，参数设置如下
 
 1、只有一个参数flag时：
 
@@ -40,9 +42,11 @@
 4：repl-protection by password
 
 
-## 更改交互保护密码
+### `system.replChangPswd`
 
-> ​	**system.replChangPswd(old_password,new_password)**
+```python
+system.replChangPswd(old_password,new_password)
+```
 
 更改交互保护密码
 
@@ -78,7 +82,6 @@ REPL enable
 2
 >>>
 
-
 >>> system.replSetEnable(1,password='miamia') //已经设置过密码，如果需要重新锁住交互口，需要输入正确密码
 Incorrect password!
 -1
@@ -93,7 +96,6 @@ REPL enable
 2
 
 
-
 >>> system.replChangPswd(old_password='miamia123',new_password='123456') //change password
 0
 >>> system.replSetEnable(1,password='miamia123')                         //更改密码成功之后，继续用老密码锁交互口，提示密码不正确
@@ -105,8 +107,6 @@ Incorrect password!
 Please enter password:
 >>> ******
 REPL enable
-
-
 
 >>> system.replSetEnable(0,password='123456')          //取消密码保护（取消加密保护之后可使用任意新密码重新加锁交互口）
 
