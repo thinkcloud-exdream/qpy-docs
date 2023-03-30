@@ -1,12 +1,11 @@
 # voiceCall - 电话功能
 
-模块功能：该模块提供电话功能相关接口。
+该模块提供电话功能相关接口。
 
 
 
->注意：
 >* 支持voiceCall功能的模组：
-> EC100Y系列：EC100YCN_AA
+>EC100Y系列：EC100YCN_AA
 > EC200N系列：EC200NCN_AA/EC200NCN_AC/EC200NCN_LA
 > EC600N系列：EC600NCN_AA/EC600NCN_LC/EC600NCN_LD/EC600NCN_LF
 > EC600S系列：EC600SCN_LA
@@ -16,7 +15,7 @@
 > EC200U系列：EC200UAU_AB/EC200UCN_AA/EC200UEU_AA/EC200UEU_AB
 > EC600U系列：EC600CEU_AB/EG912UGL_AA/EG915UEU_AB
 > BC25/EC600G/EC800G/BG95/BG77系列模组不支持voiceCall功能。
->* 其他系列模组需要定制版本才能支持voiceCall功能。
+> * 其他系列模组需要定制版本才能支持voiceCall功能。
 
 
 
@@ -193,8 +192,6 @@ def voice_callback(args):
 
 
 
->注意:
->
 >* 1、以上仅适用2021-09-09之后发布的支持语音通话的版本
 >* 2、QPY_V0004_EC600N_CNLC_FW_VOLTE(2021-09-09发布)之前发布的版本都按照以下规则使用voiceCall
 
@@ -246,7 +243,7 @@ voiceCall.setAutoCancel(enable)
 
 
 
->注意：EC200AAU_HA/EC200ACN_DA/EC200ACN_HA/EC200ACN_LA/EC200AEU_HA系列模组支持该功能
+>EC200AAU_HA/EC200ACN_DA/EC200ACN_HA/EC200ACN_LA/EC200AEU_HA系列模组支持该功能
 
 
 
@@ -319,7 +316,7 @@ voiceCall.startDtmf(dtmf, duration)
 
 
 
->注意：该方法仅在语音通话过程中使用生效
+>该方法仅在语音通话过程中使用生效
 
 
 
@@ -351,7 +348,7 @@ voiceCall.dtmfDetEnable(enable)
 
 
 
->注意：支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
+>支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
 
 
 
@@ -382,7 +379,7 @@ def dtmfFun(args):
 
 
 
->注意：支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
+>支持voiceCall功能的模组型号中，EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
 
 
 
@@ -641,7 +638,6 @@ voiceCall.readRecordStream(readBuf, bufLen)
 
 
 
->注意：
 >* 录音流第一包数据均是对应格式文件的文件头
 >* wav格式录音流第一包数据不包含文件大小，需结束录音后自行计算
 
@@ -689,7 +685,6 @@ def recordStreamCallback(args):
 
 
 
->注意：
 >* 录音流第一包数据均是对应格式文件的文件头
 >* wav格式录音流第一包数据不包含文件大小，需结束录音后自行计算
 
