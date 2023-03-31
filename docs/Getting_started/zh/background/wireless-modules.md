@@ -50,7 +50,7 @@ QuecPython 是运行在无线通信模块上的开发框架。对于首次接触
 
 ## 蜂窝：从身边到未来
 
-蜂窝网络（Cellular Network，又称移动网络 Mobile Network）是构成现代移动电话和个人通信系统的基础无线通信技术架构之一。蜂窝通信的概念在上世纪 70 年代由贝尔实验室提出，最初是为了移动语音电话业务开发的。它将移动电话的服务区域根据地形和无线接收特性分为一个个小区（cell），在每个小区内设一套基站系统。在传统理论中，这些小区被设计为六边形、圆形或正方形，以六边形最为常见。小区之间彼此连接，实现区域的完整覆盖，形如蜂巢，这也是该项技术被译为蜂窝网络的原因。如今，在实际场景中，很多基站的覆盖区域已经不再是蜂窝形状，但这个称谓依旧流传了下来。
+蜂窝网络（Cellular Network，又称移动网络 Mobile Network）是构成现代移动电话和个人通信系统的基础无线通信技术架构之一。蜂窝通信的概念在上世纪 70 年代由贝尔实验室提出，最初是为了移动语音电话业务开发的。它将移动电话的服务区域根据地形和无线接收特性分为一个个小区（Cell），在每个小区内设一套基站系统。在传统理论中，这些小区被设计为六边形、圆形或正方形，以六边形最为常见。小区之间彼此连接，实现区域的完整覆盖，形如蜂巢，这也是该项技术被译为蜂窝网络的原因。如今，在实际场景中，很多基站的覆盖区域已经不再是蜂窝形状，但这个称谓依旧流传了下来。
 
 <center>
     <img src="../media/background/wireless-modules/cellular-network-architecture.png" style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); zoom:40%;">
@@ -134,15 +134,18 @@ QuecPython 是运行在无线通信模块上的开发框架。对于首次接触
 
 如上图所示，在标准模式中，模块与主控（MCU，如 STM32）之间通过 UART 或 USB 接口相连接，基于 AT 指令进行双向交互。不难看出，MCU 是整套系统的核心，通信模块是作为 MCU 的一个独立的功能外设的角色而存在的。系统的主要业务逻辑（用户应用，App）在 MCU 中运行，其他外设（图中的 External Devices）通过 UART、I2C 等接口与 MCU 相连，受 MCU 控制。
 
-AT 指令是目前业界历史最悠久，使用领域最广泛的通讯指令集之一。它构建起了一套用户和模块间的完备的双向通信机制：用户（或 MCU）通过向模块发送 AT 指令，控制模块执行包括联网、通话、定位等在内的各类功能，模块则将执行结果和状态返回给用户。这种“一发一收”的机制和相对单一的处理方式非常适合在资源有限的嵌入式环境中使用。如今，市面上的绝大多数模块在出厂时都内置了 AT Server 程序，可以接收、解析和执行特定的 AT 指令。
+.. details:: 关于 AT 指令
+    :open: false
 
-<center>
-    <img src="../media/background/wireless-modules/at-command-architecture.png" style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); zoom:50%;">
-    <br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">
-        AT 指令的运行模式
-    </div>
-</center>
+    AT 指令是目前业界历史最悠久，使用领域最广泛的通讯指令集之一。它构建起了一套用户和模块间的完备的双向通信机制：用户（或 MCU）通过向模块发送 AT 指令，控制模块执行包括联网、通话、定位等在内的各类功能，模块则将执行结果和状态返回给用户。这种“一发一收”的机制和相对单一的处理方式非常适合在资源有限的嵌入式环境中使用。如今，市面上的绝大多数模块在出厂时都内置了 AT Server 程序，可以接收、解析和执行特定的 AT 指令。
+
+    <center>
+        <img src="../media/background/wireless-modules/at-command-architecture.png" style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); zoom:50%;">
+        <br>
+        <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">
+            AT 指令的运行模式
+        </div>
+    </center>
 
 对于开发者而言，在基于标准模式使用模块时，主要的开发工作量在于主控中运行的用户 App。其业务代码中需要包含较为复杂的 AT 指令发送和返回值解析功能，例如对 URC（Unsolicited Result Code，非请求结果码）的处理等，因而对于初学者难度较大。
 
@@ -172,55 +175,55 @@ AT 指令是目前业界历史最悠久，使用领域最广泛的通讯指令�
 
 与 C 语言相比，脚本语言在语法和使用方式上普遍较为简单，开发者无需花费太多时间和精力即可掌握，并可相对轻松地实现业务逻辑，便于项目的快速开发和功能迭代。同时，对于低代码开发方式而言，开发者通常无需考虑内存回收、基础任务调度等底层细节，显著降低了模块二次开发的技术门槛。最后，对于不同型号的模块，只要它们运行的是同一种脚本语言解释器，用户编写的程序通常只需少量修改（甚至无需修改）即可完成移植。
 
-如下的示例分别是在 EC100Y-CN 模块上使用 C 语言和脚本语言实现 LED 闪灯的代码。可以看出，脚本语言更加简单直观，易于编写、便于理解。
+如下的示例分别是在 EC100Y-CN 模块上使用 C 语言和 Python 语言实现 LED 闪灯的代码。可以看出，脚本语言更加简单直观，易于编写、便于理解。
 
 .. tabset:: LED 闪灯代码
 
     ## 使用 QuecOpen（CSDK）
     
     ```c
-        #include "ql_application.h"
-        #include "ql_gpio.h"
-        #include <stdio.h>
-    
-        static quec_gpio_cfg_t led_gpio_cfg[] = 
+    #include "ql_application.h"
+    #include "ql_gpio.h"
+    #include <stdio.h>
+
+    static quec_gpio_cfg_t led_gpio_cfg[] = 
+    {
+        {GPIO_PIN_NO_75, PIN_DIRECTION_OUT, PIN_NO_EDGE, PIN_PULL_DISABLE, PIN_LEVEL_LOW}
+    };
+
+    static void led_test(void *argv)
+    {
+        ql_gpio_init(led_gpio_cfg[0].gpio_pin_num, led_gpio_cfg[0].pin_dir, led_gpio_cfg[0].pin_pull, led_gpio_cfg[0].pin_level);
+
+        while (1)
         {
-            {GPIO_PIN_NO_75, PIN_DIRECTION_OUT, PIN_NO_EDGE, PIN_PULL_DISABLE, PIN_LEVEL_LOW}
-        };
-    
-        static void led_test(void *argv)
-        {
-            ql_gpio_init(led_gpio_cfg[0].gpio_pin_num, led_gpio_cfg[0].pin_dir, led_gpio_cfg[0].pin_pull, led_gpio_cfg[0].pin_level);
-    
-            while (1)
-            {
-                ql_gpio_set_level(led_gpio_cfg[0].gpio_pin_num, PIN_LEVEL_LOW);
-                ql_rtos_task_sleep_s(1);
-                ql_gpio_set_level(led_gpio_cfg[0].gpio_pin_num, PIN_LEVEL_HIGH);
-                ql_rtos_task_sleep_s(1);
-            }
+            ql_gpio_set_level(led_gpio_cfg[0].gpio_pin_num, PIN_LEVEL_LOW);
+            ql_rtos_task_sleep_s(1);
+            ql_gpio_set_level(led_gpio_cfg[0].gpio_pin_num, PIN_LEVEL_HIGH);
+            ql_rtos_task_sleep_s(1);
         }
-    
-        application_init(led_test, "led_test", 2, 2);
+    }
+
+    application_init(led_test, "led_test", 2, 2);
     ```
     
     ## 使用 QuecPython
     
     ```python
-        from machine import Pin
-        import utime as time
-    
-        led = Pin(Pin.GPIO15, Pin.OUT, Pin.PULL_DISABLE, 0)
-    
-        def led_test():
-            while 1:
-                led.write(0)
-                time.sleep(1)
-                led.write(1)
-                time.sleep(1)
-    
-        if __name__ == "__main__":
-            led_test()
+    from machine import Pin
+    import utime as time
+
+    led = Pin(Pin.GPIO15, Pin.OUT, Pin.PULL_DISABLE, 0)
+
+    def led_test():
+        while 1:
+            led.write(0)
+            time.sleep(1)
+            led.write(1)
+            time.sleep(1)
+
+    if __name__ == "__main__":
+        led_test()
     ```
 
 当然，由于使用脚本语言开发时屏蔽了很多底层细节，因而在灵活性和可控性上不如传统的 C 语言开发。此外，脚本语言与 C 语言相比，本身性能相对较差、执行速度较慢，因而在部分对于性能和实时性要求较高的场景下不适合使用。
