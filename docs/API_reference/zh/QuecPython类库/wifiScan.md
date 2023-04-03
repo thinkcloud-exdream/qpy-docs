@@ -2,15 +2,17 @@
 
 `wifiScan`模块提供了同步和异步两种方式来扫描模组周边的WiFi热点信息。
 
-支持`wifiScan`功能的模组：
 
-EC100Y/EC200N/EC600N/EC600S/EC600M部分系列/EC800M部分系列/EC800N/EG912N/EG915N/EG810M/EC600G/EC800G/EC200U/EC600U部分系列/EG912U/EG915U系列模组。
 
-EC600M系列模组中，EC600MCN_LC/EC600MCN_LF不支持`wifiScan`；
-
-EC800M系列模组中，EC800MCN_GC/EC800MCN_LC/EC800MCN_LF不支持`wifiScan`；
-
-EC600U系列模组中，EC600UEC_AC不支持`wifiScan`。
+> 支持`wifiScan`功能的模组：
+>
+> EC100Y/EC200N/EC600N/EC600S/EC600M部分系列/EC800M部分系列/EC800N/EG912N/EG915N/EG810M/EC600G/EC800G/EC200U/EC600U部分系列/EG912U/EG915U系列模组。
+>
+> EC600M系列模组中，EC600MCN_LC/EC600MCN_LF不支持`wifiScan`；
+>
+> EC800M系列模组中，EC800MCN_GC/EC800MCN_LC/EC800MCN_LF不支持`wifiScan`；
+>
+> EC600U系列模组中，EC600UEC_AC不支持`wifiScan`。
 
 
 
@@ -81,7 +83,7 @@ wifiScan.setCfgParam(timeout, round, maxNums[, priority])
 
 
 
-> EC200U/EC600U/EG912U/EG915U/EC600G/EC800G系列模组不支持priority参数，使用时可不填该参数，如果填写了也没有影响。
+> EC200U/EC600U/EG912U/EG915U/EC600G/EC800G系列模组不支持priority参数，使用时可不填该参数。
 
 
 
@@ -95,7 +97,7 @@ wifiScan.getCfgParam()
 
 **返回值描述：**
 
-成功返回一个元组，失败返回整型` -1`。返回元组格式如下，返回值参数描述见`wifiScan.setCfgParam`方法的参数描述：
+成功返回一个元组，失败返回整型` -1`。返回值参数描述见`wifiScan.setCfgParam`方法的参数描述，返回元组格式如下：
 
 `(timeout, round, maxNums, priority)`
 

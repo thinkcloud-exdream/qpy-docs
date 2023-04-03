@@ -8,5 +8,5 @@ QuecPython 应用指导，是对QuecPython常用功能模块如何使用的指�
 * [bsp](./bsp/README.md)
 * [bluetooth](./bluetooth/README.md)
 * [fota](./fota/README.md)
-* [network](./network/README.md)
+* [gnss](./gnss/README.md)
 * [peripherals](./peripherals/README.md)
