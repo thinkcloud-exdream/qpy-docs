@@ -22,15 +22,42 @@ class ESP8266(uart=UART.UART1, mod=ESP8266.STA， callback=None)
 - `content` - 用户回调，表示上报消息内容
 
 **上报消息内容描述：**
-- `ota`信息上报：
-    - `ota,begin` - ota升级开始
-    - `ota,downloading,xx` - ota升级下载百分比
-    - `ota,restart` - ota升级下载完成进行重启
-    - `ota,err_code,1` - ota升级错误码
-- `station`网络连接变化上报：
-    - `station, connected` - wifi已连接
-    - `station, disconnected` - wifi未连接
 
+开启用户回调后，模组会在ota升级和sta模式连接变化时进行消息上报，以下是上报信息描述。
+
+`ota`信息上报：
+- `ota,begin` - ota升级开始
+- `ota,downloading,xx` - ota升级下载百分比
+- `ota,restart` - ota升级下载完成进行重启
+- `ota,err_code,x` - ota升级错误码，以下是对错误码(x)的描述：
+    - `1` - url解析失败
+    - `2` - 连接http服务器失败
+    - `3` - 为GET请求分配内存失败
+    - `4` - 发送GET请求到服务器失败
+    - `5` - 升级开始时错误
+    - `6` - 接收数据失败
+    - `7` - ota文件写入失败
+    - `8` - 升级结束时错误
+    - `9` - 设置boot分区失败
+
+`station`模式网络连接变化上报：
+- `station, connected` - wifi已连接
+- `station, disconnected` - wifi断开连接
+
+**示例：**
+
+```python
+# callback使用示例
+from usr.WLAN import ESP8266
+from machine import UART
+
+def cb(args):
+    content = args
+    print('wifi content:{}'.format(content))
+
+ESP8266 = ESP8266(UART.UART2, ESP8266.STA, cb)
+
+```
 
 
 ## 方法
@@ -44,6 +71,8 @@ ESP8266.status()
 获取无线网卡状态信息，用以判断无线网卡当前工作模式。
 
 **返回值描述：**
+
+返回int类型，枚举值，具体说明如下：
 - `0` - esp8266 设备不存在
 - `1` - esp8266 station模式已连接
 - `2` - esp8266 station模式未连接
@@ -64,11 +93,11 @@ ESP8266.version()
 
 **返回值描述：**
 
-- 返回字符串，格式为(sdk, model, version, time),具体描述如下：
-    - `sdk` - sdk信息
-    - `model` - 无线网卡型号
-    - `version` - 版本号
-    - `time` - 版本时间
+返回string类型，格式为(sdk, model, version, time),具体说明如下：
+- `sdk` - sdk信息
+- `model` - 无线网卡型号
+- `version` - 版本号
+- `time` - 版本时间
 
 
 
@@ -82,14 +111,14 @@ ESP8266.ipconfig()
 
 **返回值描述：**
 
- - 返回tuple类型，格式为 (ip, subnet, gateway, mtu, primary_dns, secondary_dns)，具体描述如下：
+ 返回tuple类型，格式为 (ip, subnet, gateway, mtu, primary_dns, secondary_dns)，具体说明如下：
 
-    - `ip` - ip地址
-    - `subnet` - 子网掩码
-    - `gateway` - 网关
-    - `mtu` - 最大传输单元
-    - `primary_dns` - DNS服务器主地址
-    - `secondary_dns` - DNS服务器辅地址
+- `ip` - ip地址
+- `subnet` - 子网掩码
+- `gateway` - 网关
+- `mtu` - 最大传输单元
+- `primary_dns` - DNS服务器主地址
+- `secondary_dns` - DNS服务器辅地址
 
 
 
@@ -160,7 +189,7 @@ ESP8266.ota(url)
 
 开启`ota`后，网卡将更新新版本固件
 
-> 注意：升级过程中只可查询当前状态，不可进行其他操作
+> 注意：当前仅支持sta模式下进行ota升级；且升级过程中只可查询当前状态，不可进行其他操作
 
 **参数描述：**
 
@@ -170,13 +199,14 @@ ESP8266.ota(url)
 
 - 执行成功返回`0`，执行失败返回其他值。
 
+
 **示例：**
 
 ```python
 
 url='http://www.example.com/fota.bin'
 
-esp8266.ota(url)
+ESP8266.ota(url)
 
 ```
 
