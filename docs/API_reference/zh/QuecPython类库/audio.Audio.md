@@ -13,10 +13,10 @@ from machine import Pin
 import utime
 
 def audio_cb(event):
-	if event == 0:
-		print('audio-play start.')
-	elif event == 7:
-		print('audio-play finish.')
+    if event == 0:
+        print('audio-play start.')
+    elif event == 7:
+        print('audio-play finish.')
 
 aud = audio.Audio(0)
 aud.setCallback(audio_cb)
@@ -61,7 +61,7 @@ class audio.Audio(device)
 
 **参数描述：**
 
-- `device` - 输出通道，int类型，`0`表示听筒，`1`表示耳机，`2`表示喇叭。具体模块所支持通道详见下表。
+- `device` - 输出通道，int类型，0表示听筒，1表示耳机，2表示喇叭。具体模块所支持通道详见下表。
 
 **模块输出通道对应表：**
 
@@ -161,7 +161,7 @@ Audio.setCallback(cb)
 
 该方法用于注册用户的回调函数，用于通知用户音频文件播放状态。
 
-> **注意**：该回调函数中不要进行耗时以及阻塞性的操作，建议只进行简单、耗时短的操作。
+> 该回调函数中不要进行耗时以及阻塞性的操作，建议只进行简单、耗时短的操作。
 
 **参数描述：**
 
@@ -267,7 +267,7 @@ Audio.aud_tone_play(tone, time)
 
 该方法用于播放tone音，播放一段时间(time)后自动停止播放。
 
-> **注意**：EC600N/EC800N系列模组调用该接口为立即返回，EC600U/EC200U系列模组调用该接口为阻塞等待。
+> EC600N/EC800N系列模组调用该接口为立即返回，EC600U/EC200U系列模组调用该接口为阻塞等待。
 
 **参数描述：**
 
