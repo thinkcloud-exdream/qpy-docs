@@ -62,7 +62,7 @@ class audio.Record(device)
 
 创建Record对象。
 
-> 注意：如果传参，请与audio.Audio(device)的参数保持一致。
+> 如果传参，请与audio.Audio(device)的参数保持一致。
 
 **参数描述：**
 
@@ -198,7 +198,7 @@ Record.getSize(file_name)
 
 若获取成功，返回文件大小 （EC600N系列、EC800N系列、EC800M系列、EC600M系列、EG915N不返回文件头），单位字节。
 
-> 注意：wav格式时，此值会比返回callback返回值大44 bytes(44 bytes为文件头)；amr格式时，此值会比返回callback返回值大6 bytes(6 bytes为文件头)。
+> wav格式时，此值会比返回callback返回值大44 bytes(44 bytes为文件头)；amr格式时，此值会比返回callback返回值大6 bytes(6 bytes为文件头)。
 
 失败返回值如下： 
 
@@ -273,14 +273,18 @@ Record.end_callback(cb)
 - `cb` - 录音结束回调函数，function类型，函数原型：
 
   ```
-  cb(file_path, audio_len, audio_state)
+  cb(audio_msg)
   ```
 
   **回调函数参数描述**：
 
-  -  `file_path` - 文件路径，string类型。
-  -  `audio_len` - 录音长度，int类型。
-  -  `audio_state` - 录音状态，int类型，<a href="#label_record_map1">点此查看</a>回调函数参数audio_state说明表。
+  -  `audio_msg` - 录音信息，list类型，其中元素如下：
+     
+     ​    `audio_msg[0]`：`file_path` ，文件路径，string类型。
+     
+     ​    `audio_msg[1]`：`audio_len` ， 录音长度，int类型。
+     
+     ​    `audio_msg[2]`：`audio_state` ，录音状态，int类型，<a href="#label_record_map1">点此查看</a>回调函数参数audio_state说明表。
 
 **返回值描述：**
 
@@ -306,7 +310,7 @@ Record.gain(code_gain,dsp_gain)
 
 **参数描述：**
 
-- `code_gain` - 上行编解码器增益，int型，`0~4`。
+- `code_gain` - 上行编解码器增益，int型，[0,4]。
 - `dsp_gain` - 上行数字增益，int型，`-36~12` 。
 
 **返回值描述：**
@@ -340,7 +344,7 @@ Record.amrEncDtx_enable(on_off)
 Record.stream_start(format, samplerate, time)
 ```
 
-该方法用于开始录音音频流。注意：录制音频流的同时，应及时读取音频流。目前是采用循环buf,不及时读取，会导致数据丢失。
+该方法用于开始录音音频流。注意：录制音频流的同时，应及时读取音频流。目前是采用循环buf，不及时读取，会导致数据丢失。
 
 > 目前仅EC200U/EC600U系列模组支持该功能。
 
@@ -366,7 +370,7 @@ Record.stream_read(read_buf, len)
 
 **参数描述**
 
-- `read_buf` - 录音流buf，buf型 。
+- `read_buf` - 录音流buf，bytearray型 。
 - `len` - 读取的长度，int类型。
 
 **返回值描述：**

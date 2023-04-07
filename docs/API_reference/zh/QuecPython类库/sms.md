@@ -1,10 +1,10 @@
 # sms - 短信功能
 
-模块功能：该模块提供短信功能相关方法，包括读取、发送、删除短信等方法。
+该模块提供短信功能相关方法，包括读取、发送、删除短信等方法。
 
 
 
-> 注意：BC25/EC600M系列不支持此功能。
+> BC25/EC600M系列不支持此功能。
 
 
 
@@ -35,7 +35,7 @@ sms.sendTextMsg(phoneNumber, msg, codeMode)
 
 
 
-> 注意：仅以下系列支持长短信：
+> 仅以下系列支持长短信：
 >
 > EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC800M/EG810M/EC200A系列支持6条正常短信长度；
 >
@@ -81,7 +81,7 @@ sms.sendPduMsg(phoneNumber, msg, codeMode)
 
 
 
-> 注意：仅以下系列支持长短信：
+> 仅以下系列支持长短信：
 >
 > EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600M/EC800M/EG810M/EC200A系列支持6条正常短信长度；
 >
@@ -128,7 +128,7 @@ sms.deleteMsg(index [, delmode])
 
 
 
-> 注意：BC25/EC800G不支持可选参数的使用
+> BC25/EC800G不支持可选参数的使用
 
 
 
@@ -174,7 +174,7 @@ sms.setSaveLoc(mem1, mem2, mem3)
 
 
 
-> 注意：不同系列短信默认存储空间有差异，用户根据自己的需求进行设置。
+> 不同系列短信默认存储空间有差异，用户根据自己的需求进行设置。
 >
 > EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC800M/EG810M/EC200A系列如果要改变接收消息的存储位置，需要同时设定mem2 & mem3；EC200U/EC600U/EG912U/EG915U/EC600G/EC800G系列只需设定mem3即可
 

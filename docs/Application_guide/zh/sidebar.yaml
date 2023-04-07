@@ -3,3 +3,5 @@ items:
     file: audio/README.md
 -   label: 蓝牙
     file: bluetooth/README.md
+-   label: GNSS定位
+    file: gnss/README.md

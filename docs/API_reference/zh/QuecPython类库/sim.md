@@ -1,10 +1,10 @@
 # sim - SIM卡功能
 
-模块功能：提供sim卡相关功能的接口，如查询sim卡状态、iccid、imsi、电话号码等。
+该模块提供sim卡相关功能的接口，如查询sim卡状态、iccid、imsi、电话号码等。
 
 
 
-> 注意：能成功获取IMSI、ICCID、电话号码的前提是SIM卡状态为1，可通过sim.getStatus()查询。
+> 能成功获取IMSI、ICCID、电话号码的前提是SIM卡状态为1，可通过sim.getStatus()查询。
 
 
 
@@ -31,7 +31,7 @@ sim.genericAccess(simId, cmd)
 
 
 
-> 注意：仅EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
+> 仅EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N系列支持该方法。
 
 
 
@@ -112,7 +112,7 @@ sim.getPhoneNumber()
 
 
 
->注意：BC25系列不支持此方法
+>BC25系列不支持此方法
 
 
 
@@ -354,8 +354,6 @@ sim.readPhonebook(storage, start, end, username)
 
 
 
->注意：
->
 >- EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600MCNLE/EC600MCNLA/EC800MCNLA/EC800MCNLE/EC800MCNGA/EG810M/EC200A系列支持此方法。
 >
 >- 按username进行匹配时，并不是按完整的单词进行匹配，只要电话簿中已有记录的name是以username开头，那么就会匹配上。
@@ -400,7 +398,7 @@ sim.writePhonebook(storage, index, username, number)
 
 
 
-> 注意：EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600MCNLE/EC600MCNLA/EC800MCNLA/EC800MCNLE/EC800MCNGA/EG810M/EC200A系列支持此方法。
+> EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600MCNLE/EC600MCNLA/EC800MCNLA/EC800MCNLE/EC800MCNGA/EG810M/EC200A系列支持此方法。
 
 
 
@@ -435,7 +433,7 @@ SIM卡热插拔开关：用于设置SIM卡热插拔相关配置。
 
 
 
-> 注意：BC25系列不支持此方法。
+> BC25系列不支持此方法。
 
 
 
@@ -471,7 +469,7 @@ sim.getSimDet()
 
 
 
->注意：BC25系列不支持此方法。
+>BC25系列不支持此方法。
 
 
 
@@ -503,7 +501,7 @@ sim.getCurSimid()
 
 
 
->注意：支持该方法的模组：EC600M/EC800M系列。
+>支持该方法的模组：EC600M/EC800M系列。
 
 
 
@@ -535,7 +533,7 @@ sim.switchCard(simId)
 
 
 
->注意：支持该方法的模组：EC600M/EC800M系列。
+>支持该方法的模组：EC600M/EC800M系列。
 
 
 
@@ -582,7 +580,7 @@ def usrFun(args):
 
 
 
-> 注意：BC25系列不支持此方法。
+> BC25系列不支持此方法。
 
 
 
@@ -629,7 +627,7 @@ def usrFun(args):
 
 > 支持该方法的模组：EC600M/EC800M系列。
 >
-> 注意：以下几点：<br>1、目标卡不存在或者目标卡状态异常；<br>2、目标卡是当前卡；<br>以上情况切卡方法`sim.switchCard`直接返回-1，不触发此接口设置的回调函数。
+> 注意以下几点：<br>1、目标卡不存在或者目标卡状态异常；<br>2、目标卡是当前卡；<br>以上情况切卡方法`sim.switchCard`直接返回-1，不触发此接口设置的回调函数。
 
 
 

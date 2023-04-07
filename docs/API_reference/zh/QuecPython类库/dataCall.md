@@ -411,6 +411,8 @@ dataCall.getInfo(profileID, ipType)
 >返回值 `(1, 0, [0, 0, '0.0.0.0', '0.0.0.0', '0.0.0.0'])` 表示当前没有拨号或者拨号没有成功。
 >
 >支持该方法的模组：EC100Y/EC200N/EC600N/EC600S/EC800N/EG912N/EG915N/EC600M/EC800M/EG810M/EC200A/EC200U/EC600U/EG912U/EG915U/EC600G/EC800G/EC600E/EC800E/BG77/BG95/BC25/BC95系列。
+>
+>由于需要向老版dataCall.getInfo兼容，实际profileID的最大值是大于3的，具体以实际能够查询的profileID为准。
 
 
 
