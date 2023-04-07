@@ -3,7 +3,7 @@
 本文阐述了QuecPython的uping模块的用法，描述了uping模块最新版本的特性。
 ```
 
-uping 模块实现模拟发送icmp-ping包。
+该模块实现模拟发送icmp-ping包。
 
 > 注意：1.可能会存在host地址无法建立socket连接异常。2.通过初始化参数中的`COUNT`和`INTERVAL`来确认发Ping包周期。
 
