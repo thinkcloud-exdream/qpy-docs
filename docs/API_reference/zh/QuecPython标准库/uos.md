@@ -81,7 +81,7 @@ uos.mkdir(path)
 
 **参数描述**
 
-* `path`表示准备创建的目录名。
+* `path`表示准备创建的目录名，为所在目录的相对路径。
 
 **示例：**
 
@@ -124,7 +124,7 @@ uos.rmdir(path)
 
 **参数描述**
 
-* `path`，字符串，表示目录名。
+* `path`，字符串，表示目录名，为所在目录的相对路径。
 
 **示例：**
 
@@ -337,8 +337,13 @@ uos.VfsFat(spi_port, spimode, spiclk, spics)
 **参数描述**
 
 * `spi_port`，int，通道选择[0,1]
-* `spimode`，int，PI 的工作模式(模式0最常用):<br />0 : CPOL=0, CPHA=0 1 : CPOL=0, CPHA=12: CPOL=1, CPHA=0 3: CPOL=1, CPHA=1
-
+* `spimode`，int，SPI 的工作模式(模式0最常用):<br />
+|参数|工作模式|
+| ---- | ---- |
+|   0   |CPOL=0, CPHA=0|
+|   1   | CPOL=0, CPHA=1|
+|   2  |CPOL=1, CPHA=0|
+|   3  |CPOL=1, CPHA=1|
 > 时钟极性CPOL: 即SPI空闲时，时钟信号SCLK的电平（0:空闲时低电平; 1:空闲时高电平）
 
 * `spiclk`， int
@@ -350,8 +355,6 @@ uos.VfsFat(spi_port, spimode, spiclk, spics)
 |   2  |3.25MHz|
 |   3  |6.5MHz|
 |   4  |13MHz|
-
-   0 : 812.5kHz 1 : 1.625MHz 2 : 3.25MHz 3 : 6.5MHz 4 : 13MHz
 
 * `spics`，int，指定CS片选引脚为任意GPIO，硬件CS可以接这里指定的脚，也可以接默认的SPI CS脚
 
@@ -500,11 +503,19 @@ uos.VfsLfs1(readsize,progsize,lookahead,pname,spi_port,spi_clk)
 * `lookahead`，int类型，预留，暂未使用
 * `pname`，str类型，固定为“ext_fs”。后续扩展
 * `spi_port`，int类型，支持的端口参照SPI章节说明
-* `spi_clk`，int类型 <br />时钟频率：<br />0：6.25M 1:12.5M  2:25M  3:50M  4:3.125M 5:1.5625M  6:781.25K
-
+* `spi_clk`，int类型 <br />
+|参数|时钟频率|
+| ---- | ---- |
+|   0   |6.25MHz|
+|   1   |12.5MHz|
+|   2  |25MHz|
+|   3  |50MHz|
+|   4  |3.125MHz|
+|   5  |1.5625MHz|
+|  6  |781.25KHz|
 **返回值描述**
 
-成功则返回VfsLfs1 object,失败则 OSError 19。
+成功则返回VfsLfs1 object,失败则返回 OSError 19。
 
 **示例：**
 
