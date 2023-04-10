@@ -1,6 +1,6 @@
 # example - 执行python脚本
 
-模块功能：提供方法让用户可以在命令行或者代码中执行python脚本。
+提供方法让用户可以在命令行或者代码中执行python脚本。
 
 ### `example.exec`
 
