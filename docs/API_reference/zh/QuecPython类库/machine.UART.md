@@ -1,6 +1,6 @@
 # class UART - 串口通信
 
-类功能：uart串口数据传输。
+该类提供uart串口数据传输功能。
 
 ## 构造函数
 
@@ -37,7 +37,7 @@ class machine.UART(UART.UARTn, buadrate, databits, parity, stopbits, flowctl)
 | EC800M        | uart0:<br />TX: 引脚号39<br />RX: 引脚号38<br />uart1(flowctl = 0):<br />TX: 引脚号50<br />RX: 引脚号51<br />uart1(flowctl = 1):<br />TX: 引脚号22<br />RX: 引脚号23<br />注意:EC800MCN_GA uart1不可用<br />uart2:<br />TX:引脚号18<br />RX:引脚号17 |
 | EG912N        | uart0:<br />TX: 引脚号23<br />RX: 引脚号22<br />uart1(flowctl = 0):<br />TX: 引脚号27<br />RX: 引脚号28<br/>uart1(flowctl = 1):<br />TX: 引脚号36<br />RX: 引脚号37<br />uart2:<br />TX:引脚号34<br />RX:引脚号35 |
 
-> 注意：EC600M/EC800M/EG912N 的uart1在flowctl = 1时，仅将uart1映射到不同的引脚，未开启流控功能。
+> EC600M/EC800M/EG912N 的uart1在flowctl = 1时，仅将uart1映射到不同的引脚，未开启流控功能。
 
 **示例：**
 
@@ -122,7 +122,7 @@ uart.control_485(UART.GPIOn, direction)
 
 **参数描述：**
 
-- `GPIOn` - 需要控制的GPIO引脚号，参照Pin模块的引脚定义，int类型。
+- `GPIOn` - 需要控制的GPIO引脚号，参照[Pin模块](machine.Pin.md)的引脚定义，int类型。
 
 - `direction` - 引脚电平变化，int类型，说明如下：<br />`1`表示引脚电平变化为：串口发送数据之前由低拉高、发送数据之后再由高拉低<br />`0`表示引脚电平变化为：串口发送数据之前由高拉低、发送数据之后再由低拉高
 
@@ -130,7 +130,7 @@ uart.control_485(UART.GPIOn, direction)
 
 成功返回整型值`0`，失败返回整型值`-1`。
 
-> 注意：BC25PA/BG95M3平台不支持此方法。
+> BC25PA/BG95M3平台不支持此方法。
 
 **示例：**
 

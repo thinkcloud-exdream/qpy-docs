@@ -1,6 +1,6 @@
 # class I2C_simulation - 模拟I2C通信
 
-类功能：用于gpio模拟标准i2c协议，除了创建对象外，其它的操作(读写)均与I2C通信一致。
+该类用于gpio模拟标准I2C协议，除了创建对象外，其它的操作(读写)均与I2C通信一致。
 
 ## 构造函数
 
@@ -12,16 +12,16 @@ class machin.I2C_simulation(GPIO_clk, GPIO_sda, CLK)
 
 **参数描述：**
 
-- `GPIO_clk` - i2c的CLK引脚(需要控制的GPIO引脚号，参照Pin模块的定义)，int类型。
-- `GPIO_sda` - i2c的SDA引脚(需要控制的GPIO引脚号，参照Pin模块的定义)，int类型。
-- `CLK` - i2c的频率，范围：(0,1000000Hz]，int类型。
+- `GPIO_clk` - I2C 的CLK引脚(需要控制的GPIO引脚号，参照[Pin模块](machine.Pin.md)的定义)，int类型。
+- `GPIO_sda` - I2C 的SDA引脚(需要控制的GPIO引脚号，参照[Pin模块](machine.Pin.md)的定义)，int类型。
+- `CLK` - I2C 的频率，范围：(0,1000000Hz]，int类型。
 
 **示例：**
 
 ```python
 >>> from machine import I2C_simulation
 >>> # 创建I2C_simulation对象
->>> i2c_obj = I2C_simulation(I2C_simulation.GPIO10, I2C_simulation.GPIO11, 300)  # 返回i2c对象
+>>> i2c_obj = I2C_simulation(I2C_simulation.GPIO10, I2C_simulation.GPIO11, 300)  # 返回I2C对象
 ```
 
 ## 方法
@@ -36,8 +36,8 @@ I2C_simulation.read(slaveaddress, addr,addr_len, r_data, datalen, delay)
 
 **参数描述：**
 
-- `slaveaddress` - i2c 设备地址，int类型。
-- `addr` - i2c 寄存器地址，bytearray类型。
+- `slaveaddress` - I2C 设备地址，int类型。
+- `addr` - I2C 寄存器地址，bytearray类型。
 - `addr_len` - 寄存器地址长度，int类型。
 - `r_data` - 接收数据的字节数组，bytearray类型。
 - `datalen` - 字节数组的长度，int类型。
@@ -57,8 +57,8 @@ I2C_simulation.write(slaveaddress, addr, addr_len, data, datalen)
 
 **参数描述：**
 
-- `slaveaddress` - i2c 设备地址，int类型。
-- `addr` - i2c 寄存器地址，bytearray类型。
+- `slaveaddress` - I2C 设备地址，int类型。
+- `addr` - I2C 寄存器地址，bytearray类型。
 - `addr_len` - 寄存器地址长度，int类型。
 - `data` - 写入的数据，bytearray类型。
 - `datalen` - 写入数据的长度，int类型。

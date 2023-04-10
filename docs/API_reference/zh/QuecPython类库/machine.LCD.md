@@ -1,8 +1,8 @@
 # class LCD - LCD显示屏
 
-类功能：该模块提供对LCD显示屏的控制。
+该类提供对LCD显示屏的控制。
 
-> 支持的模块型号：
+> 支持的平台和模块型号：
 >
 > EC200U系列、EC600U系列、EC600N系列、EC800N系列
 >
@@ -93,9 +93,9 @@ lcd.lcd_init(lcd_init_data, lcd_width, lcd_hight, lcd_clk, data_line, line_num, 
 | lcd_interface      | int       | LCD接口类型，0 - LCM接口；1 - SPI接口                        |
 | spi_port           | int       | 通道选择[0,1]，参照SPI部分                                   |
 | spi_mode           | int       | SPI 的工作模式(通常使用工作模式0)：<br />时钟极性CPOL：即SPI空闲时，时钟信号SCLK的电平(0:空闲时低电平; 1:空闲时高电平)<br />0 : CPOL=0, CPHA=0<br />1 : CPOL=0, CPHA=1<br />2 : CPOL=1, CPHA=0<br />3 : CPOL=1, CPHA=1 |
-| cs_pin             | int       | CS引脚，见machine.Pin常量说明                                |
-| dc_pin             | int       | DC引脚，见machine.Pin常量说明                                |
-| rst_pin            | int       | RST引脚，见machine.Pin常量说明                               |
+| cs_pin             | int       | CS引脚，见[machine.Pin](machine.Pin.md)中GPIO引脚编号说明    |
+| dc_pin             | int       | DC引脚，见[machine.Pin](machine.Pin.md)中GPIO引脚编号说明    |
+| rst_pin            | int       | RST引脚，见[machine.Pin](machine.Pin.md)中GPIO引脚编号说明   |
 
 **返回值描述：**
 
@@ -118,8 +118,6 @@ lcd.mipi_init(initbuf, **kwargs)
 
 该方法用于初始化MIPI，按键值对传参，请根据屏厂提供的初始化参数填写。
 
-> 注意：
->
 > 1.仅支持EC200U系列和EC600U系列。
 >
 > 2.参数列表中，initbuf为必传参数；后面参数与缺省值不同时传入。
@@ -338,7 +336,7 @@ lcd.lcd_show(file_name, start_x,start_y,width,hight)
 
 该方法采用读文件方式，显示图片。
 
-> 注意：该文件是由Image2Lcd工具生成的bin文件，若勾选包含图像头文件，则width和hight无需填写。
+> 该文件是由Image2Lcd工具生成的bin文件，若勾选包含图像头文件，则width和hight无需填写。
 
 **参数描述：**
 
@@ -372,7 +370,7 @@ lcd.lcd_show_jpg( file_name, start_x,start_y)
 
 **使用示例：**
 
-> 注意：需要配合LCD屏使用，如下代码以st7789为例！
+> 需要配合LCD屏使用，如下代码以st7789为例。
 
 ```python
 from machine import LCD 

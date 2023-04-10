@@ -1,6 +1,6 @@
 # class I2C – I2C通信
 
-类功能：用于设备之间通信的双线协议。
+该类用于设备之间通信的双线协议。
 
 ## 构造函数
 
@@ -12,16 +12,16 @@ class machine.I2C(I2Cn, MODE)
 
 **参数描述：**
 
-- `I2Cn` - i2c 通路索引号，int类型，说明如下：<br />`I2C0` : `0` - 通道0 <br />`I2C1` : `1` - 通道1 <br />`I2C2` : `2` - 通道2<br />
+- `I2Cn` - I2C 通路索引号，int类型，说明如下：<br />`I2C0` : `0` - 通道0 <br />`I2C1` : `1` - 通道1 <br />`I2C2` : `2` - 通道2<br />
 
-- `MODE` - i2c 的工作模式，int类型，说明如下：<br />`STANDARD_MODE` : `0` - 标准模式<br />`FAST_MODE` ：`1` - 快速模式
+- `MODE` - I2C 的工作模式，int类型，说明如下：<br />`STANDARD_MODE` : `0` - 标准模式<br />`FAST_MODE` ：`1` - 快速模式
 
 **示例：**
 
 ```python
 >>> from machine import I2C
 >>> # 创建I2C对象
->>> i2c_obj = I2C(I2C.I2C0, I2C.STANDARD_MODE)  # 返回i2c对象
+>>> i2c_obj = I2C(I2C.I2C0, I2C.STANDARD_MODE)  # 返回I2C对象
 ```
 
 **I2C引脚对应关系：**
@@ -53,8 +53,8 @@ I2C.read(slaveaddress, addr,addr_len, r_data, datalen, delay)
 
 **参数描述：**
 
-- `slaveaddress` - i2c 设备地址，int类型。
-- `addr` - i2c 寄存器地址，bytearray类型。
+- `slaveaddress` - I2C 设备地址，int类型。
+- `addr` - I2C 寄存器地址，bytearray类型。
 - `addr_len` - 寄存器地址长度，int类型。
 - `r_data` - 接收数据的字节数组，bytearray类型。
 - `datalen` - 字节数组的长度，int类型。
@@ -74,8 +74,8 @@ I2C.write(slaveaddress, addr, addr_len, data, datalen)
 
 **参数描述：**
 
-- `slaveaddress` - i2c 设备地址，int类型。
-- `addr` - i2c 寄存器地址，bytearray类型。
+- `slaveaddress` - I2C 设备地址，int类型。
+- `addr` - I2C 寄存器地址，bytearray类型。
 - `addr_len` - 寄存器地址长度，int类型。
 - `data` - 写入的数据，bytearray类型。
 - `datalen` - 写入数据的长度，int类型。
@@ -86,7 +86,7 @@ I2C.write(slaveaddress, addr, addr_len, data, datalen)
 
 **使用示例：**
 
-> 注意：需要连接设备使用！
+> 需要连接设备使用。
 
 ```python
 import log
@@ -110,11 +110,11 @@ i2c_log = log.getLogger("I2C")
 
 
 if __name__ == '__main__':
-    I2C_SLAVE_ADDR = 0x1B  # i2c 设备地址
-    WHO_AM_I = bytearray([0x02, 0])   # i2c 寄存器地址，以buff的方式传入，取第一个值，计算一个值的长度
+    I2C_SLAVE_ADDR = 0x1B  # I2C  设备地址
+    WHO_AM_I = bytearray([0x02, 0])   # I2C  寄存器地址，以buff的方式传入，取第一个值，计算一个值的长度
 
     data = bytearray([0x12, 0])   # 输入对应指令
-    i2c_obj = I2C(I2C.I2C0, I2C.STANDARD_MODE)  # 返回i2c对象
+    i2c_obj = I2C(I2C.I2C0, I2C.STANDARD_MODE)  # 返回I2C对象
     i2c_obj.write(I2C_SLAVE_ADDR, WHO_AM_I, 1, data, 2) # 写入data
 
     r_data = bytearray(2)  # 创建长度为2的字节数组接收
@@ -126,10 +126,10 @@ if __name__ == '__main__':
 
 ## 常量
 
-| 常量              |                   | 适用平台                                                     |
-| ----------------- | ----------------- | ------------------------------------------------------------ |
-| I2C.I2C0          | i2c 通路索引号: 0 | EC100Y/EC600U/EC200U/EC200A/BC25PA/EC800N/BG95M3/EC600M/EG915U/EC800M |
-| I2C.I2C1          | i2c 通路索引号: 1 | EC600S/EC600N/EC600U/EC200U/BC25PA/BG95M3/EC600M/EG915U/EC800M/EG912N |
-| I2C.I2C2          | i2c 通路索引号: 2 | BG95M3/EC600M                                                |
-| I2C.STANDARD_MODE | 标准模式          |                                                              |
-| I2C.FAST_MODE     | 快速模式          |                                                              |
+| 常量              | 说明             | 适用平台                                                     |
+| ----------------- | ---------------- | ------------------------------------------------------------ |
+| I2C.I2C0          | I2C通路索引号: 0 | EC100Y/EC600U/EC200U/EC200A/BC25PA/EC800N/BG95M3/EC600M/EG915U/EC800M |
+| I2C.I2C1          | I2C通路索引号: 1 | EC600S/EC600N/EC600U/EC200U/BC25PA/BG95M3/EC600M/EG915U/EC800M/EG912N |
+| I2C.I2C2          | I2C通路索引号: 2 | BG95M3/EC600M                                                |
+| I2C.STANDARD_MODE | 标准模式         | 所有平台                                                     |
+| I2C.FAST_MODE     | 快速模式         | 所有平台                                                     |
