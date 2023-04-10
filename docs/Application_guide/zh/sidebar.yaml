@@ -5,3 +5,5 @@ items:
     file: bluetooth/README.md
 -   label: GNSS定位
     file: gnss/README.md
+-   label: WiFi扫描
+    file: wifiscan/README.md
