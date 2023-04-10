@@ -48,7 +48,7 @@ pm.create_wakelock(lock_name, name_size)
 
 成功返回wakelock的标识号，否则返回 `-1`。
 
-> **注意**:BC25PA平台不支持此方法。
+> BC25PA平台不支持此方法。
 
 ## 删除wake_lock锁
 
@@ -68,7 +68,7 @@ pm.delete_wakelock(lpm_fd)
 
 成功返回 `0`。
 
-> **注意**：BC25PA平台不支持此方法。
+> BC25PA平台不支持此方法。
 
 ## 加锁
 
@@ -88,7 +88,7 @@ pm.wakelock_lock(lpm_fd)
 
 成功返回 `0`，否则返回 `-1`。
 
-> **注意**：BC25PA平台不支持此方法。
+> BC25PA平台不支持此方法。
 
 ## 释放锁
 
@@ -108,7 +108,7 @@ pm.wakelock_unlock(lpm_fd)
 
 成功返回 `0`，否则返回 `-1`。
 
-> **注意**：BC25PA平台不支持此方法。
+> BC25PA平台不支持此方法。
 
 ## 自动休眠模式控制
 
@@ -142,7 +142,7 @@ pm.get_wakelock_num()
 
 int类型，返回已创建wakelock锁的数量。
 
-> 注意：BC25PA平台不支持此方法。
+> BC25PA平台不支持此方法。
 
 ## 设置PSM模式的控制时间
 
@@ -185,7 +185,7 @@ pm.set_psm_time(mode)# 单独设置启用或禁用 <模式2>
 
 * `act_time`，act(T3324)定时器时间周期值，int类型。
 
-> **注意：**实际设置的tau和act，为单位值和周期值的积
+> 实际设置的tau和act，为单位值和周期值的积
 
 **返回值描述**
 
@@ -201,7 +201,7 @@ True
 >>>
 ```
 
-> **注意**：仅BC25/ECX00U/ECX00E支持
+> 仅BC25/ECX00U/ECX00E支持
 
 ## 获取PSM模式的控制时间
 
@@ -235,5 +235,5 @@ pm.get_psm_time()
 
 ```
 
-> **注意**：仅BC25/ECX00U/ECX00E平台支持
+> 仅BC25/ECX00U/ECX00E平台支持
 
