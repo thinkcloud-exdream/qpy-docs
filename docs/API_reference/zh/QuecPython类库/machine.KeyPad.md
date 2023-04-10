@@ -1,6 +1,6 @@
 # class KeyPad - 矩阵键盘
 
-类功能:提供矩阵键盘接口。
+该类提供矩阵键盘接口。
 
 > 支持型号：EC600SCN_LB/ EC800NCN_LA/ EC600NCN_LC/ EC200UCN_LB/ EC600UCN_LB/ EC600MCN_LA/ EC800MCN_LA/ EC800MCN_GA/ EG912NEN_AA
 >
@@ -18,7 +18,7 @@ class machine.KeyPad(row,col)
 - `row` - 行号，int类型，大于0，不超过平台支持最大值。
 - `col` - 列号，int类型，大于0，不超过平台支持最大值。
 
-> 注意：如果row和col均不设置,默认为4X4.
+> 如果row和col均不设置,默认为4X4.
 
 | 平台          | 最大行 | 最大列 |
 | ------------- | ------ | ------ |
@@ -32,7 +32,7 @@ class machine.KeyPad(row,col)
 
 **KeyPad引脚对应关系：**
 
-> 注意：当不使用全部引脚时，接线按行列号从小到大顺序接线，比如EC600M使用2x2矩阵键盘时，硬件使用49、51和48、50引脚。
+> 当不使用全部引脚时，接线按行列号从小到大顺序接线，比如EC600M使用2x2矩阵键盘时，硬件使用49、51和48、50引脚。
 
 | 平台   | 引脚                                                         |
 | ------ | ------------------------------------------------------------ |
@@ -45,9 +45,9 @@ class machine.KeyPad(row,col)
 ```python
 >>> # 创建keypad对象
 >>> import machine
->>> keypad=machine.KeyPad(2,3)	# 设置为2行3列矩阵键盘
->>> keypad=machine.KeyPad()		# 参数缺省,默认设置为4行4列矩阵键盘
->>> keypad=machine.KeyPad(2)	# 行值设置为2,列值缺省,列值默认为4,2行4列矩阵键盘
+>>> keypad=machine.KeyPad(2,3)  # 设置为2行3列矩阵键盘
+>>> keypad=machine.KeyPad()     # 参数缺省,默认设置为4行4列矩阵键盘
+>>> keypad=machine.KeyPad(2)    # 行值设置为2,列值缺省,列值默认为4,初始化为2行4列矩阵键盘
 ```
 
 ## 方法
@@ -62,7 +62,7 @@ keypad.init()
 
 **返回值描述：**
 
-成功返回整型值`0`，失败返回整型值`-1` 。
+设置成功返回整型值`0`，设置失败返回整型值`-1` 。
 
 ### `keypad.set_callback`
 

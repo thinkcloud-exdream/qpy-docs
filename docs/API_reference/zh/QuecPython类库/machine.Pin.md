@@ -1,6 +1,6 @@
 # class Pin - 控制I/O引脚
 
-类功能：GPIO读写操作。引脚是控制I/O引脚的基本对象，它有设置引脚的模式(输入,输出等)、获取和设置数字逻辑电平的方法。
+该类提供GPIO读写操作。引脚是控制I/O的基本对象，它有设置引脚的模式(输入,输出等)、获取和设置数字逻辑电平的方法。
 
 **示例：**
 
@@ -137,7 +137,7 @@ Pin.write(value)
 
 该方法用于设置PIN脚电平。
 
-> 注意：设置高低电平前需要保证引脚为输出模式。
+> 设置高低电平前需要保证引脚为输出模式。
 
 **参数描述：**
 
@@ -249,7 +249,7 @@ Pin.get_dir()
 | Pin.GPIO44       | EC600U/EC200U/EC200A/EC600M/EC800M                           | GPIO44   |
 | Pin.GPIO45       | EC600U/EC200U/EC200A/EC600M                                  | GPIO45   |
 | Pin.GPIO46       | EC600U/EC200U/EC200A                                         | GPIO46   |
-| Pin.GPIO47       | EC200U/EC200A                                                | GPIO47   |
+| Pin.GPIO47       | EC600U/EC200U/EC200A                                         | GPIO47   |
 | Pin.IN           | --                                                           | 输入模式 |
 | Pin.OUT          | --                                                           | 输出模式 |
 | Pin.PULL_DISABLE | --                                                           | 浮空模式 |
