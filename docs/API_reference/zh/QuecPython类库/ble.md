@@ -253,7 +253,7 @@ def ble_gatt_set_name():
 def ble_gatt_set_param():
     min_adv = 0x300
     max_adv = 0x320
-    adv_type = 0  # 可连接的非定向广播，默认选择
+    adv_type = 0  # 可连接的非定向广播,默认选择
     addr_type = 0  # 公共地址
     channel = 0x07
     filter_strategy = 0  # 处理所有设备的扫描和连接请求
@@ -525,7 +525,7 @@ class BleClient(object):
             'event_type' : 0,
             'name' : '',
             'addr_type' : 0,
-            'addr' : 0, # 初始化时，用0表示无效值，实际存放bytearray
+            'addr' : 0, # 初始化时, 用0表示无效值, 实际存放bytearray
             'rssi' : 0,
             'data_len' : 0,
             'raw_data' : 0,
@@ -1014,7 +1014,7 @@ def ble_gatt_client_event_handler():
                 short_uuid = msg[4]
                 print('start_handle = {:#06x}, end_handle = {:#06x}, short_uuid = {:#06x}'.format(start_handle, end_handle, short_uuid))
                 if ble_client.discover_service_mode == 0: # discover service all
-                    if ble_client.target_service['short_uuid'] == short_uuid: # 查找到所有服务后，按指定uuid查找特征值
+                    if ble_client.target_service['short_uuid'] == short_uuid: # 查找到所有服务后, 按指定uuid查找特征值
                         ble_client.target_service['start_handle'] = start_handle
                         ble_client.target_service['end_handle'] = end_handle
                         ble_client.gatt_statue = gatt_status.BLE_GATT_DISCOVER_CHARACTERISTIC
@@ -1267,7 +1267,7 @@ def main():
         if count % 5 == 0:
             print('[{}] BLE Client running, count = {}......'.format(timestamp, count))
             print('')
-        if count > 130: # 这里设置计数是为了程序运行一会自己退出，方便测试，实际根据用户需要来处理
+        if count > 130: # 这里设置计数是为了程序运行一会自己退出, 方便测试, 实际根据用户需要来处理
             count = 0
             print('!!!!! stop BLE Client now !!!!!')
             ble_status = ble_client.gatt_get_status()
@@ -1287,13 +1287,15 @@ if __name__ == '__main__':
 
 ```
 
-**注意**：
 
-当前仅EC200U/EC600U/EG915U/EG912U平台支持`ble`功能。
+
+> 当前仅EC200U/EC600U/EG915U/EG912U型号支持`ble`功能。
+
+
 
 ## 初始化相关功能
 
-### ble.gattStart
+### `ble.gattStart`
 
 ```python
 ble.gattStart()
@@ -1305,7 +1307,7 @@ ble.gattStart()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.gattStop
+### `ble.gattStop`
 
 ```python
 ble.gattStop()
@@ -1317,7 +1319,7 @@ ble.gattStop()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.getStatus
+### `ble.getStatus`
 
 ```python
 ble.getStatus()
@@ -1329,7 +1331,7 @@ ble.getStatus()
 
 - 0 - BLE处于停止状态。1 - BLE处于开启状态。-1 - 获取状态失败。
 
-### ble.getPublicAddr
+### `ble.getPublicAddr`
 
 ```python
 ble.getPublicAddr()
@@ -1352,13 +1354,15 @@ b'\xdb3\xf5\x1ek\xac'
 mac = [ac:6b:1e:f5:33:db]
 ```
 
-**注意**：
 
-如果有出厂设置默认蓝牙MAC地址，那么该接口获取的MAC地址和默认的蓝牙MAC地址是一致的；如果没有设置，那么该接口获取的地址，将是蓝牙启动后随机生成的静态地址，因此在每次重新上电运行蓝牙功能时都不相同。
+
+> 如果有出厂设置默认蓝牙MAC地址，那么该接口获取的MAC地址和默认的蓝牙MAC地址是一致的；如果没有设置，那么该接口获取的地址，将是蓝牙启动后随机生成的静态地址，因此在每次重新上电运行蓝牙功能时都不相同。
+
+
 
 ## BLE Server相关功能
 
-### ble.serverInit
+### `ble.serverInit`
 
 ```python
 ble.serverInit(user_cb)
@@ -1490,7 +1494,7 @@ def ble_callback(args):
 ble.serverInit(ble_callback)
 ```
 
-### ble.serverRelease
+### `ble.serverRelease`
 
 ```python
 ble.serverRelease()
@@ -1502,7 +1506,7 @@ BLE Server 资源释放。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.setLocalName
+### `ble.setLocalName`
 
 ```python
 ble.setLocalName(code, name)
@@ -1526,11 +1530,13 @@ ble.setLocalName(code, name)
 0
 ```
 
-**注意**：
 
-对于BLE，设备在广播时，如果希望扫描软件扫描时，能看到广播设备的名称，是需要在广播数据中包含蓝牙名称的，或者在扫描回复数据中包含设备名称。
 
-### ble.setAdvParam
+> 对于BLE，设备在广播时，如果希望扫描软件扫描时，能看到广播设备的名称，是需要在广播数据中包含蓝牙名称的，或者在扫描回复数据中包含设备名称。
+
+
+
+### `ble.setAdvParam`
 
 ```python
 ble.setAdvParam(min_adv,max_adv,adv_type,addr_type,channel,filter_policy,discov_mode,no_br_edr,enable_adv)
@@ -1564,7 +1570,7 @@ ble.setAdvParam(min_adv,max_adv,adv_type,addr_type,channel,filter_policy,discov_
 def ble_gatt_set_param():
     min_adv = 0x300
     max_adv = 0x320
-    adv_type = 0  # 可连接的非定向广播，默认选择
+    adv_type = 0  # 可连接的非定向广播,默认选择
     addr_type = 0  # 公共地址
     channel = 0x07
     filter_strategy = 0  # 处理所有设备的扫描和连接请求
@@ -1579,7 +1585,7 @@ def ble_gatt_set_param():
     return 0
 ```
 
-### ble.setAdvData
+### `ble.setAdvData`
 
 ```python
 ble.setAdvData(data)
@@ -1617,7 +1623,7 @@ def ble_gatt_set_data():
     return 0
 ```
 
-### ble.setAdvRspData
+### `ble.setAdvRspData`
 
 ```python
 ble.setAdvRspData(data)
@@ -1655,11 +1661,13 @@ def ble_gatt_set_rsp_data():
     return 0
 ```
 
-**注意**：
 
-当client设备扫描方式为积极扫描时，设置扫描回复数据才有意义。
 
-### ble.addService
+> 当client设备扫描方式为积极扫描时，设置扫描回复数据才有意义。
+
+
+
+### `ble.addService`
 
 ```python
 ble.addService(primary, server_id, uuid_type, uuid_s, uuid_l)
@@ -1696,7 +1704,7 @@ def ble_gatt_add_service():
     return 0
 ```
 
-### ble.addChara
+### `ble.addChara`
 
 ```python
 ble.addChara(server_id, chara_id, chara_prop, uuid_type, uuid_s, uuid_l)
@@ -1747,7 +1755,7 @@ def ble_gatt_add_characteristic():
     return 0
 ```
 
-### ble.addCharaValue
+### `ble.addCharaValue`
 
 ```python
 ble.addCharaValue(server_id, chara_id, permission, uuid_type, uuid_s, uuid_l, value)
@@ -1805,7 +1813,7 @@ def ble_gatt_add_characteristic_value():
     return 0
 ```
 
-### ble.changeCharaValue
+### `ble.changeCharaValue`
 
 ```python
 ble.changeCharaValue(server_id, chara_id, value)
@@ -1824,7 +1832,7 @@ ble.changeCharaValue(server_id, chara_id, value)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.addCharaDesc
+### `ble.addCharaDesc`
 
 ```python
 ble.addCharaDesc(server_id, chara_id, permission, uuid_type, uuid_s, uuid_l, value)
@@ -1880,7 +1888,7 @@ def ble_gatt_add_characteristic_desc():
     return 0
 ```
 
-### ble.addOrClearService
+### `ble.addOrClearService`
 
 ```python
 ble.addOrClearService(option, mode)
@@ -1897,7 +1905,7 @@ ble.addOrClearService(option, mode)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.sendNotification
+### `ble.sendNotification`
 
 ```python
 ble.sendNotification(connect_id, attr_handle, value)
@@ -1915,7 +1923,7 @@ ble.sendNotification(connect_id, attr_handle, value)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.sendIndication
+### `ble.sendIndication`
 
 ```python
 ble.sendIndication(connect_id, attr_handle, value)
@@ -1933,7 +1941,7 @@ ble.sendIndication(connect_id, attr_handle, value)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.advStart
+### `ble.advStart`
 
 ```python
 ble.advStart()
@@ -1945,7 +1953,7 @@ ble.advStart()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.advStop
+### `ble.advStop`
 
 ```python
 ble.advStop()
@@ -1959,7 +1967,7 @@ ble.advStop()
 
 ## BLE Client相关功能
 
-### ble.clientInit
+### `ble.clientInit`
 
 ```python
 ble.clientInit(user_cb)
@@ -1999,7 +2007,7 @@ ble.clientInit(user_cb)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.clientRelease
+### `ble.clientRelease`
 
 ```python
 ble.clientRelease()
@@ -2011,7 +2019,7 @@ BLE Client 资源释放。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.setScanParam
+### `ble.setScanParam`
 
 ```python
 ble.setScanParam(scan_mode, interval, scan_window, filter_policy, addr_type)
@@ -2031,11 +2039,13 @@ ble.setScanParam(scan_mode, interval, scan_window, filter_policy, addr_type)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-**注意**：
 
-扫描时间 `scan_window` 不能大于扫描间隔 `interval` 。如果两者相等，则表示连续不停的扫描。此时 BLE 的 Controller 会连续运行扫描，占满系统资源而导致无法执行其他任务。所以不允许设置连续扫描。并且不建议将时间设置的太短，扫描越频繁则功耗越高。
 
-### ble.scanStart
+> 扫描时间 `scan_window` 不能大于扫描间隔 `interval` 。如果两者相等，则表示连续不停的扫描。此时 BLE 的 Controller 会连续运行扫描，占满系统资源而导致无法执行其他任务。所以不允许设置连续扫描。并且不建议将时间设置的太短，扫描越频繁则功耗越高。
+
+
+
+### `ble.scanStart`
 
 ```python
 ble.scanStart()
@@ -2047,7 +2057,7 @@ ble.scanStart()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.scanStop
+### `ble.scanStop`
 
 ```python
 ble.scanStop()
@@ -2059,7 +2069,7 @@ ble.scanStop()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.setScanFilter
+### `ble.setScanFilter`
 
 ```python
 ble.setScanFilter(act)
@@ -2075,7 +2085,7 @@ ble.setScanFilter(act)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.connect
+### `ble.connect`
 
 ```python
 ble.connect(addr_type, addr)
@@ -2092,7 +2102,7 @@ ble.connect(addr_type, addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.cancelConnect
+### `ble.cancelConnect`
 
 ```python
 ble.cancelConnect(addr)
@@ -2108,7 +2118,7 @@ ble.cancelConnect(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.disconnect
+### `ble.disconnect`
 
 ```python
 ble.disconnect(connect_id)
@@ -2124,7 +2134,7 @@ ble.disconnect(connect_id)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.discoverAllService
+### `ble.discoverAllService`
 
 ```python
 ble.discoverAllService(connect_id)
@@ -2140,7 +2150,7 @@ ble.discoverAllService(connect_id)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.discoverByUUID
+### `ble.discoverByUUID`
 
 ```python
 ble.discoverByUUID(connect_id, uuid_type, uuid_s, uuid_l)
@@ -2159,7 +2169,7 @@ ble.discoverByUUID(connect_id, uuid_type, uuid_s, uuid_l)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.discoverAllIncludes
+### `ble.discoverAllIncludes`
 
 ```python
 ble.discoverAllIncludes(connect_id, start_handle, end_handle)
@@ -2177,7 +2187,7 @@ ble.discoverAllIncludes(connect_id, start_handle, end_handle)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.discoverAllChara
+### `ble.discoverAllChara`
 
 ```python
 ble.discoverAllChara(connect_id, start_handle, end_handle)
@@ -2195,7 +2205,7 @@ ble.discoverAllChara(connect_id, start_handle, end_handle)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.discoverAllCharaDesc
+### `ble.discoverAllCharaDesc`
 
 ```python
 ble.discoverAllCharaDesc(connect_id, start_handle, end_handle)
@@ -2213,7 +2223,7 @@ ble.discoverAllCharaDesc(connect_id, start_handle, end_handle)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.readCharaByUUID
+### `ble.readCharaByUUID`
 
 ```python
 ble.readCharaByUUID(connect_id, start_handle, end_handle, uuid_type, uuid_s, uuid_l)
@@ -2234,7 +2244,7 @@ ble.readCharaByUUID(connect_id, start_handle, end_handle, uuid_type, uuid_s, uui
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.readCharaByHandle
+### `ble.readCharaByHandle`
 
 ```python
 ble.readCharaByHandle(connect_id, handle, offset, is_long)
@@ -2253,7 +2263,7 @@ ble.readCharaByHandle(connect_id, handle, offset, is_long)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.readCharaDesc
+### `ble.readCharaDesc`
 
 ```python
 ble.readCharaDesc(connect_id, handle, is_long)
@@ -2271,7 +2281,7 @@ ble.readCharaDesc(connect_id, handle, is_long)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.writeChara
+### `ble.writeChara`
 
 ```python
 ble.writeChara(connect_id, handle, offset, is_long, data)
@@ -2291,7 +2301,7 @@ ble.writeChara(connect_id, handle, offset, is_long, data)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.writeCharaNoRsp
+### `ble.writeCharaNoRsp`
 
 ```python
 ble.writeCharaNoRsp(connect_id, handle, data)
@@ -2309,7 +2319,7 @@ ble.writeCharaNoRsp(connect_id, handle, data)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### ble.writeCharaDesc
+### `ble.writeCharaDesc`
 
 ```python
 ble.writeCharaDesc(connect_id, handle, data)

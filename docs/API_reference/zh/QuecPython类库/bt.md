@@ -8,10 +8,10 @@
 #HFP 示例程序
 
 """
-示例说明：本例程提供一个通过HFP自动接听电话的功能
-运行平台：EC600UCN_LB 铀开发板
-运行本例程后，通过手机A搜索到设备名并点击连接；然后通过手机B拨打电话给手机A，
-当手机A开始响铃震动时，设备会自动接听电话
+示例说明:本例程提供一个通过HFP自动接听电话的功能
+运行平台:EC600UCN_LB 铀开发板
+运行本例程后,通过手机A搜索到设备名并点击连接;然后通过手机B拨打电话给手机A,
+当手机A开始响铃震动时,设备会自动接听电话
 """
 import bt
 import utime
@@ -19,7 +19,7 @@ import _thread
 from queue import Queue
 from machine import Pin
 
-# 如果对应播放通道外置了PA，且需要引脚控制PA开启，则需要下面步骤
+# 如果对应播放通道外置了PA,且需要引脚控制PA开启,则需要下面步骤
 # 具体使用哪个GPIO取决于实际使用的引脚
 gpio11 = Pin(Pin.GPIO11, Pin.OUT, Pin.PULL_DISABLE, 0)
 gpio11.write(1)
@@ -125,7 +125,7 @@ def bt_event_proc_task():
                     bt.stop()
                     break
 
-                # 设置蓝牙可见模式为：可以被发现并且可以被连接
+                # 设置蓝牙可见模式为:可以被发现并且可以被连接
                 retval = bt.setVisibleMode(3)
                 if retval == 0:
                     mode = bt.getVisibleMode()
@@ -359,9 +359,9 @@ if __name__ == '__main__':
 #A2DP/AVRCP 示例程序
 
 """
-示例说明：本例程提供一个通过A2DP/AVRCP实现的简易蓝牙音乐播放控制功能
-运行本例程后，通过手机搜索到设备名并点击连接；然后打开手机上的音乐播放软件，
-回到例程运行界面，根据提示菜单输入对应的控制命令来实现音乐的播放、暂停、上一首、
+示例说明:本例程提供一个通过A2DP/AVRCP实现的简易蓝牙音乐播放控制功能
+运行本例程后,通过手机搜索到设备名并点击连接；然后打开手机上的音乐播放软件,
+回到例程运行界面,根据提示菜单输入对应的控制命令来实现音乐的播放,暂停,上一首,
 下一首以及设置音量的功能
 """
 import bt
@@ -385,7 +385,7 @@ A2DP_AVRCP_CONNECT_STATUS = {
 host_addr = 0
 msg_queue = Queue(10)
 
-# 如果对应播放通道外置了PA，且需要引脚控制PA开启，则需要下面步骤
+# 如果对应播放通道外置了PA,且需要引脚控制PA开启,则需要下面步骤
 # 具体使用哪个GPIO取决于实际使用的引脚
 gpio11 = Pin(Pin.GPIO11, Pin.OUT, Pin.PULL_DISABLE, 0)
 gpio11.write(1)
@@ -574,13 +574,13 @@ if __name__ == '__main__':
 #SPP 示例程序
 
 """
-示例说明：本例程提供一个通过SPP实现与手机端进行数据传输的功能
-（1）运行之前，需要先在手机端（安卓）安装蓝牙串口APP，如BlueSPP，然后打开该软件；
-（2）修改本例程中的目标设备的蓝牙名称，即 DST_DEVICE_INFO['dev_name'] 的值改为用户准备连接的手机的蓝牙名称；
-（3）运行本例程，例程中会先发起搜索周边设备的操作，直到搜索到目标设备，就会结束搜索，然后向目标设备发起SPP连接请求；
-（4）用户注意查看手机界面是否弹出蓝牙配对请求的界面，当出现时，点击配对；
-（5）配对成功后，用户即可进入到蓝牙串口界面，发送数据给设备，设备在收到数据后会回复“I have received the data you sent.”
-（6）手机端APP中点击断开连接，即可结束例程；
+示例说明:本例程提供一个通过SPP实现与手机端进行数据传输的功能
+（1）运行之前,需要先在手机端（安卓）安装蓝牙串口APP,如BlueSPP,然后打开该软件;
+（2）修改本例程中的目标设备的蓝牙名称,即 DST_DEVICE_INFO['dev_name'] 的值改为用户准备连接的手机的蓝牙名称;
+（3）运行本例程,例程中会先发起搜索周边设备的操作,直到搜索到目标设备,就会结束搜索,然后向目标设备发起SPP连接请求;
+（4）用户注意查看手机界面是否弹出蓝牙配对请求的界面,当出现时,点击配对;
+（5）配对成功后,用户即可进入到蓝牙串口界面,发送数据给设备,设备在收到数据后会回复"I have received the data you sent."
+（6）手机端APP中点击断开连接，即可结束例程;
 """
 import bt
 import utime
@@ -601,7 +601,7 @@ BT_EVENT = {
 }
 
 DST_DEVICE_INFO = {
-    'dev_name': 'HUAWEI Mate40 Pro', # 要连接设备的蓝牙名称
+    'dev_name':'HUAWEI Mate40 Pro',# 要连接设备的蓝牙名称
     'bt_addr': None
 }
 
@@ -807,13 +807,15 @@ if __name__ == '__main__':
     main()
 ```
 
-**注意**：
 
-当前仅EC200U/EC600U/EG915U/EG912U平台支持`bt`功能。
+
+> 当前仅EC200U/EC600U/EG915U/EG912U型号支持`bt`功能。
+
+
 
 ## 初始化相关功能
 
-### bt.init
+### `bt.init`
 
 ```python
 bt.init(user_cb)
@@ -857,11 +859,11 @@ bt.init(user_cb)
 ```python
 def bt_callback(args):
 	event_id = args[0]  # 第一个参数固定是 event_id
-	status = args[1] # 第二个参数固定是状态，表示某个操作的执行结果是成功还是失败
+	status = args[1] # 第二个参数固定是状态,表示某个操作的执行结果是成功还是失败
 	......
 ```
 
-### bt.release
+### `bt.release`
 
 ```python
 bt.release()
@@ -873,7 +875,7 @@ bt.release()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.start
+### `bt.start`
 
 ```python
 bt.start()
@@ -885,7 +887,7 @@ bt.start()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.stop
+### `bt.stop`
 
 ```python
 bt.stop()
@@ -897,7 +899,7 @@ bt.stop()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.getStatus
+### `bt.getStatus`
 
 ```python
 bt.getStatus()
@@ -909,7 +911,7 @@ bt.getStatus()
 
 - 蓝牙状态：类型为整型，0-蓝牙处于停止状态，1-蓝牙正常运行中，-1-获取状态失败。
 
-### bt.getLocalAddr
+### `bt.getLocalAddr`
 
 ```python
 bt.getLocalAddr()
@@ -932,11 +934,13 @@ b'\xc7\xa13\xf8\xbf\x1a'
 mac = [1a:bf:f8:33:a1:c7]
 ```
 
-**注意**：
 
-该接口需要在蓝牙已经初始化完成并启动成功后才能调用，比如在回调中收到 event_id 为0的事件之后，即 start 成功后，去调用。
 
-### bt.setLocalName
+> 该接口需要在蓝牙已经初始化完成并启动成功后才能调用，比如在回调中收到 event_id 为0的事件之后，即 start 成功后，去调用。
+
+
+
+### `bt.setLocalName`
 
 ```python
 bt.setLocalName(code, name)
@@ -951,7 +955,7 @@ bt.setLocalName(code, name)
 
 **返回值描述：**
 
-- 蓝牙地址：执行成功返回类型为bytearray的蓝牙地址，大小6字节，失败返回整型-1。
+- 执行成功返回整型0，失败返回整型-1。
 
 **示例**：
 
@@ -960,7 +964,7 @@ bt.setLocalName(code, name)
 0
 ```
 
-### bt.getLocalName
+### `bt.getLocalName`
 
 ```python
 bt.getLocalName()
@@ -970,8 +974,7 @@ bt.getLocalName()
 
 **返回值描述：**
 
-- 执行成功返回一个元组`(code, name)`，包含名称编码模式和蓝牙名称，失败返回整型-1。
-
+- 执行成功返回一个元组`(code, name)`，包含编码模式和蓝牙名称，失败返回整型-1。
 
 **示例**：
 
@@ -980,13 +983,13 @@ bt.getLocalName()
 (0, 'QuecPython-BT')
 ```
 
-### bt.setVisibleMode
+### `bt.setVisibleMode`
 
 ```python
 bt.setVisibleMode(mode)
 ```
 
-设置蓝牙可见模式，即做从机时，被扫描时，是否可见以及可连接。
+设置蓝牙可见模式，即做从机被扫描时，是否可被发现以及可被连接。
 
 **参数描述：**
 
@@ -1001,7 +1004,7 @@ bt.setVisibleMode(mode)
 
 **返回值描述：**
 
-- 蓝牙地址：执行成功返回类型为bytearray的蓝牙地址，大小6字节，失败返回整型-1。
+- 执行成功返回整型0，失败返回整型-1。
 
 **示例**：
 
@@ -1010,7 +1013,7 @@ bt.setVisibleMode(mode)
 0
 ```
 
-### bt.getVisibleMode
+### `bt.getVisibleMode`
 
 ```python
 bt.getVisibleMode()
@@ -1029,7 +1032,7 @@ bt.getVisibleMode()
 3
 ```
 
-### bt.startInquiry
+### `bt.startInquiry`
 
 ```python
 bt.startInquiry(mode)
@@ -1039,7 +1042,7 @@ bt.startInquiry(mode)
 
 **参数描述：**
 
-- `mode`-搜索类型。表示查询哪一类设备，当前直接写15，表示搜索所有。
+- `mode`-搜索类型。目前固定为15，表示搜索所有类型的设备。
 
 **返回值描述：**
 
@@ -1051,7 +1054,7 @@ bt.startInquiry(mode)
 bt.startInquiry(15)
 ```
 
-### bt.cancelInquiry
+### `bt.cancelInquiry`
 
 ```python
 bt.cancelInquiry()
@@ -1063,7 +1066,7 @@ bt.cancelInquiry()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.setChannel
+### `bt.setChannel`
 
 ```python
 bt.setChannel(channel)
@@ -1079,7 +1082,7 @@ bt.setChannel(channel)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.reconnect_set
+### `bt.reconnect_set`
 
 ```python
 bt.reconnect_set(max_count, period)
@@ -1099,10 +1102,10 @@ bt.reconnect_set(max_count, period)
 **示例**：
 
 ```python
-bt.reconnect_set(25, 2)#配置尝试重连的最大次数为25，每次尝试重连的间隔为2秒
+bt.reconnect_set(25, 2)#配置尝试重连的最大次数为25,每次尝试重连的间隔为2秒
 ```
 
-### bt.reconnect
+### `bt.reconnect`
 
 ```python
 bt.reconnect()
@@ -1118,11 +1121,11 @@ bt.reconnect()
 
 参考A2DP示例程序。
 
-## HFP相关功能
+## HFP协议相关功能
 
 提供蓝牙通话相关功能。
 
-### bt.hfpInit
+### `bt.hfpInit`
 
 ```python
 bt.hfpInit()
@@ -1134,7 +1137,7 @@ HFP 功能初始化 。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpRelease
+### `bt.hfpRelease`
 
 ```python
 bt.hfpRelease()
@@ -1146,7 +1149,7 @@ HFP 资源释放。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpConnect
+### `bt.hfpConnect`
 
 ```python
 bt.hfpConnect(addr)
@@ -1162,7 +1165,7 @@ bt.hfpConnect(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpDisonnect
+### `bt.hfpDisonnect`
 
 ```python
 bt.hfpDisonnect(addr)
@@ -1178,7 +1181,7 @@ bt.hfpDisonnect(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpSetVolume
+### `bt.hfpSetVolume`
 
 ```python
 bt.hfpSetVolume(addr, vol)
@@ -1195,7 +1198,7 @@ bt.hfpSetVolume(addr, vol)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpRejectAfterAnswer
+### `bt.hfpRejectAfterAnswer`
 
 ```python
 bt.hfpRejectAfterAnswer(addr)
@@ -1211,7 +1214,7 @@ bt.hfpRejectAfterAnswer(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpRejectCall
+### `bt.hfpRejectCall`
 
 ```python
 bt.hfpRejectCall(addr)
@@ -1227,7 +1230,7 @@ bt.hfpRejectCall(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpAnswerCall
+### `bt.hfpAnswerCall`
 
 ```python
 bt.hfpAnswerCall(addr)
@@ -1243,7 +1246,7 @@ bt.hfpAnswerCall(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpEnableVR
+### `bt.hfpEnableVR`
 
 ```python
 bt.hfpEnableVR(addr)
@@ -1259,7 +1262,7 @@ bt.hfpEnableVR(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpDisableVR
+### `bt.hfpDisableVR`
 
 ```python
 bt.hfpDisableVR(addr)
@@ -1275,7 +1278,7 @@ bt.hfpDisableVR(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.hfpDisableVR
+### `bt.hfpDisableVR`
 
 ```python
 bt.hfpDisableVR(addr, cmd)
@@ -1292,11 +1295,11 @@ bt.hfpDisableVR(addr, cmd)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-## A2DP/AVRCP相关功能
+## A2DP/AVRCP协议相关功能
 
 提供蓝牙音乐相关功能。
 
-### bt.a2dpavrcpInit
+### `bt.a2dpavrcpInit`
 
 ```python
 bt.a2dpavrcpInit()
@@ -1308,7 +1311,7 @@ A2DP和AVRCP功能初始化。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.a2dpavrcpRelease
+### `bt.a2dpavrcpRelease`
 
 ```python
 bt.a2dpavrcpRelease()
@@ -1320,7 +1323,7 @@ A2DP和AVRCP 资源释放。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.a2dpDisconnect
+### `bt.a2dpDisconnect`
 
 ```python
 bt.a2dpDisconnect(addr)
@@ -1336,7 +1339,7 @@ bt.a2dpDisconnect(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.a2dpGetAddr
+### `bt.a2dpGetAddr`
 
 ```python
 bt.a2dpGetAddr()
@@ -1348,7 +1351,7 @@ bt.a2dpGetAddr()
 
 - 执行成功返回bytearray类型的A2DP主机蓝牙地址，6字节，失败返回整型-1。
 
-### bt.a2dpGetConnStatus
+### `bt.a2dpGetConnStatus`
 
 ```python
 bt.a2dpGetConnStatus()
@@ -1368,7 +1371,7 @@ bt.a2dpGetConnStatus()
 | 2    | int  | 已连接       |
 | 3    | int  | 正在断开连接 |
 
-### bt.avrcpStart
+### `bt.avrcpStart`
 
 ```python
 bt.avrcpStart()
@@ -1380,7 +1383,7 @@ bt.avrcpStart()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.avrcpPause
+### `bt.avrcpPause`
 
 ```python
 bt.avrcpPause()
@@ -1392,7 +1395,7 @@ bt.avrcpPause()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.avrcpPrev
+### `bt.avrcpPrev`
 
 ```python
 bt.avrcpPrev()
@@ -1404,7 +1407,7 @@ bt.avrcpPrev()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.avrcpNext
+### `bt.avrcpNext`
 
 ```python
 bt.avrcpNext()
@@ -1416,7 +1419,7 @@ bt.avrcpNext()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.avrcpSetVolume
+### `bt.avrcpSetVolume`
 
 ```python
 bt.avrcpSetVolume(vol)
@@ -1432,7 +1435,7 @@ bt.avrcpSetVolume(vol)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.avrcpGetVolume
+### `bt.avrcpGetVolume`
 
 ```python
 bt.avrcpGetVolume()
@@ -1444,7 +1447,7 @@ bt.avrcpGetVolume()
 
 - 执行成功返回整形音量值，失败返回整型-1。
 
-### bt.avrcpGetPlayStatus
+### `bt.avrcpGetPlayStatus`
 
 ```python
 bt.avrcpGetPlayStatus()
@@ -1465,7 +1468,7 @@ bt.avrcpGetPlayStatus()
 | 3    | int  | 正在切换下一首 |
 | 4    | int  | 正在切换下一首 |
 
-### bt.avrcpGetConnStatus
+### `bt.avrcpGetConnStatus`
 
 ```python
 bt.avrcpGetConnStatus()
@@ -1485,11 +1488,11 @@ bt.avrcpGetConnStatus()
 | 2    | int  | 已连接       |
 | 3    | int  | 正在断开连接 |
 
-## SPP相关功能
+## SPP协议相关功能
 
 提供蓝牙传输相关功能。
 
-### bt.sppInit
+### `bt.sppInit`
 
 ```python
 bt.sppInit()
@@ -1501,7 +1504,7 @@ SPP 功能初始化。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.sppRelease
+### `bt.sppRelease`
 
 ```python
 bt.sppRelease()
@@ -1513,7 +1516,7 @@ SPP 资源释放。
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.sppConnect
+### `bt.sppConnect`
 
 ```python
 bt.sppConnect(addr)
@@ -1529,7 +1532,7 @@ bt.sppConnect(addr)
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.sppDisconnect
+### `bt.sppDisconnect`
 
 ```python
 bt.sppDisconnect()
@@ -1541,7 +1544,7 @@ bt.sppDisconnect()
 
 - 执行成功返回整型0，失败返回整型-1。
 
-### bt.sppSend
+### `bt.sppSend`
 
 ```python
 bt.sppSend(data)
