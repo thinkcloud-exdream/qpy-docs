@@ -14,10 +14,10 @@ import sys_bus
 sys_bus.subscribe(topic, handler)
 ```
 
-**参数**
+**参数描述：**
 
-topic-主题,  string/int类型, 所需要订阅的topic 
-handler-处理函数,  func函数类型,   处理函数, 当有对应topic过来时, 会对应调用其中的处理函数去处理 handler 需要有两个参数(topic, msg) 
+`topic`-主题,  string/int类型, 所需要订阅的topic 
+`handler`-处理函数,  func函数类型,   处理函数, 当有对应topic过来时, 会对应调用其中的处理函数去处理 handler 需要有两个参数(topic, msg) 
 
 
 
@@ -31,10 +31,10 @@ sys_bus.publish(topic , msg)
 
 发布消息, 对应订阅的topic将收到并多线程对此消息处理
 
-**参数**
+**参数描述：**
 
-topic-主题,  string/int类型, 所需要订阅的topic 
-msg-处理函数,  任意类型,  发布的数据
+`topic`-主题,  string/int类型, 所需要订阅的topic 
+`msg`-处理函数,  任意类型,  发布的数据
 
 
 
@@ -50,10 +50,10 @@ sys_bus.sub_table(topic=None)
 
 查看订阅注册表, 注册表中有所有topic和订阅的函数
 
-**参数**
-topic-主题,  string/int类型, 可以不传 传表示查看此topic的注册表 不传表示查看所有的topic的注册表
+**参数描述：**
+`topic`-主题,  string/int类型, 可以不传 传表示查看此topic的注册表 不传表示查看所有的topic的注册表
 
-**返回值**
+**返回值描述：**
 
 dict / list类型的订阅函数列表或注册表
 
@@ -71,18 +71,18 @@ sys_bus.unsubscribe(topic , cb=None)
 
 
 
-**参数**
-topic-主题,  string/int类型, 可以不传 传表示查看此topic的注册表 不传表示查看所有的topic的注册表
+**参数描述：**
+`topic`-主题,  string/int类型, 可以不传 传表示查看此topic的注册表 不传表示查看所有的topic的注册表
 
-cb-回调函数,  func函数类型, 要删除的订阅函数, 不传则删除topic
+`cb`-回调函数,  func函数类型, 要删除的订阅函数, 不传则删除topic
 
-**返回值**
+**返回值描述：**
 
 True 删除成功, False删除失败
 
 
 
-**示例**
+**示例**：
 
 ```python
 import sys_bus

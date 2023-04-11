@@ -6,14 +6,6 @@
 
 
 
-## 导入ql_fs
-
-### `ql_fs`
-
-```python
-import ql_fs
-```
-
 
 
 ## 查看文件或文件夹是否存在
@@ -24,15 +16,15 @@ import ql_fs
 ql_fs.path_exists(file_path)
 ```
 
-**参数:**
+**参数描述：**
 
-file_path-文件路径, string类型, 文件或文件夹的绝对路径 
+`file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
 
-**返回值**
+**返回值描述：**
 
 存在返回 True, 不存在返回False
 
-**示例**
+**示例:**
 
 ```python
 >>> import ql_fs
@@ -52,15 +44,15 @@ file_path-文件路径, string类型, 文件或文件夹的绝对路径
 ql_fs.path_dirname(file_path)
 ```
 
-**参数:**
+**参数描述：**
 
-file_path-文件路径, string类型, 文件或文件夹的绝对路径 
+`file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
 
-**返回值**
+**返回值描述：**
 
 string类型的路径地址
 
-**示例**
+**示例:**
 
 ```python
 >>> import ql_fs
@@ -83,11 +75,11 @@ ql_fs.mkdirs(dir_path)
 
 该方法递归式创建文件夹, 传入文件夹路径
 
-**参数:**
+**参数描述：**
 
-dir_path-文件路径, string类型, 所要创建的文件夹绝对路径 
+`dir_path`-文件路径, string类型, 所要创建的文件夹绝对路径 
 
-**使用示例**
+**示例:**
 
 ```python
 >>> import ql_fs
@@ -106,16 +98,16 @@ dir_path-文件路径, string类型, 所要创建的文件夹绝对路径
 ql_fs.rmdirs(dir_path)
 ```
 
-**参数:**
+**参数描述：**
 
-dir_path-文件路径, string类型, 所要创建的文件夹绝对路径 
+`dir_path`-文件路径, string类型, 所要创建的文件夹绝对路径 
 
-**使用示例**
+**示例:**
 
 ```python
-import ql_fs
+>>> import ql_fs
 
-ql_fs.rmdirs("usr/a/b")
+>>> ql_fs.rmdirs("usr/a/b")
 ```
 
 
@@ -130,7 +122,7 @@ ql_fs.path_getsize(file_path)
 
 **参数:**
 
-file_path-文件路径, string类型, 文件或文件夹的绝对路径 
+`file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
 
 **返回值**
 
@@ -156,17 +148,17 @@ ql_fs.touch(file, data)
 
 创建文件或者更新文件数据, 默认是json文件也可传入文本文件更新, 会自动创建文件夹然后创建或更新文件的内容
 
-**参数:**
+**参数描述：**
 
-file-文件路径, string类型, 文件或文件夹的绝对路径 
+`file`-文件路径, string类型, 文件或文件夹的绝对路径 
 
- data-数据, dict类型, 所要写入的数据,目前只支持json文件
+ `data`-数据, dict类型, 所要写入的数据,目前只支持json文件
 
-**返回值**
+**返回值描述：**
 
 int类型, 0为成功, -1则失败
 
-**使用示例**
+**示例**：
 
 ```python
 >>> import ql_fs
@@ -186,17 +178,17 @@ ql_fs.read_json(file)
 
 json文件类型的直接读取json文件并返回, 非json文件类型返回为读取的字符串数据类型
 
-**参数**
+**参数描述：**
 
-file-文件路径, string类型, 文件或文件夹的绝对路径 
+`file`-文件路径, string类型, 文件或文件夹的绝对路径 
 
-**返回值**
+**返回值描述：**
 
 读取成功, 返回dict类型
 
 失败, 返回None
 
-**使用示例**
+**示例**：
 
 ```python
 >>> import ql_fs
@@ -215,16 +207,16 @@ ql_fs.file_copy(dst, src)
 
 将文件从原路径拷贝到目标路径
 
-**参数**
+**参数描述：**
 
-dst-目标文件,  string类型,   目标路径路径
-src-源文件,  string类型, 源文件路径
+`dst`-目标文件,  string类型,   目标路径路径
+`src`-源文件,  string类型, 源文件路径
 
-**返回值**
+**返回值描述：**
 
 True代表拷贝成功
 
-**示例**
+**示例**：
 
 ```python
 >>> import ql_fs
