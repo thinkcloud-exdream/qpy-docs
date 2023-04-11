@@ -63,6 +63,15 @@ items:
         file: QuecPython类库/wifiScan.md
     -   label: ethernet - 以太网相关功能
         file: QuecPython类库/ethernet.md
+        items:
+        -   label: W5500 - W5500驱动
+            file: QuecPython类库/ethernet.W5500.md
+        -   label: DM9051 - DM9051驱动
+            file: QuecPython类库/ethernet.DM9051.md
+        -   label: CH395 - CH395驱动
+            file: QuecPython类库/ethernet.CH395.md
+        -   label: YT8512H - YT8512H驱动
+            file: QuecPython类库/ethernet.YT8512H.md
     -   label: camera - 摄像扫码
         file: QuecPython类库/camera.md
         items:

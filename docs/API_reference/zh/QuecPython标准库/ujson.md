@@ -1,5 +1,5 @@
 # ujson - JSON编码和解码
-`ujson`模块实现在Python数据对象和JSON数据格式之间进行转换的功能。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[json](https://docs.python.org/3.5/library/json.html#module-json)
+`ujson`模块实现在Python数据对象和JSON数据格式之间进行转换的功能。该模块实现相应CPython模块的子集。更多信息请参阅CPython文档：[json](https://docs.python.org/3.5/library/json.html#module-json)
 
 
 ## 编码json数据
