@@ -1,6 +1,6 @@
 # class SPI – SPI通信
 
-类功能：串行外设接口总线协议。
+该类提供串行外设接口总线协议功能。
 
 ## 构造函数
 
@@ -19,7 +19,7 @@ class machine.SPI(port, mode, clk)
 - `clk` - 时钟频率，说明如下：<br />EC600N/EC600S/EC800N/BG95M3/EC600M/EC800M/EG912N:<br />`0` : 812.5kHz<br />`1` : 1.625MHz<br />`2` : 3.25MHz<br />`3` : 6.5MHz<br />`4` : 13MHz<br />`5` :  26MHz<br />`6`：52MHz<br />C600U/EC200U/EG915U:<br />`0` : 781.25KHz<br />`1` : 1.5625MHz<br />`2` : 3.125MHz<br />`3` : 5MHz<br />`4` : 6.25MHz<br />`5` : 10MHz<br />`6` : 12.5MHz<br />`7` : 20MHz<br />`8` : 25MHz<br />`9` : 33.33MHz<br />BC25PA：<br />`0` ：5MHz<br />`X` : XMHz  (X in [1,39])
 
 
-> 注意：BC25PA平台不支持1、2模式。
+> BC25PA平台不支持1、2模式。
 
 **示例：**
 
@@ -101,7 +101,7 @@ SPI.write_read(r_data, data, datalen)
 
 **使用示例：**
 
-> 注意：需要配合外设使用！
+> 需要配合外设使用！
 
 ```python
 import log

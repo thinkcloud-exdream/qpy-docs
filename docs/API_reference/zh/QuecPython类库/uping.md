@@ -1,6 +1,6 @@
 # class uping - 发送ping包
 
-模块功能：实现模拟发送icmp-ping包。
+该模块实现了 IPv4 ping 请求功能。
 
 > 注意：1.可能会存在host地址无法建立socket连接异常。2.通过初始化参数中的`COUNT`和`INTERVAL`来确认发Ping包周期。
 

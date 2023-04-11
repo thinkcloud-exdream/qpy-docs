@@ -24,7 +24,24 @@ except ImportError:
 返回当前microPython版本信息。对于MicroPython，它具有以下属性：
 
 - name - 字符串“ micropython”
+
 - version - 元组（主要，次要，微型），例如（1、7、0）
+
+- _mpy - mpy文件的版本信息，解析方法如下，mpy_cross生成mpy时需要与此版本信息相适配
+
+```python
+import sys
+sys_mpy = sys.implementation._mpy
+arch = [None, 'x86', 'x64',
+    'armv6', 'armv6m', 'armv7m', 'armv7em', 'armv7emsp', 'armv7emdp',
+    'xtensa', 'xtensawin'][sys_mpy >> 10]
+print('mpy version:', sys_mpy & 0xff)
+print('mpy sub-version:', sys_mpy >> 8 & 3)
+print('mpy flags:', end='')
+if arch:
+    print(' -march=' + arch, end='')
+print()
+```
 
 建议使用此对象来将MicroPython与其他Python实现区分开。
 

@@ -2,7 +2,8 @@
 
 对L76K GPS型号（或数据类型与之类似的GPS模组）进行数据获取，可以得到模块定位是否成功，定位的经纬度数据，UTC授时时间，获取GPS模块的定位模式，获取GPS模块定位使用卫星数量，获取GPS模块定位可见卫星数量，获取定位方位角，GPS模块对地速度，模块定位大地高等数据信息。目前，该模块提供的功能接口，所获取的数据都来源于从串口读出的原始GNSS数据包中的GNGGA、GNRMC和GPGSV语句。
 
-注意：当前仅EC600S/EC600N/EC800N/200U/600U/600M/800M模块支持该功能。
+> 当前仅EC600S/EC600N/EC800N/200U/600U/600M/800M模块支持该功能
+>
 
 ## 创建gnss对象
 
@@ -16,12 +17,12 @@ gnss.GnssGetData(uartn,baudrate,databits,parity,stopbits,flowctl)
 
 **参数描述**
 
-* `UARTn`，int类型
-  UARTn范围为0-3：
-  `0`-UART0 - DEBUG PORT
-  `1`-UART1 – BT PORT
-  `2`-UART2 – MAIN PORT
-  `3`-UART3 – USB CDC PORT
+* `uartn`，int类型
+  uartn
+  `0`-uart0 - DEBUG PORT
+  `1`-uart1 – BT PORT
+  `2`-uart2 – MAIN PORT
+  `3`-uart3 – USB CDC PORT
 * `baudrate`，int类型，常用波特率都支持，如4800、9600、19200、38400、57600、115200、230400等
 * `databits`，int类型，数据位（5 ~ 8），ECX00U系列平台当前仅支持8位
 * `parity`，int类型，奇偶校验（0 – NONE，1 – EVEN，2 - ODD）
@@ -138,7 +139,7 @@ GNSS模块提供的功能接口，所获取的数据都来源于从串口读出�
 
 **返回值描述**
 
-返回一个元组，形式为 ` (gga_valid, rmc_valid, gsv_valid)`
+返回一个列表，形式为 ` (gga_valid, rmc_valid, gsv_valid)`
 
 `gga_valid` - 表示本次读取解析，是否匹配到GNGGA数据并解析成功，0表示没有匹配到GNGGA数据或数据无效，1表示有效；
 
@@ -311,7 +312,7 @@ gnss.getCourse()
 
 **返回值描述**
 
-返回所有可视的GNSS卫星方位角，范围：`0 ~ 359`，以正北为参考平面。返回形式为字典，其中key表示卫星编号，value表示方位角。要注意，value的值可能是一个整型值，也可能是空，这取决于原始的GNSS数据中GPGSV语句中方位角是否有值。返回值形式如下：
+返回所有可视的GNSS卫星方位角，范围：`0 ~ 359`，以正北为参考平面。返回形式为字典，其中key表示卫星编号，value表示方位角。要注意，value的值可能是一个整型值，也可能是空，这取决于原始的GNSS数据中GPGSV语句中方位角是否有值，如获取失败返回-1。返回值形式如下：
 
 `{key:value, ...,  key:value}`
 

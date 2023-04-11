@@ -4,7 +4,7 @@
 本文阐述了QuecPython的usocket模块的用法，描述了usocket模块最新版本的特性。
 ```
 
-usocket 模块提供对BSD套接字接口的访问。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[socket](https://docs.python.org/3.5/library/socket.html#module-socket)
+该模块提供对BSD套接字接口的访问。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[socket](https://docs.python.org/3.5/library/socket.html#module-socket)
 
 **示例：**
 
@@ -110,7 +110,7 @@ DNS域名解析，将主机域名（host）和端口（port）解析为用于创
 
 ## 方法
 
-### socket.bind
+### `socket.bind`
 
 ```python
 socket.bind(address)
@@ -132,7 +132,7 @@ socket.bind(("192.168.0.1",80))
 socket.bind(("",0))
 ```
 
-### socket.listen
+### `socket.listen`
 
 ```python
 socket.listen(backlog)
@@ -144,7 +144,7 @@ socket.listen(backlog)
 
 - `backlog` - 接受套接字的最大个数，至少为0。
 
-### socket.accept
+### `socket.accept`
 
 ```python
 socket.accept()
@@ -158,7 +158,7 @@ socket.accept()
 - `address` - 连接到服务器的客户端地址。
 - `port` - 连接到服务器的客户端端口。
 
-### socket.connect
+### `socket.connect`
 
 ```python
 socket.connect(address)
@@ -176,7 +176,7 @@ socket.connect(address)
 socket.connect(("192.168.0.1",80))
 ```
 
-### socket.read
+### `socket.read`
 
 ```python
 socket.read( [ size ] )
@@ -184,7 +184,7 @@ socket.read( [ size ] )
 
 该方法用于从套接字中读取size字节数据，返回一个字节对象。如果没有指定size，则会从套接字读取所有可读数据，直到读取到数据结束，此时作用和 `socket.readall()` 相同。
 
-### socket.readinto
+### `socket.readinto`
 
 ```python
 socket.readinto(buf, [ , nbytes ])
@@ -192,7 +192,7 @@ socket.readinto(buf, [ , nbytes ])
 
 该方法用于从套接字读取字节到缓冲区buf中。如果指定了nbytes，则最多读取nbytes数量的字节；如果没有指定nbytes，则最多读取len(buf)字节。返回值是实际读取的字节数。
 
-### socket.readline
+### `socket.readline`
 
 ```python
 socket.readline()
@@ -200,7 +200,7 @@ socket.readline()
 
 该方法用于从套接字按行读取数据，遇到换行符结束，返回读取的数据行。
 
-### socket.write
+### `socket.write`
 
 ```python
 socket.write(buf)
@@ -208,7 +208,7 @@ socket.write(buf)
 
 该方法用于套接字发送缓冲区的数据，buf为待发送的数据，返回实际发送的字节数。
 
-### socket.send
+### `socket.send`
 
 ```python
 socket.send(bytes)
@@ -220,7 +220,7 @@ socket.send(bytes)
 
 - `bytes` - bytes型数据。
 
-### socket.sendall
+### `socket.sendall`
 
 ```python
 socket.sendall(bytes)
@@ -233,7 +233,7 @@ socket.sendall(bytes)
 
 - `bytes` - bytes型数据。
 
-### socket.sendto
+### `socket.sendto`
 
 ```python
 socket.sendto(bytes, address)
@@ -246,7 +246,7 @@ socket.sendto(bytes, address)
 - `bytes` - bytes型数据。
 - `address` - 包含地址和端口号的元组或列表。
 
-### socket.recv
+### `socket.recv`
 
 ```python
 socket.recv(bufsize)
@@ -258,7 +258,7 @@ socket.recv(bufsize)
 
 - `bufsize` - 一次接收的最大数据量。
 
-### socket.recvfrom
+### `socket.recvfrom`
 
 ```python
 socket.recvfrom(bufsize)
@@ -275,7 +275,7 @@ socket.recvfrom(bufsize)
 - `bytes` ：接收数据的字节对象。
 - `address` ：发送数据的套接字的地址。
 
-### socket.close
+### `socket.close`
 
 ```python
 socket.close()
@@ -283,7 +283,7 @@ socket.close()
 
 该方法用于将套接字标记为关闭并释放所有资源。
 
-### socket.setsockopt
+### `socket.setsockopt`
 
 ```python
 socket.setsockopt(level, optname, value)
@@ -305,7 +305,7 @@ socket.setsockopt(usocket.SOL_SOCKET, usocket.SO_REUSEADDR, 1)
 socket.setsockopt(usocket.SOL_SOCKET, usocket.TCP_KEEPALIVE, 1)
 ```
 
-### socket.setblocking
+### `socket.setblocking`
 
 ```python
 socket.setblocking(flag)
@@ -325,7 +325,7 @@ socket.setblocking(flag)
 `socket.setblocking(False)` 相当于 `socket.settimeout(0)`
 ```
 
-### socket.settimeout
+### `socket.settimeout`
 
 ```python
 socket.settimeout(value)
@@ -337,7 +337,7 @@ socket.settimeout(value)
 
 - `value` - 可以是表示秒的非负浮点数，也可以是None。如果给定零，则将套接字置为非阻塞模式，否则套接字将处于阻塞模式。
 
-### socket.makefile
+### `socket.makefile`
 
 ```python
 socket.makefile(mode='rb')
@@ -345,7 +345,7 @@ socket.makefile(mode='rb')
 
 该方法用于返回与套接字关联的文件对象，返回值类型与指定的参数有关。仅支持二进制模式 (rb和wb)。
 
-### socket.getsocketsta
+### `socket.getsocketsta`
 
 ```python
 socket.getsocketsta()

@@ -4,7 +4,7 @@
 本文阐述了QuecPython的uhashlib模块的用法，描述了uhashlib模块最新版本的特性。
 ```
 
-ubinascii 模块实现二进制数据散列算法。
+该模块实现二进制数据散列算法。
 
 > 注意：目前仅支持sha256，sha1，MD5。
 
