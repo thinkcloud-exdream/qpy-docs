@@ -1,0 +1,109 @@
+# Queue - 普通队列
+
+模块功能: 用于线程间通信
+
+
+
+## 构造函数
+
+### `Queue`
+
+```python
+class queue.Queue(maxsize=100)
+```
+
+**参数**
+
+maxsize-队列最大长度,   int类型,  默认长度是100
+
+**示例**
+
+```python
+>>> from queue import Queue
+>>> q = Queue(100)
+```
+
+
+
+## 往队列放入数据
+
+### `q.put`
+
+往队列中塞入数据
+
+```python
+q.put(data)
+```
+
+**参数**
+data-数据或信号,  任意类型,   插入的数据, 可以为空不传, 不传则可认识是放松了一个空信号
+
+**返回值**
+
+True 为成功, False 为失败
+
+
+
+## 获取数据
+
+### `q.get`
+
+从队列中获取数据, 这里需要注意一下获取数据这块的是阻塞获取
+
+```python
+q.get()
+```
+
+**返回值**
+
+为队列中的数据, 如果是空信号则会获取为None
+
+
+
+## 查看队列是否为空
+
+### `q.empty`
+
+```python
+q.empty()
+```
+
+**返回值**
+
+True则为空, False则不为空
+
+
+
+## 查看队列中存在的数据个数
+
+### `q.size`
+
+```python
+q.size()
+```
+
+**返回值**
+
+int类型的当前数据长度
+
+
+
+**示例**
+
+```python
+import _thread
+from queue import Queue
+
+# 初始化队列  默认长度100
+q = Queue()
+
+
+def get():
+    while True:
+        # 阻塞获取
+        data = q.get()
+        print("data = {}".format(data))
+
+# 线程去阻塞
+_thread.start_new_thread(get, ())
+```
