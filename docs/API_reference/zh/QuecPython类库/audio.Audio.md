@@ -1,6 +1,6 @@
 # class Audio - 音频播放
 
-类功能：提供音频播放功能。
+该类提供音频播放功能。
 
 > 目前支持型号：EC600N系列、EC800N系列、EC600M-CN(LA、LE)、EC800M-CN(LA、LE、GA)、EC600U系列、EC200U系列、EG912U、EG915U、EG915N-EUAG。
 
@@ -80,7 +80,7 @@ class audio.Audio(device)
 
 ## 方法
 
-### Audio.set_pa
+### `Audio.set_pa`
 
 ```python
 Audio.set_pa(gpio,num)
@@ -97,7 +97,7 @@ Audio.set_pa(gpio,num)
 
 `1` 表示成功，`0`表示失败。
 
-### Audio.play
+### `Audio.play`
 
 ```python
 Audio.play(priority, breakin, filename)
@@ -129,7 +129,7 @@ Audio.play(priority, breakin, filename)
 
 用户分区路径固定为’U:/‘开头，表示用户分区的根目录，如果用户在根目录下新建audio目录，并将音频文件存放在根目录下的audio目录，那么播放接口中，传入的路径参数应该是：'U:/audio/music.mp3'。
 
-### Audio.stop
+### `Audio.stop`
 
 ```python
 Audio.stop()
@@ -141,7 +141,7 @@ Audio.stop()
 
 `0` 表示成功，`-1`表示失败。
 
-### Audio.stopAll
+### `Audio.stopAll`
 
 ```python
 Audio.stopAll()
@@ -153,7 +153,7 @@ Audio.stopAll()
 
 `0` 表示成功，`-1`表示失败。
 
-### Audio.setCallback
+### `Audio.setCallback`
 
 ```python
 Audio.setCallback(cb)
@@ -167,13 +167,14 @@ Audio.setCallback(cb)
 
 - `cb` - 用户回调函数，function类型，函数原型：
 
+  ```python
+  def cb(event):
+      pass
   ```
-  cb(event)
-  ```
-
+  
   **回调函数参数描述**：
-
-  -  `event` - 播放状态，int类型，<a href="#label_Audio_map2">点此查看</a>回调函数参数event说明表。
+  
+    - `event` - 播放状态，int类型，<a href="#label_Audio_map2">点此查看</a>回调函数参数event说明表。
 
 **返回值描述：**
 
@@ -186,7 +187,7 @@ Audio.setCallback(cb)
 | 0     | 开始播放 |
 | 7     | 播放完成 |
 
-### Audio.getState
+### `Audio.getState`
 
 ```python
 Audio.getState()
@@ -198,7 +199,7 @@ Audio.getState()
 
 `0` 表示audio初始化完成，`-1`表示audio初始化未完成。
 
-### Audio.getVolume
+### `Audio.getVolume`
 
 ```python
 Audio.getVolume()
@@ -210,7 +211,7 @@ Audio.getVolume()
 
 整型音量大小值。
 
-### Audio.setVolume
+### `Audio.setVolume`
 
 ```python
 Audio.setVolume(vol)
@@ -226,7 +227,7 @@ Audio.setVolume(vol)
 
 `0` 表示成功，`-1`表示失败。
 
-### Audio.playStream
+### `Audio.playStream`
 
 ```python
 Audio.playStream(format, buf)
@@ -243,7 +244,7 @@ Audio.playStream(format, buf)
 
 `0`表示播放成功，`-1`表示播放失败。
 
-### Audio.stopPlayStream
+### `Audio.stopPlayStream`
 
 ```python
 Audio.stopPlayStream()
@@ -259,7 +260,7 @@ Audio.stopPlayStream()
 
 `0` 表示成功，`-1`表示失败。
 
-### Audio.aud_tone_play
+### `Audio.aud_tone_play`
 
 ```python
 Audio.aud_tone_play(tone, time)
@@ -278,7 +279,7 @@ Audio.aud_tone_play(tone, time)
 
 `0` 表示播放成功，`-1`表示播放失败。
 
-### Audio.aud_tone_play_stop
+### `Audio.aud_tone_play_stop`
 
 ```python
 Audio.aud_tone_play_stop()

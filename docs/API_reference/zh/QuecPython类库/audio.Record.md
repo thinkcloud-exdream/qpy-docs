@@ -2,7 +2,7 @@
 
 # class Record - 录音
 
-类功能：提供录音功能。
+该类提供录音功能。
 
 > 目前支持型号：EC600N系列、EC800N系列、EC600M-CN(LA、LE)、EC800M-CN(LA、LE、GA)、EC600U系列、EC200U系列、EG912U、EG915U、EG915N-EUAG。
 
@@ -87,7 +87,7 @@ class audio.Record(device)
 
 ## 方法
 
-### Record.start
+### `Record.start`
 
 ```python
 audio.start(file_name,seconds)
@@ -116,7 +116,7 @@ audio.start(file_name,seconds)
 
 `-6` 表示音频格式检测错误。
 
-### Record.stop
+### `Record.stop`
 
 ```python
 Record.stop()
@@ -128,7 +128,7 @@ Record.stop()
 
 `0` 表示播放成功，`-1`表示播放失败。
 
-### Record.getFilePath
+### `Record.getFilePath`
 
 ```python
 Record.getFilePath(file_name)
@@ -148,7 +148,7 @@ Record.getFilePath(file_name)
 
 `-2`表示文件名长度为0。
 
-### Record.getData
+### `Record.getData`
 
 ```python
 Record.getData(file_name, offset, size)
@@ -182,7 +182,7 @@ Record.getData(file_name, offset, size)
 
 `-7`表示内存不足10K。
 
-### Record.getSize
+### `Record.getSize`
 
 ```python
 Record.getSize(file_name)
@@ -210,7 +210,7 @@ Record.getSize(file_name)
 
 `-4`表示文件名长度为0。
 
-### Record.Delete
+### `Record.Delete`
 
 ```python
 Record.Delete(file_name)
@@ -230,7 +230,7 @@ Record.Delete(file_name)
 
 `-2`表示文件正在使用。
 
-### Record.exists
+### `Record.exists`
 
 ```python
 Record.exists(file_name)
@@ -248,7 +248,7 @@ Record.exists(file_name)
 
 `false`表示文件不存在。
 
-### Record.isBusy
+### `Record.isBusy`
 
 ```python
 Record.isBusy()
@@ -260,7 +260,7 @@ Record.isBusy()
 
 `0`表示不在录音，`1`表示正在录音。
 
-### Record.end_callback
+### `Record.end_callback`
 
 ```python
 Record.end_callback(cb)
@@ -272,19 +272,20 @@ Record.end_callback(cb)
 
 - `cb` - 录音结束回调函数，function类型，函数原型：
 
+  ```python
+  def cb(audio_msg):
+      pass
   ```
-  cb(audio_msg)
-  ```
-
+  
   **回调函数参数描述**：
-
-  -  `audio_msg` - 录音信息，list类型，其中元素如下：
-     
-     ​    `audio_msg[0]`：`file_path` ，文件路径，string类型。
-     
-     ​    `audio_msg[1]`：`audio_len` ， 录音长度，int类型。
-     
-     ​    `audio_msg[2]`：`audio_state` ，录音状态，int类型，<a href="#label_record_map1">点此查看</a>回调函数参数audio_state说明表。
+  
+    - `audio_msg` - 录音信息，list类型，其中元素如下：
+  
+       ​    `audio_msg[0]`：`file_path` ，文件路径，string类型。
+  
+       ​    `audio_msg[1]`：`audio_len` ， 录音长度，int类型。
+  
+       ​    `audio_msg[2]`：`audio_state` ，录音状态，int类型，<a href="#label_record_map1">点此查看</a>回调函数参数audio_state说明表。
 
 **返回值描述：**
 
@@ -298,7 +299,7 @@ Record.end_callback(cb)
 | 0     | 录音开始 |
 | 3     | 录音结束 |
 
-### Record.gain
+### `Record.gain`
 
 ```python
 Record.gain(code_gain,dsp_gain)
@@ -317,7 +318,7 @@ Record.gain(code_gain,dsp_gain)
 
 `0` 表示成功，`-1`表示失败。
 
-### Record.amrEncDtx_enable
+### `Record.amrEncDtx_enable`
 
 ```python
 Record.amrEncDtx_enable(on_off)
@@ -338,7 +339,7 @@ Record.amrEncDtx_enable(on_off)
 
 传参：参数正确无返回，参数错误抛异常。
 
-### Record.stream_start
+### `Record.stream_start`
 
 ```python
 Record.stream_start(format, samplerate, time)
@@ -358,7 +359,7 @@ Record.stream_start(format, samplerate, time)
 
 `0` 表示成功，`-1`表示失败。
 
-### Record.stream_read
+### `Record.stream_read`
 
 ```python
 Record.stream_read(read_buf, len)
@@ -379,6 +380,6 @@ Record.stream_read(read_buf, len)
 
 ## 常量
 
-### <span id="label_record_const">Record.AMRNB</span>
+### <span id="label_record_const">`Record.AMRNB`</span>
 
 amr 格式。

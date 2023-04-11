@@ -1,8 +1,8 @@
 # class camScandecode - 摄像头扫码
 
-类功能：提供摄像头的扫码功能。
+该类提供摄像头的扫码功能。
 
-> 注意：如果开启预览，需要先初始化LCD。
+> 如果开启预览，需要先初始化LCD。
 
 **示例：**
 
@@ -72,7 +72,7 @@ class camera.camScandecode(model,decode_level,cam_w,cam_h,perview_level,lcd_w,lc
 
 ## 方法
 
-### camScandecode.open
+### `camScandecode.open`
 
 ```python
 camScandecode.open()
@@ -88,7 +88,7 @@ camScandecode.open()
 
 `0` 表示打开使能成功，其他表示打开使能失败。
 
-### camScandecode.close
+### `camScandecode.close`
 
 ```python
 camScandecode.close()
@@ -104,7 +104,7 @@ camScandecode.close()
 
 `0` 表示关闭使能成功，其他表示关闭使能失败。
 
-### camScandecode.start
+### `camScandecode.start`
 
 ```python
 camScandecode.start()
@@ -120,7 +120,7 @@ camScandecode.start()
 
 `0` 表示开始扫码，其他表示开始扫码失败。
 
-### camScandecode.stop
+### `camScandecode.stop`
 
 ```python
 camScandecode.stop()
@@ -136,7 +136,7 @@ camScandecode.stop()
 
 `0` 表示结束扫码扫码，其他表示结束扫码失败。
 
-### camScandecode.pause
+### `camScandecode.pause`
 
 ```python
 camScandecode.pause()
@@ -152,7 +152,7 @@ camScandecode.pause()
 
 `0` 表示暂停扫码成功，其他表示暂停扫码失败。
 
-### camScandecode.resume
+### `camScandecode.resume`
 
 ```python
 camScandecode.resume()
@@ -168,7 +168,7 @@ camScandecode.resume()
 
 `0` 表示继续扫码成功，其他表示继续扫码失败。
 
-### camScandecode.callback
+### `camScandecode.callback`
 
 ```python
 camScandecode.callback(cb)
@@ -180,14 +180,14 @@ camScandecode.callback(cb)
 
 - `cb` - 识别回调函数，回调函数原型：
 
+  ```python
+  def cb(result_list):
+      pass
   ```
-  cb(result_list)
-  ```
-
+  
   **回调函数参数描述：**
-
+  
   - `result_list[0]` - 扫码结果，int类型，`0`表示成功， 其它表示失败
-
   - `result_list[1]` - 扫码内容，string类型。
 
 **返回值描述：**

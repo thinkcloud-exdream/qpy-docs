@@ -2,7 +2,7 @@
 
 # class TTS - 文本到语音播放 
 
-类功能：提供从文本到语音播放功能。
+该类提供从文本到语音播放功能。
 
 > 目前支持型号：EC600N系列、EC800N系列、EC600M-CN(LA、LE)、EC800M-CN(LA、LE、GA)、EC600U-CN系列、EC200U-CN系列。
 
@@ -93,7 +93,7 @@ class audio.TTS(device)
 
 ## 方法
 
-### TTS.close
+### `TTS.close`
 
 ```python
 TTS.close()
@@ -105,7 +105,7 @@ TTS.close()
 
 `0` 表示关闭成功，`-1`表示关闭失败。
 
-### TTS.play
+### `TTS.play`
 
 ```python
 TTS.play(priority, breakin, mode, str)
@@ -149,7 +149,7 @@ TTS.play(priority, breakin, mode, str)
 | 模式     | 说明                                                         |
 | -------- | ------------------------------------------------------------ |
 | 编码模式 | 1 - UNICODE16(UTF-16大端模式)<br />2 - UTF-8<br />3 - UNICODE16(UTF-16小端模式) |
-| WTTS模式 | 仅600N系列支持VOLTE的版本支持，<br />wtts_enable - wtts总开关<br />wtts_ul_enable - wtts上行使能， <br />wtts_dl_enable - wtts下行使能 |
+| WTTS模式 | 仅600N系列支持VOLTE的版本支持，<br />wtts_enable - wtts总开关<br />wtts_ul_enable - wtts上行使能 <br />wtts_dl_enable - wtts下行使能 |
 
 <span id="label_tts_playdemo">**TTS.play方法使用实例：**</span>
 
@@ -211,7 +211,7 @@ TTS.play(priority, breakin, mode, str)
 
 - **TTS播放中文示例：**
 
-  > 注意：python文件开头需要加上`# -*- coding: UTF-8 -*-`。
+  > python文件开头需要加上`# -*- coding: UTF-8 -*-`。
 
 ```python
 # -*- coding: UTF-8 -*-
@@ -291,7 +291,7 @@ tts.play(4, 0, 2, str1)
 
 
 
-### TTS.stop
+### `TTS.stop`
 
 ```python
 TTS.stop()
@@ -303,7 +303,7 @@ TTS.stop()
 
 `0` 表示成功，`-1`表示失败。
 
-### TTS.stopAll
+### `TTS.stopAll`
 
 ```python
 TTS.stopAll()
@@ -315,7 +315,7 @@ TTS.stopAll()
 
 `0` 表示成功，`-1`表示失败。
 
-### TTS.setCallback
+### `TTS.setCallback`
 
 ```python
 TTS.setCallback(cb)
@@ -323,19 +323,20 @@ TTS.setCallback(cb)
 
 该方法用于注册用户的回调函数，用于通知用户TTS播放状态。
 
-> 注意，该回调函数中不要进行耗时以及阻塞性的操作，建议只进行简单、耗时短的操作。
+> 该回调函数中不要进行耗时以及阻塞性的操作，建议只进行简单、耗时短的操作。
 
 **参数描述：**
 
 - `cb` - 用户回调函数，function类型，函数原型：
 
+  ```python
+  def cb(event):
+      pass
   ```
-  cb(event)
-  ```
-
+  
   **回调函数参数描述**：
-
-  -  `event` - 播放状态，int类型，<a href="#label_tts_map2">点此查看</a>回调函数参数event说明表。
+  
+    - `event` - 播放状态，int类型，<a href="#label_tts_map2">点此查看</a>回调函数参数event说明表。
 
 **返回值描述：**
 
@@ -349,7 +350,7 @@ TTS.setCallback(cb)
 | 3     | 停止播放 |
 | 4     | 播放完成 |
 
-### TTS.getVolume
+### `TTS.getVolume`
 
 ```python
 TTS.getVolume()
@@ -361,7 +362,7 @@ TTS.getVolume()
 
 成功则返回整型音量大小值，`-1`表示失败。
 
-### TTS.setVolume
+### `TTS.setVolume`
 
 ```python
 TTS.setVolume(vol)
@@ -377,7 +378,7 @@ TTS.setVolume(vol)
 
 `0` 表示成功，`-1`表示失败。
 
-### TTS.getSpeed
+### `TTS.getSpeed`
 
 ```python
 TTS.getSpeed()
@@ -389,7 +390,7 @@ TTS.getSpeed()
 
 成功则返回整型音量大小值，`-1`表示失败。
 
-### TTS.setSpeed
+### `TTS.setSpeed`
 
 ```python
 TTS.setSpeed(speed)
@@ -405,7 +406,7 @@ TTS.setSpeed(speed)
 
 `0` 表示成功，`-1`表示失败。
 
-### TTS.getState
+### `TTS.getState`
 
 ```python
 TTS.getState()

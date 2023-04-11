@@ -1,8 +1,8 @@
 # class camCapture - 摄像头拍照
 
-类功能：提供摄像头的拍照及保存功能。
+该类提供摄像头的拍照及保存功能。
 
-> 注意：使用该功能前，需要初始化LCD。
+> 使用该功能前，需要初始化LCD。
 
 **示例：**
 
@@ -66,7 +66,7 @@ class camera.camCapture(model,cam_w,cam_h,perview_level,lcd_w,lcd_h)
 
 ## 方法
 
-### camCapture.open
+### `camCapture.open`
 
 ```python
 camCapture.open()
@@ -82,7 +82,7 @@ camCapture.open()
 
 `0` 表示打开使能成功，其他表示打开使能失败。
 
-### camCapture.close
+### `camCapture.close`
 
 ```python
 camCapture.close()
@@ -98,13 +98,13 @@ camCapture.close()
 
 `0` 表示关闭使能成功，其他表示关闭使能失败。
 
-### camCapture.start
+### `camCapture.start`
 
 ```python
 camCaputre.start(width,  height, pic_name)
 ```
 
-该方法用于开始拍照保存。
+该方法用于拍照保存。
 
 **参数描述：**
 
@@ -116,9 +116,9 @@ camCaputre.start(width,  height, pic_name)
 
 `0` 表示拍照保存成功，其他表示开始拍照保存失败。
 
-> 注意：拍照结果还是以回调函数参数为主。
+> 拍照结果还是以回调函数参数为主。
 
-### camCapture.callback
+### `camCapture.callback`
 
 ```python
 camCapture.callback(cb)
@@ -130,14 +130,14 @@ camCapture.callback(cb)
 
 - `cb` - 拍照回调函数，回调函数原型：
 
+  ```python
+  def cb(result_list):
+      pass
   ```
-  cb(result_list)
-  ```
-
+  
   **回调函数参数描述：**
-
+  
   - `result_list[0]` - 拍照保存结果，int类型，`0`表示成功， 其它表示失败
-
   - `result_list[1]` - 保存的照片名称，string类型。
 
 **返回值描述：**
