@@ -116,7 +116,7 @@ socket.bind(address)
 该方法用于套接字绑定指定address，必须尚未绑定。
 
 > 1.作为服务器时，需要进行绑定，以固定服务器的address。
-2.作为客户端时，绑定address用来指定套接字进行数据处理（配合usocket.TCP_CUSTOMIZE_PORT使用）。
+> 2.作为客户端时，绑定address用来指定套接字进行数据处理（配合usocket.TCP_CUSTOMIZE_PORT使用）。
 
 **参数描述**
 
@@ -352,7 +352,7 @@ socket.getsocketsta()
 该方法用于获取TCP套接字的状态。
 
 > 1.BG95平台不支持该API。
-2.如果调用了 `socket.close()` 方法之后，再调用 `socket.getsocketsta()` 会返回-1，因为此时创建的对象资源等都已经被释放。
+> 2.如果调用了 `socket.close()` 方法之后，再调用 `socket.getsocketsta()` 会返回-1，因为此时创建的对象资源等都已经被释放。
 
 **返回值：** 
 
