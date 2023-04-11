@@ -5,23 +5,8 @@
 **示例**：
 
 ```python
-'''
-@Author: Baron
-@Date: 2020-06-17
-@LastEditTime: 2020-06-17 17:06:08
-@Description: example for module utime
-@FilePath: example_utime_loacltime_file.py
-'''
 import utime
 import log
-
-
-'''
-下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
-'''
-PROJECT_NAME = "QuecPython_localtime_example"
-PROJECT_VERSION = "1.0.0"
-
 
 # 设置日志输出级别
 log.basicConfig(level=log.INFO)
@@ -62,13 +47,13 @@ utime.localtime(secs)
 
 **返回值描述：**
 
-- `(year, month, mday, hour, minute, second, weekday, yearday)`-类型为元组，包含了年、月、日、时、分、秒、星期、一年中第几天。当提供参数`secs`时，返回转换后的时间。当参数`secs`没有提供时，则返回本地RTC的时间。返回值含义如下：
+- `(year, month, day, hour, minute, second, weekday, yearday)`-类型为元组，包含了年、月、日、时、分、秒、星期、一年中第几天。当提供参数`secs`时，返回转换后的时间。当参数`secs`没有提供时，则返回本地RTC的时间。返回值含义如下：
 
-| 元组成员 | 范围                   | 含义             |
+| 元组成员 | 范围及类型             | 含义             |
 | -------- | ---------------------- | ---------------- |
 | year     | int型                  | 年份             |
 | month    | int型，1~12            | 月份             |
-| mday     | int型，1~31            | 日，当月多少号   |
+| day      | int型，1~31            | 日，当月多少号   |
 | hour     | int型，0~23            | 小时             |
 | minute   | int型，0~59            | 分钟             |
 | second   | int型，0~59            | 秒               |
@@ -82,7 +67,7 @@ utime.localtime(secs)
 >>> utime.localtime()
 (2020, 9, 29, 8, 54, 42, 1, 273)
 >>> utime.localtime(646898736)
-(2020, 7, 1, 6, 5, 36, 2, 183)
+(1990, 7, 2, 14, 5, 36, 0, 183)
 ```
 
 ### `utime.mktime`
@@ -99,7 +84,7 @@ utime.mktime(date)
 
 **返回值描述：**
 
-- 以秒为单位的时间，类型为int。
+- int类型。
 
 **示例**：
 
@@ -120,7 +105,7 @@ utime.time()
 
 **返回值描述：**
 
-- 以秒为单位的时间，类型为int。
+- int类型。
 
 ### `utime.getTimeZone`
 
@@ -132,7 +117,7 @@ utime.getTimeZone()
 
 **返回值描述：**
 
-- 单位小时，范围[-12, 12]，负值表示西时区，正值表示东时区，0表示零时区。
+- int类型，单位小时，范围[-12, 12]，负值表示西时区，正值表示东时区，0表示零时区。
 
 ### `utime.setTimeZone`
 
@@ -144,7 +129,11 @@ utime.setTimeZone(offset)
 
 **参数描述：**
 
-- 单位小时，范围[-12, 12]，负值表示西时区，正值表示东时区，0表示零时区。
+- int类型，单位小时，范围[-12, 12]，负值表示西时区，正值表示东时区，0表示零时区。
+
+**返回值描述：**
+
+- int类型，成功返回0，失败抛异常。
 
 ## 测量时间间隔相关功能
 
@@ -158,7 +147,7 @@ utime.ticks_ms()
 
 **返回值描述：**
 
-- 毫秒计数值，计数值本身无特定意义，只适合用在 `ticks_diff()`函数中。
+- int类型，毫秒计数值，计数值本身无特定意义，只适合用在 `ticks_diff()`函数中。
 
 ### `utime.ticks_us`
 
@@ -170,7 +159,7 @@ utime.ticks_us()
 
 **返回值描述：**
 
-- 微秒计数值，计数值本身无特定意义，只适合用在 `ticks_diff()`函数中。
+- int类型，微秒计数值，计数值本身无特定意义，只适合用在 `ticks_diff()`函数中。
 
 ### `utime.ticks_cpu`
 
@@ -182,7 +171,7 @@ utime.ticks_cpu()
 
 **返回值描述：**
 
-- 计数值，计数值本身无特定意义，只适合用在 `ticks_diff()`函数中。
+- int类型，计数值，计数值本身无特定意义，只适合用在 `ticks_diff()`函数中。
 
 ### `utime.ticks_diff`
 
@@ -194,16 +183,18 @@ utime.ticks_diff(ticks1, ticks2)
 
 **参数描述：**
 
-- `ticks1`-第二次调用` ticks_ms`， `ticks_us`，或 `ticks_cpu`获取的tick值。
-- `ticks2`-第一次调用` ticks_ms`， `ticks_us`，或 `ticks_cpu`获取的tick值。
+- `ticks1`-int类型，第二次调用` ticks_ms`， `ticks_us`，或 `ticks_cpu`获取的tick值。
+- `ticks2`-int类型，第一次调用` ticks_ms`， `ticks_us`，或 `ticks_cpu`获取的tick值。
 
 **返回值描述：**
 
-- 时间间隔，两次调用` ticks_ms`， `ticks_us`，或 `ticks_cpu`之间的时间间隔。单位和传入的`ticks2`和`ticks1`的单位一致。
+- int类型，时间间隔，两次调用` ticks_ms`， `ticks_us`，或 `ticks_cpu`之间的时间间隔。单位和传入的`ticks2`和`ticks1`的单位一致。
 
-**注意**：
 
-`ticks2`和`ticks1`的顺序不能颠倒，否则结果无法确定。且这个函数不要用在计算很长的时间间隔，具体限制为`ticks2`和`ticks1`的tick差值不能超过0x1FFFFFFF，否则结果无法确定。
+
+> `ticks2`和`ticks1`的顺序不能颠倒，否则结果无法确定。且这个函数不要用在计算很长的时间间隔，具体限制为`ticks2`和`ticks1`的tick差值不能超过0x1FFFFFFF，否则结果无法确定。
+
+
 
 **示例**：
 
@@ -227,7 +218,7 @@ utime.sleep(seconds)
 
 **参数描述：**
 
-- `seconds`-休眠的时长，单位秒。
+- `seconds`-int类型，休眠的时长，单位秒。
 
 ### `utime.sleep_ms`
 
@@ -239,7 +230,7 @@ utime.sleep_ms(ms)
 
 **参数描述：**
 
-`ms`-休眠的时长，单位毫秒。
+`ms`-int类型，休眠的时长，单位毫秒。
 
 ### `utime.sleep_us`
 
@@ -251,8 +242,8 @@ utime.sleep_us(us)
 
 **参数描述：**
 
-`us`-休眠的时长，单位微秒。
+`us`-int类型，休眠的时长，单位微秒。
 
-**注意**：
 
-`utime.sleep`、`utime.sleep_ms`及`utime.sleep_us`函数的调用会导致程序休眠阻塞。
+
+> `utime.sleep`、`utime.sleep_ms`及`utime.sleep_us`函数的调用会导致程序休眠阻塞。
