@@ -1,7 +1,7 @@
 
 # ucollections - 集合和容器类型
 
-模块功能：ucollections 模块可以创建一个新的容器类型，用于保存各种对象。该模块实现了CPython模块相应模块的子集。更多信息请参阅CPython文档：[collections](https://docs.python.org/3/library/collections.html)
+`ucollections`模块可以创建一个新的容器类型，用于保存各种对象。该模块实现了CPython模块相应模块的子集。更多信息请参阅CPython文档：[collections](https://docs.python.org/3/library/collections.html)
 
 ## `ucollections`方法
 ### `ucollections.namedtuple`
@@ -40,9 +40,9 @@ ucollections.deque(iterable, maxlen, flag)
 
 - `iterable` - tuple类型，必须是一个空元组
 - `maxlen` - int类型，表示指定maxlen并将双端队列限制为此最大长度
-- `flag` - int类型，可选参数；0(默认)：不检查队列是否溢出，达到最大长度时继续append会丢弃之前的值  ，1：当队列达到最大设定长度会抛出IndexError: full
+- `flag` - int类型，可选参数；`0`(默认)：不检查队列是否溢出，达到最大长度时继续append会丢弃之前的值  ，`1`：当队列达到最大设定长度会抛出IndexError: full
 
-**返回值：**
+**返回值描述：**
 
 - deque对象
 
@@ -72,11 +72,11 @@ deque.popleft()
 
 从`deque`的左侧移除并返回移除的数据。如果`deque`为空，会引起索引错误
 
-**返回值：**
+**返回值描述：**
 
 - 返回pop出的值
 
-**使用示例**
+**示例**
 
 ```python
 from ucollections import deque

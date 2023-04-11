@@ -1,7 +1,7 @@
 
 # ustruct - 打包和解压原始数据类型
 
-模块功能：`ustruct`模块实现相应CPython模块的子集。更多信息请参阅CPython文档：[struct](https://docs.python.org/3.5/library/struct.html#module-struct)
+`ustruct`模块实现相应CPython模块的子集。更多信息请参阅CPython文档：[struct](https://docs.python.org/3.5/library/struct.html#module-struct)
 
 
 ## 格式字符串

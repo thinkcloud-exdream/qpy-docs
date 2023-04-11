@@ -92,6 +92,9 @@ items:
             file: QuecPython类库/audio.Record.md
     -   label: WLAN - 无线局域网相关功能
         file: QuecPython类库/WLAN.md
+        items:
+        -   label: ESP8266 - 乐鑫ESP8266模组驱动
+            file: QuecPython类库/WLAN.ESP8266.md
     -   label: misc - 其他
         file: QuecPython类库/misc.md
         items:
