@@ -1,45 +1,59 @@
 items:
--   label: 使用说明
-    file: 使用说明/README.md
+  - label: 操作指引
+    file: guide/README.md
     items:
-    -   label: 问题查找
-        file: 使用说明/问题查找.md
-    -   label: 文档贡献
-        file: 使用说明/文档贡献.md
--   label: 开发环境与工具
-    file: 开发环境与工具/README.md
+      - label: 搜索功能用法
+        file: guide/use-search.md
+      - label: 参与文档贡献
+        file: guide/contribute.md
+  - label: 开发环境和工具相关
+    file: tools/README.md
     items:
-    -   label: 开发工具使用常见问题
-        file: 开发环境与工具/开发工具使用常见问题.md
--   label: 应用方案
-    file: 应用方案/README.md
+      - label: QPYcom
+        file: tools/QPYcom.md
+      - label: Qflash
+        file: tools/qflash.md
+  - label: 软件相关
+    file: software/README.md
     items:
-    -   label: EventMesh框架常见问题
-        file: 应用方案/EventMesh框架常见问题.md
-    -   label: sys_bus框架常见问题
-        file: 应用方案/sys_bus框架常见问题.md
-    -   label: 云平台对接常见问题
-        file: 应用方案/云平台对接常见问题.md
-    -   label: 解决方案常见问题
-        file: 应用方案/解决方案常见问题.md
--   label: 软件平台
-    file: 软件平台/README.md
+      - label: 系统基础功能常见问题
+        file: software/os.md
+      - label: 多线程开发常见问题
+        file: software/threads.md
+      - label: 编程框架
+        file: software/frameworks.md
+  - label: 硬件功能相关
+    file: hardware/README.md
     items:
-    -   label: Python基础常见问题
-        file: 软件平台/Python基础常见问题.md
-    -   label: 多线程开发常见问题
-        file: 软件平台/多线程开发常见问题.md
-    -   label: BSP开发常见问题
-        file: 软件平台/BSP开发常见问题.md
-    -   label: 外设应用开发常见问题
-        file: 软件平台/外设应用开发常见问题.md
-    -   label: 网络通信开发常见问题
-        file: 软件平台/网络通信开发常见问题.md
-    -   label: 蓝牙开发常见问题
-        file: 软件平台/蓝牙开发常见问题.md
-    -   label: 图形化界面开发常见问题
-        file: 软件平台/图形化界面开发常见问题.md
--   label: 硬件相关
-    file: 硬件相关/README.md
--   label: 测试校验
-    file: 测试校验/README.md
+      - label: BSP功能常见问题
+        file: hardware/bsp.md
+      - label: 多媒体功能常见问题
+        file: hardware/multimedia.md
+      - label: 图形界面功能常见问题
+        file: hardware/ui.md
+      - label: 蓝牙功能常见问题
+        file: hardware/bt.md
+      - label: 功耗常见问题
+        file: hardware/pm.md
+      - label: 外挂组件相关常见问题
+        file: hardware/external.md
+  - label: 网络功能相关
+    file: network/README.md
+    items:
+      - label: 注网拨号常见问题
+        file: network/basics.md
+      - label: 语音通话和短信常见问题
+        file: network/voicecall-and-sms.md
+      - label: 基础连接常见问题
+        file: network/connections.md
+      - label: 云平台相关常见问题
+        file: network/cloud-platforms.md
+  - label: 量产和商业应用
+    file: mp/README.md
+    items:
+      - label: 量产工具
+        file: mp/mp-tools.md
+      - label: 解决方案
+        file: mp/solution.md
+      - label: 硬件设计和验证
+        file: mp/hd-design.md
