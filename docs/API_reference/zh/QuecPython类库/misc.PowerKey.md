@@ -39,7 +39,7 @@ PowerKey.powerKeyEventRegister(usrFun)
 
 `0`表示注册成功，`-1`表示注册失败。
 
-> 注意:EC600S/EC600N系列，对于powerkey，按下和松开时，都会触发用户注册的回调函数；
+> EC600S/EC600N系列，对于powerkey，按下和松开时，都会触发用户注册的回调函数；
 >
 > EC200U/EC600U系列，对于powerkey，只在按键松开时才会触发回调函数，并且按键按下的时间需要维持500ms以上。
 

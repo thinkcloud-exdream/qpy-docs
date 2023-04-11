@@ -58,7 +58,18 @@ ADC.read(ADCn)
 
 <span id="label_pinmap">**ADC通道与物理引脚的映射关系：**</span>
 
-EC100Y系列对应引脚如下<br/>ADC0 – 引脚号39<br/>ADC1 – 引脚号81<br/>EC600S/EC600N系列对应引脚如下<br/>ADC0 – 引脚号19<br/>EC600M系列对应引脚如下<br/>ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br/>EC800N系列对应引脚如下<br/>ADC0 – 引脚号9<br/>EC600U系列对应引脚如下<br />ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br />ADC2 – 引脚号113<br />ADC3 – 引脚号114<br />EC200U系列对应引脚如下<br />ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br />ADC2 – 引脚号43<br />EC200A系列对应引脚如下<br/>ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br/>BG95系列对应引脚如下<br/>ADC0 – 引脚号24<br/>EG915U系列对应引脚如下<br/>ADC0 – 引脚号24<br/>ADC1 – 引脚号2<br/>EC800M系列对应引脚如下<br/>ADC0 – 引脚号9<br/>ADC1 – 引脚号96<br/>EG912N系列对应引脚如下<br/>ADC0 – 引脚号24<br/>ADC1 – 引脚号2
+| 系列   | 引脚对应                                                     |
+| ------ | ------------------------------------------------------------ |
+| EC600N | ADC0 – 引脚号19                                              |
+| EC600M | ADC0 – 引脚号19<br/>ADC1 – 引脚号20                          |
+| EC800N | ADC0 – 引脚号9                                               |
+| EC600U | ADC0 – 引脚号19<br/>ADC1 – 引脚号20<br />ADC2 – 引脚号113<br />ADC3 – 引脚号114 |
+| EC200U | ADC0 – 引脚号45<br/>ADC1 – 引脚号44<br />ADC2 – 引脚号43     |
+| EC200A | ADC0 – 引脚号45<br/>ADC1 – 引脚号44                          |
+| BG95   | ADC0 – 引脚号24                                              |
+| EG915U | ADC0 – 引脚号24<br/>ADC1 – 引脚号2                           |
+| EC800M | ADC0 – 引脚号9<br/>ADC1 – 引脚号96                           |
+| EG912N | ADC0 – 引脚号24<br/>ADC1 – 引脚号2                           |
 
 ### ADC.close
 

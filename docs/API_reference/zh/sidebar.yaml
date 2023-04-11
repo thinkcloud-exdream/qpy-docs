@@ -95,10 +95,18 @@ items:
     -   label: misc - 其他
         file: QuecPython类库/misc.md
         items:
-        -   label: USBNET - USB网卡
-            file: QuecPython类库/misc.USBNET.md
         -   label: Power - 关机和重启
             file: QuecPython类库/misc.Power.md
+        -   label: PowerKey - PowerKey按键回调注册
+            file: QuecPython类库/misc.PowerKey.md
+        -   label: PWM - 脉宽调制
+            file: QuecPython类库/misc.PWM.md
+        -   label: ADC - 模数转换
+            file: QuecPython类库/misc.ADC.md
+        -   label: USB - USB插拔检测
+            file: QuecPython类库/misc.USBNET.md
+        -   label: USBNET - USB网卡
+            file: QuecPython类库/misc.USB.md
     -   label: modem - 设备相关
         file: QuecPython类库/modem.md
     -   label: machine - 硬件相关功能
