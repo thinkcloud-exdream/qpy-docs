@@ -41,13 +41,11 @@ uping.ping(HOST, SOURCE=None, COUNT=4, INTERVAL=1000, SIZE=64, TIMEOUT=5000, qui
 
 **参数描述：**
 
-| 参数     | 类型 | 说明                                                         |
-| -------- | ---- | ------------------------------------------------------------ |
-| HOST     | str  | 所要ping的域名地址, 例如"baidu.com"                          |
-| SOURCE   | str  | 源地址, 用于绑定, 一般情况下不需要传                         |
-| COUNT    | int  | 默认是4次,  发送4次ping包                                    |
-| INTERVAL | int  | 间隔时间, 单位:ms, 默认1000ms                                |
-| SIZE     | int  | 每次读取的包大小默认64, 无需修改                             |
-| TIMEOUT  | int  | 超时时间, 单位:ms, 默认5000ms                                |
-| quiet    | bool | 默认:false,打印直接输出。若设为True, 调用start默认打印的值会被转换成对象返回。 |
+- `HOST` - 主机名，字符串类型，所要ping的域名地址, 例如"baidu.com"。
+- `SOURCE` - 源地址，字符串类型，用于绑定, 一般情况下不需要传。
+- `COUNT` - 默认请求次数，整型，默认是4次,发送4次ping包。
+- `INTERVAL` - 间隔时间，整型，用于绑定, 一般情况下不需要传。
+- `SIZE` - 每次读取的包大小，整型，默认64, 无需修改。
+- `TIMEOUT` - 超时时间，整型，单位:ms, 默认5000ms。
+- `quiet` - 打印是否直接输出，布尔类型，默认:false,打印直接输出。若设为True, 调用start默认打印的值会被转换成对象返回。
 
