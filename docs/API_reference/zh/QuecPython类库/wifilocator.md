@@ -11,11 +11,11 @@
 **示例：**
 
 ```python
-import wifilocator
+>>> import wifilocator
 # 创建wifilocato对象
-wifiloc = wifilocator.wifilocator("xxxxxxxxxxxxxxxx")
+>>> wifiloc = wifilocator.wifilocator("xxxxxxxxxxxxxxxx")
 # 获取模块坐标信息
-wifiloc.getwifilocator()
+>>> wifiloc.getwifilocator()
 (117.1152877807617, 31.82142066955567, 100)
 # 上面使用的密钥"xxxxxxxxxxxxxxxx"指代token，具体需要向移远申请
 ```
@@ -40,7 +40,7 @@ class wifilocator.wifilocator(token)
 
 ## 获取坐标信息
 
-### wifilocator.getwifilocator
+### `wifilocator.getwifilocator`
 
 ```python
 wifilocator.getwifilocator()
