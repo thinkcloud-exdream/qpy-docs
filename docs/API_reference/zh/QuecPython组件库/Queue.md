@@ -32,7 +32,7 @@ class queue.Queue(maxsize=100)
 往队列中塞入数据
 
 ```python
-q.put(data)
+Queue.put(data)
 ```
 
 **参数描述：**
@@ -51,7 +51,7 @@ True 为成功, False 为失败
 从队列中获取数据, 这里需要注意一下获取数据这块的是阻塞获取
 
 ```python
-q.get()
+Queue.get()
 ```
 
 **返回值描述：**
@@ -65,7 +65,7 @@ q.get()
 ### `Queue.empty`
 
 ```python
-q.empty()
+Queue.empty()
 ```
 
 **返回值描述：**
@@ -79,7 +79,7 @@ True则为空, False则不为空
 ### `Queue.size`
 
 ```python
-q.size()
+Queue.size()
 ```
 
 **返回值描述：**

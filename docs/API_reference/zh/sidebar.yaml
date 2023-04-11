@@ -163,8 +163,6 @@ items:
         file: QuecPython组件库/Queue.md
     -   label: sys_bus - 会话总线
         file: QuecPython组件库/sys_bus.md
-    -   label: uasyncio - 协程
-        file: QuecPython组件库/uasyncio.md
     -   label: uwebsocket - websocket服务
         file: QuecPython组件库/uwebsocket.md
     -   label: ussl - SSL算法
