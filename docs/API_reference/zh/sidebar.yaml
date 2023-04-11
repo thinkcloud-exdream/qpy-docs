@@ -156,7 +156,7 @@ items:
         file: QuecPython组件库/log.md
     -   label: umqtt - MQTT
         file: QuecPython组件库/umqtt.md
-    -   label: ntptime - NTP对时
+    -   label: ntptime - 网络时间同步
         file: QuecPython组件库/ntptime.md
     -   label: system - 环境配置
         file: QuecPython组件库/system.md
