@@ -1,8 +1,5 @@
+# class usocket - socket模块
 
-
-```
-本文阐述了QuecPython的usocket模块的用法，描述了usocket模块最新版本的特性。
-```
 
 该模块提供对BSD套接字接口的访问。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：[socket](https://docs.python.org/3.5/library/socket.html#module-socket)
 
@@ -33,22 +30,22 @@ if __name__ == '__main__':
     if stagecode == 3 and subcode == 1:
         socket_log.info('Network connection successful!')
 
-    	# 创建一个socket实例
-    	sock = usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)
-    	# 解析域名
-    	sockaddr=usocket.getaddrinfo('www.tongxinmao.com', 80)[0][-1]
-    	# 建立连接
-    	sock.connect(sockaddr)
-    	# 向服务端发送消息
-    	ret=sock.send('GET /News HTTP/1.1\r\nHost: www.tongxinmao.com\r\nAccept-Encoding: deflate\r\nConnection: keep-alive\r\n\r\n')
-    	socket_log.info('send %d bytes' % ret)
-    	#接收服务端消息
-    	data=sock.recv(256)
-    	socket_log.info('recv %s bytes:' % len(data))
-    	socket_log.info(data.decode())
+        # 创建一个socket实例
+        sock = usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)
+        # 解析域名
+        sockaddr=usocket.getaddrinfo('www.tongxinmao.com', 80)[0][-1]
+        # 建立连接
+        sock.connect(sockaddr)
+        # 向服务端发送消息
+        ret=sock.send('GET /News HTTP/1.1\r\nHost: www.tongxinmao.com\r\nAccept-Encoding: deflate\r\nConnection: keep-alive\r\n\r\n')
+        socket_log.info('send %d bytes' % ret)
+        #接收服务端消息
+        data=sock.recv(256)
+        socket_log.info('recv %s bytes:' % len(data))
+        socket_log.info(data.decode())
 
-    	# 关闭连接
-    	sock.close()
+        # 关闭连接
+        sock.close()
     else:
         socket_log.info('Network connection failed! stagecode = {}, subcode = {}'.format(stagecode, subcode))
 ```
@@ -118,7 +115,8 @@ socket.bind(address)
 
 该方法用于套接字绑定指定address，必须尚未绑定。
 
-> **注意**：1.作为服务器时，需要进行绑定，以固定服务器的address。2.作为客户端时，绑定address用来指定套接字进行数据处理（配合usocket.TCP_CUSTOMIZE_PORT使用）。
+> 1.作为服务器时，需要进行绑定，以固定服务器的address。
+2.作为客户端时，绑定address用来指定套接字进行数据处理（配合usocket.TCP_CUSTOMIZE_PORT使用）。
 
 **参数描述**
 
@@ -227,7 +225,7 @@ socket.sendall(bytes)
 ```
 
 该方法用于套接字将所有数据都发送到套接字。与`send()`方法不同的是，此方法将尝试通过依次逐块发送数据来发送所有数据。
-注意：该方法再非阻塞套接字上的行为是不确定的，建议再MicroPython中，使用 `write()` 方法，该方法具有相同的“禁止短写”策略来阻塞套接字，并且将返回在非阻塞套接字上发送的字节数。
+> 该方法再非阻塞套接字上的行为是不确定的，建议再MicroPython中，使用 `write()` 方法，该方法具有相同的“禁止短写”策略来阻塞套接字，并且将返回在非阻塞套接字上发送的字节数。。
 
 **参数描述：**
 
@@ -353,7 +351,8 @@ socket.getsocketsta()
 
 该方法用于获取TCP套接字的状态。
 
-> **注意**：1.BG95平台不支持该API。2.如果调用了 `socket.close()` 方法之后，再调用 `socket.getsocketsta()` 会返回-1，因为此时创建的对象资源等都已经被释放。
+> 1.BG95平台不支持该API。
+2.如果调用了 `socket.close()` 方法之后，再调用 `socket.getsocketsta()` 会返回-1，因为此时创建的对象资源等都已经被释放。
 
 **返回值：** 
 
@@ -374,50 +373,50 @@ socket.getsocketsta()
 
 ## 常量
 
-### usocket.AF_INET
+### `usocket.AF_INET`
 
 地址族，IPV4类型。
 
-### usocket.AF_INET6
+### `usocket.AF_INET6`
 
 地址族，IPV6类型。
 
-### usocket.SOCK_STREAM
+### `usocket.SOCK_STREAM`
 
 socket类型，TCP的流式套接字。
 
-### usocket.SOCK_DGRAM
+### `usocket.SOCK_DGRAM`
 
 socket类型，UDP的数据包套接字。
 
-### usocket.SOCK_RAW
+### `usocket.SOCK_RAW`
 
 socket类型，原始套接字。
 
-### usocket.IPPROTO_TCP
+### `usocket.IPPROTO_TCP`
 
 协议号，TCP协议。
 
-### usocket.IPPROTO_UDP
+### `usocket.IPPROTO_UDP`
 
 协议号，UDP协议。
 
-### usocket.IPPROTO_TCP_SER
+### `usocket.IPPROTO_TCP_SER`
 
 协议号，TCP服务器。
 
-### usocket.TCP_CUSTOMIZE_PORT
+### `usocket.TCP_CUSTOMIZE_PORT`
 
 协议号，TCP客户端自定义address使用。
 
-### usocket.SOL_SOCKET
+### `usocket.SOL_SOCKET`
 
 套接字选项级别。
 
-### usocket.SO_REUSEADDR
+### `usocket.SO_REUSEADDR`
 
 socket功能选项，允许设置端口复用。
 
-### usocket.TCP_KEEPALIVE
+### `usocket.TCP_KEEPALIVE`
 
 socket功能选项，设置TCP保活包间隔时间。

@@ -1,8 +1,5 @@
+# class ubinascii - 二进制与ASCII转换
 
-
-```
-本文阐述了QuecPython的ubinascii模块的用法，描述了ubinascii模块最新版本的特性。
-```
 
 该模块实现了二进制数据与各种ASCII编码之间的转换(双向)。该模块实现相应CPython模块的子集，更多信息请参阅阅CPython文档：[binascii](https://docs.python.org/3.5/library/binascii.html#module-binascii)
 

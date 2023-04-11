@@ -1,12 +1,8 @@
-
-
-```
-本文阐述了QuecPython的uhashlib模块的用法，描述了uhashlib模块最新版本的特性。
-```
+# class uhashlib - 哈希算法
 
 该模块实现二进制数据散列算法。
 
-> 注意：目前仅支持sha256，sha1，MD5。
+> 目前仅支持sha256，sha1，MD5。
 
 **示例：**
 
@@ -65,7 +61,7 @@ class uhashlib.md5(bytes)
 
 ## 方法
 
-### hash_obj.update()
+### `hash_obj.update()`
 
 ```python
 hash_obj.update(bytes)
@@ -77,10 +73,10 @@ hash_obj.update(bytes)
 
 - `bytes` - 需要被加密的bytes类型数据。
 
-### hash_obj.digest()
+### `hash_obj.digest()`
 
 ```python
-hash_obj.digest(bytes)
+hash_obj.digest()
 ```
 
 返回通过哈希传递的所有数据的散列，数据为字节类型。调用此方法后，无法再将更多的数据送入散列。
