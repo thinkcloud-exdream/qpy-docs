@@ -9,7 +9,6 @@ Python 是一个高层次的结合了解释性、编译性、互动性和面向�
 以下两个例子对比了 Python 语言和 C 语言对同一功能的实现方式的区别。可以看出，Python 语法较为简洁，易于掌握，可读性较高。
 
 .. tabset:: 读取并显示键盘输入
-    :id: compare
 
     ## 使用 C 语言
     
@@ -45,7 +44,6 @@ Python 是一个高层次的结合了解释性、编译性、互动性和面向�
     ```
 
 .. tabset:: 简单的 for 循环
-    :id: compare
 
     ## 使用 C 语言
     
@@ -209,7 +207,7 @@ QuecPython 移植自 MicroPython，而 MicroPython 作为一种面向资源有�
 
 #### 功能库差异
 
-- 和传统的电脑端 Python（CPython）开发不同，QuecPython 虽然也内置了时间设置、文件管理等一系列基础的功能库，但其名称和使用方法存在很多区别，并不能完全兼容。例如，用于解析 JSON 文件的 `json` 库，在 QuecPython 中被 `ujson` 库取代，内置的函数（方法）也只有 `dump()` `dumps()` `load()` `loads()` 四种。因此，在电脑端 Python 开发中涉及到库的经验，几乎都无法直接应用于 QuecPython 开发。
+- 和传统的电脑端 Python（CPython）开发不同，QuecPython 虽然也内置了时间设置、文件管理等一系列基础的功能库（标准库），但数量远少于 CPython。这些标准库的名称和使用方法也存在很多区别，并不能完全兼容。例如，用于解析 JSON 文件的 `json` 库，在 QuecPython 中被 `ujson` 库取代，内置的函数（方法）也只有 `dump()` `dumps()` `load()` `loads()` 四种。因此，在电脑端 Python 开发中涉及到库的经验，几乎都无法直接应用于 QuecPython 开发。
 - 除了基础库外，QuecPython 还内置了许多与模块硬件、物联网等相关的功能库。这些库中绝大部分都需要依赖模块底层的功能，因此只能在模块中运行。
 - QuecPython 没有内置 pip 功能，无法实现功能库的快速在线安装，只能手动移植。
 - 电脑端 Python 开发中常用的功能较为复杂的库，如 OpenCV、PyQt、Flask、NumPy、Scrapy 等，都不支持在 QuecPython 环境中直接运行。
