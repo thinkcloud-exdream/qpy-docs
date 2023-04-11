@@ -1,8 +1,8 @@
 # USBNET - USB网卡功能
 
-模块功能:  提供USB网卡功能。
+ 提供USB网卡功能。
 
-> 注意：EC600S/EC600N/EC800N/EC200U/EC600U/EC600M系列支持该功能。
+> EC600S/EC600N/EC800N/EC200U/EC600U/EC600M系列支持该功能。
 
 ## 设置USB网卡工作类型
 
@@ -102,7 +102,7 @@ USBNET.getNat(simid, pid)
 
 获取某一路网卡的NAT使能情况（是否支持ipv6拨号）。
 
-> 注意:（仅在EC200U/EC600U系列支持）
+> 仅在EC200U/EC600U系列支持
 
 **参数描述：**
 
@@ -133,7 +133,7 @@ USBNET.setNat(simid, pid, nat)
 
 NAT设置，设置成功后重启生效（USBNET.set_worktype()接口调用的时候会使对应的nat值变为1，使得该pid无法IPV6拨号，所以在close USBnet后，可以使用该接口关闭NAT，使IPV6功能正常）。
 
-> 注意:仅在EC200U/EC600U系列支持
+> 仅在EC200U/EC600U系列支持
 
 **参数描述：**
 

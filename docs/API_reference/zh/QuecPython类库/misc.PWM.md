@@ -37,7 +37,16 @@ class misc.PWM(PWM.PWMn,PWM.ABOVE_xx, highTime, cycleTime)
 
 <span id="label_pwmmap">**PWM通道与物理引脚的映射关系：**</span>
 
-EC100Y系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号19<br/>PWM1 – 引脚号18<br/>PWM2 – 引脚号23<br/>PWM3 – 引脚号22<br/>EC600SCN/EC600N系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号52<br/>PWM1 – 引脚号53<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69<br />EC800N系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号79<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49<br />EC200U系列，支持PWM0，对应引脚如下：<br />PWM0 – 引脚号135<br />EC600U系列，支持PWM0，对应引脚如下：<br />PWM0 – 引脚号70<br />EC600M系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号57<br/>PWM1 – 引脚号56<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69<br/>EG915U系列，支持PWM0，对应引脚如下：<br/>PWM0 – 引脚号20<br/>EC800M系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号83<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49<br/>EG912N系列，支持PWM0-PWM3，对应引脚如下：<br/>PWM0 – 引脚号21<br/>PWM1 – 引脚号116<br/>PWM2 – 引脚号107<br/>PWM3 – 引脚号92
+| 系列   | 对应引脚                                                     |
+| ------ | ------------------------------------------------------------ |
+| EC600N | PWM0 – 引脚号52<br/>PWM1 – 引脚号53<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69 |
+| EC800N | PWM0 – 引脚号79<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49 |
+| EC200U | PWM0 – 引脚号135                                             |
+| EC600U | PWM0 – 引脚号70                                              |
+| EC600M | PWM0 – 引脚号57<br/>PWM1 – 引脚号56<br/>PWM2 – 引脚号70<br/>PWM3 – 引脚号69 |
+| EG915U | PWM0 – 引脚号20                                              |
+| EC800M | PWM0 – 引脚号83<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49 |
+| EG912N | PWM0 – 引脚号21<br/>PWM1 – 引脚号116<br/>PWM2 – 引脚号107<br/>PWM3 – 引脚号92 |
 
 ## 方法
 
