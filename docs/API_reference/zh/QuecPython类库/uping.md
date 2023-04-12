@@ -1,8 +1,9 @@
-# class uping - 发送ping包
+# uping - 发送ping包
 
 该模块实现了 IPv4 ping 请求功能。
 
-> 注意：1.可能会存在host地址无法建立socket连接异常。2.通过初始化参数中的`COUNT`和`INTERVAL`来确认发Ping包周期。
+>1.可能会存在host地址无法建立socket连接异常。
+>2.通过初始化参数中的`COUNT`和`INTERVAL`来确认发Ping包周期。
 
 **示例：**
 
@@ -29,7 +30,7 @@ result = uping.ping('baidu.com', quiet=True)
 # result(tx=4, rx=4, losses=0, min=76.93899999999999, avg=131.348, max=226.697)
 ```
 
-## 构造函数
+## 发送 ping 请求
 
 ### `uping.ping`
 

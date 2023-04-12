@@ -4,7 +4,8 @@
 该模块解压缩用[DEFLATE算法](https://en.wikipedia.org/wiki/DEFLATE)压缩二进制数据 （通常在zlib库和gzip存档器中使用）。该模块实现相应CPython模块的子集，更多信息请参阅阅CPython文档：[zlib](https://docs.python.org/3.5/library/zlib.html#module-zlib)
 
 
-> 1.压缩尚未实现。2.解压缩前，应检查模块内可使用的空间，确保有足够空间解压文件。
+> 1.压缩尚未实现。
+> 2.解压缩前，应检查模块内可使用的空间，确保有足够空间解压文件。
 
 
 ## 构造函数
