@@ -1,4 +1,4 @@
-# uwebsocket
+# uwebsocket - websocket客户端
 
 模块功能: 提供用于websocket连接使用
 

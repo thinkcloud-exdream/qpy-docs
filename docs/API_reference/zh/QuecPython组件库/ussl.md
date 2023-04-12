@@ -1,8 +1,8 @@
-# SSL
+# ussl - SSL加密通信
 
-注意 BC25PA平台不支持模块功能。
+ussl模块实现了TLS/SSL加密通信功能。
 
-
+> BC25PA平台不支持ussl模块。
 
 ## ssl加密算法套件支持
 

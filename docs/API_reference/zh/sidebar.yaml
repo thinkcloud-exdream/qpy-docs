@@ -170,11 +170,11 @@ items:
         file: QuecPython组件库/system.md
     -   label: ql_fs - 高级文件操作
         file: QuecPython组件库/ql_fs.md
-    -   label: Queue - 普通队列
+    -   label: Queue - 消息队列
         file: QuecPython组件库/Queue.md
     -   label: sys_bus - 会话总线
         file: QuecPython组件库/sys_bus.md
-    -   label: uwebsocket - websocket服务
+    -   label: uwebsocket - websocket客户端
         file: QuecPython组件库/uwebsocket.md
     -   label: ussl - SSL算法
         file: QuecPython组件库/ussl.md
