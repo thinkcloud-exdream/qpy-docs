@@ -107,9 +107,9 @@ items:
         -   label: ADC - 模数转换
             file: QuecPython类库/misc.ADC.md
         -   label: USB - USB插拔检测
-            file: QuecPython类库/misc.USBNET.md
-        -   label: USBNET - USB网卡
             file: QuecPython类库/misc.USB.md
+        -   label: USBNET - USB网卡
+            file: QuecPython类库/misc.USBNET.md
     -   label: modem - 设备相关
         file: QuecPython类库/modem.md
     -   label: machine - 硬件相关功能
