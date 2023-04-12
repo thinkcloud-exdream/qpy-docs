@@ -9,9 +9,11 @@ items:
   - label: 开发环境和工具相关
     file: tools/README.md
     items:
-      - label: QPYcom
-        file: tools/QPYcom.md
-      - label: Qflash
+      - label: 开发板常见问题
+        file: tools/evb.md
+      - label: QPYcom 常见问题
+        file: tools/qpycom.md
+      - label: QFlash 常见问题
         file: tools/qflash.md
   - label: 软件相关
     file: software/README.md
