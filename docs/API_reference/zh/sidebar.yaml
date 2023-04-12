@@ -53,6 +53,16 @@ items:
         file: QuecPython类库/cellLocator.md
     -   label: wifilocator - WIFI定位
         file: QuecPython类库/wifilocator.md
+    -   label: ussl - SSL算法
+        file: QuecPython类库/ussl.md
+    -   label: request - HTTP客户端
+        file: QuecPython类库/request.md
+    -   label: umqtt - MQTT客户端
+        file: QuecPython类库/umqtt.md
+    -   label: uwebsocket - websocket客户端
+        file: QuecPython类库/uwebsocket.md
+    -   label: ntptime - 网络时间同步
+        file: QuecPython类库/ntptime.md
     -   label: fota - 固件升级相关功能
         file: QuecPython类库/fota.md
     -   label: app_fota - 用户文件升级相关功能
@@ -151,6 +161,14 @@ items:
         file: QuecPython类库/ble.md
     -   label: bt - 经典蓝牙相关功能
         file: QuecPython类库/bt.md
+    -   label: log - 日志输出
+        file: QuecPython类库/log.md
+    -   label: system - 环境配置
+        file: QuecPython类库/system.md
+    -   label: ql_fs - 高级文件操作
+        file: QuecPython类库/ql_fs.md
+    -   label: Queue - 消息队列
+        file: QuecPython类库/Queue.md
 -   label: QuecPython组件库
     file: QuecPython组件库/README.md
     items:
@@ -158,23 +176,5 @@ items:
         file: QuecPython组件库/aLiYun.md
     -   label: TenCentYun- 腾讯云服务
         file: QuecPython组件库/TenCentYun.md
-    -   label: request - HTTP相关服务
-        file: QuecPython组件库/request.md
-    -   label: log - 日志
-        file: QuecPython组件库/log.md
-    -   label: umqtt - MQTT
-        file: QuecPython组件库/umqtt.md
-    -   label: ntptime - 网络时间同步
-        file: QuecPython组件库/ntptime.md
-    -   label: system - 环境配置
-        file: QuecPython组件库/system.md
-    -   label: ql_fs - 高级文件操作
-        file: QuecPython组件库/ql_fs.md
-    -   label: Queue - 消息队列
-        file: QuecPython组件库/Queue.md
     -   label: sys_bus - 会话总线
         file: QuecPython组件库/sys_bus.md
-    -   label: uwebsocket - websocket客户端
-        file: QuecPython组件库/uwebsocket.md
-    -   label: ussl - SSL算法
-        file: QuecPython组件库/ussl.md

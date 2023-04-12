@@ -1,6 +1,6 @@
-# request- HTTP 客户端库
+# request - HTTP客户端
 
-`request`是一个 HTTP 客户端库，用于向服务器发起 HTTP 请求，它可以被用于从一个服务器获取数据，或者将数据提交到服务器上，支持多种请求方法（如 GET、POST、PUT等）。
+`request`模块用于向服务器发起 HTTP 请求，它可以被用于从一个服务器获取数据，或者将数据提交到服务器上，支持多种请求方法（如 GET、POST、PUT等）。
 
 ## HTTP请求
 

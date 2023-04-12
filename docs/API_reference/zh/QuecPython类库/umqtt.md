@@ -1,4 +1,4 @@
-# umqtt - MQTT
+# umqtt - MQTT客户端
 
 模块功能:提供创建MQTT客户端发布订阅功能。
 
@@ -10,12 +10,12 @@ QoS1 – 至少一次，是中间级别；发送者保证消息至少送达到�
 QoS2 – 有且仅有一次，是最高级别；保证消息送达且仅送达一次。
 ```
 
-## 初始化MQTT
+## 构造函数
 
-### `MQTTClient`
+### `umqtt.MQTTClient`
 
 ```python
-MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={},reconn=True,version=4)
+class umqtt.MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={},reconn=True,version=4)
 ```
 
 构建mqtt连接对象。

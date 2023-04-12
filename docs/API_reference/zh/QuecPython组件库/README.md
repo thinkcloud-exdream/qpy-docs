@@ -8,15 +8,6 @@
 
 - [aLiYun - 阿里云服务](./aLiYun.md)
 - [TenCentYun - 腾讯云服务](./TenCentYun.md)
-- [request - HTTP请求](./request.md)
-- [log - 日志模块](./log.md)
-- [umqtt - MQTT模块](./umqtt.md)
-- [ntptime - 网络时间同步](./ussl.md)
-- [system - 环境配置](./system.md)
-- [ql_fs - 文件存储](./ql_fs.md)
-- [Queue - 队列](./Queue.md)
 - [sys_bus - 会话总线](./sys_bus.md)
-- [uwebsocket - websocket](./uwebsocket.md)
-- [ussl - ussl模块](./ussl.md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonThirdlib进行补充-->

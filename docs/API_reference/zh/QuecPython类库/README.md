@@ -15,6 +15,11 @@
 - [net - 网络相关功能](./net.md)
 - [cellLocator - 基站定位](./cellLocator.md)
 - [wifilocator - WiFi定位](./wifilocator.md)
+- [ussl - SSL加密通信](./ussl.md)
+- [request - HTTP客户端](./request.md)
+- [umqtt - MQTT客户端](./umqtt.md)
+- [uwebsocket - websocket客户端](./uwebsocket.md)
+- [ntptime - 网络时间同步](./ntptime.md)
 - [fota - 固件升级相关功能](./fota.md)
 - [app_fota - 用户文件升级相关功能](./app_fota.md)
 - [checkNet - 网络就绪检测](./checkNet.md)
@@ -34,5 +39,9 @@
 - [securedata - 安全数据区相关功能](./securedata.md)
 - [ble- 低功耗蓝牙相关功能](./ble.md)
 - [bt- 经典蓝牙相关功能](./bt.md)
+- [log -日志输出](./log.md)
+- [system - 环境配置](./system.md)
+- [ql_fs - 高级文件操作](./ql_fs.md)
+- [Queue - 消息队列](./Queue.md)
 
 <!--参考https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib进行补充-->
