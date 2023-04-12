@@ -17,8 +17,8 @@
 
 在掌握上述`搜索问题技巧`后，可以利用 ESP-FAQ 已经做好的分类来提取想搜索问题里的关键词并搜索。以下是此网站的框架：
 
-- [开发环境与工具](../开发环境与工具/README.md)
-- [应用方案](../应用方案/README.md)
-- [软件平台](../软件平台/README.md)
-- [硬件相关](../硬件相关/README.md)
-- [测试校验](../测试校验/README.md)
+- [开发环境与工具相关](../tools/README.md)
+- [软件相关](../software/README.md)
+- [硬件功能相关](../hardware/README.md)
+- [网络功能相关](../network/README.md)
+- [量产和商业应用](../mp/README.md)
