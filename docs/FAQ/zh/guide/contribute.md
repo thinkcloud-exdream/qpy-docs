@@ -1,44 +1,44 @@
 # 贡献指南
 
-我们欢迎对 QuecPython-FAQ 项目做出贡献，如修复错误，添加文档等。我们通过[Github Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)接受贡献。
+我们欢迎对 QuecPython-FAQ 项目做出贡献，如修复错误，添加文档等。我们通过 [Github Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 接受贡献。
 
 ## 提交流程
 
-这一节，是对`新增问题`和`修改问题`两个操作的流程简要介绍，流程中涉及的环节具体要求，请点击链接查看。
+这一节，是对 `新增问题` 和 `修改问题` 两个操作的流程简要介绍，流程中涉及的环节具体要求，请点击链接查看。
 
-针对 git 相关操作不做具体的介绍，可以查看[Git 相关教程](https://git-scm.com/book/zh/v2)。
+针对 git 相关操作不做具体的介绍，可以查看 [Git 相关教程](https://git-scm.com/book/zh/v2)。
 
 ### 新增问题
 
-1. 在本地[新建分支](#new_branch)，遵循[分支命名规范](#branch_name_rules)；
+1. 在本地 [新建分支](#新建分支)，遵循 [分支命名规范](#分支命名规范)；
 
 2. 在本地或者 web IDE 找到与问题类型对应的 `*.md` 文件，根据模板格式新增问题；
 
-3. 编辑完成后，打开预览界面查看显示结果是否符合预期，可以使用[本地编译环境](#local_compile_env)编译文档，并检查生成网页是否满足；
+3. 编辑完成后，打开预览界面查看显示结果是否符合预期，可以使用 [本地编译环境](#本地编译环境) 编译文档，并检查生成网页是否满足；
 
-4. 遵循[提交信息规范](#msg_commit_rules)，推送到 github 后并提交 Pull Requests；
+4. 遵循 [提交信息规范](#提交信息规范)，推送到 github 后并提交 Pull Requests；
 
-5. 若满足上述预期，则[提交合并请求]；
+5. 若满足上述预期，则 [提交合并请求](#提交合并请求)；
 
 6. 待文档所有讨论解决并成功提交 PR，即完成新增问题的流程。
 
 ### 修改问题
 
-1. 在本地[新建分支](#new_branch)，遵循[分支命名规范](#branch_name_rules)；
+1. 在本地 [新建分支](#新建分支)，遵循 [分支命名规范](#分支命名规范)；
 
 2. 在本地或者 web IDE 找到与问题类型对应的 `*.rst` 文件，修改期望修改的问题；
 
-3. 编辑完成后，打开预览界面查看显示结果是否符合预期，可以使用[本地编译环境](#local_compile_env)编译文档，并检查生成网页是否满足；
+3. 编辑完成后，打开预览界面查看显示结果是否符合预期，可以使用 [本地编译环境](#本地编译环境) 编译文档，并检查生成网页是否满足；
 
-4. 遵循[提交信息规范](#msg_commit_rules)，推送到 github 后并提交 Pull Requests；
+4. 遵循 [提交信息规范](#提交信息规范)，推送到 github 后并提交 Pull Requests；
 
-5. 若满足上述预期，则[提交合并请求]；
+5. 若满足上述预期，则 [提交合并请求](#提交合并请求)；
 
 6. 待文档所有讨论解决并成功提交 PR，即完成修改的流程
 
-## <a id="new_branch"></a>新建分支
+## 新建分支
 
-新建分支都基于**主分支** 进行；操作时，请留意当前所在分支是否为你期望合入的分支。
+新建分支都基于 **主分支** 进行；操作时，请留意当前所在分支是否为你期望合入的分支。
 
 操作示例:
 
@@ -47,12 +47,11 @@ git status # 查看当前分支
 git checkout -b add/API-reference_machine_pin # 用于新增问题 "API-reference_machine pin"
 ```
 
-## <a id="branch_name_rules"></a>分支命名规范
+## 分支命名规范
 
 - 新增问题：`add/API-reference_{q&a}`，`{q&a}` 使用文件名的英语简要，例如新增 `API-reference_machine pin` 问题，分支名：`add/API-reference_machine_pin`。
 
 - 修改问题：`mod/API-reference_{q&a}`，`{q&a}` 使用文件名的英语简要，例如修改 `API-reference_machine pin` 问题，分支名：`mod/API-reference_machine_pin`。
-
 
 ## 问题编辑规范
 
@@ -67,8 +66,8 @@ git checkout -b add/API-reference_machine_pin # 用于新增问题 "API-referenc
 **问题格式：**
 
 - 须简洁清晰地描述问题，如：
-    - QPYcom烧录固件失败。**（问题不清晰）**
-    - QPYcom烧录固件失败，如何解决？**（清晰）**
+  - QPYcom 烧录固件失败。**（问题不清晰）**
+  - QPYcom 烧录固件失败，如何解决？**（清晰）**
 
 - 问题不宜过长。如描述太多，可精炼出主要的问题作为标题，并在回答的正文中详细描述问题背景及细节。
 
@@ -80,9 +79,9 @@ git checkout -b add/API-reference_machine_pin # 用于新增问题 "API-referenc
 
 - 需要列举多个条目或排列顺序时，请使用列表：
 
-    - 数字列表：有一定顺序（如操作步骤），或后文中需引用列表中的某个条目。
+  - 数字列表：有一定顺序（如操作步骤），或后文中需引用列表中的某个条目。
 
-    - 项目符号列表：无特定顺序。
+  - 项目符号列表：无特定顺序。
 
 - 列表前需有介绍性文字，说明下述列表的含义或目的，且以冒号“：”结尾。
 
@@ -92,9 +91,9 @@ git checkout -b add/API-reference_machine_pin # 用于新增问题 "API-referenc
 
 - 如某项条目后需跟注释或说明性文字，应缩进该注释，使其成为子条目。
 
-## <a id="local_compile_env"></a>本地编译环境
+## 本地编译环境
 
-- 测试验证环境使用 Windows10及以上版本、Ubuntu 或 Debian 系统，配置 python 环境为 `3.6`及以上版本。
+- 测试验证环境使用 Windows10 及以上版本、Ubuntu 或 Debian 系统，配置 python 环境为 `3.6` 及以上版本。
 - 推荐使用 python 虚拟环境，或者 docker 环境。
 
 ```bash
@@ -127,11 +126,11 @@ teedoc install
 ./build.sh -s
 ```
 
-## <a id="msg_commit_rules"></a>提交信息规范
+## 提交信息规范
 
 在分支上添加提交信息，以说明添加/修改/删除问题功能。每个提交都有一条消息，例如：
 
-```
+```text
 API-reference_machine_pin: add 'value' method for machine.Pin class.
 
 1. add 'value' method for machine.Pin class.
