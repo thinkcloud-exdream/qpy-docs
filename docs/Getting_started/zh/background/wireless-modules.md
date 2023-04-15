@@ -25,10 +25,10 @@ QuecPython 是运行在无线通信模块上的开发框架。对于首次接触
     显然，互相喊叫是最容易想到的答案。但当两人的距离远到一定程度时，靠声音传播信息显然已不太可行，通过视觉信号进行交流是更好的方式。因此，两人可以使用彩色旗帜或火把传递信息。不过，这一方法还有一个前提：双方都需要建立一种共识，了解并遵守不同的旗帜或者火光所代表的含义。这样，两人就可以在相距较远的山头实现低效但相对可靠的通信了。
 
     <center>
-        <img src="../media/background/wireless-modules/help-signal-shown-flag.png" style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); zoom:60%;">
+        <img src="../media/background/wireless-modules/flag-communication.png" style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); zoom:60%;">
         <br>
         <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">
-            使用旗语传递求救信号
+            使用旗语互相交流
         </div>
     </center>
 
