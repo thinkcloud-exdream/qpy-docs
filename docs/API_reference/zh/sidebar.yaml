@@ -120,6 +120,8 @@ items:
             file: QuecPython类库/misc.USB.md
         -   label: USBNET - USB网卡
             file: QuecPython类库/misc.USBNET.md
+    -   label: osTimer - os定时器
+        file: QuecPython类库/osTimer.md
     -   label: modem - 设备相关
         file: QuecPython类库/modem.md
     -   label: machine - 硬件相关功能
