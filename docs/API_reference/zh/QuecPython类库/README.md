@@ -26,6 +26,7 @@
 - [wifiScan - WiFi扫描](./wifiScan.md)
 - [machine - 硬件相关功能](./machine.md)
 - [misc - 其他](./misc.md)
+- [osTimer - os定时器](./osTimer.md)
 - [qrcode - 二维码显示](./qrcode.md)
 - [ethernet - 以太网相关功能](./ethernet.md)
 - [camera - 摄像头](./camera.md)
