@@ -36,7 +36,7 @@
 log.basicConfig(level)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `level`-日志等级
 
@@ -44,7 +44,7 @@ log.basicConfig(level)
 
 无
 
-** 示例：**
+**示例：**
 
 ```python
 import log
@@ -59,7 +59,7 @@ log.basicConfig(level=log.INFO)
 log.set_output(out)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `out` - 日志输出位置，输出到指定串口或者交互口，默认不设置为交互口输出，类型参考示例
 
@@ -67,7 +67,7 @@ log.set_output(out)
 
 无
 
-** 示例：**
+**示例：**
 
 ```python
 import log
@@ -99,11 +99,11 @@ Testlog.info("this is a Test log") # 会输出到交互口
 Testlog = log.getLogger(name)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `name` - 当前log对象的主题信息，字符串类型
 
-** 返回值描述：**
+**返回值描述：**
 
 *  log操作句柄，也可理解成log对象，拥有log输出的方法。
 
@@ -115,7 +115,7 @@ Testlog = log.getLogger(name)
 Testlog.debug(msg)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `msg` - 日志内容，字符串类型
 
@@ -127,7 +127,7 @@ Testlog.debug(msg)
 Testlog.info(msg)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `msg` - 日志内容，字符串类型
 
@@ -139,7 +139,7 @@ Testlog.info(msg)
 Testlog.warning(msg)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `msg` - 日志内容，字符串类型
 
@@ -151,7 +151,7 @@ Testlog.warning(msg)
 Testlog.error(msg)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `msg` - 日志内容，字符串类型
 
@@ -163,7 +163,7 @@ Testlog.error(msg)
 Testlog.critical(msg)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 * `msg` - 日志内容，字符串类型
 

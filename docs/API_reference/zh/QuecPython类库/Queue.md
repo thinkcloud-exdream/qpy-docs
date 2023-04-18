@@ -11,11 +11,11 @@
 class queue.Queue(maxsize=100)
 ```
 
-** 参数描述：**
+**参数描述：**
 
 `maxsize`-队列最大长度,   int类型,  默认长度是100
 
-** 示例：**
+**示例：**
 
 ```python
 >>> from queue import Queue
@@ -34,10 +34,10 @@ class queue.Queue(maxsize=100)
 Queue.put(data)
 ```
 
-** 参数描述：**
+**参数描述：**
 * `data`-数据或信号,  任意类型,   插入的数据, 可以为空不传, 不传则可认识是放松了一个空信号
 
-** 返回值描述：**
+**返回值描述：**
 
 True 为成功, False 为失败
 
@@ -53,7 +53,7 @@ True 为成功, False 为失败
 Queue.get()
 ```
 
-** 返回值描述：**
+**返回值描述：**
 
 为队列中的数据, 如果是空信号则会获取为None
 
@@ -81,13 +81,13 @@ True则为空, False则不为空
 Queue.size()
 ```
 
-** 返回值描述：**
+**返回值描述：**
 
 int类型的当前数据长度
 
 
 
-** 示例：**
+**示例：**
 
 ```python
 import _thread

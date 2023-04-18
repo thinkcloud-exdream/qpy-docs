@@ -12,7 +12,7 @@ aliyun = aLiYun(productKey, productSecret, DeviceName, DeviceSecret, MqttServer)
 
 模块功能：阿里云物联网套件客户端功能,目前的产品节点类型仅支持“设备”，设备认证方式支持“一机一密和“一型一密”。
 
-注意：BC25PA平台不支持模块功能。
+注意：BC25PA系列不支持模块功能。
 
 * 参数
 

@@ -14,7 +14,7 @@ TXyun(productID, devicename, devicePsk, ProductSecret)
 
 配置腾讯云物联网套件的产品信息和设备信息。
 
-** 参数描述：**
+**参数描述：**
 
 
 * `productID` -  产品标识（唯一ID） ，字符串类型
@@ -38,7 +38,7 @@ TXyun.setMqtt(clean_session, keepAlive=300,reconn=True)
 
 设置MQTT数据通道的参数
 
-** 参数描述：**
+**参数描述：**
 
 * `clean_session` -  产品标识（唯一ID），布尔值类型，如果为True，<br />那么代理将在其断开连接时删除有关此客户端的所有信息。 如果为False，则客户端是持久客户端，当客户端断开连接时，订阅信息和排队消息将被保留。默认为False
 * `keepAlive` -  通信之间允许的最长时间段（以秒为单位），整型类型，默认为300，范围（60-1000），建议300以上 
@@ -56,7 +56,7 @@ TXyun.setCallback(callback)
 
 注册回调函数。
 
-** 参数描述：**
+**参数描述：**
 
 * `callback` -  设置消息回调函数，function类型，当服务端响应时触发该方法
 
@@ -73,7 +73,7 @@ TXyun.error_register_cb(callback)
 
 设置异常回调函数，腾讯云以及umqtt内部线程异常时通过回调返回error信息，该方法在设置不使用内部重连的情况下才可触发回调
 
-** 参数描述：**
+**参数描述：**
 
 * `callback` -  设置异常回调函数，function类型
 
@@ -105,7 +105,7 @@ TXyun.subscribe(topic,qos)
 
 订阅mqtt主题。
 
-** 参数描述：**
+**参数描述：**
 
 * `topic` -  mqtt topic主题，字符串类型
 * `qos` -  MQTT消息服务质量（默认0，可选择0或1），整型类型 <br />0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker
@@ -123,7 +123,7 @@ TXyun.publish(topic,msg, qos=0)
 
 发布消息。
 
-** 参数描述：**
+**参数描述：**
 
 * `topic` -  mqtt topic主题，字符串类型
 * `msg` -  需要发送的数据，字符串类型
@@ -144,7 +144,7 @@ TXyun.start()
 
 运行连接。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -160,7 +160,7 @@ TXyun.disconnect()
 
 关闭连接。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -176,7 +176,7 @@ TXyun.ping()
 
 发送心跳包
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -194,7 +194,7 @@ TXyun.getTXyunsta()
 
 注意：BG95平台不支持该功能。
 
-** 参数描述：**
+**参数描述：**
 
 无
 

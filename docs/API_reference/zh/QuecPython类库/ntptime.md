@@ -23,7 +23,7 @@ ntptime.sethost(host)
 
 设置ntp服务器。
 
-** 参数描述：**
+**参数描述：**
 
 * `host` -  ntp服务器地址，字符串类型
 
@@ -41,7 +41,7 @@ ntptime.settime(timezone=0)
 
 同步ntp时间。
 
-** 参数描述：**
+**参数描述：**
 
 * `timezone` -  时区设置，默认为0, 范围 (-12~12)，int类型
 

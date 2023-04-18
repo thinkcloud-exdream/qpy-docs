@@ -94,7 +94,7 @@ MQTTClient.set_last_will(topic,msg,retain=False,qos=0)
 
 设置要发送给服务器的遗嘱，客户端没有调用disconnect()异常断开，则发送通知到客户端。
 
-** 参数描述：**
+**参数描述：**
 
 * `topic` -  mqtt 遗嘱主题，字符串类型
 * `msg` -  遗嘱的内容，字符串类型
@@ -116,7 +116,7 @@ MQTTClient.connect(clean_session=True)
 
 与服务器建立连接，连接失败会导致MQTTException异常。
 
-** 参数描述：**
+**参数描述：**
 
 * `clean_session` -  布尔值类型，可选参数，一个决定客户端类型的布尔值。 如果为True，那么代理将在其断开连接时删除有关此客户端的所有信息。 如果为False，则客户端是持久客户端，当客户端断开连接时，订阅信息和排队消息将被保留。默认为False
 
@@ -132,7 +132,7 @@ MQTTClient.disconnect()
 
 与服务器断开连接。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -150,7 +150,7 @@ MQTTClient.close()
 
 注意：该方法仅用于在自己实现重连时使用，具体请参照mqtt重连示例代码，正常关闭mqtt连接请使用disconnect。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -165,7 +165,7 @@ MQTTClient.ping()
 
 当keepalive不为0且在时限内没有通讯活动，会主动向服务器发送ping包,检测保持连通性，keepalive为0则不开启。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -183,7 +183,7 @@ MQTTClient.publish(topic,msg, retain=False, qos=0)
 
 发布消息。
 
-** 参数描述：**
+**参数描述：**
 
 * `topic` -  mqtt 消息主题，字符串类型
 * `msg` -  需要发送的数据，字符串类型
@@ -203,7 +203,7 @@ MQTTClient.subscribe(topic,qos)
 
 订阅mqtt主题。
 
-** 参数描述：**
+**参数描述：**
 
 * `topic` -  mqtt topic主题，字符串类型
 * `qos` -  MQTT消息服务质量（默认0，可选择0或1），整型类型 <br />0：发送者只发送一次消息，不进行重试  1：发送者最少发送一次消息，确保消息到达Broker
@@ -220,7 +220,7 @@ MQTTClient.check_msg()
 
 检查服务器是否有待处理消息。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -237,7 +237,7 @@ MQTTClient.wait_msg()
 
 阻塞等待服务器消息响应。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
@@ -258,7 +258,7 @@ MQTTClient.get_mqttsta()
 
 PS：如果用户调用了 disconnect() 方法之后，再调用 MQTTClient.get_mqttsta() 会返回-1，因为此时创建的对象资源等都已经被释放。
 
-** 参数描述：**
+**参数描述：**
 
 无
 
