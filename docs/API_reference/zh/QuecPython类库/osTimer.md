@@ -8,15 +8,13 @@
 import osTimer
 
 def test_cb(arg):
-    print("Expired!!"")
+    print("osTimer Expired!!")
 # 创建os定时器
 timer = osTimer()
 # 启动定时器，参数依次为时间、是否循环、回调函数
 timer.start(10000,1,test_cb)
 # 停止定时器
 timer.stop()
-# 删除定时器
-timer.delete_timer(timer)
 ```
 
 
@@ -58,23 +56,6 @@ int类型，0为成功，其余为失败
 osTimer.stop()
 ```
 停止定时器
-
-**返回值描述**
-
-int类型，0为成功，其余为失败
-
-## 删除定时器
-
-### `osTimer.delete_timer`
-
-```python
-osTimer.delete_timer(timer_obj)
-```
-删除定时器
-
-**参数描述**                              
-
-* `timer_obj`，osTimer对象
 
 **返回值描述**
 
