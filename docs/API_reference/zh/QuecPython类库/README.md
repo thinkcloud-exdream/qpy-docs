@@ -33,6 +33,7 @@
 - [audio - 音频播放](./audio.md)
 - [WLAN - 无线局域网相关功能](./WLAN.md)
 - [uping - 发送ping包](./uping.md)
+- [ure - 正则表达式](./ure.md)
 - [pm - 低功耗相关功能](./pm.md)
 - [modem - 设备相关功能](./modem.md)
 - [quecgnss - 内置GNSS相关功能](./quecgnss.md)
