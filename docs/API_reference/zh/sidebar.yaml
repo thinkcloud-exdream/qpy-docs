@@ -120,6 +120,8 @@ items:
             file: QuecPython类库/misc.USB.md
         -   label: USBNET - USB网卡
             file: QuecPython类库/misc.USBNET.md
+    -   label: osTimer - os定时器
+        file: QuecPython类库/osTimer.md
     -   label: modem - 设备相关
         file: QuecPython类库/modem.md
     -   label: machine - 硬件相关功能
@@ -155,6 +157,10 @@ items:
         file: QuecPython类库/gnss.md
     -   label: quecgnss - 内置GNSS
         file: QuecPython类库/quecgnss.md
+    -   label: uping - 发送ping包
+        file: QuecPython类库/uping.md
+    -   label: ure - 正则表达式
+        file: QuecPython类库/ure.md
     -   label: securedata - 安全数据区
         file: QuecPython类库/securedata.md
     -   label: ble - 低功耗蓝牙相关功能
