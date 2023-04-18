@@ -10,8 +10,9 @@
 ```python
 ntptime.host
 ```
+**返回值描述：**
 
-返回当前的ntp服务器，默认为"ntp.aliyun.com"。
+* 返回当前的ntp服务器，默认为"ntp.aliyun.com"。
 
 
 ### `ntptime.sethost`
@@ -22,35 +23,36 @@ ntptime.sethost(host)
 
 设置ntp服务器。
 
-**参数描述：**
+** 参数描述：**
 
-- `host` - ntp服务器地址，字符串类型。
+* `host` -  ntp服务器地址，字符串类型
+
 
 **返回值描述：**
 
-成功返回整型值0，失败返回整型值-1。
+* 成功返回整型值0，失败返回整型值-1。
 
 
 ### `ntptime.settime`
 
 ```python
-ntptime.settime(timezone=0, use_rhost=1, timeout=10)
+ntptime.settime(timezone=0)
 ```
 
 同步ntp时间。
 
-**参数描述：**
+** 参数描述：**
 
-- `timezone` - 可选参数，同步时间时区配置。整型，默认为0，0时区。范围：-12 - 12（-数为西时区，正数为东时区）。
-- `use_rhost` - 可选参数，默认或设置的ntp服务器对时失败时，是否使用备用ntp服务器继续尝试对时，整型，默认为1，使用备用ntp服务器继续尝试对时，设为0时，仅使用默认或设置的ntp服务器对时。
-- `timeout` - 可选参数，网络请求超时时间，整型，单位:s, 默认10s。
+* `timezone` -  时区设置，默认为0, 范围 (-12~12)，int类型
+
 
 **返回值描述：**
 
-成功返回整型值0，失败返回整型值-1。
+* 成功返回整型值0，失败返回整型值-1。
 
 
-**ntptime使用示例**
+
+**示例：**
 
 ```python
 import ntptime

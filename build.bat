@@ -5,8 +5,8 @@ set opt=%1
 set ret=0
 set project_root=%CD%
 
-set css_dest_dir=%project_root%\out\static\css\theme_default
-set js_dest_dir=%project_root%\out\static\js\theme_default
+set css_dest_dir=%project_root%\out\doc\static\css\theme_default
+set js_dest_dir=%project_root%\out\doc\static\js\theme_default
 set css_src_dir=%project_root%\static\css\theme_default
 set js_src_dir=%project_root%\static\js\theme_default
 
@@ -23,9 +23,9 @@ if not exist %css_src_dir% (
 
 
 if /i "%opt%"=="-s" (
-	echo 本地预览地址: http://127.0.0.1:8000/
+	echo 本地预览地址: http://127.0.0.1:8000/doc/
 	echo 退出预览模式: Ctrl + C
-	call python.exe -m http.server 8000 -d out/
+	call python.exe -m http.server 8000 -d out/doc/
 ) else (
 	echo 编译完成,输出文件目录: out\
 )

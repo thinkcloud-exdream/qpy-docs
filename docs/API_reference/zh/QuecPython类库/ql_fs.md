@@ -18,7 +18,7 @@ ql_fs.path_exists(file_path)
 
 **参数描述：**
 
-`file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
+* `file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
 
 **返回值描述：**
 
@@ -46,7 +46,7 @@ ql_fs.path_dirname(file_path)
 
 **参数描述：**
 
-`file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
+* `file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
 
 **返回值描述：**
 
@@ -77,7 +77,7 @@ ql_fs.mkdirs(dir_path)
 
 **参数描述：**
 
-`dir_path`-文件路径, string类型, 所要创建的文件夹绝对路径 
+* `dir_path`-文件路径, string类型, 所要创建的文件夹绝对路径 
 
 **示例:**
 
@@ -100,7 +100,7 @@ ql_fs.rmdirs(dir_path)
 
 **参数描述：**
 
-`dir_path`-文件路径, string类型, 所要创建的文件夹绝对路径 
+* `dir_path`-文件路径, string类型, 所要创建的文件夹绝对路径 
 
 **示例:**
 
@@ -122,7 +122,7 @@ ql_fs.path_getsize(file_path)
 
 **参数:**
 
-`file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
+* `file_path`-文件路径, string类型, 文件或文件夹的绝对路径 
 
 **返回值**
 
@@ -150,9 +150,9 @@ ql_fs.touch(file, data)
 
 **参数描述：**
 
-`file`-文件路径, string类型, 文件或文件夹的绝对路径 
+* `file`-文件路径, string类型, 文件或文件夹的绝对路径 
 
- `data`-数据, dict类型, 所要写入的数据,目前只支持json文件
+* `data`-数据, dict类型, 所要写入的数据,目前只支持json文件
 
 **返回值描述：**
 
@@ -180,7 +180,7 @@ json文件类型的直接读取json文件并返回, 非json文件类型返回为
 
 **参数描述：**
 
-`file`-文件路径, string类型, 文件或文件夹的绝对路径 
+* `file`-文件路径, string类型, 文件或文件夹的绝对路径 
 
 **返回值描述：**
 
@@ -209,14 +209,14 @@ ql_fs.file_copy(dst, src)
 
 **参数描述：**
 
-`dst`-目标文件,  string类型,   目标路径路径
-`src`-源文件,  string类型, 源文件路径
+* `dst`-目标文件,  string类型,   目标路径路径
+*`src`-源文件,  string类型, 源文件路径
 
 **返回值描述：**
 
 True代表拷贝成功
 
-**示例**：
+**示例：**：
 
 ```python
 >>> import ql_fs
