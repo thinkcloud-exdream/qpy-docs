@@ -25,7 +25,7 @@ if not exist %css_src_dir% (
 if /i "%opt%"=="-s" (
 	echo 本地预览地址: http://127.0.0.1:8000/doc/
 	echo 退出预览模式: Ctrl + C
-	call python.exe -m http.server 8000 -d out/doc/
+	call python.exe -m http.server 8000 -d out/
 ) else (
 	echo 编译完成,输出文件目录: out\
 )

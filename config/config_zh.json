@@ -1,6 +1,5 @@
 {
-    "class": "language_zh",
-    "locale": "zh",
+    "locale": "zh_CN",
     "navbar": {
         "title": "QuecPython",
         "logo": {
@@ -9,60 +8,44 @@
         },
         "home_url": "/",
         "items": [
-             {
-                "url": "/Quick_start/zh/index.html",
-                "label": "文档简介",
-                "position": "left"
-            },
-			{
-                "url": "https://python.quectel.com/download",
-                "label": "官网下载",
-                "position": "left"
-            },
-			{
-                "url": "/API_reference/zh/index.html",
-                "label": "&nbsp;&nbsp;&nbsp;&nbsp;wiki&nbsp;&nbsp;&nbsp;&nbsp;",
+            {
+                "url": "/",
+                "label": "首页",
                 "position": "left"
             },
             {
-                "label": "&nbsp;&nbsp;&nbsp;&nbsp;文档&nbsp;&nbsp;&nbsp;&nbsp;",
+                "url": "/develop/zh/",
+                "label": "官网",
+                "position": "right"
+            },
+			{
+                "label": "文档",
                 "position": "left",
+				"type": "list",
                 "items": [
                     {
-                        "url": "/Quecpython_intro/zh/index.html",
-                        "label": "产品介绍"
+                        "url": "/API_reference/zh/index.html",
+                        "label": "API参考手册"
                     },
-                    {
-                        "url": "/Quick_start/zh/index.html",
+					{
+                        "url": "/Getting_started/zh/index.html",
                         "label": "快速开始"
                     },
                     {
-                        "url": "/sbs/zh/index.html",
-                        "label": "基础教程"
+                        "url": "/Application_guide/zh/index.html",
+                        "label": "开发指南"
                     },
-                    {
-                        "url": "/Advanced_development/zh/index.html",
-                        "label": "进阶开发"
-                    },
-                    {
-                        "url": "/Product_case/zh/index.html",
-                        "label": "产品案例"
-                    },
+                    
                     {
                         "url": "/FAQ/zh/index.html",
-                        "label": "常见问题"
+                        "label": "FAQ"
                     }
                 ]
-            },
-            {
-                "label": "Git",
-                "position": "right",
-                "url": "https://gitee.com/quecpython/Community-document"
-            }
+            }   
         ]
     },
-    "footer": {
-        "top": [
+	"footer":{
+        "top":[
             {
                 "label": "链接",
                 "items": [
@@ -72,9 +55,8 @@
                         "target": "_blank"
                     },
                     {
-                        "label": "Copyright © 2021 移远通信",
-                        "url": "https://www.quectel.com/",
-                        "target": "_blank"
+                        "label": "网站地图",
+                        "url": "/sitemap.xml"
                     }
                 ]
             },
@@ -87,20 +69,12 @@
                         "target": "_blank"
                     },
                     {
-                        "label": "本网站源文件",
-                        "url": "https://gitee.com/quecpython/Community-document",
+                        "label": "gitee",
+                        "url": "https://gitee.com/teedoc/teedoc",
                         "target": "_blank"
                     }
                 ]
             }
         ]
-    },
-	"plugins": {
-		 "teedoc-plugin-search": {
-				"from": "pypi",
-				"config": {
-					"search_hint": "Search"
-				}
-		}
-	}
+    }
 }

@@ -24,6 +24,6 @@ else
 	if [ $1 = "-s" ]; then
 		echo "本地预览地址: http://127.0.0.1:8000/doc"
 		echo "退出预览模式: Ctrl + C"
-		python -m http.server 8000 -d out/doc/
+		python -m http.server 8000 -d out/
 	fi
 fi
