@@ -42,7 +42,7 @@ osTimer.start(initialTime, cyclialEn, callback)
 
 * `initialTime`，定时器超时的时间(单位ms)，int类型
 * `cyclialEn`，是否循环，0为单次，1为循环，int类型
-* `callback`，定时器超时触发的回调，函数
+* `callback`，定时器超时触发的回调，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`
 
 **返回值描述**
 
