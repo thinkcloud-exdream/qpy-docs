@@ -62,7 +62,7 @@ QuecPython 是运行在无线通信模块上的开发框架。对于首次接触
 |   蓝牙   |  中  |    短    |  中  |  低  | <ul> <li> 资产追踪 </li> <li> 定位标签 </li> <li> 医疗传感器 </li> <li> 智能手表 </li> </ul> |
 |  Zigbee  |  低  |    短    |  低  |  低  | <ul> <li> 无线传感器 </li> <li> 智能家居 </li> </ul>                |
 |   UWB    |  高  |    短    |  高  |  高  | <ul> <li> 高精度定位 </li> </ul>                                 |
-|    4G    |  高  |    长    |  高  |  高  | <ul> <li> 可移动通信 </li> <li> 车辆追踪 </li> <li> zhihuichens </li> </ul> |
+|    4G    |  高  |    长    |  高  |  高  | <ul> <li> 可移动通信 </li> <li> 车辆追踪 </li> <li> 智慧城市 </li> </ul> |
 |  NB-IoT  |  低  |    长    |  低  |  中  | <ul> <li> 远程抄表 </li> <li> 井盖检测 </li> </ul>                  |
 |   LoRa   |  低  |    长    |  低  |  中  | <ul> <li> 园区覆盖 </li> <li> 近海渔船检测 </li> </ul>              |
 
