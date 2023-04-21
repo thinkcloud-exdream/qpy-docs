@@ -51,22 +51,23 @@ checkNet.waitNetworkReady(timeout)
 	</tr>
     <tr>
 	    <td>0或2</td>
-        <td>这种情况说明在超时时间内，模组一直没有注网成功，这时请按如下步骤排查问题：<br>（1）首先确认SIM卡状态是正常的，通过 sim 模块的 sim.getState() 接口获取，为1说明正常；<br>（2）如果SIM卡状态正常，确认当前信号强度，通过net模块的 net.csqQueryPoll() 接口获取，如果信号强度比较弱，那么可能是因为当前信号强度较弱导致短时间内注网不成功，可以增加超时时间或者换个信号比较好的位置再尝试；<br>（3）如果SIM卡状态正常，信号强度也较好，请确认使用的SIM卡是否已经欠费或流量不足；<br>（4）如果SIM卡没有欠费也没有流量不足，请确认使用的是否是物联网卡，如果是，请确认该SIM卡是否存在机卡绑定的情况；<br>（5）如果按照前述步骤依然没有发现解决问题，请联系我们的FAE反馈问题；最好将相应SIM卡信息，比如哪个运营商的卡、什么类型的卡、卡的IMSI等信息也一并提供，必要时可以将SIM卡寄给我们来排查问题。</td>
+        <td>这种情况说明在超时时间内，模组一直没有注网成功，这时请按如下步骤排查问题：<br>（1）首先确认SIM卡状态是正常的，通过 sim 模块的<code><span style="background-color: light grey;">sim.getState()</span></code>接口获取，为1说明正常；<br>（2）如果SIM卡状态正常，确认当前信号强度，通过net模块的<code><span style="background-color: light grey;">net.csqQueryPoll()</span></code>接口获取，如果信号强度比较弱，那么可能是因为当前信号强度较弱导致短时间内注网不成功，可以增加超时时间或者换个信号比较好的位置再尝试；<br>（3）如果SIM卡状态正常，信号强度也较好，请确认使用的SIM卡是否已经欠费或流量不足；<br>（4）如果SIM卡没有欠费也没有流量不足，请确认使用的是否是物联网卡，如果是，请确认该SIM卡是否存在机卡绑定的情况；<br>（5）如果按照前述步骤依然没有发现解决问题，请联系我们的FAE反馈问题；最好将相应SIM卡信息，比如哪个运营商的卡、什么类型的卡、卡的IMSI等信息也一并提供，必要时可以将SIM卡寄给我们来排查问题。</td>
 	</tr>
     <tr>
 	    <td>其他值</td>
-        <td>请参考官方Wiki文档中 net.getState() 接口的返回值说明，确认注网失败原因。</td>
+        <td>请参考官方Wiki文档中<code><span style="background-color: light grey;">net.getState()</span></code>接口的返回值说明，确认注网失败原因。</td>
 	</tr>
 	<tr>
 	    <td rowspan="2">3</td>
         <td>0</td>
-        <td>这种情况说明在超时时间内，PDP Context一直没有激活成功，请按如下步骤尝试：<br>（1）通过 sim 模块的 sim.getState() 接口获取sim卡状态，为1表示正常；<br>（2）通过 net 模块的 net.getState() 接口获取注网状态，为1表示正常；<br>（3）手动调用 dataCall.activate(profileID) 接口尝试激活，看看能否激活成功；<br>（4）如果手动激活成功了，但是开机自动激活失败，可联系我司相关人员协助分析。</td>
+        <td>这种情况说明在超时时间内，PDP Context一直没有激活成功，请按如下步骤尝试：<br>（1）通过 sim 模块的<code><span style="background-color: light grey;">sim.getState()</span></code>接口获取sim卡状态，为1表示正常；<br>（2）通过 net 模块的<code><span style="background-color: light grey;">net.getState()</span></code>接口获取注网状态，为1表示正常；<br>（3）手动调用<code><span style="background-color: light grey;">dataCall.activate(profileID)</span></code>接口尝试激活，看看能否激活成功；<br>（4）如果手动激活成功了，但是开机自动激活失败，可联系我司相关人员协助分析。</td>
 	</tr>
     <tr>
 	    <td>1</td>
         <td>这是正常返回情况，说明网络已就绪，可进行网络相关业务操作。</td>
 	</tr>
 </table>
+
 
 
 
