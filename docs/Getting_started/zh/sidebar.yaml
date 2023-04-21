@@ -160,13 +160,13 @@ items:
     -   label: '9.3: 短信'
         file: iot-advanced/sms.md
 
-        label: '9.4: 定位'
-        file: iot-advanced/location.md
+    -   label: '9.4: GNSS定位'
+        file: iot-advanced/gnss.md
 
-        label: '9.5: OTA 升级'
+    -   label: '9.5: OTA 升级'
         file: iot-advanced/ota.md
 
-        label: '9.6: AES-128 加解密'
+    -   label: '9.6: AES-128 加解密'
         file: iot-advanced/aes128.md
 
 -   label: '10: 其他开发资源'
