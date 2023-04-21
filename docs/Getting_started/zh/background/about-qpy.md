@@ -78,7 +78,6 @@ Python 是一个高层次的结合了解释性、编译性、互动性和面向�
 MicroPython 是 Python 语言的精简高效实现，可理解为一个可以运行在微处理器上的 Python 解释器。它使得用户可以编写 Python 脚本来控制硬件。MicroPython 继承了 Python 的完备的 REPL 交互功能，可以通过 REPL 串口随时输入代码执行，便于测试。MicroPython 还内置了文件系统，用户可以随意向设备端上传任意文件内容，并对目录结构进行修改。基于这一点，设备端可以同时储存多个程序脚本和其他文件，用户可根据需要手动选择并运行，类似于手机 App 的机制，极为灵活。此外，得益于 Python 解释型语言的特性，用户在使用 MicroPython 进行开发时，无需因为代码的更改而反复编译代码和烧录固件，仅需将修改过的代码重新上传至设备内即可。
 
 .. details:: 关于解释器
-    :open: false
 
     解释器（Interpreter）是一个和编译器（Compiler）相对的概念。作为一种解释型语言，Python 的源码是在运行中（而非运行前）被转换为机器可识别和执行的二进制形式。实现这一流程的工具称为解释器。
     
@@ -95,7 +94,6 @@ MicroPython 是 Python 语言的精简高效实现，可理解为一个可以运
     关于 Python 代码执行机制的更多讲解，可以参考 [编译器与解释器的区别和工作原理](https://zhuanlan.zhihu.com/p/39141067)、[浅谈字节码 + 虚拟机](https://blog.csdn.net/qq_39478403/article/details/106298611) 等在线资料，或是阅读 Python 的专业书籍。
 
 .. details:: 关于 REPL
-    :open: false
 
     REPL，全称 Read-Eval-Print Loop，即“读取-求值-输出”循环，是一种简单的交互式编程环境。REPL 通常会提供一个 CLI（Command-Line Interface，命令行界面），接收用户的输入，解析并执行后，再将结果返回给用户。从功能和使用方法上，它类似于 Windows 的命令提示符（CMD）或 macOS / Linux 的 Shell。
     
