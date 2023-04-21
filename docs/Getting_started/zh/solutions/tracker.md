@@ -102,7 +102,7 @@ GitHub 开源地址: [https://github.com/QuecPython/solution-tracker](https://gi
 
 配置参数具体含义见[tracker公版方案功能接口](https://github.com/QuecPython/solution-tracker/blob/master/docs/tracker%E5%85%AC%E7%89%88%E6%96%B9%E6%A1%88%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%8F%A3.md)
 
-### 使用它QPYCom工具进行软件烧录
+### 使用QPYCom工具进行软件烧录
 
 ![](../media/solutions/tracker/qpycom-download-code.png)
 
