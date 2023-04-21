@@ -444,8 +444,7 @@ uos.set_callback(fun)
 
 **参数描述**
 
-* `fun`，function类型，插拔卡回调 `[ind_type]`
-* `ind_type`: 事件类型，0：拔卡 1：插卡
+* `fun`，插拔卡的回调函数，function类型，原型为fun(args),参数`args`为int类型，0表示拔卡，1表示插卡
 
 **返回值描述**
 
