@@ -33,7 +33,7 @@ PowerKey.powerKeyEventRegister(usrFun)
 
 **参数描述：**
 
-- `usrfun`-回调函数,原型usrfun(status),参数status:`0`表示松开,`1`表示按下;按下或松开powerkey按键时触发回调。
+- `usrfun`-回调函数,原型usrfun(status),参数status，int类型:`0`表示松开,`1`表示按下;按下或松开powerkey按键时触发回调。
 
 **返回值描述：**
 
