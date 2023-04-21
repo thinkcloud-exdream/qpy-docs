@@ -161,18 +161,12 @@ items:
         file: iot-advanced/sms.md
 
     -   label: '9.4: GNSS定位'
-        file: iot-advanced/loc-gnss.md
+        file: iot-advanced/gnss.md
 
-    -   label: '9.5: Cell定位'
-        file: iot-advanced/loc-cell.md
-
-    -   label: '9.6: WiFi定位'
-        file: iot-advanced/loc-wifi.md
-
-    -   label: '9.7: OTA 升级'
+    -   label: '9.5: OTA 升级'
         file: iot-advanced/ota.md
 
-    -   label: '9.8: AES-128 加解密'
+    -   label: '9.6: AES-128 加解密'
         file: iot-advanced/aes128.md
 
 -   label: '10: 其他开发资源'

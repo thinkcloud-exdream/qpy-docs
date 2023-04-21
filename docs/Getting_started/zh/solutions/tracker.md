@@ -41,17 +41,17 @@
 
 ![](../media/solutions/tracker/thingsboard-login.png)
 
-#### 1. 用户账户申请
+#### 用户账户申请
 
 如需对接该平台, 需向本司提交申请, 审核通过后会下发使用账户进行功能对接。
 
-#### 2. 添加设备
+#### 添加设备
 
 ![](../media/solutions/tracker/thingsboard-create-device-select.png)
 
 ![](../media/solutions/tracker/thingsboard-create-device-edit.png)
 
-#### 3. 获取认证信息
+#### 获取认证信息
 
 ![](../media/solutions/tracker/thingsboard-device-list.png)
 
@@ -59,7 +59,7 @@
 
 ![](../media/solutions/tracker/thingsboard-device-config.png)
 
-#### 4. 设备功能启动后查看上报数据
+#### 设备功能启动后查看上报数据
 
 ![](../media/solutions/tracker/thingsboard-device-running.png)
 
@@ -67,11 +67,11 @@
 
 ### 阿里云物联网平台操作说明
 
-#### 1. 注册账户与产品设备创建
+#### 注册账户与产品设备创建
 
 阿里云物联网平台功能介绍与功能描述(产品设备创建)详见[阿里云文档中心](https://help.aliyun.com/document_detail/131611.html?spm=a2c4g.130816.0.0.7e193e06DaU4Mu)
 
-#### 2. 获取设备认证信息
+#### 获取设备认证信息
 
 创建好产品设备后, 根据选择的认证模式, 一机一密或一型一密, 在`settings_cloud.py`中填写对应的配置参数。
 
@@ -82,19 +82,19 @@
 
 ![](../media/solutions/tracker/aliyun-device-auth.png)
 
-#### 3. 运行项目后查看上报数据
+#### 运行项目后查看上报数据
 
 ![](../media/solutions/tracker/aliyun-device-properties-info.png)
 
 ## 项目运行说明
 
-### 1. 项目代码下载
+### 项目代码下载
 
 本项目已开源至GitHub, 直接使用Git下载到本地即可进行二次开发, 开源项目中有详细的软件功能架构说明与功能模块使用说明。
 
 GitHub 开源地址: [https://github.com/QuecPython/solution-tracker](https://github.com/QuecPython/solution-tracker)
 
-### 2. 调整项目配置文件
+### 调整项目配置文件
 
 - `settings_cloud.py` 用于配置连接ThingsBoard或阿里云的配置参数
 - `settings_loc.py` 用于配置定位模块的配置参数
@@ -102,19 +102,19 @@ GitHub 开源地址: [https://github.com/QuecPython/solution-tracker](https://gi
 
 配置参数具体含义见[tracker公版方案功能接口](https://github.com/QuecPython/solution-tracker/blob/master/docs/tracker%E5%85%AC%E7%89%88%E6%96%B9%E6%A1%88%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%8F%A3.md)
 
-### 3. 使用它QPYCom工具进行软件烧录
+### 使用它QPYCom工具进行软件烧录
 
 ![](../media/solutions/tracker/qpycom-download-code.png)
 
-- 测试可直接选中`tracker_ali.py`或`tracker_tb.py`, 点击运行, 即可启动项目, 可在交互中进行查看设备运行状态与日志。
+测试可直接选中`tracker_ali.py`或`tracker_tb.py`, 点击运行, 即可启动项目, 可在交互中进行查看设备运行状态与日志。
 
 ![](../media/solutions/tracker/qpycom-project-running.png)
 
-- 还可以烧入`main.py`脚本, 烧入完成后, 重启设备, 项目即可自动运行, 以后每次设备上电即可自动运行。
+还可以烧入`main.py`脚本, 烧入完成后, 重启设备, 项目即可自动运行, 以后每次设备上电即可自动运行。
 
 ![](../media/solutions/tracker/qpycom-project-main.png)
 
-> QPYCom软件下载地址: [https://python.quectel.com/download](https://python.quectel.com/download)
+QPYCom软件下载地址: [https://python.quectel.com/download](https://python.quectel.com/download)
 
 ![](../media/solutions/tracker/qpycom-download.png)
 
