@@ -98,14 +98,14 @@ rtc.set_alarm(data_e)
 ### `rtc.register_callback`
 
 ```python
-rtc.register_callback(fun)
+rtc.register_callback(callback)
 ```
 
 该方法用于注册RTC alarm回调处理函数。
 
 **参数描述：**
 
-- `fun` - RTC alarm回调处理函数，function类型。
+- `callback` - RTC alarm回调处理函数，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`
 
 **返回值描述：**
 

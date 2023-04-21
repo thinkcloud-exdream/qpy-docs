@@ -40,7 +40,7 @@ timer.start(period, mode, callback)
 
 - `mode` - 运行模式，int类型，说明如下：<br />`ONE_SHOT` - 单次模式，定时器只执行一次<br />`PERIODIC` - 周期模式，循环执行
 
-- `callback` - 定时器执行函数，function类型。
+- `callback` - 定时器执行函数，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`
 
 **返回值描述：**
 
