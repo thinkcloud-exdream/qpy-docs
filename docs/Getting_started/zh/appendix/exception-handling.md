@@ -1,109 +1,73 @@
+# QuecPython异常处理流程
 
-## QuecPython异常处理流程
+## 模组网络异常处理
 
-### 异常重启处理
+使用QuecPython开发时，如遇到网络异常情况产生，如MQTT连接异常，request请求失败等
 
-固件版本默认是业务模式，即出现底层异常错误时会自动重启，防止模块程序停止导致无法使用。当我们处于调试期时需要暴露并定位问题原因，此时需要设置三条AT指令（AT口执行）：
+可以先检查SIM状态是否正常
 
-- at+qdumpcfg=0,0
-- at+qdumpcfg=1,0
-- at+log=19,1
+```python
+import sim
+sim.getStatus()   # 返回1为SIM卡状态正常，具体状态枚举值参考API手册
+```
 
-依次执行上述三条AT指令即可进入调试模式，此时若出现底层异常错误则会进入DUMP模式，出现DUMP端口，此时您可以有两种选择：
+如果SIM状态异常，请检查SIM卡是否插入或者状态是否正常，如果SIM卡插入但是未检测到，在模块可以正常开机并且可以正常串口通信的前提下，建议尝试以下排查操作：
 
-**方法一**：提供固件版本、测试步骤及测试代码，前往QuecPython官网提交问题工单
-**方法二**：使用Tera term窗口调试工具（使用方法：百度即可）抓取Dumplog，同时提供固件版本、测试步骤及测试代码，前往QuecPython官网提交问题工单，节省复现问题时间。
+1. 检查 SIM 卡有没有插反，市面上 SIM 卡座种类繁多，部分 SIM 卡座没有防呆标识，正反插都可以放置在卡座内。
+2. 更换 SIM 卡，SIM 卡可能长期插拔使用过程中损坏。
+3. 按压 SIM 卡座，防止 SIM 卡座弹片和 SIM 卡接触不良。
+4. 把 SIM 卡电路部分电容和 ESD 器件全部去掉，防止焊接电容容值不对和 ESD 器件焊接导致模组 SIM 卡不识别，这两种类型器件模组识卡是不影响。如果器件是手动焊接的，尤其关注这两点。
+5. 尤其注意部分客户是手动焊接，检查 SIM 卡座各个引脚焊接是否存在短路问题。
+6. 检查 SIM 卡座封装设计，确保封装正确。
+7. 发送 AT 指令：AT+QSIMDET=0,0  关闭 SIM 卡热插拔功能 ，模块重新开机尝试能否识别卡。主要由于 SIM 卡座结构可能与开启的热插拔识别电平不一致导致无法识卡。
+8. 如以上方法无法解决SIM异常问题，可联系技术支持人员寻求技术支持
 
-**需要注意此指令重启后仍然生效，如需退出调试模式，有以下三种方法。**
-1、用AT指令直接关闭
-2、AT+RSTSET恢复出厂设置
-3、更改固件烧录时擦除nvm
+如果SIM卡状态正常，可以使用模组提供的 **checkNet - 网络检测** 库来检测网络状态
 
-## QuecPython开关机reason含义和使用
+```
+import checkNet
+checkNet.waitNetworkReady(timeout)
+```
 
-### 寄存器含义
+等待模组网络就绪。该方法会依次检测SIM卡状态、模组网络注册状态和PDP Context激活状态；在设定的超时时间之内，如果检测到PDP Context激活成功，会立即返回，否则直到超时才会退出。
 
-#### power_up_reason
+如果超时时间内一直无法成功注册网络，可检查一下SIM卡是否有欠费停机、模组天线是否插好、查询信号值等来确认原因。
 
-对应寄存器：NINGBO_PWRUP_LOG_REG
-各bit的含义：
+## python代码报错处理流程
 
-| 0x01即bit0 | onkey硬件唤醒   |
-| ---------- | :-------------- |
-| 0x02即bit1 | exton1硬件唤醒  |
-| 0x04即bit2 | exton2硬件唤醒  |
-| 0x08即bit3 | bat硬件唤醒     |
-| 0x10即bit4 | rtc_alarm唤醒   |
-| 0x20即bit5 | fault唤醒       |
-| 0x40即bit6 | vbus_detect唤醒 |
+开发中遇到代码运行报错可根据代码报错类型来出处理，比如
 
->
-> 目前使用的有：exton1硬件唤醒(powerkey硬件接的是exton1)，fault唤醒，vbus_detect唤醒。
+```
+ImportError: no module named "***"
+```
 
-#### power_down_reason
+ImportError为导入错误，一般是导入的库或者库文件不存在，根据后面错误提示内容也有可能是库文件代码中有语法错误等，根据错误提示信息处理即可
 
-对应寄存器：NINGBO_POWERDOWN_LOG_REG
-各bit的含义：
+类如（举例常见的几种）
 
-| 0x01即bit0 | over temperature关机               |
-| ---------- | :--------------------------------- |
-| 0x02即bit1 | PMIC VINLDO电压低于2.9V关机        |
-| 0x04即bit2 | SW_PDOWN软件调用power_down接口关机 |
-| 0x08即bit3 | 无                                 |
-| 0x10即bit4 | PMIC watch dog关机                 |
-| 0x20即bit5 | long press of ONKEY关机            |
-| 0x40即bit6 | VINLDO电压过高关机                 |
-| 0x80即bit7 | VRTC LOW关机                       |
+- TypeError：类型错误，**对象用来表示值的类型非预期类型时发生的错误**
+- AttributeError：属性错误，**特性引用和赋值失败时会引发属性错误**
+- NameError：**试图访问的变量名不存在**
+- SyntaxError: invalid syntax，语法错，**错误使用标点符号**
+- KeyError：**在读取字典中的key和value时，如果key不存在，就会触发KeyError错误**
+- IndexError: list index out of range， **索引错误，列表索引超出了范围**
+- IndentationError: expected an indented block，**代码缩进错误**
 
->
-> 目前long press of ONKEY关机不使用。
+其他错误码参考标准python处理即可
 
-#### power_down_reason2
+如有错误码可参考 [QuecPython错误码汇总](error-code.md)
 
-目前只关注power_down_reason寄存器，该寄存器不需要使用。
+## 模组异常重启处理
 
-### 开机原因
+代码运行过程中如遇到设备异常重启，可以通过API接口查询异常关机原因
 
-#### 开关机过程
+```
+from misc import Power
+Power.powerDownReason()
+```
 
-**1.长按powerkey关机**
-检测到长按动作，最终调用PMIC_SW_PDOWN
 
-**2.硬件RESET**
-调用CPU RESET引脚，PMIC不掉电， PWRUP_LOG_REG和POWERDOWN_LOG_REG寄存器也不会更新
 
-**3.软件RESET**
-a.若是调用PMIC_SW_RESET先使能FAULT_WAKEUP，再调SW_PDOWN，然后会FAULT唤醒重启。
-b.若是异常重启类似硬件RESET，只是CPU RESET，PMIC不掉电。
 
-**4.按 powerkey开机**
-为exton1硬件唤醒
 
-**5.插USB开机**
-为vbus_detect唤醒
 
-#### 开机原因获取
-
-*每次开机读取过power_down_reason之后，会将其标志清掉，power_up_reason不支持清除。*
-
-**1.powerkey**
-需满足power_up_reason==0x02，且power_down_reason!=0
-
-**2.硬件、异常RESET**
-由于PMIC不掉电， PWRUP_LOG_REG寄存器不会更新，POWERDOWN_LOG_REG寄存器被清掉，则需满足power_up_reason==0x02，且power_down_reason==0。或满足power_up_reason==0x40， 且power_down_reason==0。
-
-**3.软件RESET**
-如果是插着USB则需满足power_up_reason==0x60，且power_down_reason==0x04。
-
-**4.Vbus**
-需满足power_up_reason==0x40，且power_down_reason!=0x00。
-
-**5.其他开机原因在前面这些原因之后按bit含义获取。**
-
-### 关机原因
-
-关机原因如代码中按照bit含义获取即可。
-
-### 开关机原因接口使用
-
-目前boot侧和kernel侧都会提供开关机原因接口，由于获取开关机原因之后需要将POWERDOWN_LOG_REG寄存器中的关机原因标志清除，所以在boot侧调用过该接口的话，在kernel侧就不能调了，否则获取的值会有异常。现在boot侧的接口默认没调用。
