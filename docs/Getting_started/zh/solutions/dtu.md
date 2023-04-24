@@ -73,11 +73,35 @@ DTU运行成功，在QPYcom的"交互"窗口中，可观察到打印如下。
 
 ![](../media/solutions/dtu/dtu_init.png)
 
-## 私有云MQTT案例演示
+## 基于MQTT协议的DTU案例演示
 
-本案例演示采用`http://www.tongxinmao.com/App/Detail/id/126`公共mqtt私有云。
+本节以通信猫的MQTT服务器为例演示DTU方案的运行效果。
+
+### 在线MQTT客户端
+
+访问`mq.tongxinmao.com`可见如下页面：
 
 ![tongxinmao_mqtt.png](../media/solutions/dtu/tongxinmao_mqtt.png)
+
+> 从上文图示中可以获取mqtt服务器相关参数 —— 服务器参数与我们的DTU配置的参数保持一致。
+>
+> - 服务器地址： ` mq.tongxinmao.com `
+> - 端口：`18830`
+> - 用户名：<空>
+> - 密码：<空>
+>
+> 订阅主题：`/public/test/`
+>
+> 发布主题：`/public/test/`
+
+配置好在线客户端后，点击`Connect连接`（点击后按钮变为`断开Disconnect`即表示在线客户端已连接）。
+
+接下来，我们分别进行**向云端发送消息**和**云端向设备发送信息**两个方向来演示案例。
+
+> 解释：
+>
+> - 向云端发送消息：即DTU接收串口数据，发送给MQTT服务，我们通过在线客户端观察收到的消息数据。
+> - 云端向设备发送信息：即我们通过在线客户端发送消息，DTU收到订阅的消息数据后写入串口，我们通过串口调试工具观察收到的消息数据。
 
 ### 向云端发送消息
 
