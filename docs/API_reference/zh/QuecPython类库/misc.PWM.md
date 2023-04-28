@@ -47,6 +47,7 @@ class misc.PWM(PWM.PWMn,PWM.ABOVE_xx, highTime, cycleTime)
 | EG915U | PWM0 – 引脚号20                                              |
 | EC800M | PWM0 – 引脚号83<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49 |
 | EG912N | PWM0 – 引脚号21<br/>PWM1 – 引脚号116<br/>PWM2 – 引脚号107<br/>PWM3 – 引脚号92 |
+| EC200A | PWM0 – 引脚号1<br/>PWM1 – 引脚号4<br/>PWM2 – 引脚号6         |
 
 ## 方法
 

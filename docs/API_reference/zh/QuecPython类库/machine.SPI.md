@@ -16,7 +16,7 @@ class machine.SPI(port, mode, clk)
 
 - `mode` - SPI 的工作模式，说明如下：<br />时钟极性CPOL：即SPI空闲时，时钟信号SCLK的电平(0:空闲时低电平; 1:空闲时高电平)<br />`0` : CPOL=0, CPHA=0<br />`1` : CPOL=0, CPHA=1<br />`2`:  CPOL=1, CPHA=0<br />`3`:  CPOL=1, CPHA=1
 
-- `clk` - 时钟频率，说明如下：<br />EC600N/EC600S/EC800N/BG95M3/EC600M/EC800M/EG912N:<br />`0` : 812.5kHz<br />`1` : 1.625MHz<br />`2` : 3.25MHz<br />`3` : 6.5MHz<br />`4` : 13MHz<br />`5` :  26MHz<br />`6`：52MHz<br />C600U/EC200U/EG915U:<br />`0` : 781.25KHz<br />`1` : 1.5625MHz<br />`2` : 3.125MHz<br />`3` : 5MHz<br />`4` : 6.25MHz<br />`5` : 10MHz<br />`6` : 12.5MHz<br />`7` : 20MHz<br />`8` : 25MHz<br />`9` : 33.33MHz<br />BC25PA：<br />`0` ：5MHz<br />`X` : XMHz  (X in [1,39])
+- `clk` - 时钟频率，说明如下：<br />EC600N/EC600S/EC800N/BG95M3/EC600M/EC800M/EG912N/EC200A:<br />`0` : 812.5kHz<br />`1` : 1.625MHz<br />`2` : 3.25MHz<br />`3` : 6.5MHz<br />`4` : 13MHz<br />`5` :  26MHz<br />`6`：52MHz<br />EC600U/EC200U/EG915U:<br />`0` : 781.25KHz<br />`1` : 1.5625MHz<br />`2` : 3.125MHz<br />`3` : 5MHz<br />`4` : 6.25MHz<br />`5` : 10MHz<br />`6` : 12.5MHz<br />`7` : 20MHz<br />`8` : 25MHz<br />`9` : 33.33MHz<br />BC25PA：<br />`0` ：5MHz<br />`X` : XMHz  (X in [1,39])
 
 
 > BC25PA平台不支持1、2模式。
@@ -44,6 +44,7 @@ class machine.SPI(port, mode, clk)
 | EG915U        | port0:<br />CS:引脚号25<br />CLK:引脚号26<br />MOSI:引脚号64<br />MISO:引脚号88 |
 | EC800M        | port0:<br />CS:引脚号31<br />CLK:引脚号30<br />MOSI:引脚号32<br />MISO:引脚号33</u><br />port1:<br />CS:引脚号52<br />CLK:引脚号53<br />MOSI:引脚号50<br />MISO:引脚号51 |
 | EG912N        | port0:<br />CS:引脚号25<br />CLK:引脚号26<br />MOSI:引脚号27<br />MISO:引脚号28<br/>port1:<br />CS:引脚号5<br />CLK:引脚号4<br />MOSI:引脚号6<br />MISO:引脚号7 |
+| EC200A        | port0:<br />CS:引脚号37<br />CLK:引脚号40<br />MOSI:引脚号38<br />MISO:引脚号39<br />port1:<br />CS:引脚号26<br />CLK:引脚号27<br />MOSI:引脚号25<br />MISO:引脚号24 |
 
 ## 方法
 

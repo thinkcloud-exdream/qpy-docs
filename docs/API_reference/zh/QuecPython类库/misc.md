@@ -39,6 +39,53 @@ misc.antennaSecRXOffCtrl()
 1
 ```
 
+## 禁止网络灯功能
+
+### `misc.net_light`
+
+```python
+misc.net_light([arg])
+```
+
+设置是否打开网络灯功能或查询网络灯是否打开。<a href="#label_pwmmap">点此查看</a>网络灯对应引脚。
+
+> EC200A/EC600U/EC200U系列支持。
+
+**参数描述：**
+  传入参数时：设置网络灯功能是否打开；不传参数时：查询网络灯是否打开。
+
+- `arg`-int类型，范围0/1，`0`：关闭网络灯功能；`1`：打开网络灯功能。
+
+**返回值描述：**
+
+查询：成功返回网络灯是否打开，`0`：关闭，`1`：打开；未设置过返回整型值`-1`；
+
+设置：成功返回整形`0`,失败返回整型值`-1`。
+
+> 设置重启生效；未设置过默认网络灯功能打开。
+
+**示例：**
+
+```python
+import misc
+misc.net_light()#未设置过
+-1
+misc.net_light(0)#设置关闭网络灯后重启模组
+misc.net_light()#查询
+0
+misc.net_light(1)#设置打开网络灯后重启模组
+misc.net_light()#查询
+1
+```
+
+<span id="label_pwmmap">**网络灯引脚：**</span>
+
+| 系列   | 对应引脚     |
+| ------ | ------------ |
+| EC200A | PIN4，PIN6   |
+| EC200U | PIN5，PIN6   |
+| EC600U | PIN52，PIN54 |
+
 ## Classes
 
 - [class PowerKey – PowerKey按键回调注册](./misc.PowerKey.md)
