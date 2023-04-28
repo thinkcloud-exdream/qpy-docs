@@ -60,6 +60,10 @@ TXyun.setCallback(callback)
 
 * `callback` -  设置消息回调函数，function类型，当服务端响应时触发该方法
 
+**回调函数参数**
+
+* `topic` -  mqtt topic主题，字符串类型
+* `msg` -  需要发送的数据，字符串类型
 
 **返回值描述：**
 
@@ -76,6 +80,10 @@ TXyun.error_register_cb(callback)
 **参数描述：**
 
 * `callback` -  设置异常回调函数，function类型
+
+**回调函数参数**
+
+* `msg` -  异常信息，字符串类型
 
 **返回值描述：**
 
@@ -200,13 +208,13 @@ TXyun.getTXyunsta()
 
 **返回值描述：**
 
-0 ：连接成功
+* 0 ：连接成功
 
-1：连接中
+* 1：连接中
 
-2：服务端连接关闭
+* 2：服务端连接关闭
 
--1：连接异常
+* -1：连接异常
 
 
 
