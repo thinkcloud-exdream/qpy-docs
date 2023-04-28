@@ -105,7 +105,7 @@ rtc.register_callback(callback)
 
 **参数描述：**
 
-- `callback` - RTC alarm回调处理函数，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`
+- `callback` - RTC alarm回调处理函数，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`。
 
 **返回值描述：**
 

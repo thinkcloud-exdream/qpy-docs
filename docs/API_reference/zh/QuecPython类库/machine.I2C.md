@@ -93,13 +93,6 @@ import log
 from machine import I2C
 import utime
 
-
-'''
-下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
-'''
-PROJECT_NAME = "QuecPython_I2C_example"
-PROJECT_VERSION = "1.0.0"
-
 '''
 I2C使用示例
 '''
@@ -131,5 +124,5 @@ if __name__ == '__main__':
 | I2C.I2C0          | I2C通路索引号: 0 | EC100Y/EC600U/EC200U/EC200A/BC25PA/EC800N/BG95M3/EC600M/EG915U/EC800M |
 | I2C.I2C1          | I2C通路索引号: 1 | EC600S/EC600N/EC600U/EC200U/BC25PA/BG95M3/EC600M/EG915U/EC800M/EG912N |
 | I2C.I2C2          | I2C通路索引号: 2 | BG95M3/EC600M                                                |
-| I2C.STANDARD_MODE | 标准模式         | 所有平台                                                     |
-| I2C.FAST_MODE     | 快速模式         | 所有平台                                                     |
+| I2C.STANDARD_MODE | 标准模式         | --                                                           |
+| I2C.FAST_MODE     | 快速模式         | --                                                           |

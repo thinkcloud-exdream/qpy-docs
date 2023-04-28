@@ -40,7 +40,7 @@ timer.start(period, mode, callback)
 
 - `mode` - 运行模式，int类型，说明如下：<br />`ONE_SHOT` - 单次模式，定时器只执行一次<br />`PERIODIC` - 周期模式，循环执行
 
-- `callback` - 定时器执行函数，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`
+- `callback` - 定时器执行函数，function类型，原型为callback(arg)，`arg`未实际使用，可直接传入`None`。
 
 **返回值描述：**
 
@@ -78,13 +78,6 @@ import log
 import utime
 from machine import Timer
 import checkNet
-
-
-'''
-下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
-'''
-PROJECT_NAME = "QuecPython_Timer_example"
-PROJECT_VERSION = "1.0.0"
 
 # 设置日志输出级别
 log.basicConfig(level=log.INFO)

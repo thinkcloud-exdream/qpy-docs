@@ -51,14 +51,7 @@ wdt.stop()
 ```python
 from machine import WDT
 from machine import Timer
-import utime
 
-
-'''
-下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
-'''
-PROJECT_NAME = "QuecPython_WDT_example"
-PROJECT_VERSION = "1.0.0"
 
 timer1 = Timer(Timer.Timer1)
 
@@ -67,7 +60,7 @@ def feed(t):
 
 
 if __name__ == '__main__':
-    wdt = WDT(20)  # 启动看门狗，间隔时长
+    wdt = WDT(20)  # 启动看门狗，设置超时时间
     timer1.start(period=15000, mode=timer1.PERIODIC, callback=feed)  # 使用定时器喂狗
 
     # wdt.stop()
