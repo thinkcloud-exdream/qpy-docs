@@ -1,0 +1,186 @@
+items:
+-   label: QuecPython_stdlib
+    file: QuecPython_stdlib/README.md
+    items:
+    -   label: uos - uos
+        file: QuecPython_stdlib/uos.md
+    -   label: gc - gc
+        file: QuecPython_stdlib/gc.md
+    -   label: ubinascii - ubinascii
+        file: QuecPython_stdlib/ubinascii.md
+    -   label: ucollections - ucollections
+        file: QuecPython_stdlib/ucollections.md
+    -   label: urandom - urandom
+        file: QuecPython_stdlib/urandom.md
+    -   label: math - math
+        file: QuecPython_stdlib/math.md
+    -   label: usocket - usocket
+        file: QuecPython_stdlib/usocket.md
+    -   label: uio -  uio
+        file: QuecPython_stdlib/uio.md
+    -   label: ustruct - ustruct
+        file: QuecPython_stdlib/ustruct.md
+    -   label: ujson - ujson
+        file: QuecPython_stdlib/ujson.md
+    -   label: utime - utime
+        file: QuecPython_stdlib/utime.md
+    -   label: sys - sys
+        file: QuecPython_stdlib/sys.md
+    -   label: uzlib - uzlib
+        file: QuecPython_stdlib/uzlib.md
+    -   label: _thread - _thread
+        file: QuecPython_stdlib/_thread.md
+    -   label: uhashlib - uhashlib
+        file: QuecPython_stdlib/uhashlib.md
+-   label: QuecPython_classlib
+    file: QuecPython_classlib/README.md
+    items:
+    -   label: example - example
+        file: QuecPython_classlib/example.md
+    -   label: dataCall - dataCall
+        file: QuecPython_classlib/dataCall.md
+    -   label: atcmd - atcmd
+        file: QuecPython_classlib/atcmd.md
+    -   label: sim - sim
+        file: QuecPython_classlib/sim.md
+    -   label: sms - sms
+        file: QuecPython_classlib/sms.md
+    -   label: voiceCall - voiceCall
+        file: QuecPython_classlib/voiceCall.md
+    -   label: net - net
+        file: QuecPython_classlib/net.md
+    -   label: cellLocator - cellLocator
+        file: QuecPython_classlib/cellLocator.md
+    -   label: wifilocator - wifilocator
+        file: QuecPython_classlib/wifilocator.md
+    -   label: ussl - ussl
+        file: QuecPython_classlib/ussl.md
+    -   label: request - request
+        file: QuecPython_classlib/request.md
+    -   label: umqtt - umqtt
+        file: QuecPython_classlib/umqtt.md
+    -   label: uwebsocket - uwebsocket
+        file: QuecPython_classlib/uwebsocket.md
+    -   label: ntptime - ntptime
+        file: QuecPython_classlib/ntptime.md
+    -   label: fota - fota
+        file: QuecPython_classlib/fota.md
+    -   label: app_fota - app_fota
+        file: QuecPython_classlib/app_fota.md
+    -   label: checkNet - checkNet
+        file: QuecPython_classlib/checkNet.md
+    -   label: wifiScan - wifiScan
+        file: QuecPython_classlib/wifiScan.md
+    -   label: ethernet - ethernet
+        file: QuecPython_classlib/ethernet.md
+        items:
+        -   label: W5500 - W5500
+            file: QuecPython_classlib/ethernet.W5500.md
+        -   label: DM9051 - DM9051
+            file: QuecPython_classlib/ethernet.DM9051.md
+        -   label: CH395 - CH395
+            file: QuecPython_classlib/ethernet.CH395.md
+        -   label: YT8512H - YT8512H
+            file: QuecPython_classlib/ethernet.YT8512H.md
+    -   label: camera - camera
+        file: QuecPython_classlib/camera.md
+        items:
+        -   label: CamPreview - CamPreview
+            file: QuecPython_classlib/camera.CamPreview.md
+        -   label: CamDecoder -  CamDecoder
+            file: QuecPython_classlib/camera.CamDecoder.md
+        -   label: CamCapture - CamCapture
+            file: QuecPython_classlib/camera.CamCapture.md
+    -   label: audio - audio
+        file: QuecPython_classlib/audio.md
+        items:
+        -   label: TTS - TTS
+            file: QuecPython_classlib/audio.TTS.md
+        -   label: Audio - Audio
+            file: QuecPython_classlib/audio.Audio.md
+        -   label: Record - Record
+            file: QuecPython_classlib/audio.Record.md
+    -   label: WLAN - WLAN
+        file: QuecPython_classlib/WLAN.md
+        items:
+        -   label: ESP8266 - ESP8266
+            file: QuecPython_classlib/WLAN.ESP8266.md
+    -   label: misc - misc
+        file: QuecPython_classlib/misc.md
+        items:
+        -   label: Power - Power
+            file: QuecPython_classlib/misc.Power.md
+        -   label: PowerKey - PowerKey
+            file: QuecPython_classlib/misc.PowerKey.md
+        -   label: PWM - PWM
+            file: QuecPython_classlib/misc.PWM.md
+        -   label: ADC - ADC
+            file: QuecPython_classlib/misc.ADC.md
+        -   label: USB - USB
+            file: QuecPython_classlib/misc.USB.md
+        -   label: USBNET - USBNET
+            file: QuecPython_classlib/misc.USBNET.md
+    -   label: osTimer - osTimer
+        file: QuecPython_classlib/osTimer.md
+    -   label: modem - modem
+        file: QuecPython_classlib/modem.md
+    -   label: machine - machine
+        file: QuecPython_classlib/machine.md
+        items:
+        -   label: Pin - Pin
+            file: QuecPython_classlib/machine.Pin.md
+        -   label: UART - UART
+            file: QuecPython_classlib/machine.UART.md
+        -   label: Timer - Timer
+            file: QuecPython_classlib/machine.Timer.md
+        -   label: ExtInt - ExtInt
+            file: QuecPython_classlib/machine.ExtInt.md
+        -   label: RTC - RTC
+            file: QuecPython_classlib/machine.RTC.md
+        -   label: I2C - I2C
+            file: QuecPython_classlib/machine.I2C.md
+        -   label: I2C_simulation - I2C_simulation
+            file: QuecPython_classlib/machine.I2C_simulation.md
+        -   label: SPI - SPI
+            file: QuecPython_classlib/machine.SPI.md
+        -   label: LCD - LCD
+            file: QuecPython_classlib/machine.LCD.md
+        -   label: WDT - WDT
+            file: QuecPython_classlib/machine.WDT.md
+        -   label: KeyPad - KeyPad
+            file: QuecPython_classlib/machine.KeyPad.md
+    -   label: qrcode - qrcode
+        file: QuecPython_classlib/qrcode.md
+    -   label: pm - pm
+        file: QuecPython_classlib/pm.md
+    -   label: gnss - gnss
+        file: QuecPython_classlib/gnss.md
+    -   label: quecgnss - quecgnss
+        file: QuecPython_classlib/quecgnss.md
+    -   label: uping - uping
+        file: QuecPython_classlib/uping.md
+    -   label: ure - ure
+        file: QuecPython_classlib/ure.md
+    -   label: securedata - securedata
+        file: QuecPython_classlib/securedata.md
+    -   label: ble - ble
+        file: QuecPython_classlib/ble.md
+    -   label: bt - bt
+        file: QuecPython_classlib/bt.md
+    -   label: log - log
+        file: QuecPython_classlib/log.md
+    -   label: log - log
+        file: QuecPython_classlib/system.md
+    -   label: ql_fs - ql_fs
+        file: QuecPython_classlib/ql_fs.md
+    -   label: Queue - Queue
+        file: QuecPython_classlib/Queue.md
+-   label: QuecPython_componentlib
+    file: QuecPython_componentlib/README.md
+    items:
+    -   label: aLiYun - aLiYun
+        file: QuecPython_componentlib/aLiYun.md
+    -   label: TenCentYun - TenCentYun
+        file: QuecPython_componentlib/TenCentYun.md
+    -   label: sys_bus - sys_bus
+        file: QuecPython_componentlib/sys_bus.md

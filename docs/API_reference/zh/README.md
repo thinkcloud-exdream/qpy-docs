@@ -30,6 +30,6 @@ QuecPython 则在系统中集成了丰富的嵌入式物联网项目常用的各
 
 ## QuecPython API 参考手册
 
-- [QuecPython标准库](./QuecPython标准库/README.md)
-- [QuecPython类库](./QuecPython类库/README.md)
-- [QuecPython组件库](./QuecPython组件库/README.md)
+- [QuecPython标准库](./QuecPython_stdlib/README.md)
+- [QuecPython类库](./QuecPython_classlib/README.md)
+- [QuecPython组件库](./QuecPython_componentlib/README.md)

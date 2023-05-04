@@ -14,7 +14,7 @@
                 "position": "left"
             },
             {
-                "url": "/develop/zh/",
+                "url": "https://python.quectel.com/",
                 "label": "官网",
                 "position": "right"
             },
@@ -41,7 +41,13 @@
                         "label": "FAQ"
                     }
                 ]
-            }   
+            },
+			{
+                "id": "language",
+                "label": "Language: ",
+                "position": "right",
+                "type": "language"
+            }			
         ]
     },
 	"footer":{
