@@ -112,6 +112,8 @@ items:
             file: clouds/onenet.md
           - label: "7.7 电信云"
             file: clouds/ctyun.md
+          - label: "7.8 微软云"
+            file: clouds/azure.md
 
     - label: "8 QuecPython 硬件高级功能"
       file: hardware-advanced/README.md

@@ -64,7 +64,7 @@ uart.any()
 **示例：**
 
 ```python
->>> uart.any()
+>>> uart1.any()
 20 #表示接收缓冲区中有20字节数据未读
 ```
 
@@ -190,13 +190,6 @@ import _thread
 import utime
 import log
 from machine import UART
-
-
-'''
-下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
-'''
-PROJECT_NAME = "QuecPython_UART_example"
-PROJECT_VERSION = "1.0.1"
 
 '''
  * 参数1：端口

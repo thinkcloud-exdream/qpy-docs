@@ -2,8 +2,7 @@
 
 该类提供矩阵键盘接口。
 
-> 支持型号：EC600SCN_LB/ EC800NCN_LA/ EC600NCN_LC/ EC200UCN_LB/ EC600UCN_LB/ EC600MCN_LA/ EC800MCN_LA/ EC800MCN_GA/ EG912NEN_AA
->
+> 支持的平台：EC200U系列、EC600U系列、EG912U系列、EG915U系列、EC600M系列、EC800M系列、EC600S系列、EC600N系列、EC800N系列、EG912N系列、EG915N系列
 
 ## 构造函数
 
@@ -18,7 +17,7 @@ class machine.KeyPad(row,col)
 - `row` - 行号，int类型，大于0，不超过平台支持最大值。
 - `col` - 列号，int类型，大于0，不超过平台支持最大值。
 
-> 如果row和col均不设置,默认为4X4.
+> 如果row和col均不设置,默认为4X4。
 
 | 平台          | 最大行 | 最大列 |
 | ------------- | ------ | ------ |
@@ -76,7 +75,7 @@ keypad.set_callback(usrFun)
 
 - `usrFun` - 矩阵键盘回调函数，回调函数原型：
 
-  ```
+  ```python
   usrFun(result_list)
   ```
 

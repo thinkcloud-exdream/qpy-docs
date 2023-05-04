@@ -56,6 +56,16 @@ ADC.read(ADCn)
 605
 ```
 
+### `ADC.close`
+
+```python
+ADC.close()
+```
+
+**返回值描述：**
+
+`0`表示关闭成功，`-1`表示关闭失败。
+
 <span id="label_pinmap">**ADC通道与物理引脚的映射关系：**</span>
 
 | 系列   | 引脚对应                                                     |
@@ -70,16 +80,6 @@ ADC.read(ADCn)
 | EG915U | ADC0 – 引脚号24<br/>ADC1 – 引脚号2                           |
 | EC800M | ADC0 – 引脚号9<br/>ADC1 – 引脚号96                           |
 | EG912N | ADC0 – 引脚号24<br/>ADC1 – 引脚号2                           |
-
-### ADC.close
-
-```python
-ADC.close()
-```
-
-**返回值描述：**
-
-`0`表示关闭成功，`-1`表示关闭失败。
 
 ## 常量
 

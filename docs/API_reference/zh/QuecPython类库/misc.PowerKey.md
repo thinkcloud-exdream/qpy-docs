@@ -33,7 +33,7 @@ PowerKey.powerKeyEventRegister(usrFun)
 
 **参数描述：**
 
-- `usrfun`-回调函数,原型usrfun(status),参数status，int类型:`0`表示松开,`1`表示按下;按下或松开powerkey按键时触发回调。
+- `usrfun`-回调函数，原型usrfun(status)，参数status，int类型：`0`表示松开，`1`表示按下；按下或松开powerkey按键时触发回调。
 
 **返回值描述：**
 
@@ -41,7 +41,7 @@ PowerKey.powerKeyEventRegister(usrFun)
 
 > ECX00S/ECX00N/ECX00M/ECX00E系列，对于powerkey，按下和松开时，都会触发用户注册的回调函数；
 >
-> ECX00U/ECX00G系列，对于powerkey，只在按键松开时才会触发回调函数，并且按键按下的时间需要维持500ms以上;
+> ECX00U/ECX00G系列，对于powerkey，只在按键松开时才会触发回调函数，并且按键按下的时间需要维持500ms以上；
 >
 > 上述所有平台在注册用户的回调函数后，powerkey长按不再触发关机。
 
