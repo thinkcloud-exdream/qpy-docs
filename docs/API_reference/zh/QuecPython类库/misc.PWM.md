@@ -14,17 +14,17 @@ class misc.PWM(PWM.PWMn,PWM.ABOVE_xx, highTime, cycleTime)
 
 **参数描述：**
 
-- `PWM.PWMn`-PWM通道,int类型,<a href="#label_pwmmap">点此查看</a>支持的通道与对应引脚;
+- `PWM.PWMn`-PWM通道，int类型,<a href="#label_pwmmap">点此查看</a>支持的通道与对应引脚；
 
-- `PWM.ABOVE_xx`-时间取值范围,int类型,说明如下:
+- `PWM.ABOVE_xx`-时间取值范围，int类型,说明如下：
 
-  EC200U/EC600U/EG915U系列:<br />PWM.ABOVE_MS				          ms级取值范围：(0,10]<br/>PWM.ABOVE_1US				        us级取值范围：(0,10000]<br/>PWM.ABOVE_10US				      us级取值范围：(1,10000]<br/>PWM.ABOVE_BELOW_US			ns级 取值[100,65535]
+  EC200U/EC600U/EG915U系列:<br />PWM.ABOVE_MS				          ms级取值范围：(0,10]<br/>PWM.ABOVE_1US				        us级取值范围：(0,10000]<br/>PWM.ABOVE_10US				      us级取值范围：(1,10000]<br/>PWM.ABOVE_BELOW_US			ns级取值范围[100,65535]
 
-- `highTime`-高电平时间,int类型,说明如下:
+- `highTime`-高电平时间，int类型，说明如下：
 
   ms级时，单位为ms<br/>us级时，单位为us<br/>ns级别：需要使用者计算<br/>               频率 = 13Mhz / cycleTime<br/>               占空比 = highTime/ cycleTime
 
-- `cycleTime`-周期时间,int类型,说明如下:
+- `cycleTime`-周期时间，int类型，说明如下：
 
   ms级时，单位为ms<br/>us级时，单位为us<br/>ns级别：需要使用者计算<br/>             频率 = 13Mhz / cycleTime<br/>             占空比 = highTime/ cycleTime
 
@@ -47,6 +47,7 @@ class misc.PWM(PWM.PWMn,PWM.ABOVE_xx, highTime, cycleTime)
 | EG915U | PWM0 – 引脚号20                                              |
 | EC800M | PWM0 – 引脚号83<br/>PWM1 – 引脚号78<br/>PWM2 – 引脚号16<br/>PWM3 – 引脚号49 |
 | EG912N | PWM0 – 引脚号21<br/>PWM1 – 引脚号116<br/>PWM2 – 引脚号107<br/>PWM3 – 引脚号92 |
+| EC200A | PWM0 – 引脚号1<br/>PWM1 – 引脚号4<br/>PWM2 – 引脚号6         |
 
 ## 方法
 
@@ -94,3 +95,4 @@ if __name__ == '__main__':
 | PWM.PWM1 | PWM1 | EC600S / EC600N / EC100Y/EC800N/EC600M/EC800M/EG912N         |
 | PWM.PWM2 | PWM2 | EC600S / EC600N / EC100Y/EC800N/EC600M/EC800M/EG912N         |
 | PWM.PWM3 | PWM3 | EC600S / EC600N / EC100Y/EC800N/EC600M/EC800M/EG912N         |
+
