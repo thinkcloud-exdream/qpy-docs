@@ -11,9 +11,9 @@
 # 方式一
 # 打印输出方式
 import uping
-uping.ping('baidu.com')
+uping.ping('www.baidu.com')
 
-# 以下是uping.start()的输出, 无返回值
+# 以下是uping的输出, 无返回值
 #72 bytes from 49.49.48.46: icmp_seq=1, ttl=53, time=1169.909000 ms
 #72 bytes from 49.49.48.46: icmp_seq=2, ttl=53, time=92.060000 ms
 #72 bytes from 49.49.48.46: icmp_seq=3, ttl=53, time=94.818000 ms
