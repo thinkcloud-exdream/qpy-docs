@@ -10,20 +10,10 @@
 
 ```python
 # -*- coding: UTF-8 -*-
-'''
-@Description: example for class TTS
-@FilePath: example_tts_file.py
-'''
 import log
 from audio import TTS
 import utime
 
-
-'''
-下面两个全局变量是必须有的，用户可以根据自己的实际项目修改下面两个全局变量的值
-'''
-PROJECT_NAME = "QuecPython_TTS_example"
-PROJECT_VERSION = "1.0.0"
 
 # 设置日志输出级别
 log.basicConfig(level=log.INFO)
@@ -40,19 +30,19 @@ def UsrFunc(event):
 
 if __name__ == '__main__':
     # 参数1：device （0：听筒，1：耳机，2：喇叭）
-    tts = TTS(1)
-    
+    tts = TTS(0)
+
     #注册用户回调函数
     tts.setCallback(UsrFunc)
-    
+
     # 获取当前播放音量大小
     volume_num = tts.getVolume()
     tts_Log.info("Current TTS volume is %d" %volume_num)
-	
+    
     # 设置音量为6
     volume_num = 6
     tts.setVolume(volume_num)
-    
+
     #  参数1：优先级 (0-4)
     #  参数2：打断模式，0表示不允许被打断，1表示允许被打断
     #  参数3：模式 低四位：（1：UNICODE16(Size end conversion)  2：UTF-8  3：UNICODE16(Don't convert)），高四位：wtts_enable，wtts_ul_enable， wtts_dl_enable
@@ -327,16 +317,16 @@ TTS.setCallback(cb)
 
 **参数描述：**
 
-- `cb` - 用户回调函数，function类型，函数原型：
+`cb` - 用户回调函数，function类型，函数原型：
 
-  ```python
-  def cb(event):
-      pass
-  ```
-  
-  **回调函数参数描述**：
-  
-    - `event` - 播放状态，int类型，<a href="#label_tts_map2">点此查看</a>回调函数参数event说明表。
+```python
+def cb(event):
+    pass
+```
+
+**回调函数参数描述**：
+
+  - `event` - 播放状态，int类型，<a href="#label_tts_map2">点此查看</a>回调函数参数event说明表。
 
 **返回值描述：**
 

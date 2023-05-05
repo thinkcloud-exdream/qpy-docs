@@ -178,17 +178,17 @@ camScandecode.callback(cb)
 
 **参数描述：**
 
-- `cb` - 识别回调函数，回调函数原型：
+`cb` - 识别回调函数，回调函数原型：
 
-  ```python
-  def cb(result_list):
-      pass
-  ```
-  
-  **回调函数参数描述：**
-  
-  - `result_list[0]` - 扫码结果，int类型，`0`表示成功， 其它表示失败
-  - `result_list[1]` - 扫码内容，string类型。
+```python
+def cb(result_list):
+    pass
+```
+
+**回调函数参数描述：**
+
+- `result_list[0]` - 扫码结果，int类型，`0`表示成功， 其它表示失败
+- `result_list[1]` - 扫码内容，string类型。
 
 **返回值描述：**
 

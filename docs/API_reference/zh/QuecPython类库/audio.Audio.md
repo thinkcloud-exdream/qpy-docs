@@ -11,6 +11,7 @@
 import audio
 from machine import Pin
 import utime
+import uos
 
 def audio_cb(event):
     if event == 0:
@@ -24,6 +25,7 @@ aud.setCallback(audio_cb)
 aud.set_pa(Pin.GPIO15,2)
 # 播放MP3
 aud.play(2, 1, 'U:/music.mp3')
+utime.sleep(5)
 aud.stop()
 
 # 音频流播放
@@ -165,16 +167,16 @@ Audio.setCallback(cb)
 
 **参数描述：**
 
-- `cb` - 用户回调函数，function类型，函数原型：
+`cb` - 用户回调函数，function类型，函数原型：
 
-  ```python
-  def cb(event):
-      pass
-  ```
-  
-  **回调函数参数描述**：
-  
-    - `event` - 播放状态，int类型，<a href="#label_Audio_map2">点此查看</a>回调函数参数event说明表。
+```python
+def cb(event):
+    pass
+```
+
+**回调函数参数描述**：
+
+  - `event` - 播放状态，int类型，<a href="#label_Audio_map2">点此查看</a>回调函数参数event说明表。
 
 **返回值描述：**
 

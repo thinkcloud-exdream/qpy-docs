@@ -34,7 +34,7 @@ def record_callback(args):
     if record_sta == 3:
         print('The recording is over, play it')
         tts.play(1, 0, 2, '录音结束,准备播放录音文件')
-        aud.play(1, 0, audio.getFilePath(path))
+        aud.play(1, 0, record.getFilePath('recordfile.wav'))
         flag = 0
     elif record_sta == -1:
         print('The recording failure.')
@@ -47,7 +47,7 @@ record.start('recordfile.wav', 10)
 
 while 1:
     if flag:
-        pass
+        utime.sleep_ms(200)
     else:
         break
 ```
@@ -270,22 +270,22 @@ Record.end_callback(cb)
 
 **参数描述：**
 
-- `cb` - 录音结束回调函数，function类型，函数原型：
+`cb` - 录音结束回调函数，function类型，函数原型：
 
-  ```python
-  def cb(audio_msg):
-      pass
-  ```
-  
-  **回调函数参数描述**：
-  
-    - `audio_msg` - 录音信息，list类型，其中元素如下：
-  
-       ​    `audio_msg[0]`：`file_path` ，文件路径，string类型。
-  
-       ​    `audio_msg[1]`：`audio_len` ， 录音长度，int类型。
-  
-       ​    `audio_msg[2]`：`audio_state` ，录音状态，int类型，<a href="#label_record_map1">点此查看</a>回调函数参数audio_state说明表。
+```python
+def cb(audio_msg):
+    pass
+```
+
+**回调函数参数描述**：
+
+  - `audio_msg` - 录音信息，list类型，其中元素如下：
+
+     ​    `audio_msg[0]`：`file_path` ，文件路径，string类型。
+
+     ​    `audio_msg[1]`：`audio_len` ， 录音长度，int类型。
+
+     ​    `audio_msg[2]`：`audio_state` ，录音状态，int类型，<a href="#label_record_map1">点此查看</a>回调函数参数audio_state说明表。
 
 **返回值描述：**
 
