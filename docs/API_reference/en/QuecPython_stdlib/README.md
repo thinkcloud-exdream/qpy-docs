@@ -30,4 +30,4 @@ help('modules')
 - [thread - Multi-threading](./_thread.md)
 - [uhashlib - Hash Algorithm](./uhashlib.md)
 
-<!--Refer to https://python.quectel.com/wiki/#/zh-cn/api/pythonStdlib for the supplement>
+<!--Refer to https://python.quectel.com/wiki/#/zh-cn/api/pythonStdlib for the supplement-->
