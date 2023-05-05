@@ -8,8 +8,8 @@ id: home_page
 
 <div id="home_page">
     <div>
-        <h1><span>QuecPython文档中心</span></h1>
-        <h2>让开发更简单迅速</h3>
+        <h1><span>QuecPython</span></h1>
+        <h2>make development faster</h3>
     </div>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="static/css/just-the-docs.css">
@@ -41,15 +41,15 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>详解QuecPython API接口描述,包括API参考用例等</p>
+                                    <p>Describe the QuecPython API interface in detail, including API reference use cases</p>
                                 </div>
                             </div>
                         </figcaption>
                 </figure>
                 <a href="/API_reference/en/index.html" class="article-a">
-                    <p class="article-p-h">API参考手册</p>
+                    <p class="article-p-h">API reference</p>
                 </a>
-                <p class="article-p-t">最新：2023-03-15</font>
+                <p class="article-p-t">latest：2023-03-15</font>
                 </p>
             </div>
 			<!-- QuecPython快速开始教程-->
@@ -62,15 +62,15 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>QuecPython快速开始教程</p>
+                                    <p>QuecPython Quick start tutorial</p>
                                 </div>
                             </div>
                         </figcaption>
                 </figure>
                 <a href="/Getting_started/en/index.html" class="article-a">
-                    <p class="article-p-h">快速开始</p>
+                    <p class="article-p-h">Getting started</p>
                 </a>
-                <p class="article-p-t">最新：2023-03-15</font>
+                <p class="article-p-t">latest：2023-03-15</font>
                 </p>
             </div>
             <!-- QuecPython开发指南-->
@@ -83,15 +83,16 @@ id: home_page
                             <div class="c4-reveal-down">
                                 <div>
                                     <h2 style="margin-bottom: 5px;"></h2>
-                                    <p>QuecPython开发指南,包括BSP、网络通信、外设应用开发等</p>
+									<p>QuecPython development guide, including BSP, network communication, peripheral application development
+                                    </p>
                                 </div>
                             </div>
                         </figcaption>
                 </figure>
                 <a href="/Application_guide/en/index.html" class="article-a">
-                    <p class="article-p-h">开发指南</p>
+                    <p class="article-p-h">Application guide</p>
                 </a>
-                <p class="article-p-t">最新：2023-01-16</font>
+                <p class="article-p-t">latest：2023-01-16</font>
                 </p>
             </div>
 			<!-- QuecPython常见问题-->
@@ -104,8 +105,8 @@ id: home_page
 							<div class="c4-reveal-down">
 								<div>
 									<h2 style="margin-bottom: 5px;"></h2>
-									<p>常见问题,固件烧录救砖,文档系统编写规范,
-										参与文档贡献流程,提交文档错误流程。</p>
+									<p>Common problems, brick painting and brick rescue, document system preparation specification,Participate in document contribution process and submit document error process.
+									</p>
 								</div>
 							</div>
 						</figcaption>
@@ -113,7 +114,7 @@ id: home_page
 				<a href="/FAQ/en/index.html" class="article-a">
 					<p class="article-p-h">FAQ</p>
 				</a>
-				<p class="article-p-t">最新：2023-03-15</font>
+				<p class="article-p-t">latest：2023-03-15</font>
 				</p>
 			</div>
 		</div>
