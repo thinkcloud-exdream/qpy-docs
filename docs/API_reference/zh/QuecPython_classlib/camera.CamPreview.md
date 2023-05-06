@@ -2,9 +2,9 @@
 
 # class camPreview - 摄像头预览
 
-类功能：提供摄像头的预览功能。
+该类提供摄像头的预览功能。
 
-> 注意：使用该功能前，需要初始化LCD。
+> 使用该功能前，需要初始化LCD。
 
 **示例：**
 
@@ -54,7 +54,7 @@ class camera.camPreview(model,cam_w,cam_h,lcd_w,lcd_h,perview_level)
 
 ## 方法
 
-### camPreview.open
+### `camPreview.open`
 
 ```python
 camPreview.open()
@@ -70,7 +70,7 @@ camPreview.open()
 
 `0` 表示打开预览成功，其他表示打开预览失败。
 
-### camPreview.close
+### `camPreview.close`
 
 ```
 camPreview.close()

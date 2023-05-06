@@ -1,6 +1,6 @@
 # Queue - 消息队列
 
-模块功能: 用于线程间通信
+用于线程间通信
 
 
 ## 构造函数
@@ -31,11 +31,12 @@ class queue.Queue(maxsize=100)
 往队列中塞入数据
 
 ```python
-Queue.put(data)
+Queue.put(data=None)
 ```
 
 **参数描述：**
-* `data`-数据或信号,  任意类型,   插入的数据, 可以为空不传, 不传则可认识是放松了一个空信号
+
+* `data`-数据或信号,  任意类型,   插入的数据, 可以为空不传参, 不传的默认会传个None信号
 
 **返回值描述：**
 
@@ -105,4 +106,14 @@ def get():
 
 # 线程去阻塞
 _thread.start_new_thread(get, ())
+
+# put数据
+text = "hello world"
+q.put(text)
+
+# 获取size
+q.size()
+
+# 判断队列是否已空
+q.empty()
 ```

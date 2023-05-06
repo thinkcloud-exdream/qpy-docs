@@ -1,6 +1,6 @@
 # uwebsocket - websocket客户端
 
-模块功能: 提供用于websocket连接使用
+提供用于websocket连接使用
 
 
 
@@ -9,12 +9,12 @@
 ### uwebsocket.Client.connect
 
 ```python
->>> import uwebsocket
->>> ws_client = uwebsocket.Client.connect(uri, headers=None, debug=False)
+ws_client = uwebsocket.Client.connect(url, headers=None, debug=False)
 ```
 
 **参数描述：**:
-* `uri` -  str类型,  websocket的连接地址, 一般以"ws://xxx/"或"wss://xxx/"形式存在
+
+* `url` -  str类型,  websocket的连接地址, 一般以"ws://xxx/"或"wss://xxx/"形式存在
 * `headers` - dict类型,  额外需要添加的headers, 用于除了标准连接头之外, 允许用户自己传额外的头部
 * `debug` - bool类型,  默认False, 当为True的情况下, 会输出日志
 
@@ -42,7 +42,7 @@ ws_client.recv()
 ```
 
 **返回值描述：**
-* `result `- str类型， 返回的结果, 就是recv的结果, 当接受空值或None的时候, 为连接被关闭
+* `result `- str类型， recv接受返回的结果, 当接受空值或None的时候, 为连接被关闭
 
 
 
@@ -59,7 +59,7 @@ ws_client.close()
 **示例：**：
 
 ```python
-from usr import uwebsocket
+import uwebsocket
 import _thread
 
 
