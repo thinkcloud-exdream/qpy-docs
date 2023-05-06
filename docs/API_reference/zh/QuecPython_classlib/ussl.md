@@ -2,8 +2,6 @@
 
 ussl模块实现了TLS/SSL加密通信功能, 主要用于单向和双向认证使用。
 
-> BC25PA平台不支持ussl模块。
-
 
 
 ## 创建SSL连接通道
@@ -25,7 +23,9 @@ ussl.wrap_socket(sock,server_hostname=None,cert=None,key=None)
 
 **返回值描述：**
 
-返回一个被包装的`usocket.socket`对象, 并且具有`usocket.socket`所有方法及功能
+返回一个被包装的`usocket.socket`对象
+
+
 
 **示例：**
 
@@ -37,16 +37,16 @@ import usocket
 # 创建一个socket实例
 sock = usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)
 # 解析域名
-sockaddr=usocket.getaddrinfo('www.tongxinmao.com', 80)[0][-1]
+sockaddr=usocket.getaddrinfo('www.baidu.com', 443)[0][-1]
 # 建立连接
 sock.connect(sockaddr)
 # 简历SSL连接. 前提需要服务器支持
 sock = ussl.wrap_socket(sock, server_hostname=sockaddr[0])
 # 向服务端发送消息
-ret=sock.send('GET /News HTTP/1.1\r\nHost: www.tongxinmao.com\r\nAccept-Encoding: deflate\r\nConnection: keep-alive\r\n\r\n')
+ret=sock.write('GET /News HTTP/1.1\r\nHost: www.tongxinmao.com\r\nAccept-Encoding: deflate\r\nConnection: keep-alive\r\n\r\n')
 socket_log.info('send %d bytes' % ret)
-# 接收服务端消息
-data=sock.recv(256)
+# 阻塞接收服务端消息
+data=sock.read()
 socket_log.info('recv %s bytes:' % len(data))
 socket_log.info(data.decode())
 
@@ -57,16 +57,16 @@ key = "私钥"
 # 创建一个socket实例
 sock = usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)
 # 解析域名
-sockaddr=usocket.getaddrinfo('www.tongxinmao.com', 80)[0][-1]
+sockaddr=usocket.getaddrinfo('www.baidu.com', 443)[0][-1]
 # 建立连接
 sock.connect(sockaddr)
 # 简历SSL连接. 前提需要服务器支持
 sock = ussl.wrap_socket(sock, server_hostname=sockaddr[0], cert=cert, key=key)
 # 向服务端发送消息
-ret=sock.send('GET /News HTTP/1.1\r\nHost: www.tongxinmao.com\r\nAccept-Encoding: deflate\r\nConnection: keep-alive\r\n\r\n')
+ret=sock.write('GET /News HTTP/1.1\r\nHost: www.tongxinmao.com\r\nAccept-Encoding: deflate\r\nConnection: keep-alive\r\n\r\n')
 socket_log.info('send %d bytes' % ret)
 # 接收服务端消息
-data=sock.recv(256)
+data=sock.read()
 socket_log.info('recv %s bytes:' % len(data))
 socket_log.info(data.decode())
 
