@@ -1,5 +1,5 @@
 items:
--   label: QuecPython_stdlib
+-   label: QuecPython标准库
     file: QuecPython_stdlib/README.md
     items:
     -   label: uos - 基本系统服务
@@ -32,7 +32,7 @@ items:
         file: QuecPython_stdlib/_thread.md
     -   label: uhashlib - 哈希算法
         file: QuecPython_stdlib/uhashlib.md
--   label: QuecPython_classlib
+-   label: QuecPython类库
     file: QuecPython_classlib/README.md
     items:
     -   label: example - 执行python脚本
@@ -175,7 +175,7 @@ items:
         file: QuecPython_classlib/ql_fs.md
     -   label: Queue - 消息队列
         file: QuecPython_classlib/Queue.md
--   label: QuecPython_componentlib
+-   label: QuecPython组件库
     file: QuecPython_componentlib/README.md
     items:
     -   label: aLiYun - 阿里云服务
@@ -184,3 +184,8 @@ items:
         file: QuecPython_componentlib/TenCentYun.md
     -   label: sys_bus - 会话总线
         file: QuecPython_componentlib/sys_bus.md
+-   label: 附录
+    file: appendix/README.md
+    items:
+      - label: QuecPython 错误码汇总
+        file: appendix/error-code.md

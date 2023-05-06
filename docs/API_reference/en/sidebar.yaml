@@ -184,3 +184,8 @@ items:
         file: QuecPython_componentlib/TenCentYun.md
     -   label: sys_bus - sys_bus
         file: QuecPython_componentlib/sys_bus.md
+-   label: appendix
+    file: appendix/README.md
+    items:
+      - label: QuecPython error code
+        file: appendix/error-code.md
