@@ -22,6 +22,26 @@
     },
     "translate": {
         "docs": {
+            "/API_reference/zh/": [ {
+                    "url": "/API_reference/en/",
+                    "src": "docs/API_reference/en"
+                }
+            ],
+            "/Getting_started/zh/": [ {
+                    "url": "/Getting_started/en/",
+                    "src": "docs/Getting_started/en"
+                }
+            ],
+			"/Application_guide/zh/": [ {
+                    "url": "/Application_guide/en/",
+                    "src": "docs/Application_guide/en"
+                }
+            ],
+            "/FAQ/zh/": [ {
+                    "url": "/FAQ/en/",
+                    "src": "docs/FAQ/en"
+                }
+            ]
         },
         "pages": {
             "/": [ {
