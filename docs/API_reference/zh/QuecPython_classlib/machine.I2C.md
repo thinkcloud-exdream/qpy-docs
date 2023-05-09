@@ -40,6 +40,8 @@ class machine.I2C(I2Cn, MODE)
 | EG915U        | I2C0:<br />SCL: 引脚号103<br />SDA: 引脚号114<br />I2C1:<br />SCL:引脚号40<br />SDA:引脚号41 |
 | EC800M        | I2C0:<br />SCL: 引脚号67<br />SDA: 引脚号66<br />I2C2:<br />SCL:引脚号68<br />SDA:引脚号69 |
 | EG912N        | I2C1:<br />SCL: 引脚号40<br />SDA: 引脚号41                  |
+| EC600E        | I2C1:<br />SCL: 引脚号57(11)<br />SDA: 引脚号56(12)<br />注：模块的Pin57、Pin56 和Pin11、Pin12 共用内部同一路 I2C 接口。 |
+| EC800E        | I2C0:<br />SCL: 引脚号67(57)<br />SDA: 引脚号66(58)<br />注：<br />1.模块的Pin67、Pin66 和Pin57、Pin58 共用内部同一路 I2C 接口。<br />2.EC800ECN_LE&LQ 的57/58引脚不可用 |
 
 ## 方法
 
@@ -121,8 +123,8 @@ if __name__ == '__main__':
 
 | 常量              | 说明             | 适用平台                                                     |
 | ----------------- | ---------------- | ------------------------------------------------------------ |
-| I2C.I2C0          | I2C通路索引号: 0 | EC100Y/EC600U/EC200U/EC200A/BC25PA/EC800N/BG95M3/EC600M/EG915U/EC800M |
-| I2C.I2C1          | I2C通路索引号: 1 | EC600S/EC600N/EC600U/EC200U/BC25PA/BG95M3/EC600M/EG915U/EC800M/EG912N |
+| I2C.I2C0          | I2C通路索引号: 0 | EC100Y/EC600U/EC200U/EC200A/BC25PA/EC800N/BG95M3/EC600M/EG915U/EC800M/EC800E |
+| I2C.I2C1          | I2C通路索引号: 1 | EC600S/EC600N/EC600U/EC200U/BC25PA/BG95M3/EC600M/EG915U/EC800M/EG912N/EC600E |
 | I2C.I2C2          | I2C通路索引号: 2 | BG95M3/EC600M                                                |
 | I2C.STANDARD_MODE | 标准模式         | --                                                           |
 | I2C.FAST_MODE     | 快速模式         | --                                                           |
