@@ -7,14 +7,14 @@
 ### `machine.UART`
 
 ```python
-class machine.UART(UART.UARTn, buadrate, databits, parity, stopbits, flowctl)
+class machine.UART(UART.UARTn, baudrate, databits, parity, stopbits, flowctl)
 ```
 
 **参数描述：**
 
 - `UARTn` - UART编号，int类型，UARTn说明如下：<br />`UART0` - DEBUG PORT<br />`UART1` - BT PORT<br />`UART2` - MAIN PORT<br />`UART3` - USB CDC PORT (不支持BG95M3)<br />`UART4` - STDOUT PORT (仅支持EC200U/EC600U/EG915U)
 
-- `buadrate` - 波特率，int类型，支持常用波特率，如`4800`、`9600`、`19200`、`38400`、`57600`、`115200`、`230400`等。
+- `baudrate` - 波特率，int类型，支持常用波特率，如`4800`、`9600`、`19200`、`38400`、`57600`、`115200`、`230400`等。
 - `databits` - 数据位[5 ~ 8]，int类型，EC600U/EC200U/EG915U仅支持8位。
 - `parity` - 奇偶校验(`0` – NONE，`1` – EVEN，`2` – ODD)，int类型。
 - `stopbits` - 停止位[1 ~ 2]，int类型。
@@ -36,6 +36,8 @@ class machine.UART(UART.UARTn, buadrate, databits, parity, stopbits, flowctl)
 | EG915U        | uart1:<br />TX: 引脚号27<br />RX: 引脚号28<br />uart2:<br />TX:引脚号35<br />RX:引脚号34<br/>uart4:<br/>TX:引脚号19<br/>RX:引脚号18 |
 | EC800M        | uart0:<br />TX: 引脚号39<br />RX: 引脚号38<br />uart1(flowctl = 0):<br />TX: 引脚号50<br />RX: 引脚号51<br />uart1(flowctl = 1):<br />TX: 引脚号22<br />RX: 引脚号23<br />注意:EC800MCN_GA uart1不可用<br />uart2:<br />TX:引脚号18<br />RX:引脚号17 |
 | EG912N        | uart0:<br />TX: 引脚号23<br />RX: 引脚号22<br />uart1(flowctl = 0):<br />TX: 引脚号27<br />RX: 引脚号28<br/>uart1(flowctl = 1):<br />TX: 引脚号36<br />RX: 引脚号37<br />uart2:<br />TX:引脚号34<br />RX:引脚号35 |
+| EC600E        | uart0:<br />TX: 引脚号71<br />RX: 引脚号72<br />uart1:<br />TX:引脚号70<br />RX:引脚号69<br />uart2:<br />TX:引脚号32<br />RX:引脚号31 |
+| EC800E        | uart0:<br />TX: 引脚号39<br />RX: 引脚号38<br />uart1:<br />TX:引脚号29<br />RX:引脚号28<br />uart2:<br />TX:引脚号18<br />RX:引脚号17 |
 
 > EC600M/EC800M/EG912N 的uart1在flowctl = 1时，仅将uart1映射到不同的引脚，未开启流控功能。
 
