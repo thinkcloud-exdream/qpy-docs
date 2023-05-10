@@ -195,11 +195,9 @@ MQTT API 使用以及说明查阅Wiki文档：https://python.quectel.com/doc/API
   ![image-20230510112211696](../media/coulds/iot_aliyun/image-20230510112211696.png)
 
   ```python
->>> mqtt_obj.subscribe("device_control")
+  >>> mqtt_obj.subscribe("device_control")
   0
-  >>> 
   ```
-
 #### 数据上行
 
 - 发布主题消息到平台，Topic字段填写任意主题
@@ -209,10 +207,11 @@ MQTT API 使用以及说明查阅Wiki文档：https://python.quectel.com/doc/API
   >>> mqtt_obj.publish("device_test", ujson.dumps({"quec": "Hello, Ctwing cloud!"}))
   True
   >>> 
-```
-  
+  ```
+
+
 云端查看设备上行消息
-  
+
   ![image-20230510112121530](../media/coulds/iot_aliyun/image-20230510112121530.png)
 
 
@@ -221,4 +220,3 @@ MQTT API 使用以及说明查阅Wiki文档：https://python.quectel.com/doc/API
 
 - 设备进行云连接时需确认网络状态，例如SIM卡是否能够注网，设备是否拨号成功
 - 确保所用模组包含MQTT连接API可供使用
-
