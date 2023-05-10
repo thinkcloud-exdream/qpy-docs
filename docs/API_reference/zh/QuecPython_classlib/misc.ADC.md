@@ -80,12 +80,14 @@ ADC.close()
 | EG915U | ADC0 – 引脚号24<br/>ADC1 – 引脚号2                           |
 | EC800M | ADC0 – 引脚号9<br/>ADC1 – 引脚号96                           |
 | EG912N | ADC0 – 引脚号24<br/>ADC1 – 引脚号2                           |
+| EC600E | ADC0 – 引脚号19<br/>ADC1 – 引脚号20                          |
+| EC800E | ADC0 – 引脚号9<br/>ADC0 – 引脚号96                           |
 
 ## 常量
 
 | 常量     | 说明     | 适用平台                                                     |
 | -------- | -------- | ------------------------------------------------------------ |
-| ADC.ADC0 | ADC通道0 | EC600S/EC600N/EC100Y/EC600U/EC200U/BC25PA/EC800N/BG95M3/EC200A/EC600M/EG915U/EC800M/EG912N |
-| ADC.ADC1 | ADC通道1 | EC600U/EC200U/EC200A/EC600M/EG915U/EC800M/EG912N             |
+| ADC.ADC0 | ADC通道0 | EC600S/EC600N/EC100Y/EC600U/EC200U/BC25PA/EC800N/BG95M3/EC200A/EC600M/EG915U/EC800M/EG912N/EC600E/EC800E |
+| ADC.ADC1 | ADC通道1 | EC600U/EC200U/EC200A/EC600M/EG915U/EC800M/EG912N/EC600E/EC800E |
 | ADC.ADC2 | ADC通道2 | EC600U/EC200U                                                |
 | ADC.ADC3 | ADC通道3 | EC600U                                                       |

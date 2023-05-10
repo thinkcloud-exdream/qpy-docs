@@ -1,6 +1,6 @@
 # class PowerKey - power key按键回调注册功能
 
-提供power key按键注册回调功能接口。
+提供power key事件回调注册功能。
 
 ## 构造函数
 

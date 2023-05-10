@@ -2,7 +2,7 @@
 
 根据输入的内容，生成对应的二维码。
 
-> 当前支持的型号：EC600N/EC200NCNLA/EC800N/EC600MCNLA/EC600MCNLE/EC800MCNLA/EC800MCNGA/EC800MCNLE系列。
+> 当前支持的型号：EC600N/EC800N系列。
 
 ## 二维码显示功能
 
