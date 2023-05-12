@@ -186,6 +186,8 @@ items:
         file: QuecPython_componentlib/TenCentYun.md
     -   label: sys_bus - 会话总线
         file: QuecPython_componentlib/sys_bus.md
+    -   label: uasyncio - 协程
+        file: QuecPython_componentlib/uasyncio.md
 -   label: 附录
     file: appendix/README.md
     items:

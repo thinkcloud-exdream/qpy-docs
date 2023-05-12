@@ -164,6 +164,12 @@ items:
             file: other-resources/programming-framework.md
           - label: "10.2 HeliosSDK"
             file: other-resources/helios-sdk.md
+          - label: "10.3 HeliosService"
+            file: other-resources/helios-service.md
+          - label: "10.4 sys_bus"
+            file: other-resources/sys_bus.md
+          - label: "10.5 eventMesh"
+            file: other-resources/eventMesh.md
 
     - label: "11 量产相关"
       file: mass-production/README.md
