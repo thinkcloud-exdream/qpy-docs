@@ -94,7 +94,8 @@ items:
             file: iot-basic/websocket.md
           - label: "6.6 通信异常处理"
             file: iot-basic/exceptions.md
-
+          - label: "6.7 ntp时间同步"
+            file: iot-basic/ntp.md
     - label: "7 QuecPython 云平台功能"
       file: clouds/README.md
       items:
@@ -164,7 +165,6 @@ items:
             file: other-resources/programming-framework.md
           - label: "10.2 HeliosSDK"
             file: other-resources/helios-sdk.md
-
     - label: "11 量产相关"
       file: mass-production/README.md
       items:
@@ -198,13 +198,30 @@ items:
             file: solutions/student-card.md
           - label: "12.8 充电桩"
             file: solutions/charging-pile.md
-
-    - label: "13 附录"
+    - label: "13 高级组件"
+      file: high-level-component/README.md
+      items:
+          - label: "13.1 modbus"
+            file: high-level-component/modbus.md
+          - label: "13.2 asyncio"
+            file: high-level-component/asyncio.md
+          - label: "13.3 blinker"
+            file: high-level-component/blinker.md          
+    - label: "14 产品方案介绍"
+      file: app-framework/README.md
+      items:
+          - label: "14.1 HeliosService"
+            file: app-framework/helios-service.md
+          - label: "14.2 sys_bus"
+            file: app-framework/sys_bus.md
+          - label: "14.3 EventMesh"
+            file: app-framework/EventMesh.md
+    - label: "15 附录"
       file: appendix/README.md
       items:
-          - label: "13.1 QuecPython 开发板板载资源列表"
+          - label: "15.1 QuecPython 开发板板载资源列表"
             file: appendix/evb-resources.md
-          - label: "13.2 QuecPython 错误码汇总"
+          - label: "15.2 QuecPython 错误码汇总"
             file: appendix/error-code.md
-          - label: "13.3 QuecPython 异常处理流程"
+          - label: "15.3 QuecPython 异常处理流程"
             file: appendix/exception-handling.md
