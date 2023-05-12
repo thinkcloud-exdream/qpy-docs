@@ -84,15 +84,19 @@ items:
       items:
           - label: "6.1 天线、SIM 卡和网络注册"
             file: iot-basic/preparation.md
-          - label: "6.2 TCP 与 UDP 通信"
+          - label: "6.2 APN与数据拨号"
+            file: iot-basic/apn-datacall.md
+          - label: "6.3 TCP 与 UDP 通信"
             file: iot-basic/tcp-and-udp.md
-          - label: "6.3 HTTP 通信"
+          - label: "6.4 HTTP 通信"
             file: iot-basic/http.md
-          - label: "6.4 MQTT 通信"
+          - label: "6.5 MQTT 通信"
             file: iot-basic/mqtt.md
-          - label: "6.5 WebSocket 通信"
+          - label: "6.6 WebSocket 通信"
             file: iot-basic/websocket.md
-          - label: "6.6 通信异常处理"
+          - label: "6.9 短信"
+            file: iot-basic/sms.md
+          - label: "6.10 通信异常处理"
             file: iot-basic/exceptions.md
 
     - label: "7 QuecPython 云平台功能"

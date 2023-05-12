@@ -89,6 +89,8 @@
   <summary>6 QuecPython 物联网基础功能</summary>
 
 - [6.1 天线、SIM 卡和网络注册](./iot-basic/preparation.md)
+- 
+- [6.2 APN与数据拨号](./iot-basic/apn-datacall.md)
 
 - [6.2 TCP 与 UDP 通信](./iot-basic/tcp-and-udp.md)
 
@@ -98,7 +100,9 @@
 
 - [6.5 WebSocket 通信](./iot-basic/websocket.md)
 
-- [6.6 通信异常处理](./iot-basic/exceptions.md)
+- [6.9 短信](./iot-basic/sms.md)
+
+- [6.10 通信异常处理](./iot-basic/exceptions.md)
 
   </details>
 
