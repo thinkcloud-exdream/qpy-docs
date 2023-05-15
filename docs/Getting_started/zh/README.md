@@ -60,6 +60,8 @@
 
 - [4.8 多线程](./os/threads.md)
 
+- [4.9: 功耗管理](./os/pm.md)
+
   </details>
 
 <details>

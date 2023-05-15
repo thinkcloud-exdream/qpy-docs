@@ -56,6 +56,8 @@ items:
             file: os/ram.md
           - label: "4.8 多线程"
             file: os/threads.md
+          - label: "4.9 功耗管理"
+            file: os/pm.md
 
     - label: "5 QuecPython 硬件基础功能"
       file: hardware-basic/README.md
