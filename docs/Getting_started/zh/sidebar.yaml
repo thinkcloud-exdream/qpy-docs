@@ -207,7 +207,7 @@ items:
             file: high-level-component/asyncio.md
           - label: "13.3 blinker"
             file: high-level-component/blinker.md          
-    - label: "14 产品方案介绍"
+    - label: "14 应用框架"
       file: app-framework/README.md
       items:
           - label: "14.1 HeliosService"
